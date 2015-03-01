@@ -61,7 +61,7 @@
       </EntityProperty>
       <EntityProperty
         Name="Email"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
         <EntityProperty.Attributes>
           <MaxLength
             Value="50" />
@@ -69,7 +69,7 @@
       </EntityProperty>
       <EntityProperty
         Name="Website"
-        PropertyType=":String?">
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
         <EntityProperty.Attributes>
           <MaxLength
             Value="50" />

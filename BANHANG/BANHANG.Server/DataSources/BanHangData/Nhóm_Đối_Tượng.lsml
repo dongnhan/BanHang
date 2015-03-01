@@ -6,6 +6,10 @@
   </ServiceApplication.Attributes>
   <EntityType
     Name="Nhóm_Đối_TượngItem">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Nhóm Đối Tượng" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">

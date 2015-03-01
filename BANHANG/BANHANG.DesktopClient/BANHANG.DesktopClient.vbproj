@@ -76,6 +76,39 @@
     <UseDesignTimeFeatures>false</UseDesignTimeFeatures>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.LightSwitch.FlexGrid.Client">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.LightSwitch.FlexGrid.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.LightSwitch.FlexGrid.Client.Design">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\DebugOnlyRef\C1.LightSwitch.FlexGrid.Client.Design.dll</HintPath>
+      <ExtensionReferenceType>DebugOnly</ExtensionReferenceType>
+    </Reference>
+    <Reference Include="C1.LightSwitch.FlexGrid.Common">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.LightSwitch.FlexGrid.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Silverlight.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.5.dll</HintPath>
+      <ExtensionReferenceType>DebugOnly</ExtensionReferenceType>
+    </Reference>
+    <Reference Include="C1.Silverlight.DateTimeEditors.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.DateTimeEditors.5.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Silverlight.Excel.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.Excel.5.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Silverlight.Extended.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.Extended.5.dll</HintPath>
+      <ExtensionReferenceType>DebugOnly</ExtensionReferenceType>
+    </Reference>
+    <Reference Include="C1.Silverlight.FlexGrid.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.FlexGrid.5.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Silverlight.FlexGridFilter.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.FlexGridFilter.5.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Silverlight.Zip.5">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.Zip.5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.LightSwitch, Version=10.0.12.1, Culture=neutral, PublicKeyToken=8e9329cecb4700e9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(LightSwitchSDKPath)\Client\Microsoft.LightSwitch.dll</HintPath>
@@ -253,6 +286,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\KhachHangListDetail.lsml.vb">
+      <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="My Project\Client.lsml">
@@ -262,9 +298,10 @@
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\KhachHangListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Screens\" />
+    <Resource Include="Resources\report.jpg" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="default.htm">
@@ -275,6 +312,9 @@
       <SubFolder>
       </SubFolder>
     </_ClientBuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

@@ -73,6 +73,12 @@
     <Import Include="LightSwitchApplication" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="C1.LightSwitch.FlexGrid.Common">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Server\Reference\C1.LightSwitch.FlexGrid.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.LightSwitch.FlexGrid.Server">
+      <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Server\Reference\C1.LightSwitch.FlexGrid.Server.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.LightSwitch.Extensions.Server">
       <HintPath>..\_Pvt_Extensions\Microsoft.LightSwitch.Extensions\Server\Reference\Microsoft.LightSwitch.Extensions.Server.dll</HintPath>
     </Reference>
@@ -240,6 +246,12 @@
     <LightSwitchModel Include="DataSources\BanHangData\Thu_Chi_Tiết.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\KhachHang.lsml">
+      <DependentUpon>Đối_Tượng.lsml</DependentUpon>
+    </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\BanHangData\NhaCungCap.lsml">
+      <DependentUpon>Đối_Tượng.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

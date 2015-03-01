@@ -5,7 +5,7 @@
   Version="1.0.0.0"
   DefaultNavigationItem="!module/NavigationItems[Tasks]"
   Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
-  Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  Theme="Microsoft.LightSwitch.RichClient:Blue" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application.Attributes>
     <ModuleNamespace
       Namespace="LightSwitchApplication" />
@@ -35,19 +35,28 @@
         Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Application.Commands>
+    <ApplicationCommand
+      Name="ScreenCommandShowKhachHangListDetail"
+      Target="!module/Methods[ShowKhachHangListDetail]" />
+  </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
-      Name="Tasks">
+      Name="Tasks"
+      DefaultItem="!module/NavigationItems[Tasks]/Children[KhachHangListDetail]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
-          Value="Tasks" />
+          Value="DANH MỤC" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="KhachHangListDetail"
+        Command="!module/Commands[ScreenCommandShowKhachHangListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
-          Value="Administration" />
+          Value="QUẢN TRỊ" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
         Name="RolesScreen"
