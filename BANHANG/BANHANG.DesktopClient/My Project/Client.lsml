@@ -42,6 +42,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowNhaCungCapListDetail"
       Target="!module/Methods[ShowNhaCungCapListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowĐơn_Vị_Sử_DụngListDetail"
+      Target="!module/Methods[ShowĐơn_Vị_Sử_DụngListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -57,6 +60,9 @@
       <ApplicationNavigationLink
         Name="NhaCungCapListDetail"
         Command="!module/Commands[ScreenCommandShowNhaCungCapListDetail]" />
+      <ApplicationNavigationLink
+        Name="Đơn_Vị_Sử_DụngListDetail"
+        Command="!module/Commands[ScreenCommandShowĐơn_Vị_Sử_DụngListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

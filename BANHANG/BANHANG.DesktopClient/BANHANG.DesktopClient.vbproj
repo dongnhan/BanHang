@@ -303,6 +303,7 @@
     <LightSwitchModel Include="My Project\Proxies.lsml" />
     <LightSwitchModel Include="Screens\KhachHangListDetail.lsml" />
     <LightSwitchModel Include="Screens\NhaCungCapListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
