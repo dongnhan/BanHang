@@ -44,9 +44,9 @@
       </EntityProperty>
       <NavigationProperty
         Name="Bảng_Giá_Chi_Tiết"
-        Association="FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính"
+        Association="Đơn_Vị_TínhItem_BangGiaChiTiet"
         FromEnd="Đơn_Vị_Tính"
-        ToEnd="Bảng_Giá_Chi_Tiết" />
+        ToEnd="BangGiaChiTiet" />
       <NavigationProperty
         Name="Đặt_Hàng_Chi_Tiết"
         Association="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính"
@@ -54,9 +54,9 @@
         ToEnd="Đặt_Hàng_Chi_Tiết" />
       <NavigationProperty
         Name="Nhập_Sản_Phẩm_Chi_Tiết"
-        Association="FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
+        Association="Đơn_Vị_TínhItem_NhapSanPhamChiTiet"
         FromEnd="Đơn_Vị_Tính"
-        ToEnd="Nhập_Sản_Phẩm_Chi_Tiết" />
+        ToEnd="NhapSanPhamChiTiet" />
       <NavigationProperty
         Name="Sản_Phẩm"
         Association="FK_Sản_Phẩm_Đơn_Vị_Tính"
@@ -64,13 +64,13 @@
         ToEnd="Sản_Phẩm" />
       <NavigationProperty
         Name="Xuất_Sản_Phẩm_Chi_Tiết"
-        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
+        Association="Đơn_Vị_TínhItem_XuatSanPhamChiTiet"
         FromEnd="Đơn_Vị_Tính"
-        ToEnd="Xuất_Sản_Phẩm_Chi_Tiết" />
+        ToEnd="XuatSanPhamChiTiet" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính">
+    Name="Đơn_Vị_TínhItem_BangGiaChiTiet">
     <AssociationEnd
       Name="Đơn_Vị_Tính"
       Multiplicity="One"
@@ -80,9 +80,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Bảng_Giá_Chi_Tiết"
+      Name="BangGiaChiTiet"
       Multiplicity="Many"
-      EntityType="Bảng_Giá_Chi_TiếtItem" />
+      EntityType="BangGiaChiTiet" />
   </Association>
   <Association
     Name="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính">
@@ -100,7 +100,7 @@
       EntityType="Đặt_Hàng_Chi_TiếtItem" />
   </Association>
   <Association
-    Name="FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
+    Name="Đơn_Vị_TínhItem_NhapSanPhamChiTiet">
     <AssociationEnd
       Name="Đơn_Vị_Tính"
       Multiplicity="One"
@@ -110,9 +110,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Nhập_Sản_Phẩm_Chi_Tiết"
+      Name="NhapSanPhamChiTiet"
       Multiplicity="Many"
-      EntityType="Nhập_Sản_Phẩm_Chi_TiếtItem" />
+      EntityType="NhapSanPhamChiTiet" />
   </Association>
   <Association
     Name="FK_Sản_Phẩm_Đơn_Vị_Tính">
@@ -130,7 +130,7 @@
       EntityType="Sản_PhẩmItem" />
   </Association>
   <Association
-    Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
+    Name="Đơn_Vị_TínhItem_XuatSanPhamChiTiet">
     <AssociationEnd
       Name="Đơn_Vị_Tính"
       Multiplicity="One"
@@ -140,9 +140,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Xuất_Sản_Phẩm_Chi_Tiết"
+      Name="XuatSanPhamChiTiet"
       Multiplicity="Many"
-      EntityType="Xuất_Sản_Phẩm_Chi_TiếtItem" />
+      EntityType="XuatSanPhamChiTiet" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -157,12 +157,12 @@
       EntityType="Đơn_Vị_TínhItem" />
     <AssociationSet
       Name="FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính"
-      Association="FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính">
+      Association="Đơn_Vị_TínhItem_BangGiaChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
         EntitySet="Đơn_Vị_Tính" />
       <AssociationSetEnd
-        Name="Bảng_Giá_Chi_Tiết"
+        Name="BangGiaChiTiet"
         EntitySet="Bảng_Giá_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
@@ -177,12 +177,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
-      Association="FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
+      Association="Đơn_Vị_TínhItem_NhapSanPhamChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
         EntitySet="Đơn_Vị_Tính" />
       <AssociationSetEnd
-        Name="Nhập_Sản_Phẩm_Chi_Tiết"
+        Name="NhapSanPhamChiTiet"
         EntitySet="Nhập_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
@@ -197,12 +197,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
-      Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
+      Association="Đơn_Vị_TínhItem_XuatSanPhamChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
         EntitySet="Đơn_Vị_Tính" />
       <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm_Chi_Tiết"
+        Name="XuatSanPhamChiTiet"
         EntitySet="Xuất_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
@@ -330,7 +330,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính]/Members[Bảng_Giá_Chi_Tiết]">
+          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính]/Members[BangGiaChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DonViTinh" />
@@ -372,7 +372,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính]/Members[Nhập_Sản_Phẩm_Chi_Tiết]">
+          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính]/Members[NhapSanPhamChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DonViTinh" />
@@ -414,7 +414,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính]/Members[Xuất_Sản_Phẩm_Chi_Tiết]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính]/Members[XuatSanPhamChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DonViTinh" />

@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Bảng_GiáItem">
+    Name="BangGia">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -55,45 +55,45 @@
       </EntityProperty>
       <NavigationProperty
         Name="Bảng_Giá_Chi_Tiết"
-        Association="FK_Bảng_Giá_Chi_Tiết_Bảng_Giá"
-        FromEnd="Bảng_Giá"
-        ToEnd="Bảng_Giá_Chi_Tiết" />
+        Association="BangGia_BangGiaChiTiet"
+        FromEnd="BangGia"
+        ToEnd="BangGiaChiTiet" />
       <NavigationProperty
         Name="Xuất_Sản_Phẩm"
-        Association="FK_Xuất_Sản_Phẩm_Bảng_Giá"
-        FromEnd="Bảng_Giá"
-        ToEnd="Xuất_Sản_Phẩm" />
+        Association="BangGia_XuatSanPham"
+        FromEnd="BangGia"
+        ToEnd="XuatSanPham" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Bảng_Giá_Chi_Tiết_Bảng_Giá">
+    Name="BangGia_BangGiaChiTiet">
     <AssociationEnd
-      Name="Bảng_Giá"
+      Name="BangGia"
       Multiplicity="One"
-      EntityType="Bảng_GiáItem">
+      EntityType="BangGia">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Bảng_Giá_Chi_Tiết"
+      Name="BangGiaChiTiet"
       Multiplicity="Many"
-      EntityType="Bảng_Giá_Chi_TiếtItem" />
+      EntityType="BangGiaChiTiet" />
   </Association>
   <Association
-    Name="FK_Xuất_Sản_Phẩm_Bảng_Giá">
+    Name="BangGia_XuatSanPham">
     <AssociationEnd
-      Name="Bảng_Giá"
-      EntityType="Bảng_GiáItem">
+      Name="BangGia"
+      EntityType="BangGia">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Xuất_Sản_Phẩm"
+      Name="XuatSanPham"
       Multiplicity="Many"
-      EntityType="Xuất_Sản_PhẩmItem" />
+      EntityType="XuatSanPham" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -105,30 +105,30 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Bảng_GiáItem" />
+      EntityType="BangGia" />
     <AssociationSet
       Name="FK_Bảng_Giá_Chi_Tiết_Bảng_Giá"
-      Association="FK_Bảng_Giá_Chi_Tiết_Bảng_Giá">
+      Association="BangGia_BangGiaChiTiet">
       <AssociationSetEnd
-        Name="Bảng_Giá"
+        Name="BangGia"
         EntitySet="Bảng_Giá" />
       <AssociationSetEnd
-        Name="Bảng_Giá_Chi_Tiết"
+        Name="BangGiaChiTiet"
         EntitySet="Bảng_Giá_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Bảng_Giá"
-      Association="FK_Xuất_Sản_Phẩm_Bảng_Giá">
+      Association="BangGia_XuatSanPham">
       <AssociationSetEnd
-        Name="Bảng_Giá"
+        Name="BangGia"
         EntitySet="Bảng_Giá" />
       <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm"
+        Name="XuatSanPham"
         EntitySet="Xuất_Sản_Phẩm" />
     </AssociationSet>
     <QueryOperation
       Name="Bảng_Giá_Single"
-      ReturnType="Bảng_GiáItem">
+      ReturnType="BangGia">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -168,7 +168,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Bảng_Giá_SingleOrDefault"
-      ReturnType="Bảng_GiáItem">
+      ReturnType="BangGia">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -223,24 +223,24 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Bảng_GiáItem/Properties[Id]" />
+          Property="BangGia/Properties[Id]" />
         <SsdlProperty
           MaxLength="500"
           Name="Tên"
           Nullable="False"
           Type="nvarchar"
-          Property="Bảng_GiáItem/Properties[Tên]" />
+          Property="BangGia/Properties[Tên]" />
         <SsdlProperty
           Name="Ngày tạo"
           Nullable="False"
           Type="date"
-          Property="Bảng_GiáItem/Properties[Ngày_tạo]" />
+          Property="BangGia/Properties[Ngày_tạo]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Bảng_GiáItem/Properties[Ghi_chú]" />
+          Property="BangGia/Properties[Ghi_chú]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
@@ -249,14 +249,14 @@
         <SsdlAssociationSet
           Name="FK_Bảng Giá Chi Tiết_Bảng Giá" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Bảng_Giá]/Members[Bảng_Giá]">
+          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Bảng_Giá]/Members[BangGia]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Bảng_Giá]/Members[Bảng_Giá_Chi_Tiết]">
+          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Bảng_Giá]/Members[BangGiaChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_BangGia" />
@@ -270,14 +270,14 @@
         <SsdlAssociationSet
           Name="FK_Xuất Sản Phẩm_Bảng Giá" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Bảng_Giá]/Members[Bảng_Giá]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Bảng_Giá]/Members[BangGia]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Bảng_Giá]/Members[Xuất_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Bảng_Giá]/Members[XuatSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_BangGia" />

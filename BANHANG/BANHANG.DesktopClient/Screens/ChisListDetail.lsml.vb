@@ -17,6 +17,7 @@ Namespace LightSwitchApplication
         Private Sub OK_Execute()
             ' Write your code here.
             Me.CloseModalWindow("GroupChiTiet")
+            Me.FindControl("Chi_Chi_TiếtAddAndEditNew").Focus()
         End Sub
 
         Private Sub Hủy_Execute()

@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Nhập_Sản_PhẩmItem">
+    Name="NhapSanPham">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -64,31 +64,72 @@
       </EntityProperty>
       <NavigationProperty
         Name="Nhập_Sản_Phẩm_Chi_Tiết"
-        Association="FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm"
-        FromEnd="Nhập_Sản_Phẩm"
-        ToEnd="Nhập_Sản_Phẩm_Chi_Tiết" />
+        Association="NhapSanPham_NhapSanPhamChiTiet"
+        FromEnd="NhapSanPham"
+        ToEnd="NhapSanPhamChiTiet" />
       <NavigationProperty
         Name="Đối_TượngItem"
-        Association="FK_Nhập_Sản_Phẩm_Đối_Tượng"
-        FromEnd="Nhập_Sản_Phẩm"
-        ToEnd="Đối_Tượng" />
+        Association="Đối_TượngItem_NhapSanPham"
+        FromEnd="NhapSanPham"
+        ToEnd="Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đối Tượng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
+        Name="Thành_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tiền_thuế"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tổng_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm">
+    Name="NhapSanPham_NhapSanPhamChiTiet">
     <AssociationEnd
-      Name="Nhập_Sản_Phẩm"
+      Name="NhapSanPham"
       Multiplicity="One"
-      EntityType="Nhập_Sản_PhẩmItem">
+      EntityType="NhapSanPham">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Nhập_Sản_Phẩm_Chi_Tiết"
+      Name="NhapSanPhamChiTiet"
       Multiplicity="Many"
-      EntityType="Nhập_Sản_Phẩm_Chi_TiếtItem" />
+      EntityType="NhapSanPhamChiTiet" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -100,20 +141,20 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Nhập_Sản_PhẩmItem" />
+      EntityType="NhapSanPham" />
     <AssociationSet
       Name="FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm"
-      Association="FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm">
+      Association="NhapSanPham_NhapSanPhamChiTiet">
       <AssociationSetEnd
-        Name="Nhập_Sản_Phẩm"
+        Name="NhapSanPham"
         EntitySet="Nhập_Sản_Phẩm" />
       <AssociationSetEnd
-        Name="Nhập_Sản_Phẩm_Chi_Tiết"
+        Name="NhapSanPhamChiTiet"
         EntitySet="Nhập_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
       Name="Nhập_Sản_Phẩm_Single"
-      ReturnType="Nhập_Sản_PhẩmItem">
+      ReturnType="NhapSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -153,7 +194,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Nhập_Sản_Phẩm_SingleOrDefault"
-      ReturnType="Nhập_Sản_PhẩmItem">
+      ReturnType="NhapSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -208,29 +249,29 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Nhập_Sản_PhẩmItem/Properties[Id]" />
+          Property="NhapSanPham/Properties[Id]" />
         <SsdlProperty
           Name="Ngày nhập"
           Nullable="False"
           Type="date"
-          Property="Nhập_Sản_PhẩmItem/Properties[Ngày_nhập]" />
+          Property="NhapSanPham/Properties[Ngày_nhập]" />
         <SsdlProperty
           MaxLength="50"
           Name="Số hóa đơn"
           Nullable="True"
           Type="nvarchar"
-          Property="Nhập_Sản_PhẩmItem/Properties[Số_hóa_đơn]" />
+          Property="NhapSanPham/Properties[Số_hóa_đơn]" />
         <SsdlProperty
           Name="Ngày hóa đơn"
           Nullable="True"
           Type="date"
-          Property="Nhập_Sản_PhẩmItem/Properties[Ngày_hóa_đơn]" />
+          Property="NhapSanPham/Properties[Ngày_hóa_đơn]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Nhập_Sản_PhẩmItem/Properties[Ghi_chú]" />
+          Property="NhapSanPham/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_NhaCungCap"
           Nullable="False"
@@ -244,14 +285,14 @@
         <SsdlAssociationSet
           Name="FK_Nhập Sản Phẩm Chi Tiết_Nhập Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm]/Members[Nhập_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm]/Members[NhapSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm]/Members[Nhập_Sản_Phẩm_Chi_Tiết]">
+          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm]/Members[NhapSanPhamChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_NhapSanPham" />

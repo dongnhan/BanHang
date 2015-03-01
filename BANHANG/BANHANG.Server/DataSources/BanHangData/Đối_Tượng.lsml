@@ -132,9 +132,9 @@
       </NavigationProperty>
       <NavigationProperty
         Name="Nhập_Sản_Phẩm"
-        Association="FK_Nhập_Sản_Phẩm_Đối_Tượng"
+        Association="Đối_TượngItem_NhapSanPham"
         FromEnd="Đối_Tượng"
-        ToEnd="Nhập_Sản_Phẩm" />
+        ToEnd="NhapSanPham" />
       <NavigationProperty
         Name="Thu_Chi_Tiết"
         Association="FK_Thu_Chi_Tiết_Đối_Tượng"
@@ -147,9 +147,9 @@
         ToEnd="Thu" />
       <NavigationProperty
         Name="Xuất_Sản_Phẩm"
-        Association="FK_Xuất_Sản_Phẩm_Khách_Hàng"
+        Association="Đối_TượngItem_XuatSanPham"
         FromEnd="Đối_Tượng"
-        ToEnd="Xuất_Sản_Phẩm" />
+        ToEnd="XuatSanPham" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -195,7 +195,7 @@
       EntityType="Đặt_HàngItem" />
   </Association>
   <Association
-    Name="FK_Nhập_Sản_Phẩm_Đối_Tượng">
+    Name="Đối_TượngItem_NhapSanPham">
     <AssociationEnd
       Name="Đối_Tượng"
       Multiplicity="One"
@@ -205,9 +205,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Nhập_Sản_Phẩm"
+      Name="NhapSanPham"
       Multiplicity="Many"
-      EntityType="Nhập_Sản_PhẩmItem" />
+      EntityType="NhapSanPham" />
   </Association>
   <Association
     Name="FK_Thu_Chi_Tiết_Đối_Tượng">
@@ -239,7 +239,7 @@
       EntityType="Thu" />
   </Association>
   <Association
-    Name="FK_Xuất_Sản_Phẩm_Khách_Hàng">
+    Name="Đối_TượngItem_XuatSanPham">
     <AssociationEnd
       Name="Đối_Tượng"
       Multiplicity="One"
@@ -249,9 +249,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Xuất_Sản_Phẩm"
+      Name="XuatSanPham"
       Multiplicity="Many"
-      EntityType="Xuất_Sản_PhẩmItem" />
+      EntityType="XuatSanPham" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -296,12 +296,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Nhập_Sản_Phẩm_Đối_Tượng"
-      Association="FK_Nhập_Sản_Phẩm_Đối_Tượng">
+      Association="Đối_TượngItem_NhapSanPham">
       <AssociationSetEnd
         Name="Đối_Tượng"
         EntitySet="Đối_Tượng" />
       <AssociationSetEnd
-        Name="Nhập_Sản_Phẩm"
+        Name="NhapSanPham"
         EntitySet="Nhập_Sản_Phẩm" />
     </AssociationSet>
     <AssociationSet
@@ -326,12 +326,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Khách_Hàng"
-      Association="FK_Xuất_Sản_Phẩm_Khách_Hàng">
+      Association="Đối_TượngItem_XuatSanPham">
       <AssociationSetEnd
         Name="Đối_Tượng"
         EntitySet="Đối_Tượng" />
       <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm"
+        Name="XuatSanPham"
         EntitySet="Xuất_Sản_Phẩm" />
     </AssociationSet>
     <QueryOperation
@@ -573,7 +573,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Đối_Tượng]/Members[Nhập_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Đối_Tượng]/Members[NhapSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_NhaCungCap" />
@@ -636,7 +636,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Khách_Hàng]/Members[Xuất_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Khách_Hàng]/Members[XuatSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_KhachHang" />

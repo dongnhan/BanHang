@@ -5,7 +5,11 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Xuất_Sản_PhẩmItem">
+    Name="XuatSanPham">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Xuất Sản Phẩm" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -46,41 +50,83 @@
       </EntityProperty>
       <NavigationProperty
         Name="Xuất_Sản_Phẩm_Chi_Tiết"
-        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm"
-        FromEnd="Xuất_Sản_Phẩm"
-        ToEnd="Xuất_Sản_Phẩm_Chi_Tiết" />
+        Association="XuatSanPham_XuatSanPhamChiTiet"
+        FromEnd="XuatSanPham"
+        ToEnd="XuatSanPhamChiTiet" />
       <NavigationProperty
-        Name="Bảng_GiáItem"
-        Association="FK_Xuất_Sản_Phẩm_Bảng_Giá"
-        FromEnd="Xuất_Sản_Phẩm"
-        ToEnd="Bảng_Giá" />
+        Name="BangGia"
+        Association="BangGia_XuatSanPham"
+        FromEnd="XuatSanPham"
+        ToEnd="BangGia" />
       <NavigationProperty
         Name="Đặt_HàngItem"
-        Association="FK_Xuất_Sản_Phẩm_Đặt_Hàng"
-        FromEnd="Xuất_Sản_Phẩm"
+        Association="Đặt_HàngItem_XuatSanPham"
+        FromEnd="XuatSanPham"
         ToEnd="Đặt_Hàng" />
       <NavigationProperty
         Name="Đối_TượngItem"
-        Association="FK_Xuất_Sản_Phẩm_Khách_Hàng"
-        FromEnd="Xuất_Sản_Phẩm"
+        Association="Đối_TượngItem_XuatSanPham"
+        FromEnd="XuatSanPham"
         ToEnd="Đối_Tượng" />
+      <EntityProperty
+        Name="Thành_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tiền_thuế"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tổng_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm">
+    Name="XuatSanPham_XuatSanPhamChiTiet">
     <AssociationEnd
-      Name="Xuất_Sản_Phẩm"
+      Name="XuatSanPham"
       Multiplicity="One"
-      EntityType="Xuất_Sản_PhẩmItem">
+      EntityType="XuatSanPham">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Xuất_Sản_Phẩm_Chi_Tiết"
+      Name="XuatSanPhamChiTiet"
       Multiplicity="Many"
-      EntityType="Xuất_Sản_Phẩm_Chi_TiếtItem" />
+      EntityType="XuatSanPhamChiTiet" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -92,20 +138,20 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Xuất_Sản_PhẩmItem" />
+      EntityType="XuatSanPham" />
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm"
-      Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm">
+      Association="XuatSanPham_XuatSanPhamChiTiet">
       <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm"
+        Name="XuatSanPham"
         EntitySet="Xuất_Sản_Phẩm" />
       <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm_Chi_Tiết"
+        Name="XuatSanPhamChiTiet"
         EntitySet="Xuất_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
       Name="Xuất_Sản_Phẩm_Single"
-      ReturnType="Xuất_Sản_PhẩmItem">
+      ReturnType="XuatSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -145,7 +191,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Xuất_Sản_Phẩm_SingleOrDefault"
-      ReturnType="Xuất_Sản_PhẩmItem">
+      ReturnType="XuatSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -200,18 +246,18 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Xuất_Sản_PhẩmItem/Properties[Id]" />
+          Property="XuatSanPham/Properties[Id]" />
         <SsdlProperty
           Name="Ngày xuất"
           Nullable="False"
           Type="date"
-          Property="Xuất_Sản_PhẩmItem/Properties[Ngày_xuất]" />
+          Property="XuatSanPham/Properties[Ngày_xuất]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Xuất_Sản_PhẩmItem/Properties[Ghi_chú]" />
+          Property="XuatSanPham/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_BangGia"
           Nullable="True"
@@ -235,14 +281,14 @@
         <SsdlAssociationSet
           Name="FK_Xuất Sản Phẩm Chi Tiết_Xuất Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm]/Members[Xuất_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm]/Members[XuatSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm]/Members[Xuất_Sản_Phẩm_Chi_Tiết]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm]/Members[XuatSanPhamChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_XuatSanPham" />

@@ -7,13 +7,13 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Bảng_GiáItem" />
+        Target="ServiceInterface:BangGia" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Bảng_Giá_Chi_TiếtItem" />
+        Target="ServiceInterface:BangGiaChiTiet" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
@@ -56,18 +56,6 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:NămItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Nhập_Sản_PhẩmItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Nhập_Sản_Phẩm_Chi_TiếtItem" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
@@ -118,34 +106,22 @@
         Target="ServiceInterface:Thu_Chi_TiếtItem" />
     </EntityType.Attributes>
   </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Xuất_Sản_PhẩmItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Xuất_Sản_Phẩm_Chi_TiếtItem" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Bảng_Giá_Chi_Tiết_Bảng_Giá" />
+        Target="ServiceInterface:BangGia_BangGiaChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính" />
+        Target="ServiceInterface:Đơn_Vị_TínhItem_BangGiaChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Bảng_Giá_Chi_Tiết_Sản_Phẩm" />
+        Target="ServiceInterface:Sản_PhẩmItem_BangGiaChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -199,25 +175,25 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính" />
+        Target="ServiceInterface:Đơn_Vị_TínhItem_NhapSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm" />
+        Target="ServiceInterface:NhapSanPham_NhapSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Chi_Tiết_Sản_Phẩm" />
+        Target="ServiceInterface:Sản_PhẩmItem_NhapSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đối_Tượng" />
+        Target="ServiceInterface:Đối_TượngItem_NhapSanPham" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -265,37 +241,37 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính" />
+        Target="ServiceInterface:Đơn_Vị_TínhItem_XuatSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Xuất_Sản_Phẩm_Chi_Tiết_Sản_Phẩm" />
+        Target="ServiceInterface:Sản_PhẩmItem_XuatSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm" />
+        Target="ServiceInterface:XuatSanPham_XuatSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Xuất_Sản_Phẩm_Bảng_Giá" />
+        Target="ServiceInterface:BangGia_XuatSanPham" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Xuất_Sản_Phẩm_Đặt_Hàng" />
+        Target="ServiceInterface:Đặt_HàngItem_XuatSanPham" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Xuất_Sản_Phẩm_Khách_Hàng" />
+        Target="ServiceInterface:Đối_TượngItem_XuatSanPham" />
     </Association.Attributes>
   </Association>
   <EntityContainer>

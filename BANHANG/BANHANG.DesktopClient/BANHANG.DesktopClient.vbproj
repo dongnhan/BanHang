@@ -288,6 +288,18 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\Chi.lsml.vb">
       <Link>UserCode\Shared\Chi.lsml.vb</Link>
     </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\NhapSanPham.lsml.vb">
+      <Link>UserCode\Shared\NhapSanPham.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\NhapSanPhamChiTiet.lsml.vb">
+      <Link>UserCode\Shared\NhapSanPhamChiTiet.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\XuatSanPham.lsml.vb">
+      <Link>UserCode\Shared\XuatSanPham.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\XuatSanPhamChiTiet.lsml.vb">
+      <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Screens\ChisListDetail.lsml.vb">
       <DependentUpon>ChisListDetail.lsml</DependentUpon>
@@ -297,6 +309,12 @@
     </Compile>
     <Compile Include="Screens\NhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhaCungCapListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Nhập_Sản_PhẩmListDetail.lsml.vb">
+      <DependentUpon>Nhập_Sản_PhẩmListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ThusListDetail.lsml.vb">
+      <DependentUpon>ThusListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml.vb">
       <DependentUpon>Đơn_Vị_Sử_DụngListDetail.lsml</DependentUpon>
@@ -311,6 +329,10 @@
     </LightSwitchModel>
     <None Include="My Project\AppManifest.xml" />
     <LightSwitchModel Include="My Project\BanHangData\Chis.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData\Nhập_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -319,6 +341,10 @@
     <LightSwitchModel Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml" />
     <LightSwitchModel Include="Screens\Đơn_Vị_TínhListDetail.lsml" />
     <LightSwitchModel Include="Screens\ChisListDetail.lsml" />
+    <LightSwitchModel Include="Screens\ThusListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Bảng_GiáListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Xuất_Sản_PhẩmListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Nhập_Sản_PhẩmListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

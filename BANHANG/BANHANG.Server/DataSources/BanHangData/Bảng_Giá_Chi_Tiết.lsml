@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Bảng_Giá_Chi_TiếtItem">
+    Name="BangGiaChiTiet">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -27,24 +27,36 @@
       </KeyProperty>
       <EntityProperty
         Name="Giá_vốn"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Chi_phí"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -53,28 +65,46 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Ghi giá trực tiếp"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Tính theo 'Phần trăm chiết khấu'"
+            Value="1" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Phần_trăm_chiết_khấu"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@FormatParameter">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Giá_bán"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
             Scale="2" />
           <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Giá_bán"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -86,20 +116,30 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Bảng_GiáItem"
-        Association="FK_Bảng_Giá_Chi_Tiết_Bảng_Giá"
-        FromEnd="Bảng_Giá_Chi_Tiết"
-        ToEnd="Bảng_Giá" />
+        Name="BangGia"
+        Association="BangGia_BangGiaChiTiet"
+        FromEnd="BangGiaChiTiet"
+        ToEnd="BangGia" />
       <NavigationProperty
         Name="Đơn_Vị_TínhItem"
-        Association="FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính"
-        FromEnd="Bảng_Giá_Chi_Tiết"
-        ToEnd="Đơn_Vị_Tính" />
+        Association="Đơn_Vị_TínhItem_BangGiaChiTiet"
+        FromEnd="BangGiaChiTiet"
+        ToEnd="Đơn_Vị_Tính">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đơn Vị Tính" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Sản_PhẩmItem"
-        Association="FK_Bảng_Giá_Chi_Tiết_Sản_Phẩm"
-        FromEnd="Bảng_Giá_Chi_Tiết"
-        ToEnd="Sản_Phẩm" />
+        Association="Sản_PhẩmItem_BangGiaChiTiet"
+        FromEnd="BangGiaChiTiet"
+        ToEnd="Sản_Phẩm">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Sản Phẩm" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -112,10 +152,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Bảng_Giá_Chi_TiếtItem" />
+      EntityType="BangGiaChiTiet" />
     <QueryOperation
       Name="Bảng_Giá_Chi_Tiết_Single"
-      ReturnType="Bảng_Giá_Chi_TiếtItem">
+      ReturnType="BangGiaChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -155,7 +195,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Bảng_Giá_Chi_Tiết_SingleOrDefault"
-      ReturnType="Bảng_Giá_Chi_TiếtItem">
+      ReturnType="BangGiaChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -210,39 +250,39 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Id]" />
+          Property="BangGiaChiTiet/Properties[Id]" />
         <SsdlProperty
           Name="Giá vốn"
           Nullable="False"
           Type="decimal"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Giá_vốn]" />
+          Property="BangGiaChiTiet/Properties[Giá_vốn]" />
         <SsdlProperty
           Name="Chi phí"
           Nullable="False"
           Type="decimal"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Chi_phí]" />
+          Property="BangGiaChiTiet/Properties[Chi_phí]" />
         <SsdlProperty
           Name="Cách tính"
           Nullable="False"
           Type="int"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Cách_tính]" />
+          Property="BangGiaChiTiet/Properties[Cách_tính]" />
         <SsdlProperty
           Name="Phần trăm chiết khấu"
           Nullable="False"
           Scale="2"
           Type="decimal"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Phần_trăm_chiết_khấu]" />
+          Property="BangGiaChiTiet/Properties[Phần_trăm_chiết_khấu]" />
         <SsdlProperty
           Name="Giá bán"
           Nullable="False"
           Type="decimal"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Giá_bán]" />
+          Property="BangGiaChiTiet/Properties[Giá_bán]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Bảng_Giá_Chi_TiếtItem/Properties[Ghi_chú]" />
+          Property="BangGiaChiTiet/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_BangGia"
           Nullable="False"

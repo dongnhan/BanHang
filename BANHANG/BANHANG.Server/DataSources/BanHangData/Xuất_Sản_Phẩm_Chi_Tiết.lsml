@@ -5,7 +5,11 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Xuất_Sản_Phẩm_Chi_TiếtItem">
+    Name="XuatSanPhamChiTiet">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Xuất Sản Phẩm Chi Tiết" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -34,39 +38,59 @@
             Precision="18"
             Scale="2" />
           <NotSearchable />
+          <StringValueFormat
+            Value="n2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Giá_bán"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Giá_vốn"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Phần_trăm_thuế"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
             Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Giá_vốn"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Phần_trăm_thuế"
+        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="9" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@FormatParameter">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -79,19 +103,61 @@
       </EntityProperty>
       <NavigationProperty
         Name="Đơn_Vị_TínhItem"
-        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
-        FromEnd="Xuất_Sản_Phẩm_Chi_Tiết"
+        Association="Đơn_Vị_TínhItem_XuatSanPhamChiTiet"
+        FromEnd="XuatSanPhamChiTiet"
         ToEnd="Đơn_Vị_Tính" />
       <NavigationProperty
         Name="Sản_PhẩmItem"
-        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Sản_Phẩm"
-        FromEnd="Xuất_Sản_Phẩm_Chi_Tiết"
+        Association="Sản_PhẩmItem_XuatSanPhamChiTiet"
+        FromEnd="XuatSanPhamChiTiet"
         ToEnd="Sản_Phẩm" />
       <NavigationProperty
-        Name="Xuất_Sản_PhẩmItem"
-        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm"
-        FromEnd="Xuất_Sản_Phẩm_Chi_Tiết"
-        ToEnd="Xuất_Sản_Phẩm" />
+        Name="XuatSanPham"
+        Association="XuatSanPham_XuatSanPhamChiTiet"
+        FromEnd="XuatSanPhamChiTiet"
+        ToEnd="XuatSanPham" />
+      <EntityProperty
+        Name="Thành_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tiền_thuế"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tổng_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -104,10 +170,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Xuất_Sản_Phẩm_Chi_TiếtItem" />
+      EntityType="XuatSanPhamChiTiet" />
     <QueryOperation
       Name="Xuất_Sản_Phẩm_Chi_Tiết_Single"
-      ReturnType="Xuất_Sản_Phẩm_Chi_TiếtItem">
+      ReturnType="XuatSanPhamChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -147,7 +213,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Xuất_Sản_Phẩm_Chi_Tiết_SingleOrDefault"
-      ReturnType="Xuất_Sản_Phẩm_Chi_TiếtItem">
+      ReturnType="XuatSanPhamChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -202,35 +268,35 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Id]" />
+          Property="XuatSanPhamChiTiet/Properties[Id]" />
         <SsdlProperty
           Name="Số lượng"
           Nullable="False"
           Scale="2"
           Type="decimal"
-          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lượng]" />
+          Property="XuatSanPhamChiTiet/Properties[Số_lượng]" />
         <SsdlProperty
           Name="Giá bán"
           Nullable="False"
           Type="decimal"
-          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Giá_bán]" />
+          Property="XuatSanPhamChiTiet/Properties[Giá_bán]" />
         <SsdlProperty
           Name="Giá vốn"
           Nullable="False"
           Type="decimal"
-          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Giá_vốn]" />
+          Property="XuatSanPhamChiTiet/Properties[Giá_vốn]" />
         <SsdlProperty
           Name="Phần trăm thuế"
           Nullable="False"
           Scale="2"
           Type="decimal"
-          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Phần_trăm_thuế]" />
+          Property="XuatSanPhamChiTiet/Properties[Phần_trăm_thuế]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Ghi_chú]" />
+          Property="XuatSanPhamChiTiet/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_DonViTinh"
           Nullable="False"

@@ -56,9 +56,9 @@
         ToEnd="Đối_Tượng" />
       <NavigationProperty
         Name="Xuất_Sản_Phẩm"
-        Association="FK_Xuất_Sản_Phẩm_Đặt_Hàng"
+        Association="Đặt_HàngItem_XuatSanPham"
         FromEnd="Đặt_Hàng"
-        ToEnd="Xuất_Sản_Phẩm" />
+        ToEnd="XuatSanPham" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -78,7 +78,7 @@
       EntityType="Đặt_Hàng_Chi_TiếtItem" />
   </Association>
   <Association
-    Name="FK_Xuất_Sản_Phẩm_Đặt_Hàng">
+    Name="Đặt_HàngItem_XuatSanPham">
     <AssociationEnd
       Name="Đặt_Hàng"
       EntityType="Đặt_HàngItem">
@@ -87,9 +87,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Xuất_Sản_Phẩm"
+      Name="XuatSanPham"
       Multiplicity="Many"
-      EntityType="Xuất_Sản_PhẩmItem" />
+      EntityType="XuatSanPham" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -114,12 +114,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Đặt_Hàng"
-      Association="FK_Xuất_Sản_Phẩm_Đặt_Hàng">
+      Association="Đặt_HàngItem_XuatSanPham">
       <AssociationSetEnd
         Name="Đặt_Hàng"
         EntitySet="Đặt_Hàng" />
       <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm"
+        Name="XuatSanPham"
         EntitySet="Xuất_Sản_Phẩm" />
     </AssociationSet>
     <QueryOperation
@@ -272,7 +272,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Đặt_Hàng]/Members[Xuất_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Đặt_Hàng]/Members[XuatSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DatHang" />

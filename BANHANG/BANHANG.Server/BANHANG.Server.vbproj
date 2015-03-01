@@ -213,6 +213,18 @@
     <Compile Include="DataSources\BanHangData\Chi.lsml.vb">
       <DependentUpon>Chis.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\BanHangData\NhapSanPham.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangData\NhapSanPhamChiTiet.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangData\XuatSanPham.lsml.vb">
+      <DependentUpon>Xuất_Sản_Phẩm.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangData\XuatSanPhamChiTiet.lsml.vb">
+      <DependentUpon>Xuất_Sản_Phẩm_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>

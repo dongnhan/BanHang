@@ -51,6 +51,18 @@
     <ApplicationCommand
       Name="ScreenCommandShowChisListDetail"
       Target="!module/Methods[ShowChisListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowThusListDetail"
+      Target="!module/Methods[ShowThusListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowBảng_GiáListDetail"
+      Target="!module/Methods[ShowBảng_GiáListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowXuất_Sản_PhẩmListDetail"
+      Target="!module/Methods[ShowXuất_Sản_PhẩmListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhập_Sản_PhẩmListDetail"
+      Target="!module/Methods[ShowNhập_Sản_PhẩmListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -73,8 +85,27 @@
         Name="Đơn_Vị_TínhListDetail"
         Command="!module/Commands[ScreenCommandShowĐơn_Vị_TínhListDetail]" />
       <ApplicationNavigationLink
-        Name="ChisListDetail"
+        Name="ThusListDetail"
+        Command="!module/Commands[ScreenCommandShowThusListDetail]" />
+      <ApplicationNavigationLink
+        Name="Bảng_GiáListDetail"
+        Command="!module/Commands[ScreenCommandShowBảng_GiáListDetail]" />
+      <ApplicationNavigationLink
+        Name="Xuất_Sản_PhẩmListDetail"
+        Command="!module/Commands[ScreenCommandShowXuất_Sản_PhẩmListDetail]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="TIỀN MẶT" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link"
         Command="!module/Commands[ScreenCommandShowChisListDetail]" />
+      <ApplicationNavigationLink
+        Name="link2"
+        Command="!module/Commands[ScreenCommandShowThusListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
@@ -88,6 +119,16 @@
       <ApplicationNavigationLink
         Name="UsersScreen"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group1">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="NHẬP" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link1"
+        Command="!module/Commands[ScreenCommandShowNhập_Sản_PhẩmListDetail]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>
