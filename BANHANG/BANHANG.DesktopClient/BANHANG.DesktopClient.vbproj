@@ -292,6 +292,9 @@
     <Compile Include="Screens\NhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhaCungCapListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml.vb">
+      <DependentUpon>Đơn_Vị_Sử_DụngListDetail.lsml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="My Project\Client.lsml">
