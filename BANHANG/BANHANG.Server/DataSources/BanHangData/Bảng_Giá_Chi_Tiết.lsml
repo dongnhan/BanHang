@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Bảng_Giá_Chi_TiếtItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Giá_vốn"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Chi_phí"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Cách_tính"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Phần_trăm_chiết_khấu"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Giá_bán"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Bảng_GiáItem"
+        Association="FK_Bảng_Giá_Chi_Tiết_Bảng_Giá"
+        FromEnd="Bảng_Giá_Chi_Tiết"
+        ToEnd="Bảng_Giá" />
+      <NavigationProperty
+        Name="Đơn_Vị_TínhItem"
+        Association="FK_Bảng_Giá_Chi_Tiết_Đơn_Vị_Tính"
+        FromEnd="Bảng_Giá_Chi_Tiết"
+        ToEnd="Đơn_Vị_Tính" />
+      <NavigationProperty
+        Name="Sản_PhẩmItem"
+        Association="FK_Bảng_Giá_Chi_Tiết_Sản_Phẩm"
+        FromEnd="Bảng_Giá_Chi_Tiết"
+        ToEnd="Sản_Phẩm" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="BanHangData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Bảng_Giá_Chi_Tiết"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Bảng_Giá_Chi_TiếtItem" />
+    <QueryOperation
+      Name="Bảng_Giá_Chi_Tiết_Single"
+      ReturnType="Bảng_Giá_Chi_TiếtItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Bảng_Giá_Chi_Tiết" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Bảng_Giá_Chi_Tiết_SingleOrDefault"
+      ReturnType="Bảng_Giá_Chi_TiếtItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Bảng_Giá_Chi_Tiết" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="BanHangDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Bảng_Giá_Chi_Tiết">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Bảng Giá Chi Tiết" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Id]" />
+        <SsdlProperty
+          Name="Giá vốn"
+          Nullable="False"
+          Type="decimal"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Giá_vốn]" />
+        <SsdlProperty
+          Name="Chi phí"
+          Nullable="False"
+          Type="decimal"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Chi_phí]" />
+        <SsdlProperty
+          Name="Cách tính"
+          Nullable="False"
+          Type="int"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Cách_tính]" />
+        <SsdlProperty
+          Name="Phần trăm chiết khấu"
+          Nullable="False"
+          Scale="2"
+          Type="decimal"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Phần_trăm_chiết_khấu]" />
+        <SsdlProperty
+          Name="Giá bán"
+          Nullable="False"
+          Type="decimal"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Giá_bán]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Bảng_Giá_Chi_TiếtItem/Properties[Ghi_chú]" />
+        <SsdlForeignKeyProperty
+          Name="_BangGia"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__BangGia" />
+        <SsdlForeignKeyProperty
+          Name="_DonViTinh"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__DonViTinh" />
+        <SsdlForeignKeyProperty
+          Name="_SanPham"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__SanPham" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

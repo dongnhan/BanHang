@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Đặt_Hàng_Chi_TiếtItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Số_lượng"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Đặt_HàngItem"
+        Association="FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng"
+        FromEnd="Đặt_Hàng_Chi_Tiết"
+        ToEnd="Đặt_Hàng" />
+      <NavigationProperty
+        Name="Đơn_Vị_TínhItem"
+        Association="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính"
+        FromEnd="Đặt_Hàng_Chi_Tiết"
+        ToEnd="Đơn_Vị_Tính" />
+      <NavigationProperty
+        Name="Sản_PhẩmItem"
+        Association="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm"
+        FromEnd="Đặt_Hàng_Chi_Tiết"
+        ToEnd="Sản_Phẩm" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="BanHangData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Đặt_Hàng_Chi_Tiết"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Đặt_Hàng_Chi_TiếtItem" />
+    <QueryOperation
+      Name="Đặt_Hàng_Chi_Tiết_Single"
+      ReturnType="Đặt_Hàng_Chi_TiếtItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Đặt_Hàng_Chi_Tiết" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Đặt_Hàng_Chi_Tiết_SingleOrDefault"
+      ReturnType="Đặt_Hàng_Chi_TiếtItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Đặt_Hàng_Chi_Tiết" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="BanHangDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Đặt_Hàng_Chi_Tiết">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Đặt Hàng Chi Tiết" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Đặt_Hàng_Chi_TiếtItem/Properties[Id]" />
+        <SsdlProperty
+          Name="Số lượng"
+          Nullable="False"
+          Scale="2"
+          Type="decimal"
+          Property="Đặt_Hàng_Chi_TiếtItem/Properties[Số_lượng]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đặt_Hàng_Chi_TiếtItem/Properties[Ghi_chú]" />
+        <SsdlForeignKeyProperty
+          Name="_DatHang"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__DatHang" />
+        <SsdlForeignKeyProperty
+          Name="_DonViTinh"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__DonViTinh" />
+        <SsdlForeignKeyProperty
+          Name="_SanPham"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__SanPham" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>
