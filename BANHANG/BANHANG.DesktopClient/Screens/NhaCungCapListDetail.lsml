@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="KhachHangListDetail">
+    Name="NhaCungCapListDetail">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangData" />
       <DisplayName
-        Value="KHÁCH HÀNG" />
+        Value="NHÀ CUNG CẤP" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -31,13 +31,13 @@
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Khách hàng" />
+                  Value="Nhà cung cấp" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="KhachHangListDetail/Properties[KhachHang]" />
+                      Member="NhaCungCapListDetail/Properties[NhaCungCap]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -155,7 +155,7 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Là_Nhà_Cung_Cấp"
+                  Name="Là_Khách_Hàng"
                   Kind="Value"
                   DataType=":Boolean?"
                   View="C1.LightSwitch.FlexGrid:C1BooleanColumn">
@@ -163,7 +163,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Đối_TượngItem/Properties[Là_Nhà_Cung_Cấp]" />
+                          Member="Đối_TượngItem/Properties[Là_Khách_Hàng]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -204,19 +204,19 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="KhachHangListDetail/Methods[Đối_TượngItemListAddAndEditNew]" />
+                          Target="NhaCungCapListDetail/Methods[Đối_TượngItemListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="KhachHang_DeleteSelected"
+                  Name="NhaCungCap_DeleteSelected"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="KhachHangListDetail/Properties[KhachHang]" />
+                          Member="NhaCungCapListDetail/Properties[NhaCungCap]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -295,7 +295,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="KhachHangListDetail/Properties[KhachHang]" />
+                      Member="NhaCungCapListDetail/Properties[NhaCungCap]" />
                     <MemberExpression
                       Member="SelectedItem" />
                   </ChainExpression>
@@ -376,19 +376,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Website1"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Đối_TượngItem/Properties[Website]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Facebook1"
                   Kind="Value"
                   DataType=":String?">
@@ -397,6 +384,19 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="Đối_TượngItem/Properties[Facebook]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Website1"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:WebAddress?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Đối_TượngItem/Properties[Website]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -430,14 +430,14 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  Name="Là_Nhà_Cung_Cấp1"
+                  Name="Là_Khách_Hàng1"
                   Kind="Value"
                   DataType=":Boolean?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Đối_TượngItem/Properties[Là_Nhà_Cung_Cấp]" />
+                          Member="Đối_TượngItem/Properties[Là_Khách_Hàng]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -501,7 +501,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="KhachHangListDetail/Methods[Save]" />
+                    Target="NhaCungCapListDetail/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -513,7 +513,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="KhachHangListDetail/Methods[Refresh]" />
+                    Target="NhaCungCapListDetail/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -525,7 +525,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="KhachHangListDetail/Methods[Báo_cáo]" />
+                    Target="NhaCungCapListDetail/Methods[Báo_cáo]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -549,7 +549,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="KhachHangListDetail/Methods[Close]" />
+                    Target="NhaCungCapListDetail/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -599,8 +599,6 @@
         </ScreenMethod.Attributes>
       </ScreenMethod>
       <ScreenMethod
-        Name="Report" />
-      <ScreenMethod
         Name="Báo_cáo" />
       <ScreenMethod
         Name="Đối_TượngItemListAddAndEditNew">
@@ -612,12 +610,12 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="KhachHang"
+        Name="NhaCungCap"
         PageSize="45"
         PropertyType="CollectionView$Đối_TượngItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="KhachHangQuery"
+            Name="NhaCungCapQuery"
             ReturnType="Đối_TượngItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
@@ -625,7 +623,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[KhachHang]" />
+                  Member="BanHangData/Members[NhaCungCap]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -633,7 +631,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="KhachHangListDetail/Properties[KhachHang]/Query" />
+              Target="NhaCungCapListDetail/Properties[NhaCungCap]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -641,10 +639,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowKhachHangListDetail">
+      Name="ShowNhaCungCapListDetail">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="KhachHangListDetail" />
+          TargetScreen="NhaCungCapListDetail" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

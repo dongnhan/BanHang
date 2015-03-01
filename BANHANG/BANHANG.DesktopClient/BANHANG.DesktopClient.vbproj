@@ -289,6 +289,9 @@
     <Compile Include="Screens\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\NhaCungCapListDetail.lsml.vb">
+      <DependentUpon>NhaCungCapListDetail.lsml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="My Project\Client.lsml">
@@ -299,6 +302,7 @@
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
     <LightSwitchModel Include="Screens\KhachHangListDetail.lsml" />
+    <LightSwitchModel Include="Screens\NhaCungCapListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

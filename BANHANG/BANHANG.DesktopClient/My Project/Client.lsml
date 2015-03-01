@@ -39,6 +39,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowKhachHangListDetail"
       Target="!module/Methods[ShowKhachHangListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhaCungCapListDetail"
+      Target="!module/Methods[ShowNhaCungCapListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -51,6 +54,9 @@
       <ApplicationNavigationLink
         Name="KhachHangListDetail"
         Command="!module/Commands[ScreenCommandShowKhachHangListDetail]" />
+      <ApplicationNavigationLink
+        Name="NhaCungCapListDetail"
+        Command="!module/Commands[ScreenCommandShowNhaCungCapListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

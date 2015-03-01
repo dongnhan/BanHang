@@ -124,7 +124,12 @@
         Name="Nhóm_Đối_TượngItem"
         Association="FK_Đối_Tượng_Nhóm_Đối_Tượng"
         FromEnd="Đối_Tượng"
-        ToEnd="Nhóm_Đối_Tượng" />
+        ToEnd="Nhóm_Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Nhóm Đối Tượng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Nhập_Sản_Phẩm"
         Association="FK_Nhập_Sản_Phẩm_Đối_Tượng"
