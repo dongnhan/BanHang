@@ -15,8 +15,8 @@
     <AssemblyName>Application.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <LightSwitchVersion>v4.5</LightSwitchVersion>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>vi</DefaultLanguage>
+    <SupportedCultures>vi</SupportedCultures>
     <FileAlignment>512</FileAlignment>
     <LightSwitchProjectTypeV45>Server</LightSwitchProjectTypeV45>
     <OptionExplicit>On</OptionExplicit>
@@ -210,6 +210,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\BanHangData\Chi.lsml.vb">
+      <DependentUpon>Chis.lsml</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>

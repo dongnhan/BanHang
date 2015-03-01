@@ -5,7 +5,11 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Chi_Chi_TiếtItem">
+    Name="ChiChiTiet">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Chi tiết Phiếu Chi Tiền" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -64,25 +68,36 @@
       </EntityProperty>
       <EntityProperty
         Name="Số_tiền"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Chi"
-        Association="FK_Chi_Chi_Tiết_Chi"
-        FromEnd="Chi_Chi_Tiết"
+        Association="Chi_ChiChiTiet"
+        FromEnd="ChiChiTiet"
         ToEnd="Chi" />
       <NavigationProperty
         Name="Đối_TượngItem"
-        Association="FK_Chi_Chi_Tiết_Đối_Tượng"
-        FromEnd="Chi_Chi_Tiết"
-        ToEnd="Đối_Tượng" />
+        Association="Đối_TượngItem_ChiChiTiet"
+        FromEnd="ChiChiTiet"
+        ToEnd="Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đối Tượng Chi" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -95,10 +110,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Chi_Chi_TiếtItem" />
+      EntityType="ChiChiTiet" />
     <QueryOperation
       Name="Chi_Chi_Tiết_Single"
-      ReturnType="Chi_Chi_TiếtItem">
+      ReturnType="ChiChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -138,7 +153,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Chi_Chi_Tiết_SingleOrDefault"
-      ReturnType="Chi_Chi_TiếtItem">
+      ReturnType="ChiChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -193,34 +208,34 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Chi_Chi_TiếtItem/Properties[Id]" />
+          Property="ChiChiTiet/Properties[Id]" />
         <SsdlProperty
           Name="Ngày"
           Nullable="False"
           Type="date"
-          Property="Chi_Chi_TiếtItem/Properties[Ngày]" />
+          Property="ChiChiTiet/Properties[Ngày]" />
         <SsdlProperty
           MaxLength="50"
           Name="Số hóa đơn"
           Nullable="True"
           Type="nvarchar"
-          Property="Chi_Chi_TiếtItem/Properties[Số_hóa_đơn]" />
+          Property="ChiChiTiet/Properties[Số_hóa_đơn]" />
         <SsdlProperty
           Name="Ngày hóa đơn"
           Nullable="True"
           Type="date"
-          Property="Chi_Chi_TiếtItem/Properties[Ngày_hóa_đơn]" />
+          Property="ChiChiTiet/Properties[Ngày_hóa_đơn]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Chi_Chi_TiếtItem/Properties[Ghi_chú]" />
+          Property="ChiChiTiet/Properties[Ghi_chú]" />
         <SsdlProperty
           Name="Số tiền"
           Nullable="False"
           Type="decimal"
-          Property="Chi_Chi_TiếtItem/Properties[Số_tiền]" />
+          Property="ChiChiTiet/Properties[Số_tiền]" />
         <SsdlForeignKeyProperty
           Name="_Chi"
           Nullable="False"

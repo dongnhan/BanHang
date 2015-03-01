@@ -20,8 +20,8 @@
     <LightSwitchVersion>v4.5</LightSwitchVersion>
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>vi</DefaultLanguage>
+    <SupportedCultures>vi</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>BANHANG.DesktopClient.xap</XapFilename>
@@ -285,7 +285,13 @@
     <Import Include="Microsoft.LightSwitch.Presentation.Extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\Chi.lsml.vb">
+      <Link>UserCode\Shared\Chi.lsml.vb</Link>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\ChisListDetail.lsml.vb">
+      <DependentUpon>ChisListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
     </Compile>
@@ -304,6 +310,7 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <None Include="My Project\AppManifest.xml" />
+    <LightSwitchModel Include="My Project\BanHangData\Chis.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -311,6 +318,7 @@
     <LightSwitchModel Include="Screens\NhaCungCapListDetail.lsml" />
     <LightSwitchModel Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml" />
     <LightSwitchModel Include="Screens\Đơn_Vị_TínhListDetail.lsml" />
+    <LightSwitchModel Include="Screens\ChisListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

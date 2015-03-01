@@ -48,6 +48,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowĐơn_Vị_TínhListDetail"
       Target="!module/Methods[ShowĐơn_Vị_TínhListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowChisListDetail"
+      Target="!module/Methods[ShowChisListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -69,6 +72,9 @@
       <ApplicationNavigationLink
         Name="Đơn_Vị_TínhListDetail"
         Command="!module/Commands[ScreenCommandShowĐơn_Vị_TínhListDetail]" />
+      <ApplicationNavigationLink
+        Name="ChisListDetail"
+        Command="!module/Commands[ScreenCommandShowChisListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

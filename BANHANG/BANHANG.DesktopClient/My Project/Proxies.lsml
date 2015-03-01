@@ -19,13 +19,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Chi" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Chi_Chi_TiếtItem" />
+        Target="ServiceInterface:ChiChiTiet" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
@@ -157,13 +151,13 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Chi_Chi_Tiết_Chi" />
+        Target="ServiceInterface:Chi_ChiChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Chi_Chi_Tiết_Đối_Tượng" />
+        Target="ServiceInterface:Đối_TượngItem_ChiChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>

@@ -6,6 +6,10 @@
   </ServiceApplication.Attributes>
   <EntityType
     Name="Chi">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Phiếu chi tiền" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -64,29 +68,40 @@
       </EntityProperty>
       <EntityProperty
         Name="Số_tiền"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
         Name="Chi_Chi_Tiết"
-        Association="FK_Chi_Chi_Tiết_Chi"
+        Association="Chi_ChiChiTiet"
         FromEnd="Chi"
-        ToEnd="Chi_Chi_Tiết" />
+        ToEnd="ChiChiTiet" />
       <NavigationProperty
         Name="Đối_TượngItem"
         Association="FK_Chi_Đối_Tượng"
         FromEnd="Chi"
-        ToEnd="Đối_Tượng" />
+        ToEnd="Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đối Tượng Chi" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Chi_Chi_Tiết_Chi">
+    Name="Chi_ChiChiTiet">
     <AssociationEnd
       Name="Chi"
       Multiplicity="One"
@@ -97,9 +112,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Chi_Chi_Tiết"
+      Name="ChiChiTiet"
       Multiplicity="Many"
-      EntityType="Chi_Chi_TiếtItem" />
+      EntityType="ChiChiTiet" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -114,12 +129,12 @@
       EntityType="Chi" />
     <AssociationSet
       Name="FK_Chi_Chi_Tiết_Chi"
-      Association="FK_Chi_Chi_Tiết_Chi">
+      Association="Chi_ChiChiTiet">
       <AssociationSetEnd
         Name="Chi"
         EntitySet="Chis" />
       <AssociationSetEnd
-        Name="Chi_Chi_Tiết"
+        Name="ChiChiTiet"
         EntitySet="Chi_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
@@ -267,7 +282,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Chi_Chi_Tiết_Chi]/Members[Chi_Chi_Tiết]">
+          End="BanHangData/Members[FK_Chi_Chi_Tiết_Chi]/Members[ChiChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_Chi" />
