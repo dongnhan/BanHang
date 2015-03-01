@@ -45,6 +45,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowĐơn_Vị_Sử_DụngListDetail"
       Target="!module/Methods[ShowĐơn_Vị_Sử_DụngListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowĐơn_Vị_TínhListDetail"
+      Target="!module/Methods[ShowĐơn_Vị_TínhListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -63,6 +66,9 @@
       <ApplicationNavigationLink
         Name="Đơn_Vị_Sử_DụngListDetail"
         Command="!module/Commands[ScreenCommandShowĐơn_Vị_Sử_DụngListDetail]" />
+      <ApplicationNavigationLink
+        Name="Đơn_Vị_TínhListDetail"
+        Command="!module/Commands[ScreenCommandShowĐơn_Vị_TínhListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
