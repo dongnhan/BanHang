@@ -289,6 +289,12 @@
     <Compile Include="XtraReport_Chi.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_NhapSanPham.Designer.vb">
+      <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_NhapSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_Thu.Designer.vb">
       <DependentUpon>XtraReport_Thu.vb</DependentUpon>
     </Compile>
@@ -373,6 +379,9 @@
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="XtraReport_Chi.resx">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_NhapSanPham.resx">
+      <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_Thu.resx">
       <DependentUpon>XtraReport_Thu.vb</DependentUpon>

@@ -52,6 +52,11 @@ Namespace LightSwitchApplication
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = True
         End Sub
+
+        Private Sub Báo_cáo_Execute()
+            Me.Application.ShowNhapSanPhamReportPreviewScreen(Me.Nhập_Sản_Phẩm.SelectedItem.Id, NumToText(Me.Nhập_Sản_Phẩm.SelectedItem.Tổng_tiền)) ' Write your code here.
+
+        End Sub
     End Class
 
 End Namespace

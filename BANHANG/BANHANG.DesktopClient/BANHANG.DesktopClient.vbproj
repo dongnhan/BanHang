@@ -325,6 +325,9 @@
     <Compile Include="Screens\NhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhaCungCapListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\NhapSanPhamReportPreviewScreen.lsml.vb">
+      <DependentUpon>NhapSanPhamReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Nhập_Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Nhập_Sản_PhẩmListDetail.lsml</DependentUpon>
     </Compile>
@@ -377,6 +380,7 @@
     <LightSwitchModel Include="Screens\vTonQuyTienMatReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\ChiReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\ThuReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\NhapSanPhamReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
