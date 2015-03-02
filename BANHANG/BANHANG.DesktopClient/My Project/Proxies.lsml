@@ -103,7 +103,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Thu_Chi_TiếtItem" />
+        Target="ServiceInterface:ThuChiTiet" />
     </EntityType.Attributes>
   </EntityType>
   <Association>
@@ -223,13 +223,13 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Thu_Chi_Tiết_Đối_Tượng" />
+        Target="ServiceInterface:Đối_TượngItem_ThuChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Thu_Chi_Tiết_Thu" />
+        Target="ServiceInterface:Thu_ThuChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>

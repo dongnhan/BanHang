@@ -137,9 +137,9 @@
         ToEnd="NhapSanPham" />
       <NavigationProperty
         Name="Thu_Chi_Tiết"
-        Association="FK_Thu_Chi_Tiết_Đối_Tượng"
+        Association="Đối_TượngItem_ThuChiTiet"
         FromEnd="Đối_Tượng"
-        ToEnd="Thu_Chi_Tiết" />
+        ToEnd="ThuChiTiet" />
       <NavigationProperty
         Name="Thus"
         Association="FK_Thu_Đối_Tượng"
@@ -210,7 +210,7 @@
       EntityType="NhapSanPham" />
   </Association>
   <Association
-    Name="FK_Thu_Chi_Tiết_Đối_Tượng">
+    Name="Đối_TượngItem_ThuChiTiet">
     <AssociationEnd
       Name="Đối_Tượng"
       Multiplicity="One"
@@ -220,9 +220,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Thu_Chi_Tiết"
+      Name="ThuChiTiet"
       Multiplicity="Many"
-      EntityType="Thu_Chi_TiếtItem" />
+      EntityType="ThuChiTiet" />
   </Association>
   <Association
     Name="FK_Thu_Đối_Tượng">
@@ -306,12 +306,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Thu_Chi_Tiết_Đối_Tượng"
-      Association="FK_Thu_Chi_Tiết_Đối_Tượng">
+      Association="Đối_TượngItem_ThuChiTiet">
       <AssociationSetEnd
         Name="Đối_Tượng"
         EntitySet="Đối_Tượng" />
       <AssociationSetEnd
-        Name="Thu_Chi_Tiết"
+        Name="ThuChiTiet"
         EntitySet="Thu_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
@@ -594,7 +594,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Thu_Chi_Tiết_Đối_Tượng]/Members[Thu_Chi_Tiết]">
+          End="BanHangData/Members[FK_Thu_Chi_Tiết_Đối_Tượng]/Members[ThuChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DoiTuong" />

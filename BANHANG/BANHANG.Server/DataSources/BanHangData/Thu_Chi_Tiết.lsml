@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Thu_Chi_TiếtItem">
+    Name="ThuChiTiet">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -75,13 +75,13 @@
       </EntityProperty>
       <NavigationProperty
         Name="Đối_TượngItem"
-        Association="FK_Thu_Chi_Tiết_Đối_Tượng"
-        FromEnd="Thu_Chi_Tiết"
+        Association="Đối_TượngItem_ThuChiTiet"
+        FromEnd="ThuChiTiet"
         ToEnd="Đối_Tượng" />
       <NavigationProperty
         Name="Thu"
-        Association="FK_Thu_Chi_Tiết_Thu"
-        FromEnd="Thu_Chi_Tiết"
+        Association="Thu_ThuChiTiet"
+        FromEnd="ThuChiTiet"
         ToEnd="Thu" />
     </EntityType.Properties>
   </EntityType>
@@ -95,10 +95,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Thu_Chi_TiếtItem" />
+      EntityType="ThuChiTiet" />
     <QueryOperation
       Name="Thu_Chi_Tiết_Single"
-      ReturnType="Thu_Chi_TiếtItem">
+      ReturnType="ThuChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -138,7 +138,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Thu_Chi_Tiết_SingleOrDefault"
-      ReturnType="Thu_Chi_TiếtItem">
+      ReturnType="ThuChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -193,34 +193,34 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Thu_Chi_TiếtItem/Properties[Id]" />
+          Property="ThuChiTiet/Properties[Id]" />
         <SsdlProperty
           Name="Ngày"
           Nullable="False"
           Type="date"
-          Property="Thu_Chi_TiếtItem/Properties[Ngày]" />
+          Property="ThuChiTiet/Properties[Ngày]" />
         <SsdlProperty
           MaxLength="50"
           Name="Số hóa đơn"
           Nullable="True"
           Type="nvarchar"
-          Property="Thu_Chi_TiếtItem/Properties[Số_hóa_đơn]" />
+          Property="ThuChiTiet/Properties[Số_hóa_đơn]" />
         <SsdlProperty
           Name="Ngày hóa đơn"
           Nullable="True"
           Type="date"
-          Property="Thu_Chi_TiếtItem/Properties[Ngày_hóa_đơn]" />
+          Property="ThuChiTiet/Properties[Ngày_hóa_đơn]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Thu_Chi_TiếtItem/Properties[Ghi_chú]" />
+          Property="ThuChiTiet/Properties[Ghi_chú]" />
         <SsdlProperty
           Name="Số tiền"
           Nullable="False"
           Type="decimal"
-          Property="Thu_Chi_TiếtItem/Properties[Số_tiền]" />
+          Property="ThuChiTiet/Properties[Số_tiền]" />
         <SsdlForeignKeyProperty
           Name="_DoiTuong"
           Nullable="False"
