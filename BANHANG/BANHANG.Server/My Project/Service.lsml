@@ -24,6 +24,9 @@
     <EntityContainerGroupProperty
       Name="BanHangData"
       EntityContainer="BanHangData" />
+    <EntityContainerGroupProperty
+      Name="XtraReportsServiceData"
+      EntityContainer="XtraReportsServiceData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup
     Name="LightSwitchServiceApplicationGroup">

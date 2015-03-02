@@ -316,6 +316,9 @@
     <Compile Include="Screens\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\MainListDetail.lsml.vb">
+      <DependentUpon>MainListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\NhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhaCungCapListDetail.lsml</DependentUpon>
     </Compile>
@@ -325,12 +328,19 @@
     <Compile Include="Screens\ThusListDetail.lsml.vb">
       <DependentUpon>ThusListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\vTonQuyTienMatReportPreviewScreen.lsml.vb">
+      <DependentUpon>vTonQuyTienMatReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\vTồn_Quỹ_Tiền_MặtSearch.lsml.vb">
+      <DependentUpon>vTồn_Quỹ_Tiền_MặtSearch.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml.vb">
       <DependentUpon>Đơn_Vị_Sử_DụngListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Đơn_Vị_TínhListDetail.lsml.vb">
       <DependentUpon>Đơn_Vị_TínhListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="UserCode\Application.vb" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="My Project\Client.lsml">
@@ -355,6 +365,8 @@
     <LightSwitchModel Include="Screens\Xuất_Sản_PhẩmListDetail.lsml" />
     <LightSwitchModel Include="Screens\Nhập_Sản_PhẩmListDetail.lsml" />
     <LightSwitchModel Include="Screens\MainListDetail.lsml" />
+    <LightSwitchModel Include="Screens\vTồn_Quỹ_Tiền_MặtSearch.lsml" />
+    <LightSwitchModel Include="Screens\vTonQuyTienMatReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

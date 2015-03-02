@@ -5,11 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="ChiChiTiet">
-    <EntityType.Attributes>
-      <DisplayName
-        Value="Chi tiết Phiếu Chi Tiền" />
-    </EntityType.Attributes>
+    Name="MessageEnvelope">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -21,99 +17,43 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
-        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
-          <Hidden />
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Ngày"
-        PropertyType=":Date">
+        Name="RowVersion"
+        PropertyType=":Int32">
         <EntityProperty.Attributes>
           <Required />
-          <DateTimeConstraint
-            Precision="0"
-            PreserveSeconds="True" />
+          <UseForConcurrency />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Số_hóa_đơn"
-        PropertyType=":String?">
+        Name="Message"
+        PropertyType=":Binary?">
         <EntityProperty.Attributes>
-          <MaxLength
-            Value="50" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Ngày_hóa_đơn"
-        PropertyType=":Date?">
-        <EntityProperty.Attributes>
-          <DateTimeConstraint
-            Precision="0"
-            PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="Ghi_chú"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="500" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Số_tiền"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Name="Chi"
-        Association="Chi_ChiChiTiet"
-        FromEnd="ChiChiTiet"
-        ToEnd="Chi" />
-      <NavigationProperty
-        Name="Đối_TượngItem"
-        Association="Đối_TượngItem_ChiChiTiet"
-        FromEnd="ChiChiTiet"
-        ToEnd="Đối_Tượng">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Đối Tượng Chi" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
-    Name="BanHangData">
+    Name="XtraReportsServiceData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Chi_Chi_Tiết"
+      Name="MessageEnvelopes"
       CanDelete="True"
       CanInsert="True"
-      CanUpdate="True"
-      EntityType="ChiChiTiet" />
+      EntityType="MessageEnvelope" />
     <QueryOperation
-      Name="Chi_Chi_Tiết_Single"
-      ReturnType="ChiChiTiet">
+      Name="MessageEnvelopes_Single"
+      ReturnType="MessageEnvelope">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -139,7 +79,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Chi_Chi_Tiết" />
+            Member="MessageEnvelopes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -152,8 +92,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Chi_Chi_Tiết_SingleOrDefault"
-      ReturnType="ChiChiTiet">
+      Name="MessageEnvelopes_SingleOrDefault"
+      ReturnType="MessageEnvelope">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -179,7 +119,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Chi_Chi_Tiết" />
+            Member="MessageEnvelopes" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -193,59 +133,25 @@
     </QueryOperation>
   </EntityContainer>
   <DataService
-    Name="BanHangDataDataService">
+    Name="XtraReportsServiceDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Chi_Chi_Tiết">
+      EntitySet="MessageEnvelopes">
       <EntitySetMapping.Attributes>
-        <SsdlEntitySet
-          Schema="dbo"
-          Table="Chi Chi Tiết" />
-        <SsdlProperty
+        <WcfRiaEntitySet
+          EntitySetQuery="GetMessageEnvelopes"
+          EntityTypeName="DevExpress.XtraReports.LightSwitch.Server.Entities.MessageEnvelope" />
+        <WcfRiaProperty
           Name="Id"
-          Nullable="False"
-          StoreGeneratedPattern="Identity"
-          Type="int"
-          Property="ChiChiTiet/Properties[Id]" />
-        <SsdlProperty
-          Name="Ngày"
-          Nullable="False"
-          Type="date"
-          Property="ChiChiTiet/Properties[Ngày]" />
-        <SsdlProperty
-          MaxLength="50"
-          Name="Số hóa đơn"
-          Nullable="True"
-          Type="nvarchar"
-          Property="ChiChiTiet/Properties[Số_hóa_đơn]" />
-        <SsdlProperty
-          Name="Ngày hóa đơn"
-          Nullable="True"
-          Type="date"
-          Property="ChiChiTiet/Properties[Ngày_hóa_đơn]" />
-        <SsdlProperty
-          MaxLength="500"
-          Name="Ghi chú"
-          Nullable="True"
-          Type="nvarchar"
-          Property="ChiChiTiet/Properties[Ghi_chú]" />
-        <SsdlProperty
-          Name="Số tiền"
-          Nullable="False"
-          Type="decimal"
-          Property="ChiChiTiet/Properties[Số_tiền]" />
-        <SsdlForeignKeyProperty
-          Name="_Chi"
-          Nullable="False"
-          Type="int"
-          PropertyName="c__Chi" />
-        <SsdlForeignKeyProperty
-          Name="_DoiTuong"
-          Nullable="True"
-          Type="int"
-          PropertyName="c__DoiTuong" />
+          Property="MessageEnvelope/Properties[Id]" />
+        <WcfRiaProperty
+          Name="RowVersion"
+          Property="MessageEnvelope/Properties[RowVersion]" />
+        <WcfRiaProperty
+          Name="Message"
+          Property="MessageEnvelope/Properties[Message]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

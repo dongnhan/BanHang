@@ -319,11 +319,14 @@
     <LightSwitchModel Include="DataSources\BanHangData\NhaCungCap.lsml">
       <DependentUpon>Đối_Tượng.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\BanHangData\vTồn_Quỹ_Tiền_Mặt.lsml" />
+    <LightSwitchModel Include="DataSources\XtraReportsServiceData\MessageEnvelopes.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <LightSwitchModel Include="My Project\DataSources\BanHangData.lsml" />
+    <LightSwitchModel Include="My Project\DataSources\XtraReportsServiceData.lsml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

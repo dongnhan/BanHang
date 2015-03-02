@@ -28,6 +28,9 @@
     <EntityContainerGroupProperty
       Name="BanHangData"
       EntityContainer="BanHangData" />
+    <EntityContainerGroupProperty
+      Name="XtraReportsServiceData"
+      EntityContainer="XtraReportsServiceData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -66,6 +69,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowMainListDetail"
       Target="!module/Methods[ShowMainListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvTồn_Quỹ_Tiền_MặtSearch"
+      Target="!module/Methods[ShowvTồn_Quỹ_Tiền_MặtSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -99,6 +105,9 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
+      <ApplicationNavigationLink
+        Name="vTồn_Quỹ_Tiền_MặtSearch"
+        Command="!module/Commands[ScreenCommandShowvTồn_Quỹ_Tiền_MặtSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

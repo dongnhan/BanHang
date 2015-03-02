@@ -5,11 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="NhapSanPhamChiTiet">
-    <EntityType.Attributes>
-      <DisplayName
-        Value="Chi tiết của Nhập Sản Phẩm" />
-    </EntityType.Attributes>
+    Name="vTồn_Quỹ_Tiền_MặtItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -20,54 +16,31 @@
     </EntityType.Methods>
     <EntityType.Properties>
       <KeyProperty
-        Name="Id"
-        IsReadOnly="True"
+        Name="Thang"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
-          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="Nam"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Số_lượng"
-        PropertyType=":Decimal">
+        Name="Đầu_Kỳ"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
-          <Required />
           <DecimalConstraint
-            Precision="18"
-            Scale="2" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Giá_nhập"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Phần_trăm_thuế"
-        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
+            Precision="38"
             Scale="2" />
           <NotSearchable />
           <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@FormatParameter">
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
             <Property
               Name="DecimalDigits"
               Value="0" />
@@ -75,43 +48,12 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Ghi_chú"
-        PropertyType=":String?">
+        Name="Thu"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
-          <MaxLength
-            Value="500" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Name="Đơn_Vị_TínhItem"
-        Association="Đơn_Vị_TínhItem_NhapSanPhamChiTiet"
-        FromEnd="NhapSanPhamChiTiet"
-        ToEnd="Đơn_Vị_Tính">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Đơn Vị Tính" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <NavigationProperty
-        Name="NhapSanPham"
-        Association="NhapSanPham_NhapSanPhamChiTiet"
-        FromEnd="NhapSanPhamChiTiet"
-        ToEnd="NhapSanPham" />
-      <NavigationProperty
-        Name="Sản_PhẩmItem"
-        Association="Sản_PhẩmItem_NhapSanPhamChiTiet"
-        FromEnd="NhapSanPhamChiTiet"
-        ToEnd="Sản_Phẩm">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Sản Phẩm" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <EntityProperty
-        Name="Thành_tiền"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
-          <Computed />
+          <DecimalConstraint
+            Precision="38"
+            Scale="2" />
           <NotSearchable />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
@@ -122,10 +64,12 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Tiền_thuế"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        Name="Chi"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
-          <Computed />
+          <DecimalConstraint
+            Precision="38"
+            Scale="2" />
           <NotSearchable />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
@@ -136,10 +80,12 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Tổng_tiền"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        Name="Cuối_Kỳ"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
-          <Computed />
+          <DecimalConstraint
+            Precision="38"
+            Scale="2" />
           <NotSearchable />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
@@ -157,14 +103,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Nhập_Sản_Phẩm_Chi_Tiết"
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="NhapSanPhamChiTiet" />
+      Name="vTồn_Quỹ_Tiền_Mặt"
+      EntityType="vTồn_Quỹ_Tiền_MặtItem" />
     <QueryOperation
-      Name="Nhập_Sản_Phẩm_Chi_Tiết_Single"
-      ReturnType="NhapSanPhamChiTiet">
+      Name="vTồn_Quỹ_Tiền_Mặt_Single"
+      ReturnType="vTồn_Quỹ_Tiền_MặtItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -173,16 +116,36 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Nam" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Nam" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Thang" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Thang" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -190,21 +153,29 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Nhập_Sản_Phẩm_Chi_Tiết" />
+            Member="vTồn_Quỹ_Tiền_Mặt" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="Id"
+        Name="Thang"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'Id' key property of the entity to retrieve." />
+            Value="The value of the 'Thang' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Nam"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Nam' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Nhập_Sản_Phẩm_Chi_Tiết_SingleOrDefault"
-      ReturnType="NhapSanPhamChiTiet">
+      Name="vTồn_Quỹ_Tiền_Mặt_SingleOrDefault"
+      ReturnType="vTồn_Quỹ_Tiền_MặtItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -213,16 +184,36 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Nam" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Nam" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Thang" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Thang" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -230,15 +221,23 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Nhập_Sản_Phẩm_Chi_Tiết" />
+            Member="vTồn_Quỹ_Tiền_Mặt" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="Id"
+        Name="Thang"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'Id' key property of the entity to retrieve." />
+            Value="The value of the 'Thang' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Nam"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Nam' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -249,55 +248,46 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Nhập_Sản_Phẩm_Chi_Tiết">
+      EntitySet="vTồn_Quỹ_Tiền_Mặt">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Nhập Sản Phẩm Chi Tiết" />
+          Table="vTồn Quỹ Tiền Mặt" />
+        <IsView />
         <SsdlProperty
-          Name="Id"
+          Name="Thang"
           Nullable="False"
-          StoreGeneratedPattern="Identity"
           Type="int"
-          Property="NhapSanPhamChiTiet/Properties[Id]" />
+          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Thang]" />
         <SsdlProperty
-          Name="Số lượng"
+          Name="Nam"
           Nullable="False"
-          Scale="2"
-          Type="decimal"
-          Property="NhapSanPhamChiTiet/Properties[Số_lượng]" />
+          Type="int"
+          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Nam]" />
         <SsdlProperty
-          Name="Giá nhập"
-          Nullable="False"
-          Type="decimal"
-          Property="NhapSanPhamChiTiet/Properties[Giá_nhập]" />
-        <SsdlProperty
-          Name="Phần trăm thuế"
-          Nullable="False"
-          Scale="2"
-          Type="decimal"
-          Property="NhapSanPhamChiTiet/Properties[Phần_trăm_thuế]" />
-        <SsdlProperty
-          MaxLength="500"
-          Name="Ghi chú"
+          Name="Đầu Kỳ"
           Nullable="True"
-          Type="nvarchar"
-          Property="NhapSanPhamChiTiet/Properties[Ghi_chú]" />
-        <SsdlForeignKeyProperty
-          Name="_DonViTinh"
-          Nullable="False"
-          Type="int"
-          PropertyName="c__DonViTinh" />
-        <SsdlForeignKeyProperty
-          Name="_NhapSanPham"
-          Nullable="False"
-          Type="int"
-          PropertyName="c__NhapSanPham" />
-        <SsdlForeignKeyProperty
-          Name="_SanPham"
-          Nullable="False"
-          Type="int"
-          PropertyName="c__SanPham" />
+          Precision="38"
+          Type="decimal"
+          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Đầu_Kỳ]" />
+        <SsdlProperty
+          Name="Thu"
+          Nullable="True"
+          Precision="38"
+          Type="decimal"
+          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Thu]" />
+        <SsdlProperty
+          Name="Chi"
+          Nullable="True"
+          Precision="38"
+          Type="decimal"
+          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Chi]" />
+        <SsdlProperty
+          Name="Cuối Kỳ"
+          Nullable="True"
+          Precision="38"
+          Type="decimal"
+          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Cuối_Kỳ]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
