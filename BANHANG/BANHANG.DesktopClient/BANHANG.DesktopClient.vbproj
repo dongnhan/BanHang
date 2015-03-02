@@ -310,6 +310,9 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\ChiReportPreviewScreen.lsml.vb">
+      <DependentUpon>ChiReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ChisListDetail.lsml.vb">
       <DependentUpon>ChisListDetail.lsml</DependentUpon>
     </Compile>
@@ -369,6 +372,7 @@
     <LightSwitchModel Include="Screens\MainListDetail.lsml" />
     <LightSwitchModel Include="Screens\vTồn_Quỹ_Tiền_MặtSearch.lsml" />
     <LightSwitchModel Include="Screens\vTonQuyTienMatReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\ChiReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

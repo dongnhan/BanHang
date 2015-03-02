@@ -283,6 +283,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="XtraReport_Chi.Designer.vb">
+      <DependentUpon>XtraReport_Chi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_Chi.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_Thu.Designer.vb">
+      <DependentUpon>XtraReport_Thu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_Thu.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_TonTienMat.Designer.vb">
       <DependentUpon>XtraReport_TonTienMat.vb</DependentUpon>
     </Compile>
@@ -359,6 +371,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="XtraReport_Chi.resx">
+      <DependentUpon>XtraReport_Chi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_Thu.resx">
+      <DependentUpon>XtraReport_Thu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_TonTienMat.resx">
       <DependentUpon>XtraReport_TonTienMat.vb</DependentUpon>
     </EmbeddedResource>
