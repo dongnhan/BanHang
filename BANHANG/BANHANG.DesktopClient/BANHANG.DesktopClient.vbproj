@@ -337,6 +337,12 @@
     <Compile Include="Screens\ThusListDetail.lsml.vb">
       <DependentUpon>ThusListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\vDoanh_Thu_NgàySearch.lsml.vb">
+      <DependentUpon>vDoanh_Thu_NgàySearch.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\vDoanh_Thu_Ngày_Theo_Khách_HàngSearch.lsml.vb">
+      <DependentUpon>vDoanh_Thu_Ngày_Theo_Khách_HàngSearch.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\vTonQuyTienMatReportPreviewScreen.lsml.vb">
       <DependentUpon>vTonQuyTienMatReportPreviewScreen.lsml</DependentUpon>
     </Compile>
@@ -381,6 +387,10 @@
     <LightSwitchModel Include="Screens\ChiReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\ThuReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\NhapSanPhamReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\vDoanh_Thu_NgàySearch.lsml" />
+    <LightSwitchModel Include="Screens\vDoanh_Thu_Ngày_Theo_Khách_HàngSearch.lsml" />
+    <LightSwitchModel Include="Screens\vLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch.lsml" />
+    <LightSwitchModel Include="Screens\vDoanh_Thu_Ngày_Theo_Sản_PhẩmSearch.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

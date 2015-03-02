@@ -339,6 +339,16 @@
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\BanHangData\vTồn_Quỹ_Tiền_Mặt.lsml" />
     <LightSwitchModel Include="DataSources\XtraReportsServiceData\MessageEnvelopes.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vDoanh_Thu_Ngày.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vDoanh_Thu_Ngày_Theo_Khách_Hàng.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vDoanh_Thu_Ngày_Theo_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vLời_Lỗ_Ngày.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vLời_Lỗ_Ngày_Theo_Khách_Hàng.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vLời_Lỗ_Ngày_Theo_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vLời_Lỗ_Tháng_Theo_Khách_Hàng.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vLời_Lỗ_Tháng_Theo_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vThẻ_Kho_Tổng_Hợp.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\vTồn_Tổng_Hợp.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

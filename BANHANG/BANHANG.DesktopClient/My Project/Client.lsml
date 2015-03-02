@@ -72,6 +72,18 @@
     <ApplicationCommand
       Name="ScreenCommandShowvTồn_Quỹ_Tiền_MặtSearch"
       Target="!module/Methods[ShowvTồn_Quỹ_Tiền_MặtSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvDoanh_Thu_NgàySearch"
+      Target="!module/Methods[ShowvDoanh_Thu_NgàySearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvDoanh_Thu_Ngày_Theo_Khách_HàngSearch"
+      Target="!module/Methods[ShowvDoanh_Thu_Ngày_Theo_Khách_HàngSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch"
+      Target="!module/Methods[ShowvLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvDoanh_Thu_Ngày_Theo_Sản_PhẩmSearch"
+      Target="!module/Methods[ShowvDoanh_Thu_Ngày_Theo_Sản_PhẩmSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -108,6 +120,18 @@
       <ApplicationNavigationLink
         Name="vTồn_Quỹ_Tiền_MặtSearch"
         Command="!module/Commands[ScreenCommandShowvTồn_Quỹ_Tiền_MặtSearch]" />
+      <ApplicationNavigationLink
+        Name="vDoanh_Thu_NgàySearch"
+        Command="!module/Commands[ScreenCommandShowvDoanh_Thu_NgàySearch]" />
+      <ApplicationNavigationLink
+        Name="vDoanh_Thu_Ngày_Theo_Khách_HàngSearch"
+        Command="!module/Commands[ScreenCommandShowvDoanh_Thu_Ngày_Theo_Khách_HàngSearch]" />
+      <ApplicationNavigationLink
+        Name="vLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch"
+        Command="!module/Commands[ScreenCommandShowvLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch]" />
+      <ApplicationNavigationLink
+        Name="vDoanh_Thu_Ngày_Theo_Sản_PhẩmSearch"
+        Command="!module/Commands[ScreenCommandShowvDoanh_Thu_Ngày_Theo_Sản_PhẩmSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
