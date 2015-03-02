@@ -337,18 +337,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:vLời_Lỗ_Tháng_Theo_Khách_HàngItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:vLời_Lỗ_Tháng_Theo_Sản_PhẩmItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:vThẻ_Kho_Tổng_HợpItem" />
     </EntityType.Attributes>
   </EntityType>

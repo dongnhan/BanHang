@@ -34,6 +34,8 @@
             Precision="38"
             Scale="2" />
           <NotSearchable />
+          <StringValueFormat
+            Value="n2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty
@@ -64,12 +66,18 @@
       </KeyProperty>
       <EntityProperty
         Name="Tiền_Lời"
-        PropertyType=":Decimal?">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
             Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty
