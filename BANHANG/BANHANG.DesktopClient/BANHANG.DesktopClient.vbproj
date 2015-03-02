@@ -109,6 +109,15 @@
     <Reference Include="C1.Silverlight.Zip.5">
       <HintPath>..\_Pvt_Extensions\C1.LightSwitch.FlexGrid\Client\Reference\C1.Silverlight.Zip.5.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v13.1.Core, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1.LightSwitch.Client, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1.LightSwitch.Common, Version=13.1.8.5, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.LightSwitch, Version=10.0.12.1, Culture=neutral, PublicKeyToken=8e9329cecb4700e9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(LightSwitchSDKPath)\Client\Microsoft.LightSwitch.dll</HintPath>
@@ -345,6 +354,7 @@
     <LightSwitchModel Include="Screens\Bảng_GiáListDetail.lsml" />
     <LightSwitchModel Include="Screens\Xuất_Sản_PhẩmListDetail.lsml" />
     <LightSwitchModel Include="Screens\Nhập_Sản_PhẩmListDetail.lsml" />
+    <LightSwitchModel Include="Screens\MainListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
@@ -361,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WallPaper.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

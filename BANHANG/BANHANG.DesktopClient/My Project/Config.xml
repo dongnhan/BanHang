@@ -33,5 +33,14 @@
     <ExtensionAssembly>C1.Silverlight.Zip.5, Version=5.0.20142.419, Culture=neutral, PublicKeyToken=2AA4EC5576D6C3CE</ExtensionAssembly>
     <ExtensionAssembly>C1.Silverlight.Excel.5, Version=5.0.20142.419, Culture=neutral, PublicKeyToken=2AA4EC5576D6C3CE</ExtensionAssembly>
     <ExtensionAssembly>C1.Silverlight.DateTimeEditors.5, Version=5.0.20142.419, Culture=neutral, PublicKeyToken=2AA4EC5576D6C3CE</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Data.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Printing.v13.1.Core, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Printing.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Core.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Layout.v13.1.Core, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Docking.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.Xpf.Ribbon.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.XtraReports.v13.1.LightSwitch.Common, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>DevExpress.XtraReports.v13.1.LightSwitch.Client, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
   </ExtensionAssemblies>
 </Configuration>
