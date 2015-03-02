@@ -16,12 +16,6 @@ Namespace LightSwitchApplication
 
         Private Sub OK_Execute()
             ' Write your code here.
-            Try
-                Dim dvt As Đơn_Vị_TínhItem = Me.DataWorkspace.BanHangData.Đơn_Vị_Tính_Single(Me.Nhập_Sản_Phẩm_Chi_Tiết.SelectedItem.Sản_PhẩmItem.Đơn_Vị_TínhItem.Id)
-                Me.Nhập_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = dvt
-            Catch ex As Exception
-
-            End Try
             Me.CloseModalWindow("GroupChiTiet")
             'Me.FindControl("Chi_Chi_TiếtAddAndEditNew").Focus()
         End Sub
