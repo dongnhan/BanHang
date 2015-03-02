@@ -148,29 +148,17 @@
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="Xuất_Sản_Phẩm_AddAndEditNew"
+                  Name="Xuất_Sản_PhẩmItemListAddAndEditNew"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Add..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Xuất_Sản_PhẩmListDetail/Properties[Xuất_Sản_Phẩm]" />
                         <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Xuất_Sản_Phẩm_EditSelected"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Xuất_Sản_PhẩmListDetail/Properties[Xuất_Sản_Phẩm]" />
-                        <CallExpression
-                          Target="EditSelected" />
+                          Target="Xuất_Sản_PhẩmListDetail/Methods[Xuất_Sản_PhẩmItemListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -402,6 +390,32 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="OK"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Xuất_Sản_PhẩmListDetail/Methods[OK]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Hủy"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Xuất_Sản_PhẩmListDetail/Methods[Hủy]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
               </ContentItem>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -787,29 +801,33 @@
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="Xuất_Sản_Phẩm_Chi_Tiết_AddAndEditNew"
+                  Name="Xuất_Sản_Phẩm_Chi_TiếtAddAndEditNew"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Add..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Xuất_Sản_PhẩmListDetail/Properties[Xuất_Sản_Phẩm_Chi_Tiết]" />
                         <CallExpression
-                          Target="AddAndEditNew" />
+                          Target="Xuất_Sản_PhẩmListDetail/Methods[Xuất_Sản_Phẩm_Chi_TiếtAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Xuất_Sản_Phẩm_Chi_Tiết_EditSelected"
+                  Name="Xuất_Sản_Phẩm_Chi_TiếtEditSelected"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Edit..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Xuất_Sản_PhẩmListDetail/Properties[Xuất_Sản_Phẩm_Chi_Tiết]" />
                         <CallExpression
-                          Target="EditSelected" />
+                          Target="Xuất_Sản_PhẩmListDetail/Methods[Xuất_Sản_Phẩm_Chi_TiếtEditSelected]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -983,6 +1001,31 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Báo_cáo" />
+      <ScreenMethod
+        Name="Xuất_Sản_PhẩmItemListAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="OK" />
+      <ScreenMethod
+        Name="Hủy" />
+      <ScreenMethod
+        Name="Xuất_Sản_Phẩm_Chi_TiếtAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Xuất_Sản_Phẩm_Chi_TiếtEditSelected">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="EditSelected" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

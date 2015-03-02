@@ -352,6 +352,9 @@
     <Compile Include="Screens\vTồn_Quỹ_Tiền_MặtSearch.lsml.vb">
       <DependentUpon>vTồn_Quỹ_Tiền_MặtSearch.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Xuất_Sản_PhẩmListDetail.lsml.vb">
+      <DependentUpon>Xuất_Sản_PhẩmListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Đơn_Vị_Sử_DụngListDetail.lsml.vb">
       <DependentUpon>Đơn_Vị_Sử_DụngListDetail.lsml</DependentUpon>
     </Compile>
@@ -396,6 +399,8 @@
     <LightSwitchModel Include="Screens\vDoanh_Thu_Ngày_Theo_Sản_PhẩmSearch.lsml" />
     <LightSwitchModel Include="Screens\vLời_Lỗ_Ngày_Theo_Khách_HàngSearch.lsml" />
     <LightSwitchModel Include="Screens\vLời_Lỗ_NgàySearch.lsml" />
+    <LightSwitchModel Include="Screens\vTồn_Tổng_HợpSearch.lsml" />
+    <LightSwitchModel Include="Screens\vThẻ_Kho_Tổng_HợpSearch.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

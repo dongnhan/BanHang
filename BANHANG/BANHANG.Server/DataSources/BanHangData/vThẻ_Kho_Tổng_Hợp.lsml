@@ -61,6 +61,8 @@
             Precision="38"
             Scale="2" />
           <NotSearchable />
+          <StringValueFormat
+            Value="n2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty

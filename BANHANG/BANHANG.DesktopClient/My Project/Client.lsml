@@ -90,6 +90,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowvLời_Lỗ_NgàySearch"
       Target="!module/Methods[ShowvLời_Lỗ_NgàySearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvTồn_Tổng_HợpSearch"
+      Target="!module/Methods[ShowvTồn_Tổng_HợpSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvThẻ_Kho_Tổng_HợpSearch"
+      Target="!module/Methods[ShowvThẻ_Kho_Tổng_HợpSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -144,6 +150,12 @@
       <ApplicationNavigationLink
         Name="vLời_Lỗ_NgàySearch"
         Command="!module/Commands[ScreenCommandShowvLời_Lỗ_NgàySearch]" />
+      <ApplicationNavigationLink
+        Name="vTồn_Tổng_HợpSearch"
+        Command="!module/Commands[ScreenCommandShowvTồn_Tổng_HợpSearch]" />
+      <ApplicationNavigationLink
+        Name="vThẻ_Kho_Tổng_HợpSearch"
+        Command="!module/Commands[ScreenCommandShowvThẻ_Kho_Tổng_HợpSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
