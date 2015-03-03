@@ -31,6 +31,13 @@
             Target="LightSwitchServiceApplication:XuatSanPhamChiTiet/Properties[Tổng_tiền]" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty>
+        <EntityProperty.Attributes>
+          <Computed />
+          <Proxy
+            Target="LightSwitchServiceApplication:XuatSanPhamChiTiet/Properties[Tồn]" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
 </Application>

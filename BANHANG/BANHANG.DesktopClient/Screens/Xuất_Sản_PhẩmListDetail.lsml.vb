@@ -51,6 +51,47 @@ Namespace LightSwitchApplication
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = True
         End Sub
+
+        Private Sub Xuất_Sản_PhẩmListDetail_InitializeDataWorkspace(saveChangesTo As List(Of Microsoft.LightSwitch.IDataService))
+            Me.Thang = Today.Month
+            Me.Nam = Today.Year ' Write your code here.
+
+        End Sub
+
+        Private Sub Xuất_Sản_Phẩm_SelectionChanged()
+            'Me.Thang = Today.Month
+            'Me.Nam = Today.Year
+        End Sub
+
+        Private Sub Tồn_Thực_Validate(results As ScreenValidationResultsBuilder)
+            Try
+                Dim sanpham = DataWorkspace.BanHangData.Sản_Phẩm_Single(Tồn_Thực.Mã_Sản_Phẩm)
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Sản_PhẩmItem = sanpham
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.TonThuc = Tồn_Thực.Tồn
+                Me.Tồn = Tồn_Thực.Tồn
+                Dim donvitinh = DataWorkspace.BanHangData.Đơn_Vị_Tính_Single(DataWorkspace.BanHangData.Sản_Phẩm_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
+                'Me.Tồn = Tồn_Thực.Tồn
+                'If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
+                '    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Me.Tồn_Kho.Giá
+                'End If
+                'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Me.Tồn_Kho.Giá_nhập
+            Catch ex As Exception
+
+            End Try ' re' results.AddPropertyError("<Error-Message>")
+
+        End Sub
+
+        Private Sub Xuất_Sản_Phẩm_Validate(results As ScreenValidationResultsBuilder)
+            ' results.AddPropertyError("<Error-Message>")
+            Try
+                Me.Thang = Me.Xuất_Sản_Phẩm.SelectedItem.Ngày_xuất.Month
+                Me.Nam = Xuất_Sản_Phẩm.SelectedItem.Ngày_xuất.Year
+            Catch ex As Exception
+
+            End Try
+            
+        End Sub
     End Class
 
 End Namespace

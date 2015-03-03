@@ -105,12 +105,22 @@
         Name="Đơn_Vị_TínhItem"
         Association="Đơn_Vị_TínhItem_XuatSanPhamChiTiet"
         FromEnd="XuatSanPhamChiTiet"
-        ToEnd="Đơn_Vị_Tính" />
+        ToEnd="Đơn_Vị_Tính">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đơn Vị Tính" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Sản_PhẩmItem"
         Association="Sản_PhẩmItem_XuatSanPhamChiTiet"
         FromEnd="XuatSanPhamChiTiet"
-        ToEnd="Sản_Phẩm" />
+        ToEnd="Sản_Phẩm">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Sản Phẩm" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="XuatSanPham"
         Association="XuatSanPham_XuatSanPhamChiTiet"
@@ -156,6 +166,14 @@
               Name="DecimalDigits"
               Value="0" />
           </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tồn"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
