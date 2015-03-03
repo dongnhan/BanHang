@@ -115,6 +115,16 @@
             Value="508" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Ngày"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -666,6 +676,11 @@
           Schema="dbo"
           Table="vThẻ Kho Tổng Hợp" />
         <IsView />
+        <SsdlProperty
+          Name="Ngày"
+          Nullable="True"
+          Type="date"
+          Property="vThẻ_Kho_Tổng_HợpItem/Properties[Ngày]" />
         <SsdlProperty
           Name="Thang"
           Nullable="False"

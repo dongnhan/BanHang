@@ -295,6 +295,12 @@
     <Compile Include="XtraReport_NhapSanPham.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_TheKhoTongHop.Designer.vb">
+      <DependentUpon>XtraReport_TheKhoTongHop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_TheKhoTongHop.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_Thu.Designer.vb">
       <DependentUpon>XtraReport_Thu.vb</DependentUpon>
     </Compile>
@@ -305,6 +311,12 @@
       <DependentUpon>XtraReport_TonTienMat.vb</DependentUpon>
     </Compile>
     <Compile Include="XtraReport_TonTienMat.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_TonTongHop.Designer.vb">
+      <DependentUpon>XtraReport_TonTongHop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_TonTongHop.vb">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -391,11 +403,17 @@
     <EmbeddedResource Include="XtraReport_NhapSanPham.resx">
       <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_TheKhoTongHop.resx">
+      <DependentUpon>XtraReport_TheKhoTongHop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_Thu.resx">
       <DependentUpon>XtraReport_Thu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_TonTienMat.resx">
       <DependentUpon>XtraReport_TonTienMat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_TonTongHop.resx">
+      <DependentUpon>XtraReport_TonTongHop.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

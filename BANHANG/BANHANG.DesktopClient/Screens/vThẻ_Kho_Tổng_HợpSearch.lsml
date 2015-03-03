@@ -21,6 +21,104 @@
           Name="ScreenLayout"
           Kind="Group">
           <ContentItem
+            Name="Group"
+            Kind="Group">
+            <ContentItem
+              Name="Group1"
+              Kind="Group"
+              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              <ContentItem
+                Name="Tháng"
+                Kind="Details"
+                DataType="ThángItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vThẻ_Kho_Tổng_HợpSearch/Properties[Tháng]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="ThángItem"
+                  Kind="Details"
+                  DataType="ThángItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="Năm"
+                Kind="Details"
+                DataType="NămItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vThẻ_Kho_Tổng_HợpSearch/Properties[Năm]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="NămItem"
+                  Kind="Details"
+                  DataType="NămItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="Sản_Phẩm"
+                Kind="Details"
+                DataType="Sản_PhẩmItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vThẻ_Kho_Tổng_HợpSearch/Properties[Sản_Phẩm]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Sản_PhẩmItem"
+                  Kind="Details"
+                  DataType="Sản_PhẩmItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      Value="Center"
+                      ResultType=":String" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="Top"
+                    ResultType=":String" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
             Name="grid"
             Kind="Collection"
             DataType="CollectionView$vThẻ_Kho_Tổng_HợpItem"
@@ -46,6 +144,36 @@
                   <ChainExpression />
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
+              <ContentItem
+                Name="Ngày"
+                Kind="Value"
+                DataType=":Date?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vThẻ_Kho_Tổng_HợpItem/Properties[Ngày]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Id"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Mã" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vThẻ_Kho_Tổng_HợpItem/Properties[Id]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
               <ContentItem
                 Name="Nhập"
                 Kind="Value"
@@ -73,39 +201,14 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
-                Name="Tên_Sản_Phẩm"
+                Name="Tồn"
                 Kind="Value"
-                DataType=":String">
+                DataType=":Decimal?">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vThẻ_Kho_Tổng_HợpItem/Properties[Tên_Sản_Phẩm]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[ShowAsLink]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="Đơn_Vị_Tính"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vThẻ_Kho_Tổng_HợpItem/Properties[Đơn_Vị_Tính]" />
+                        Member="vThẻ_Kho_Tổng_HợpItem/Properties[Tồn]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -119,19 +222,6 @@
                     <ChainExpression>
                       <MemberExpression
                         Member="vThẻ_Kho_Tổng_HợpItem/Properties[Diễn_giải]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Tồn"
-                Kind="Value"
-                DataType=":Decimal?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vThẻ_Kho_Tổng_HợpItem/Properties[Tồn]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -321,7 +411,61 @@
             Name="vThẻ_Kho_Tổng_HợpQuery"
             ReturnType="vThẻ_Kho_Tổng_HợpItem*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="And">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="And">
+                      <BinaryExpression.Left>
+                        <BinaryExpression
+                          NodeType="Equal">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="vThẻ_Kho_Tổng_HợpItem/Properties[Thang]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="Thang" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <BinaryExpression
+                          NodeType="Equal">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="vThẻ_Kho_Tổng_HợpItem/Properties[Nam]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="Nam" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="vThẻ_Kho_Tổng_HợpItem/Properties[Mã_Sản_Phẩm]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="IdSanPham" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
@@ -329,15 +473,71 @@
                   Member="BanHangData/Members[vThẻ_Kho_Tổng_Hợp]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="Thang"
+                ParameterType=":Int32?" />
+              <QueryParameter
+                Name="Nam"
+                ParameterType=":Int32?" />
+              <QueryParameter
+                Name="IdSanPham"
+                ParameterType=":Int32?" />
+            </ScreenQueryDefinition.Parameters>
+            <ScreenQueryDefinition.SortCriteria>
+              <SortCriterion>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </SortCriterion>
+            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="vThẻ_Kho_Tổng_HợpSearch/Properties[vThẻ_Kho_Tổng_Hợp]/Query" />
+              Target="vThẻ_Kho_Tổng_HợpSearch/Properties[vThẻ_Kho_Tổng_Hợp]/Query">
+              <ArgumentExpression
+                Parameter="Thang">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="vThẻ_Kho_Tổng_HợpSearch/Properties[Tháng]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Nam">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="vThẻ_Kho_Tổng_HợpSearch/Properties[Năm]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="IdSanPham">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="vThẻ_Kho_Tổng_HợpSearch/Properties[Sản_Phẩm]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="Tháng"
+        PropertyType="ThángItem" />
+      <ScreenProperty
+        Name="Năm"
+        PropertyType="NămItem" />
+      <ScreenProperty
+        Name="Sản_Phẩm"
+        PropertyType="Sản_PhẩmItem" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
