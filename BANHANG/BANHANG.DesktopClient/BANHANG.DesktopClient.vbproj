@@ -364,6 +364,9 @@
     <Compile Include="Screens\vTồn_Tổng_HợpSearch.lsml.vb">
       <DependentUpon>vTồn_Tổng_HợpSearch.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\XuatSanPhamReportPreviewScreen.lsml.vb">
+      <DependentUpon>XuatSanPhamReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Xuất_Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Xuất_Sản_PhẩmListDetail.lsml</DependentUpon>
     </Compile>
@@ -415,6 +418,7 @@
     <LightSwitchModel Include="Screens\vThẻ_Kho_Tổng_HợpSearch.lsml" />
     <LightSwitchModel Include="Screens\vTonTongHopReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\vTheKhoReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\XuatSanPhamReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

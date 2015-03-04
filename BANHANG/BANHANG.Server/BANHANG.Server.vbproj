@@ -319,6 +319,12 @@
     <Compile Include="XtraReport_TonTongHop.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_XuatSanPham.Designer.vb">
+      <DependentUpon>XtraReport_XuatSanPham.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_XuatSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="DataSources\BanHangData\Bảng_Giá.lsml" />
@@ -414,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_TonTongHop.resx">
       <DependentUpon>XtraReport_TonTongHop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_XuatSanPham.resx">
+      <DependentUpon>XtraReport_XuatSanPham.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

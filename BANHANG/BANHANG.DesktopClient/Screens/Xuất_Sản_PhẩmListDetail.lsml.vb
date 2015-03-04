@@ -92,6 +92,11 @@ Namespace LightSwitchApplication
             End Try
             
         End Sub
+
+        Private Sub Báo_cáo_Execute()
+            Me.Application.ShowXuatSanPhamReportPreviewScreen(Me.Xuất_Sản_Phẩm.SelectedItem.Id, NumToText(Me.Xuất_Sản_Phẩm.SelectedItem.Tổng_tiền)) ' Write your code here.
+
+        End Sub
     End Class
 
 End Namespace

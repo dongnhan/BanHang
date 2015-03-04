@@ -588,6 +588,7 @@ Partial Public Class XtraReport_Thu
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.PageHeader, Me.Detail, Me.PageFooter, Me.ReportHeader})
         Me.DataSource = Me.LightSwitchDataSource1
+        Me.FilterString = "[Id] = ?Id"
         Me.Margins = New System.Drawing.Printing.Margins(50, 41, 50, 20)
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.Id, Me.TenDonVi, Me.DiaChiDonVi, Me.SoTienThanhChu})
         Me.Version = "13.1"
