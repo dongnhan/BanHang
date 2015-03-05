@@ -76,7 +76,7 @@
               <ContentItem
                 Name="Sản_Phẩm"
                 Kind="Details"
-                DataType="Sản_PhẩmItem">
+                DataType="SanPham">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -88,7 +88,7 @@
                 <ContentItem
                   Name="Sản_PhẩmItem"
                   Kind="Details"
-                  DataType="Sản_PhẩmItem">
+                  DataType="SanPham">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
@@ -537,7 +537,7 @@
         PropertyType="NămItem" />
       <ScreenProperty
         Name="Sản_Phẩm"
-        PropertyType="Sản_PhẩmItem" />
+        PropertyType="SanPham" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>

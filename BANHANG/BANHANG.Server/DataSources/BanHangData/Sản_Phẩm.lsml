@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Sản_PhẩmItem">
+    Name="SanPham">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -36,13 +36,19 @@
       </EntityProperty>
       <EntityProperty
         Name="Giá"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -55,42 +61,47 @@
       </EntityProperty>
       <NavigationProperty
         Name="Bảng_Giá_Chi_Tiết"
-        Association="Sản_PhẩmItem_BangGiaChiTiet"
-        FromEnd="Sản_Phẩm"
+        Association="SanPham_BangGiaChiTiet"
+        FromEnd="SanPham"
         ToEnd="BangGiaChiTiet" />
       <NavigationProperty
         Name="Đặt_Hàng_Chi_Tiết"
-        Association="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm"
-        FromEnd="Sản_Phẩm"
+        Association="SanPham_Đặt_Hàng_Chi_TiếtItem"
+        FromEnd="SanPham"
         ToEnd="Đặt_Hàng_Chi_Tiết" />
       <NavigationProperty
         Name="Nhập_Sản_Phẩm_Chi_Tiết"
-        Association="Sản_PhẩmItem_NhapSanPhamChiTiet"
-        FromEnd="Sản_Phẩm"
+        Association="SanPham_NhapSanPhamChiTiet"
+        FromEnd="SanPham"
         ToEnd="NhapSanPhamChiTiet" />
       <NavigationProperty
         Name="Nhóm_của_Sản_Phẩm"
-        Association="FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm"
-        FromEnd="Sản_Phẩm"
-        ToEnd="Nhóm_của_Sản_Phẩm" />
+        Association="SanPham_NhomSanPham"
+        FromEnd="SanPham"
+        ToEnd="NhomSanPham" />
       <NavigationProperty
         Name="Đơn_Vị_TínhItem"
-        Association="FK_Sản_Phẩm_Đơn_Vị_Tính"
-        FromEnd="Sản_Phẩm"
-        ToEnd="Đơn_Vị_Tính" />
+        Association="Đơn_Vị_TínhItem_SanPham"
+        FromEnd="SanPham"
+        ToEnd="Đơn_Vị_Tính">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đơn Vị Tính" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Xuất_Sản_Phẩm_Chi_Tiết"
-        Association="Sản_PhẩmItem_XuatSanPhamChiTiet"
-        FromEnd="Sản_Phẩm"
+        Association="SanPham_XuatSanPhamChiTiet"
+        FromEnd="SanPham"
         ToEnd="XuatSanPhamChiTiet" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="Sản_PhẩmItem_BangGiaChiTiet">
+    Name="SanPham_BangGiaChiTiet">
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="SanPham"
       Multiplicity="One"
-      EntityType="Sản_PhẩmItem">
+      EntityType="SanPham">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
@@ -101,11 +112,11 @@
       EntityType="BangGiaChiTiet" />
   </Association>
   <Association
-    Name="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm">
+    Name="SanPham_Đặt_Hàng_Chi_TiếtItem">
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="SanPham"
       Multiplicity="One"
-      EntityType="Sản_PhẩmItem">
+      EntityType="SanPham">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
@@ -116,11 +127,11 @@
       EntityType="Đặt_Hàng_Chi_TiếtItem" />
   </Association>
   <Association
-    Name="Sản_PhẩmItem_NhapSanPhamChiTiet">
+    Name="SanPham_NhapSanPhamChiTiet">
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="SanPham"
       Multiplicity="One"
-      EntityType="Sản_PhẩmItem">
+      EntityType="SanPham">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
@@ -131,27 +142,27 @@
       EntityType="NhapSanPhamChiTiet" />
   </Association>
   <Association
-    Name="FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm">
+    Name="SanPham_NhomSanPham">
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="SanPham"
       Multiplicity="One"
-      EntityType="Sản_PhẩmItem">
+      EntityType="SanPham">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Nhóm_của_Sản_Phẩm"
+      Name="NhomSanPham"
       Multiplicity="Many"
-      EntityType="Nhóm_của_Sản_PhẩmItem" />
+      EntityType="NhomSanPham" />
   </Association>
   <Association
-    Name="Sản_PhẩmItem_XuatSanPhamChiTiet">
+    Name="SanPham_XuatSanPhamChiTiet">
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="SanPham"
       Multiplicity="One"
-      EntityType="Sản_PhẩmItem">
+      EntityType="SanPham">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
@@ -171,12 +182,12 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Sản_PhẩmItem" />
+      EntityType="SanPham" />
     <AssociationSet
       Name="FK_Bảng_Giá_Chi_Tiết_Sản_Phẩm"
-      Association="Sản_PhẩmItem_BangGiaChiTiet">
+      Association="SanPham_BangGiaChiTiet">
       <AssociationSetEnd
-        Name="Sản_Phẩm"
+        Name="SanPham"
         EntitySet="Sản_Phẩm" />
       <AssociationSetEnd
         Name="BangGiaChiTiet"
@@ -184,9 +195,9 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm"
-      Association="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm">
+      Association="SanPham_Đặt_Hàng_Chi_TiếtItem">
       <AssociationSetEnd
-        Name="Sản_Phẩm"
+        Name="SanPham"
         EntitySet="Sản_Phẩm" />
       <AssociationSetEnd
         Name="Đặt_Hàng_Chi_Tiết"
@@ -194,9 +205,9 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Nhập_Sản_Phẩm_Chi_Tiết_Sản_Phẩm"
-      Association="Sản_PhẩmItem_NhapSanPhamChiTiet">
+      Association="SanPham_NhapSanPhamChiTiet">
       <AssociationSetEnd
-        Name="Sản_Phẩm"
+        Name="SanPham"
         EntitySet="Sản_Phẩm" />
       <AssociationSetEnd
         Name="NhapSanPhamChiTiet"
@@ -204,19 +215,19 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm"
-      Association="FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm">
+      Association="SanPham_NhomSanPham">
       <AssociationSetEnd
-        Name="Sản_Phẩm"
+        Name="SanPham"
         EntitySet="Sản_Phẩm" />
       <AssociationSetEnd
-        Name="Nhóm_của_Sản_Phẩm"
+        Name="NhomSanPham"
         EntitySet="Nhóm_của_Sản_Phẩm" />
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Sản_Phẩm"
-      Association="Sản_PhẩmItem_XuatSanPhamChiTiet">
+      Association="SanPham_XuatSanPhamChiTiet">
       <AssociationSetEnd
-        Name="Sản_Phẩm"
+        Name="SanPham"
         EntitySet="Sản_Phẩm" />
       <AssociationSetEnd
         Name="XuatSanPhamChiTiet"
@@ -224,7 +235,7 @@
     </AssociationSet>
     <QueryOperation
       Name="Sản_Phẩm_Single"
-      ReturnType="Sản_PhẩmItem">
+      ReturnType="SanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -264,7 +275,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Sản_Phẩm_SingleOrDefault"
-      ReturnType="Sản_PhẩmItem">
+      ReturnType="SanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -319,24 +330,24 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Sản_PhẩmItem/Properties[Id]" />
+          Property="SanPham/Properties[Id]" />
         <SsdlProperty
           MaxLength="500"
           Name="Tên"
           Nullable="False"
           Type="nvarchar"
-          Property="Sản_PhẩmItem/Properties[Tên]" />
+          Property="SanPham/Properties[Tên]" />
         <SsdlProperty
           Name="Giá"
           Nullable="False"
           Type="decimal"
-          Property="Sản_PhẩmItem/Properties[Giá]" />
+          Property="SanPham/Properties[Giá]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Sản_PhẩmItem/Properties[Ghi_chú]" />
+          Property="SanPham/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_DonViTinh"
           Nullable="False"
@@ -350,7 +361,7 @@
         <SsdlAssociationSet
           Name="FK_Bảng Giá Chi Tiết_Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Sản_Phẩm]/Members[Sản_Phẩm]">
+          End="BanHangData/Members[FK_Bảng_Giá_Chi_Tiết_Sản_Phẩm]/Members[SanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -371,7 +382,7 @@
         <SsdlAssociationSet
           Name="FK_Đặt Hàng Chi Tiết_Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm]/Members[Sản_Phẩm]">
+          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm]/Members[SanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -392,7 +403,7 @@
         <SsdlAssociationSet
           Name="FK_Nhập Sản Phẩm Chi Tiết_Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Sản_Phẩm]/Members[Sản_Phẩm]">
+          End="BanHangData/Members[FK_Nhập_Sản_Phẩm_Chi_Tiết_Sản_Phẩm]/Members[SanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
@@ -413,14 +424,14 @@
         <SsdlAssociationSet
           Name="FK_Nhóm của Sản Phẩm_Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm]/Members[Sản_Phẩm]">
+          End="BanHangData/Members[FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm]/Members[SanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm]/Members[Nhóm_của_Sản_Phẩm]">
+          End="BanHangData/Members[FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm]/Members[NhomSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_SanPham" />
@@ -434,7 +445,7 @@
         <SsdlAssociationSet
           Name="FK_Xuất Sản Phẩm Chi Tiết_Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Sản_Phẩm]/Members[Sản_Phẩm]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Sản_Phẩm]/Members[SanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />

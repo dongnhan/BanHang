@@ -386,19 +386,19 @@
                 <ContentItem
                   Name="Sản_PhẩmItem"
                   Kind="Details"
-                  DataType="Sản_PhẩmItem">
+                  DataType="SanPham">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BangGiaChiTiet/Properties[Sản_PhẩmItem]" />
+                          Member="BangGiaChiTiet/Properties[SanPham]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate3"
                     Kind="Details"
-                    DataType="Sản_PhẩmItem">
+                    DataType="SanPham">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

@@ -172,6 +172,10 @@
                   Name="Nhóm_Đối_TượngItem"
                   Kind="Details"
                   DataType="Nhóm_Đối_TượngItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Nhóm Khách Hàng" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -275,6 +279,16 @@
                     <ConstantExpression
                       Value="2"
                       ResultType=":Double" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
@@ -410,6 +424,10 @@
                   Name="Nhóm_Đối_TượngItem1"
                   Kind="Details"
                   DataType="Nhóm_Đối_TượngItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Nhóm Khách Hàng" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

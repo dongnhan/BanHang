@@ -266,19 +266,19 @@
                 <ContentItem
                   Name="Sản_PhẩmItem1"
                   Kind="Details"
-                  DataType="Sản_PhẩmItem">
+                  DataType="SanPham">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Sản_PhẩmItem]" />
+                          Member="NhapSanPhamChiTiet/Properties[SanPham]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="Sản_PhẩmItem2"
                     Kind="Details"
-                    DataType="Sản_PhẩmItem">
+                    DataType="SanPham">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -658,19 +658,19 @@
                 <ContentItem
                   Name="Sản_PhẩmItem"
                   Kind="Details"
-                  DataType="Sản_PhẩmItem">
+                  DataType="SanPham">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Sản_PhẩmItem]" />
+                          Member="NhapSanPhamChiTiet/Properties[SanPham]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate5"
                     Kind="Details"
-                    DataType="Sản_PhẩmItem">
+                    DataType="SanPham">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

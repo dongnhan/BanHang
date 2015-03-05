@@ -419,6 +419,7 @@
     <LightSwitchModel Include="Screens\vTonTongHopReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\vTheKhoReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\XuatSanPhamReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\Sản_PhẩmListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

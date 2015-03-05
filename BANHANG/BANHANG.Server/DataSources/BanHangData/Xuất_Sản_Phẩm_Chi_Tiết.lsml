@@ -112,10 +112,10 @@
         </NavigationProperty.Attributes>
       </NavigationProperty>
       <NavigationProperty
-        Name="Sản_PhẩmItem"
-        Association="Sản_PhẩmItem_XuatSanPhamChiTiet"
+        Name="SanPham"
+        Association="SanPham_XuatSanPhamChiTiet"
         FromEnd="XuatSanPhamChiTiet"
-        ToEnd="Sản_Phẩm">
+        ToEnd="SanPham">
         <NavigationProperty.Attributes>
           <DisplayName
             Value="Sản Phẩm" />

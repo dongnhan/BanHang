@@ -96,6 +96,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowvThẻ_Kho_Tổng_HợpSearch"
       Target="!module/Methods[ShowvThẻ_Kho_Tổng_HợpSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowSản_PhẩmListDetail"
+      Target="!module/Methods[ShowSản_PhẩmListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -120,6 +123,9 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
+      <ApplicationNavigationLink
+        Name="Sản_PhẩmListDetail"
+        Command="!module/Commands[ScreenCommandShowSản_PhẩmListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

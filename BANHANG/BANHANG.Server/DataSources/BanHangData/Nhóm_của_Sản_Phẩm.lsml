@@ -5,7 +5,11 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Nhóm_của_Sản_PhẩmItem">
+    Name="NhomSanPham">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Nhóm của Sản Phẩm" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -27,14 +31,19 @@
       </KeyProperty>
       <NavigationProperty
         Name="Nhóm_Sản_PhẩmItem"
-        Association="FK_Nhóm_của_Sản_Phẩm_Nhóm_Sản_Phẩm"
-        FromEnd="Nhóm_của_Sản_Phẩm"
-        ToEnd="Nhóm_Sản_Phẩm" />
+        Association="Nhóm_Sản_PhẩmItem_NhomSanPham"
+        FromEnd="NhomSanPham"
+        ToEnd="Nhóm_Sản_Phẩm">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Nhóm Sản Phẩm" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
-        Name="Sản_PhẩmItem"
-        Association="FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm"
-        FromEnd="Nhóm_của_Sản_Phẩm"
-        ToEnd="Sản_Phẩm" />
+        Name="SanPham"
+        Association="SanPham_NhomSanPham"
+        FromEnd="NhomSanPham"
+        ToEnd="SanPham" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -47,10 +56,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Nhóm_của_Sản_PhẩmItem" />
+      EntityType="NhomSanPham" />
     <QueryOperation
       Name="Nhóm_của_Sản_Phẩm_Single"
-      ReturnType="Nhóm_của_Sản_PhẩmItem">
+      ReturnType="NhomSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -90,7 +99,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Nhóm_của_Sản_Phẩm_SingleOrDefault"
-      ReturnType="Nhóm_của_Sản_PhẩmItem">
+      ReturnType="NhomSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -145,7 +154,7 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Nhóm_của_Sản_PhẩmItem/Properties[Id]" />
+          Property="NhomSanPham/Properties[Id]" />
         <SsdlForeignKeyProperty
           Name="_NhomSanPham"
           Nullable="False"

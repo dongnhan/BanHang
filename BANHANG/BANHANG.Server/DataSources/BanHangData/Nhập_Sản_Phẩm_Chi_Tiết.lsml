@@ -98,10 +98,10 @@
         FromEnd="NhapSanPhamChiTiet"
         ToEnd="NhapSanPham" />
       <NavigationProperty
-        Name="Sản_PhẩmItem"
-        Association="Sản_PhẩmItem_NhapSanPhamChiTiet"
+        Name="SanPham"
+        Association="SanPham_NhapSanPhamChiTiet"
         FromEnd="NhapSanPhamChiTiet"
-        ToEnd="Sản_Phẩm">
+        ToEnd="SanPham">
         <NavigationProperty.Attributes>
           <DisplayName
             Value="Sản Phẩm" />

@@ -55,10 +55,10 @@
         FromEnd="Đặt_Hàng_Chi_Tiết"
         ToEnd="Đơn_Vị_Tính" />
       <NavigationProperty
-        Name="Sản_PhẩmItem"
-        Association="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm"
+        Name="SanPham"
+        Association="SanPham_Đặt_Hàng_Chi_TiếtItem"
         FromEnd="Đặt_Hàng_Chi_Tiết"
-        ToEnd="Sản_Phẩm" />
+        ToEnd="SanPham" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer

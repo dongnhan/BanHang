@@ -67,7 +67,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Nhóm_của_Sản_PhẩmItem" />
+        Target="ServiceInterface:NhomSanPham" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
@@ -85,7 +85,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Sản_PhẩmItem" />
+        Target="ServiceInterface:SanPham" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
@@ -121,7 +121,7 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:Sản_PhẩmItem_BangGiaChiTiet" />
+        Target="ServiceInterface:SanPham_BangGiaChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -157,7 +157,7 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm" />
+        Target="ServiceInterface:SanPham_Đặt_Hàng_Chi_TiếtItem" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -187,7 +187,7 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:Sản_PhẩmItem_NhapSanPhamChiTiet" />
+        Target="ServiceInterface:SanPham_NhapSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -205,19 +205,19 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhóm_của_Sản_Phẩm_Nhóm_Sản_Phẩm" />
+        Target="ServiceInterface:Nhóm_Sản_PhẩmItem_NhomSanPham" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhóm_của_Sản_Phẩm_Sản_Phẩm" />
+        Target="ServiceInterface:SanPham_NhomSanPham" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Sản_Phẩm_Đơn_Vị_Tính" />
+        Target="ServiceInterface:Đơn_Vị_TínhItem_SanPham" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -247,7 +247,7 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:Sản_PhẩmItem_XuatSanPhamChiTiet" />
+        Target="ServiceInterface:SanPham_XuatSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>

@@ -483,19 +483,19 @@
                   Name="Sản_PhẩmItem1"
                   IsHidden="True"
                   Kind="Details"
-                  DataType="Sản_PhẩmItem">
+                  DataType="SanPham">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="XuatSanPhamChiTiet/Properties[Sản_PhẩmItem]" />
+                          Member="XuatSanPhamChiTiet/Properties[SanPham]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="Sản_PhẩmItem2"
                     Kind="Details"
-                    DataType="Sản_PhẩmItem">
+                    DataType="SanPham">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -772,19 +772,19 @@
                 <ContentItem
                   Name="Sản_PhẩmItem"
                   Kind="Details"
-                  DataType="Sản_PhẩmItem">
+                  DataType="SanPham">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="XuatSanPhamChiTiet/Properties[Sản_PhẩmItem]" />
+                          Member="XuatSanPhamChiTiet/Properties[SanPham]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate9"
                     Kind="Details"
-                    DataType="Sản_PhẩmItem">
+                    DataType="SanPham">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

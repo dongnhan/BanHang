@@ -16,7 +16,7 @@ Namespace LightSwitchApplication
             result = Thành_tiền + Tiền_thuế
         End Sub
 
-        Private Sub Sản_PhẩmItem_Validate(results As EntityValidationResultsBuilder)
+        Private Sub SanPham_Validate(results As EntityValidationResultsBuilder)
             Try
                 Dim dvt As Đơn_Vị_TínhItem = Me.DataWorkspace.BanHangData.Đơn_Vị_Tính_Single(Me.Sản_PhẩmItem.Đơn_Vị_TínhItem.Id)
                 Me.Đơn_Vị_TínhItem = dvt

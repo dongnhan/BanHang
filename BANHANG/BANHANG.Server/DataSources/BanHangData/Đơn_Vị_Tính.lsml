@@ -59,9 +59,9 @@
         ToEnd="NhapSanPhamChiTiet" />
       <NavigationProperty
         Name="Sản_Phẩm"
-        Association="FK_Sản_Phẩm_Đơn_Vị_Tính"
+        Association="Đơn_Vị_TínhItem_SanPham"
         FromEnd="Đơn_Vị_Tính"
-        ToEnd="Sản_Phẩm" />
+        ToEnd="SanPham" />
       <NavigationProperty
         Name="Xuất_Sản_Phẩm_Chi_Tiết"
         Association="Đơn_Vị_TínhItem_XuatSanPhamChiTiet"
@@ -115,7 +115,7 @@
       EntityType="NhapSanPhamChiTiet" />
   </Association>
   <Association
-    Name="FK_Sản_Phẩm_Đơn_Vị_Tính">
+    Name="Đơn_Vị_TínhItem_SanPham">
     <AssociationEnd
       Name="Đơn_Vị_Tính"
       Multiplicity="One"
@@ -125,9 +125,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="SanPham"
       Multiplicity="Many"
-      EntityType="Sản_PhẩmItem" />
+      EntityType="SanPham" />
   </Association>
   <Association
     Name="Đơn_Vị_TínhItem_XuatSanPhamChiTiet">
@@ -187,12 +187,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Sản_Phẩm_Đơn_Vị_Tính"
-      Association="FK_Sản_Phẩm_Đơn_Vị_Tính">
+      Association="Đơn_Vị_TínhItem_SanPham">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
         EntitySet="Đơn_Vị_Tính" />
       <AssociationSetEnd
-        Name="Sản_Phẩm"
+        Name="SanPham"
         EntitySet="Sản_Phẩm" />
     </AssociationSet>
     <AssociationSet
@@ -393,7 +393,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Sản_Phẩm_Đơn_Vị_Tính]/Members[Sản_Phẩm]">
+          End="BanHangData/Members[FK_Sản_Phẩm_Đơn_Vị_Tính]/Members[SanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DonViTinh" />
