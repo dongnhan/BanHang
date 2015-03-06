@@ -10,8 +10,7 @@
       Namespace="LightSwitchApplication" />
     <Partial
       IsPrimary="True" />
-    <HomeScreen
-      Value="Home" />
+    <HomeScreen />
   </Application.Attributes>
   <EntityContainerGroup
     Name="DataWorkspace">
@@ -41,10 +40,7 @@
   </GlobalAttributeGroup>
   <Application.NavigationItems>
     <ApplicationNavigationMethodLink
-      Name="link"
-      Method="!module/Methods[showBrowseĐơn_Vị_Tính]" />
-    <ApplicationNavigationMethodLink
       Name="link1"
-      Method="!module/Methods[showBrowseSản_Phẩm]" />
+      Method="!module/Methods[showBrowseĐơn_Vị_Tính]" />
   </Application.NavigationItems>
 </Application>

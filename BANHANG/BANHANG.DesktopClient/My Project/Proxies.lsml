@@ -346,4 +346,10 @@
         Target="ServiceInterface:vTồn_Tổng_HợpItem" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Test_ThửItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

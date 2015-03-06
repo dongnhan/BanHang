@@ -16,5 +16,15 @@
         </DefaultScreen.Attributes>
       </DefaultScreen>
     </EntityType.Attributes>
+    <EntityType.Properties>
+      <EntityProperty>
+        <EntityProperty.Attributes>
+          <Proxy
+            Target="ServiceInterface:Đơn_Vị_TínhItem/Properties[Tên]" />
+          <DisplayName
+            Value="Ten" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
   </EntityType>
 </Application>
