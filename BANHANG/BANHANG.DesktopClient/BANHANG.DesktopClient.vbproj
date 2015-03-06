@@ -331,6 +331,9 @@
     <Compile Include="Screens\Nhập_Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Nhập_Sản_PhẩmListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Sản_PhẩmListDetail.lsml.vb">
+      <DependentUpon>Sản_PhẩmListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\vTheKhoReportPreviewScreen.lsml.vb">
       <DependentUpon>vTheKhoReportPreviewScreen.lsml</DependentUpon>
     </Compile>

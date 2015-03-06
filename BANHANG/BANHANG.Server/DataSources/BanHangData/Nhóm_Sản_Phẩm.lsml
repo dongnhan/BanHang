@@ -44,13 +44,13 @@
       </EntityProperty>
       <NavigationProperty
         Name="Nhóm_của_Sản_Phẩm"
-        Association="Nhóm_Sản_PhẩmItem_NhomSanPham"
+        Association="Nhóm_Sản_PhẩmItem_NhomCuaSanPham"
         FromEnd="Nhóm_Sản_Phẩm"
-        ToEnd="NhomSanPham" />
+        ToEnd="NhomCuaSanPham" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="Nhóm_Sản_PhẩmItem_NhomSanPham">
+    Name="Nhóm_Sản_PhẩmItem_NhomCuaSanPham">
     <AssociationEnd
       Name="Nhóm_Sản_Phẩm"
       Multiplicity="One"
@@ -60,9 +60,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="NhomSanPham"
+      Name="NhomCuaSanPham"
       Multiplicity="Many"
-      EntityType="NhomSanPham" />
+      EntityType="NhomCuaSanPham" />
   </Association>
   <EntityContainer
     Name="BanHangData">
@@ -77,12 +77,12 @@
       EntityType="Nhóm_Sản_PhẩmItem" />
     <AssociationSet
       Name="FK_Nhóm_của_Sản_Phẩm_Nhóm_Sản_Phẩm"
-      Association="Nhóm_Sản_PhẩmItem_NhomSanPham">
+      Association="Nhóm_Sản_PhẩmItem_NhomCuaSanPham">
       <AssociationSetEnd
         Name="Nhóm_Sản_Phẩm"
         EntitySet="Nhóm_Sản_Phẩm" />
       <AssociationSetEnd
-        Name="NhomSanPham"
+        Name="NhomCuaSanPham"
         EntitySet="Nhóm_của_Sản_Phẩm" />
     </AssociationSet>
     <QueryOperation
@@ -210,7 +210,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Nhóm_của_Sản_Phẩm_Nhóm_Sản_Phẩm]/Members[NhomSanPham]">
+          End="BanHangData/Members[FK_Nhóm_của_Sản_Phẩm_Nhóm_Sản_Phẩm]/Members[NhomCuaSanPham]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_NhomSanPham" />

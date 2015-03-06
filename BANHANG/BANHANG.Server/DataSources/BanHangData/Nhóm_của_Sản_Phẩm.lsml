@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="NhomSanPham">
+    Name="NhomCuaSanPham">
     <EntityType.Attributes>
       <DisplayName
         Value="Nhóm của Sản Phẩm" />
@@ -31,8 +31,8 @@
       </KeyProperty>
       <NavigationProperty
         Name="Nhóm_Sản_PhẩmItem"
-        Association="Nhóm_Sản_PhẩmItem_NhomSanPham"
-        FromEnd="NhomSanPham"
+        Association="Nhóm_Sản_PhẩmItem_NhomCuaSanPham"
+        FromEnd="NhomCuaSanPham"
         ToEnd="Nhóm_Sản_Phẩm">
         <NavigationProperty.Attributes>
           <DisplayName
@@ -41,8 +41,8 @@
       </NavigationProperty>
       <NavigationProperty
         Name="SanPham"
-        Association="SanPham_NhomSanPham"
-        FromEnd="NhomSanPham"
+        Association="SanPham_NhomCuaSanPham"
+        FromEnd="NhomCuaSanPham"
         ToEnd="SanPham" />
     </EntityType.Properties>
   </EntityType>
@@ -56,10 +56,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="NhomSanPham" />
+      EntityType="NhomCuaSanPham" />
     <QueryOperation
       Name="Nhóm_của_Sản_Phẩm_Single"
-      ReturnType="NhomSanPham">
+      ReturnType="NhomCuaSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -99,7 +99,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Nhóm_của_Sản_Phẩm_SingleOrDefault"
-      ReturnType="NhomSanPham">
+      ReturnType="NhomCuaSanPham">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -154,7 +154,7 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="NhomSanPham/Properties[Id]" />
+          Property="NhomCuaSanPham/Properties[Id]" />
         <SsdlForeignKeyProperty
           Name="_NhomSanPham"
           Nullable="False"

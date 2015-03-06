@@ -123,29 +123,17 @@
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="Sản_Phẩm_AddAndEditNew"
+                  Name="SanPhamListAddAndEditNew"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Add..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Sản_PhẩmListDetail/Properties[Sản_Phẩm]" />
                         <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Sản_Phẩm_EditSelected"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Sản_PhẩmListDetail/Properties[Sản_Phẩm]" />
-                        <CallExpression
-                          Target="EditSelected" />
+                          Target="Sản_PhẩmListDetail/Methods[SanPhamListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -208,6 +196,90 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
+            <ContentItem
+              Name="GroupChiTiet"
+              IsHidden="True"
+              Kind="Group"
+              View="Microsoft.LightSwitch.RichClient:ModalWindow">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Nhóm của Sản Phẩm" />
+              </ContentItem.Attributes>
+              <ContentItem
+                Name="Nhóm_của_Sản_Phẩm_SelectedItem"
+                Kind="Details"
+                DataType="NhomCuaSanPham">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Sản_PhẩmListDetail/Properties[Nhóm_của_Sản_Phẩm]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Nhóm_Sản_PhẩmItem1"
+                  Kind="Details"
+                  DataType="Nhóm_Sản_PhẩmItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="NhomCuaSanPham/Properties[Nhóm_Sản_PhẩmItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="Nhóm_Sản_PhẩmItem2"
+                    Kind="Details"
+                    DataType="Nhóm_Sản_PhẩmItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="OK"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Sản_PhẩmListDetail/Methods[OK]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Hủy"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="Sản_PhẩmListDetail/Methods[Hủy]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
             <ContentItem.PropertySources>
               <ControlPropertySource
                 Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
@@ -217,6 +289,14 @@
                       Value="2"
                       ResultType=":Double" />
                   </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
                 </ScreenExpressionTree>
               </ControlPropertySource>
             </ContentItem.PropertySources>
@@ -321,7 +401,7 @@
             <ContentItem
               Name="Nhóm_của_Sản_Phẩm"
               Kind="Collection"
-              DataType="CollectionView$NhomSanPham"
+              DataType="CollectionView$NhomCuaSanPham"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -334,7 +414,7 @@
               <ContentItem
                 Name="RowTemplate3"
                 Kind="Details"
-                DataType="NhomSanPham">
+                DataType="NhomCuaSanPham">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -348,7 +428,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhomSanPham/Properties[Nhóm_Sản_PhẩmItem]" />
+                          Member="NhomCuaSanPham/Properties[Nhóm_Sản_PhẩmItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -363,32 +443,46 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="True"
+                        ResultType=":Boolean" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="Nhóm_của_Sản_Phẩm_AddAndEditNew"
+                  Name="Nhóm_của_Sản_PhẩmAddAndEditNew"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Add..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Sản_PhẩmListDetail/Properties[Nhóm_của_Sản_Phẩm]" />
                         <CallExpression
-                          Target="AddAndEditNew" />
+                          Target="Sản_PhẩmListDetail/Methods[Nhóm_của_Sản_PhẩmAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Nhóm_của_Sản_Phẩm_EditSelected"
+                  Name="Nhóm_của_Sản_PhẩmEditSelected"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Edit..." />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="Sản_PhẩmListDetail/Properties[Nhóm_của_Sản_Phẩm]" />
                         <CallExpression
-                          Target="EditSelected" />
+                          Target="Sản_PhẩmListDetail/Methods[Nhóm_của_Sản_PhẩmEditSelected]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -572,6 +666,31 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Báo_cáo" />
+      <ScreenMethod
+        Name="SanPhamListAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="OK" />
+      <ScreenMethod
+        Name="Hủy" />
+      <ScreenMethod
+        Name="Nhóm_của_Sản_PhẩmAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Nhóm_của_Sản_PhẩmEditSelected">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="EditSelected" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -603,11 +722,11 @@
       <ScreenCollectionProperty
         Name="Nhóm_của_Sản_Phẩm"
         PageSize="15"
-        PropertyType="CollectionView$NhomSanPham">
+        PropertyType="CollectionView$NhomCuaSanPham">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Nhóm_của_Sản_PhẩmQuery"
-            ReturnType="NhomSanPham*">
+            ReturnType="NhomCuaSanPham*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>

@@ -105,6 +105,12 @@
       <Private>True</Private>
       <Type>Client</Type>
     </ProjectReference>
+    <ProjectReference Include="BANHANG.HTMLClient\BANHANG.HTMLClient.jsproj">
+      <Name>BANHANG.HTMLClient</Name>
+      <Project>{981f0d44-ec4a-43ce-9fab-1575c4a3efe3}</Project>
+      <Private>True</Private>
+      <Type>Client</Type>
+    </ProjectReference>
     <ProjectReference Include="BANHANG.Server\BANHANG.Server.vbproj">
       <Name>BANHANG.Server</Name>
       <Project>{525d13f9-3e6e-454a-9332-c8f2320c5603}</Project>

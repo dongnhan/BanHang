@@ -66,7 +66,7 @@ Namespace LightSwitchApplication
         Private Sub Tồn_Thực_Validate(results As ScreenValidationResultsBuilder)
             Try
                 Dim sanpham = DataWorkspace.BanHangData.Sản_Phẩm_Single(Tồn_Thực.Mã_Sản_Phẩm)
-                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Sản_PhẩmItem = sanpham
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham = sanpham
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.TonThuc = Tồn_Thực.Tồn
                 Me.Tồn = Tồn_Thực.Tồn
                 Dim donvitinh = DataWorkspace.BanHangData.Đơn_Vị_Tính_Single(DataWorkspace.BanHangData.Sản_Phẩm_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
