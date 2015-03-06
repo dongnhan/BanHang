@@ -138,6 +138,11 @@
       <Client>MICROSOFT.LIGHTSWITCH.EXTENSIONS.CLIENT;MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT</Client>
       <Server>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</Server>
     </LightSwitchExtension>
+    <LightSwitchExtension Include="Extensions\Wijmo.LightSwitch.lspkg">
+      <ExtensionId>Wijmo.LightSwitch</ExtensionId>
+      <Client>WIJMO.LIGHTSWITCH.CLIENT;WIJMO.LIGHTSWITCH.COMMON;WIJMO.LIGHTSWITCH.CLIENT.DESIGN</Client>
+      <Server>WIJMO.LIGHTSWITCH.COMMON;WIJMO.LIGHTSWITCH.SERVER</Server>
+    </LightSwitchExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
 </Project>

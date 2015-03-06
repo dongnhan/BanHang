@@ -28,7 +28,7 @@
               Name="Sản_Phẩm"
               Kind="Collection"
               DataType="CollectionView$SanPham"
-              View="Microsoft.LightSwitch.MobileWeb:TileList">
+              View="Microsoft.LightSwitch.MobileWeb:Table">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="Sản_Phẩm" />

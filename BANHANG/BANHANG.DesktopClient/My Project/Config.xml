@@ -42,5 +42,7 @@
     <ExtensionAssembly>DevExpress.Xpf.Ribbon.v13.1, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
     <ExtensionAssembly>DevExpress.XtraReports.v13.1.LightSwitch.Common, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
     <ExtensionAssembly>DevExpress.XtraReports.v13.1.LightSwitch.Client, Version=13.1.8.5, Culture=neutral, PublicKeyToken=B88D1754D700E49A</ExtensionAssembly>
+    <ExtensionAssembly>Wijmo.LightSwitch.Client, Version=4.0.20142.37, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
+    <ExtensionAssembly>Wijmo.LightSwitch.Common, Version=4.0.20142.37, Culture=neutral, PublicKeyToken=null</ExtensionAssembly>
   </ExtensionAssemblies>
 </Configuration>
