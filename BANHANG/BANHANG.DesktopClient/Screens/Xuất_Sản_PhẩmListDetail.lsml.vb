@@ -65,13 +65,15 @@ Namespace LightSwitchApplication
 
         Private Sub Tồn_Thực_Validate(results As ScreenValidationResultsBuilder)
             Try
+               
                 Dim sanpham = DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham = sanpham
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.TonThuc = Tồn_Thực.Tồn
                 Me.Tồn = Tồn_Thực.Tồn
                 Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
-
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
                 'Me.Tồn = Tồn_Thực.Tồn
                 'If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
                 '    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Me.Tồn_Kho.Giá
@@ -96,6 +98,19 @@ Namespace LightSwitchApplication
 
         Private Sub Báo_cáo_Execute()
             Me.Application.ShowXuatSanPhamReportPreviewScreen(Me.Xuất_Sản_Phẩm.SelectedItem.Id, NumToText(Me.Xuất_Sản_Phẩm.SelectedItem.Tổng_tiền)) ' Write your code here.
+
+        End Sub
+
+        Private Sub Xuất_Sản_Phẩm_Chi_Tiết_Validate(results As ScreenValidationResultsBuilder)
+            Try
+                If Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Số_lượng = 0 Then
+                    results.AddPropertyError("Phải chọn số lượng xuất khác 0")
+                    Me.OpenModalWindow("GroupChiTiet")
+                End If
+            Catch ex As Exception
+
+            End Try
+            ' results.AddPropertyError("<Error-Message>")
 
         End Sub
     End Class

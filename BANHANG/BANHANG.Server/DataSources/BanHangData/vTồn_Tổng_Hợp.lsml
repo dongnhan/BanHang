@@ -105,6 +105,27 @@
             Value="n2" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <KeyProperty
+        Name="Giá"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Giá_nhập"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="38"
+            Scale="6" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -138,16 +159,36 @@
                         NodeType="And">
                         <BinaryExpression.Left>
                           <BinaryExpression
-                            NodeType="Equal">
+                            NodeType="And">
                             <BinaryExpression.Left>
-                              <ChainExpression>
-                                <MemberExpression
-                                  Member="Đơn_Vị_Tính" />
-                              </ChainExpression>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Giá" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Giá" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Left>
                             <BinaryExpression.Right>
-                              <ParameterExpression
-                                Parameter="Đơn_Vị_Tính" />
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Đơn_Vị_Tính" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Đơn_Vị_Tính" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Right>
                           </BinaryExpression>
                         </BinaryExpression.Left>
@@ -264,6 +305,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Đơn_Vị_Tính' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Giá"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Giá' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -290,16 +339,36 @@
                         NodeType="And">
                         <BinaryExpression.Left>
                           <BinaryExpression
-                            NodeType="Equal">
+                            NodeType="And">
                             <BinaryExpression.Left>
-                              <ChainExpression>
-                                <MemberExpression
-                                  Member="Đơn_Vị_Tính" />
-                              </ChainExpression>
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Giá" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Giá" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Left>
                             <BinaryExpression.Right>
-                              <ParameterExpression
-                                Parameter="Đơn_Vị_Tính" />
+                              <BinaryExpression
+                                NodeType="Equal">
+                                <BinaryExpression.Left>
+                                  <ChainExpression>
+                                    <MemberExpression
+                                      Member="Đơn_Vị_Tính" />
+                                  </ChainExpression>
+                                </BinaryExpression.Left>
+                                <BinaryExpression.Right>
+                                  <ParameterExpression
+                                    Parameter="Đơn_Vị_Tính" />
+                                </BinaryExpression.Right>
+                              </BinaryExpression>
                             </BinaryExpression.Right>
                           </BinaryExpression>
                         </BinaryExpression.Left>
@@ -416,6 +485,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Đơn_Vị_Tính' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Giá"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Giá' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -487,6 +564,18 @@
           Scale="2"
           Type="decimal"
           Property="vTồn_Tổng_HợpItem/Properties[Tồn]" />
+        <SsdlProperty
+          Name="Giá"
+          Nullable="False"
+          Type="decimal"
+          Property="vTồn_Tổng_HợpItem/Properties[Giá]" />
+        <SsdlProperty
+          Name="Giá nhập"
+          Nullable="True"
+          Precision="38"
+          Scale="6"
+          Type="decimal"
+          Property="vTồn_Tổng_HợpItem/Properties[Giá_nhập]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

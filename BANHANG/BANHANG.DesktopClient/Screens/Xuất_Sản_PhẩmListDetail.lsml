@@ -402,19 +402,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Giá_vốn1"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="XuatSanPhamChiTiet/Properties[Giá_vốn]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Phần_trăm_thuế1"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Percent">
@@ -475,6 +462,20 @@
                       <ChainExpression>
                         <MemberExpression
                           Member="XuatSanPhamChiTiet/Properties[Tổng_tiền]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Giá_vốn1"
+                  IsHidden="True"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="XuatSanPhamChiTiet/Properties[Giá_vốn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
