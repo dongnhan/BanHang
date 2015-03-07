@@ -341,7 +341,7 @@
     <LightSwitchModel Include="DataSources\BanHangData\Đặt_Hàng_Chi_Tiết.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Đối_Tượng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Đơn_Vị_Sử_Dụng.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\Đơn_Vị_Tính.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\DonViTinh.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Năm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nhập_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
@@ -349,7 +349,7 @@
     <LightSwitchModel Include="DataSources\BanHangData\Nhóm_của_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nhóm_Đối_Tượng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nhóm_Sản_Phẩm.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\SanPham.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Tháng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Thus.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Thu_Chi_Tiết.lsml" />

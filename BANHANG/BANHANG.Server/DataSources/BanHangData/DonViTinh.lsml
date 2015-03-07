@@ -150,7 +150,7 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Đơn_Vị_Tính"
+      Name="DonViTinh"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
@@ -160,7 +160,7 @@
       Association="Đơn_Vị_TínhItem_BangGiaChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        EntitySet="DonViTinh" />
       <AssociationSetEnd
         Name="BangGiaChiTiet"
         EntitySet="Bảng_Giá_Chi_Tiết" />
@@ -170,7 +170,7 @@
       Association="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        EntitySet="DonViTinh" />
       <AssociationSetEnd
         Name="Đặt_Hàng_Chi_Tiết"
         EntitySet="Đặt_Hàng_Chi_Tiết" />
@@ -180,7 +180,7 @@
       Association="Đơn_Vị_TínhItem_NhapSanPhamChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        EntitySet="DonViTinh" />
       <AssociationSetEnd
         Name="NhapSanPhamChiTiet"
         EntitySet="Nhập_Sản_Phẩm_Chi_Tiết" />
@@ -190,23 +190,23 @@
       Association="Đơn_Vị_TínhItem_SanPham">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        EntitySet="DonViTinh" />
       <AssociationSetEnd
         Name="SanPham"
-        EntitySet="Sản_Phẩm" />
+        EntitySet="SanPham" />
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
       Association="Đơn_Vị_TínhItem_XuatSanPhamChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        EntitySet="DonViTinh" />
       <AssociationSetEnd
         Name="XuatSanPhamChiTiet"
         EntitySet="Xuất_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
-      Name="Đơn_Vị_Tính_Single"
+      Name="DonViTinh_Single"
       ReturnType="Đơn_Vị_TínhItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -233,7 +233,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đơn_Vị_Tính" />
+            Member="DonViTinh" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -246,7 +246,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Đơn_Vị_Tính_SingleOrDefault"
+      Name="DonViTinh_SingleOrDefault"
       ReturnType="Đơn_Vị_TínhItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -273,7 +273,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đơn_Vị_Tính" />
+            Member="DonViTinh" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -292,7 +292,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Đơn_Vị_Tính">
+      EntitySet="DonViTinh">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"

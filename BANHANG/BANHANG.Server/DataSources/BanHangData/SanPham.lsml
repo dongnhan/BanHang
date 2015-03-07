@@ -178,7 +178,7 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Sản_Phẩm"
+      Name="SanPham"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
@@ -188,7 +188,7 @@
       Association="SanPham_BangGiaChiTiet">
       <AssociationSetEnd
         Name="SanPham"
-        EntitySet="Sản_Phẩm" />
+        EntitySet="SanPham" />
       <AssociationSetEnd
         Name="BangGiaChiTiet"
         EntitySet="Bảng_Giá_Chi_Tiết" />
@@ -198,7 +198,7 @@
       Association="SanPham_Đặt_Hàng_Chi_TiếtItem">
       <AssociationSetEnd
         Name="SanPham"
-        EntitySet="Sản_Phẩm" />
+        EntitySet="SanPham" />
       <AssociationSetEnd
         Name="Đặt_Hàng_Chi_Tiết"
         EntitySet="Đặt_Hàng_Chi_Tiết" />
@@ -208,7 +208,7 @@
       Association="SanPham_NhapSanPhamChiTiet">
       <AssociationSetEnd
         Name="SanPham"
-        EntitySet="Sản_Phẩm" />
+        EntitySet="SanPham" />
       <AssociationSetEnd
         Name="NhapSanPhamChiTiet"
         EntitySet="Nhập_Sản_Phẩm_Chi_Tiết" />
@@ -218,7 +218,7 @@
       Association="SanPham_NhomCuaSanPham">
       <AssociationSetEnd
         Name="SanPham"
-        EntitySet="Sản_Phẩm" />
+        EntitySet="SanPham" />
       <AssociationSetEnd
         Name="NhomCuaSanPham"
         EntitySet="Nhóm_của_Sản_Phẩm" />
@@ -228,13 +228,13 @@
       Association="SanPham_XuatSanPhamChiTiet">
       <AssociationSetEnd
         Name="SanPham"
-        EntitySet="Sản_Phẩm" />
+        EntitySet="SanPham" />
       <AssociationSetEnd
         Name="XuatSanPhamChiTiet"
         EntitySet="Xuất_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
-      Name="Sản_Phẩm_Single"
+      Name="SanPham_Single"
       ReturnType="SanPham">
       <QueryOperation.Attributes>
         <Generated />
@@ -261,7 +261,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Sản_Phẩm" />
+            Member="SanPham" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -274,7 +274,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Sản_Phẩm_SingleOrDefault"
+      Name="SanPham_SingleOrDefault"
       ReturnType="SanPham">
       <QueryOperation.Attributes>
         <Generated />
@@ -301,7 +301,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Sản_Phẩm" />
+            Member="SanPham" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -320,7 +320,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Sản_Phẩm">
+      EntitySet="SanPham">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
