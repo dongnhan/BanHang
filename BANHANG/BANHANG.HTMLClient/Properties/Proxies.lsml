@@ -97,12 +97,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:SanPham" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:ThángItem" />
     </EntityType.Attributes>
   </EntityType>
@@ -370,10 +364,4 @@
         Target="ServiceInterface:XuatSanPham_XuatSanPhamChiTiet" />
     </Association.Attributes>
   </Association>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Test_ThửItem" />
-    </EntityType.Attributes>
-  </EntityType>
 </Application>

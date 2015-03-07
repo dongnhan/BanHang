@@ -377,7 +377,6 @@
     <LightSwitchModel Include="DataSources\BanHangData\NhomNhaCungCap.lsml">
       <DependentUpon>Nhóm_Đối_Tượng.lsml</DependentUpon>
     </LightSwitchModel>
-    <LightSwitchModel Include="DataSources\BanHangData\TestThu.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -457,7 +456,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3790/</IISUrl>
+          <IISUrl>http://localhost:2529/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

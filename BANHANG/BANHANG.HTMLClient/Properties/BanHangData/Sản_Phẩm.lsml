@@ -7,12 +7,12 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Đơn_Vị_TínhItem" />
+        Target="ServiceInterface:SanPham" />
       <DefaultScreen
-        Value="ViewĐơn_Vị_TínhItem">
+        Value="ViewSanPham">
         <DefaultScreen.Attributes>
           <ScreenParameterMapping
-            ScreenParameter="ViewĐơn_Vị_TínhItem/Properties[Đơn_Vị_TínhItem]" />
+            ScreenParameter="ViewSanPham/Properties[SanPham]" />
         </DefaultScreen.Attributes>
       </DefaultScreen>
     </EntityType.Attributes>
