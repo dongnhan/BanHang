@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="NămItem">
+    Name="ThángItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -40,14 +40,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Năm"
+      Name="Thang"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="NămItem" />
+      EntityType="ThángItem" />
     <QueryOperation
-      Name="Năm_Single"
-      ReturnType="NămItem">
+      Name="Thang_Single"
+      ReturnType="ThángItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -73,7 +73,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Năm" />
+            Member="Thang" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -86,8 +86,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Năm_SingleOrDefault"
-      ReturnType="NămItem">
+      Name="Thang_SingleOrDefault"
+      ReturnType="ThángItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -113,7 +113,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Năm" />
+            Member="Thang" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -132,22 +132,22 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Năm">
+      EntitySet="Thang">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Năm" />
+          Table="Tháng" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           Type="int"
-          Property="NămItem/Properties[Id]" />
+          Property="ThángItem/Properties[Id]" />
         <SsdlProperty
           MaxLength="50"
           Name="Ten"
           Nullable="False"
           Type="nvarchar"
-          Property="NămItem/Properties[Ten]" />
+          Property="ThángItem/Properties[Ten]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

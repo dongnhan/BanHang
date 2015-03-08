@@ -11,7 +11,7 @@
     <Partial
       IsPrimary="True" />
     <HomeScreen
-      Value="Home" />
+      Value="vTồn_Quỹ_Tiền_MặtBrowse" />
   </Application.Attributes>
   <EntityContainerGroup
     Name="DataWorkspace">
@@ -46,5 +46,8 @@
     <ApplicationNavigationMethodLink
       Name="link1"
       Method="!module/Methods[showBrowseSản_Phẩm]" />
+    <ApplicationNavigationMethodLink
+      Name="link2"
+      Method="!module/Methods[showvTồn_Quỹ_Tiền_MặtBrowse]" />
   </Application.NavigationItems>
 </Application>
