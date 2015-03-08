@@ -134,10 +134,10 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="vTồn_Tổng_Hợp"
+      Name="vTon_Tong_Hop"
       EntityType="vTồn_Tổng_HợpItem" />
     <QueryOperation
-      Name="vTồn_Tổng_Hợp_Single"
+      Name="vTon_Tong_Hop_Single"
       ReturnType="vTồn_Tổng_HợpItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -264,7 +264,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vTồn_Tổng_Hợp" />
+            Member="vTon_Tong_Hop" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -317,7 +317,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="vTồn_Tổng_Hợp_SingleOrDefault"
+      Name="vTon_Tong_Hop_SingleOrDefault"
       ReturnType="vTồn_Tổng_HợpItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -444,7 +444,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vTồn_Tổng_Hợp" />
+            Member="vTon_Tong_Hop" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -503,7 +503,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="vTồn_Tổng_Hợp">
+      EntitySet="vTon_Tong_Hop">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
