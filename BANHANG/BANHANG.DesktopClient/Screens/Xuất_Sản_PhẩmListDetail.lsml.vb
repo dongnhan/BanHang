@@ -1,4 +1,4 @@
-﻿
+﻿Imports mi
 Namespace LightSwitchApplication
 
     Public Class Xuất_Sản_PhẩmListDetail
@@ -55,7 +55,20 @@ Namespace LightSwitchApplication
         Private Sub Xuất_Sản_PhẩmListDetail_InitializeDataWorkspace(saveChangesTo As List(Of Microsoft.LightSwitch.IDataService))
             Me.Thang = Today.Month
             Me.Nam = Today.Year ' Write your code here.
-
+            'ẩn sản phẩm nếu KiemTraTonKho = 0
+            If Me.Application.KiemTraTonKho = 0 Then
+                'FindControl("Tồn_Thực").SetProperty("IsReadOnly", False)
+                'FindControl("Sản_Phẩm").SetProperty("IsReadOnly", True)
+                FindControl("Tồn_Thực").IsVisible = True
+                FindControl("Sản_Phẩm").IsVisible = False
+            End If
+            'ẩn tồn_thực nếu KiemTraTonKho = 2
+            If Me.Application.KiemTraTonKho = 2 Then
+                'FindControl("Tồn_Thực").SetProperty("IsReadOnly", False)
+                'FindControl("Sản_Phẩm").SetProperty("IsReadOnly", True)
+                FindControl("Tồn_Thực").IsVisible = False
+                FindControl("Sản_Phẩm").IsVisible = True
+            End If
         End Sub
 
         Private Sub Xuất_Sản_Phẩm_SelectionChanged()
@@ -65,14 +78,16 @@ Namespace LightSwitchApplication
 
         Private Sub Tồn_Thực_Validate(results As ScreenValidationResultsBuilder)
             Try
-               
+
                 Dim sanpham = DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham = sanpham
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.TonThuc = Tồn_Thực.Tồn
                 Me.Tồn = Tồn_Thực.Tồn
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.KiemTraTonKho = Me.Application.KiemTraTonKho
                 Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
+                'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
                 'Me.Tồn = Tồn_Thực.Tồn
                 'If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
@@ -93,7 +108,7 @@ Namespace LightSwitchApplication
             Catch ex As Exception
 
             End Try
-            
+
         End Sub
 
         Private Sub Báo_cáo_Execute()
@@ -112,6 +127,26 @@ Namespace LightSwitchApplication
             End Try
             ' results.AddPropertyError("<Error-Message>")
 
+        End Sub
+
+        Private Sub Sản_Phẩm_Validate(results As ScreenValidationResultsBuilder)
+            ' results.AddPropertyError("<Error-Message>")
+            Try
+
+                Dim sanpham = DataWorkspace.BanHangData.SanPham_Single(Sản_Phẩm.Id)
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham = sanpham
+                'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.TonThuc = Tồn_Thực.Tồn
+                'Me.Tồn = Tồn_Thực.Tồn
+                'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.KiemTraTonKho = Me.Application.KiemTraTonKho
+                Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(Sản_Phẩm.Đơn_Vị_TínhItem.Id)
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Sản_Phẩm.Giá
+                'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
+                'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
+                
+            Catch ex As Exception
+
+            End Try
         End Sub
     End Class
 

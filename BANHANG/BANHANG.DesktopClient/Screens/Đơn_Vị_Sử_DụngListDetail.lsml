@@ -187,6 +187,19 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
+                  Name="Kiểm_tra_tồn_kho"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Đơn_Vị_Sử_DụngItem/Properties[Kiểm_tra_tồn_kho]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Hệ_thống_mặc_định1"
                   Kind="Value"
                   DataType=":Boolean">

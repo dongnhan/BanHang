@@ -118,6 +118,23 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Kiểm_tra_tồn_kho"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="Không cho xuất âm"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Cho xuất âm"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Xuất từ danh mục"
+            Value="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -292,6 +309,11 @@
           Nullable="False"
           Type="bit"
           Property="Đơn_Vị_Sử_DụngItem/Properties[Hệ_thống_mặc_định]" />
+        <SsdlProperty
+          Name="Kiểm tra tồn kho"
+          Nullable="False"
+          Type="int"
+          Property="Đơn_Vị_Sử_DụngItem/Properties[Kiểm_tra_tồn_kho]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

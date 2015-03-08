@@ -336,6 +336,79 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
+                  Name="Sản_Phẩm"
+                  Kind="Details"
+                  DataType="SanPham">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Xuất_Sản_PhẩmListDetail/Properties[Sản_Phẩm]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="SanPham"
+                    Kind="Details"
+                    DataType="SanPham"
+                    View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="Tên"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="SanPham/Properties[Tên]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Đơn_Vị_TínhItem2"
+                      Kind="Details"
+                      DataType="Đơn_Vị_TínhItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="SanPham/Properties[Đơn_Vị_TínhItem]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="Đơn_Vị_TínhItem3"
+                        Kind="Details"
+                        DataType="Đơn_Vị_TínhItem">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Giá"
+                      Kind="Value"
+                      DataType="Microsoft.LightSwitch.Extensions:Money">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="SanPham/Properties[Giá]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
                   Name="Đơn_Vị_TínhItem1"
                   Kind="Details"
                   DataType="Đơn_Vị_TínhItem"
@@ -1335,6 +1408,9 @@
           <Required />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="Sản_Phẩm"
+        PropertyType="SanPham" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
