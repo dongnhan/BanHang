@@ -19,7 +19,7 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="Là_Nhóm_Khách_Hàng" />
+                  Member="Là_nhóm_Khách_Hàng" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>

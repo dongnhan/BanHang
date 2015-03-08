@@ -46,22 +46,6 @@
             Value="500" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="Là_Nhóm_Khách_Hàng"
-        PropertyType=":Boolean">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Là_Nhóm_Nhà_Cung_Cấp"
-        PropertyType=":Boolean">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Name="Đối_Tượng"
         Association="FK_Đối_Tượng_Nhóm_Đối_Tượng"
@@ -72,6 +56,22 @@
         Association="FK_Nhóm_của_Đối_Tượng_Nhóm_Đối_Tượng"
         FromEnd="Nhóm_Đối_Tượng"
         ToEnd="Nhóm_của_Đối_Tượng" />
+      <EntityProperty
+        Name="Là_nhóm_Khách_Hàng"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Là_nhóm_Nhà_Cung_Cấp"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -245,15 +245,15 @@
           Type="nvarchar"
           Property="Nhóm_Đối_TượngItem/Properties[Ghi_chú]" />
         <SsdlProperty
-          Name="Là Nhóm Khách Hàng"
+          Name="Là nhóm Khách Hàng"
           Nullable="False"
           Type="bit"
-          Property="Nhóm_Đối_TượngItem/Properties[Là_Nhóm_Khách_Hàng]" />
+          Property="Nhóm_Đối_TượngItem/Properties[Là_nhóm_Khách_Hàng]" />
         <SsdlProperty
-          Name="Là Nhóm Nhà Cung Cấp"
+          Name="Là nhóm Nhà Cung Cấp"
           Nullable="False"
           Type="bit"
-          Property="Nhóm_Đối_TượngItem/Properties[Là_Nhóm_Nhà_Cung_Cấp]" />
+          Property="Nhóm_Đối_TượngItem/Properties[Là_nhóm_Nhà_Cung_Cấp]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

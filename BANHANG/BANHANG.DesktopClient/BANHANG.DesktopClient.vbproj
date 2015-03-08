@@ -338,6 +338,15 @@
     <Compile Include="Screens\NhapSanPhamReportPreviewScreen.lsml.vb">
       <DependentUpon>NhapSanPhamReportPreviewScreen.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\NhomKhachHangListDetail.lsml.vb">
+      <DependentUpon>NhomKhachHangListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\NhomNhaCungCapListDetail.lsml.vb">
+      <DependentUpon>NhomNhaCungCapListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Nhóm_Sản_PhẩmListDetail.lsml.vb">
+      <DependentUpon>Nhóm_Sản_PhẩmListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Nhập_Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Nhập_Sản_PhẩmListDetail.lsml</DependentUpon>
     </Compile>
@@ -433,6 +442,9 @@
     <LightSwitchModel Include="Screens\vTheKhoReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\XuatSanPhamReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\Sản_PhẩmListDetail.lsml" />
+    <LightSwitchModel Include="Screens\NhomKhachHangListDetail.lsml" />
+    <LightSwitchModel Include="Screens\NhomNhaCungCapListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Nhóm_Sản_PhẩmListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

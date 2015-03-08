@@ -99,6 +99,15 @@
     <ApplicationCommand
       Name="ScreenCommandShowSản_PhẩmListDetail"
       Target="!module/Methods[ShowSản_PhẩmListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhomKhachHangListDetail"
+      Target="!module/Methods[ShowNhomKhachHangListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhomNhaCungCapListDetail"
+      Target="!module/Methods[ShowNhomNhaCungCapListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhóm_Sản_PhẩmListDetail"
+      Target="!module/Methods[ShowNhóm_Sản_PhẩmListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -109,11 +118,23 @@
           Value="DANH MỤC" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
+        Name="NhomKhachHangListDetail"
+        Command="!module/Commands[ScreenCommandShowNhomKhachHangListDetail]" />
+      <ApplicationNavigationLink
         Name="KhachHangListDetail"
         Command="!module/Commands[ScreenCommandShowKhachHangListDetail]" />
       <ApplicationNavigationLink
+        Name="NhomNhaCungCapListDetail"
+        Command="!module/Commands[ScreenCommandShowNhomNhaCungCapListDetail]" />
+      <ApplicationNavigationLink
         Name="NhaCungCapListDetail"
         Command="!module/Commands[ScreenCommandShowNhaCungCapListDetail]" />
+      <ApplicationNavigationLink
+        Name="Nhóm_Sản_PhẩmListDetail"
+        Command="!module/Commands[ScreenCommandShowNhóm_Sản_PhẩmListDetail]" />
+      <ApplicationNavigationLink
+        Name="Sản_PhẩmListDetail"
+        Command="!module/Commands[ScreenCommandShowSản_PhẩmListDetail]" />
       <ApplicationNavigationLink
         Name="Đơn_Vị_Sử_DụngListDetail"
         Command="!module/Commands[ScreenCommandShowĐơn_Vị_Sử_DụngListDetail]" />
@@ -123,9 +144,6 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
-      <ApplicationNavigationLink
-        Name="Sản_PhẩmListDetail"
-        Command="!module/Commands[ScreenCommandShowSản_PhẩmListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
@@ -170,11 +188,11 @@
           Value="BÁN HÀNG" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="link3"
-        Command="!module/Commands[ScreenCommandShowXuất_Sản_PhẩmListDetail]" />
-      <ApplicationNavigationLink
         Name="link15"
         Command="!module/Commands[ScreenCommandShowBảng_GiáListDetail]" />
+      <ApplicationNavigationLink
+        Name="link3"
+        Command="!module/Commands[ScreenCommandShowXuất_Sản_PhẩmListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group3">

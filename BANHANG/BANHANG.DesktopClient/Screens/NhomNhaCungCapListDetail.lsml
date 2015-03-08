@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="vLời_Lỗ_NgàySearch">
+    Name="NhomNhaCungCapListDetail">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangData" />
       <DisplayName
-        Value="LỜI LỖ NGÀY" />
+        Value="NHÓM NHÀ CUNG CẤP" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -19,137 +19,133 @@
         View="Microsoft.LightSwitch.RichClient:Screen">
         <ContentItem
           Name="ScreenLayout"
-          Kind="Group">
+          Kind="Group"
+          View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
           <ContentItem
-            Name="Group"
+            Name="ListColumn"
             Kind="Group">
             <ContentItem
-              Name="Group1"
-              Kind="Group"
-              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              Name="Nhóm_Đối_TượngItemList"
+              Kind="Collection"
+              DataType="CollectionView$Nhóm_Đối_TượngItem"
+              View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Nhóm Nhà Cung Cấp" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="NhomNhaCungCapListDetail/Properties[NhomNhaCungCap]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
               <ContentItem
-                Name="Từ_ngày"
-                Kind="Value"
-                DataType=":Date">
+                Name="RowTemplate"
+                Kind="Details"
+                DataType="Nhóm_Đối_TượngItem">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vLời_Lỗ_NgàySearch/Properties[Từ_ngày]" />
-                    </ChainExpression>
+                    <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem
+                  Name="Tên"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhóm_Đối_TượngItem/Properties[Tên]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Ghi_chú"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhóm_Đối_TượngItem/Properties[Ghi_chú]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem>
-              <ContentItem
-                Name="Đến_ngày"
-                Kind="Value"
-                DataType=":Date">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vLời_Lỗ_NgàySearch/Properties[Đến_ngày]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="Nhóm_Đối_TượngItemListAddAndEditNew"
+                  Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Add..." />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="NhomNhaCungCapListDetail/Methods[Nhóm_Đối_TượngItemListAddAndEditNew]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="NhomNhaCungCap_DeleteSelected"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="NhomNhaCungCapListDetail/Properties[NhomNhaCungCap]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        Value="Center"
+                        Value="Collapsed"
                         ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="Top"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-          </ContentItem>
-          <ContentItem
-            Name="grid"
-            Kind="Collection"
-            DataType="CollectionView$vLời_Lỗ_NgàyItem"
-            View="C1.LightSwitch.FlexGrid:C1FlexGrid">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Lời Lỗ Ngày" />
-            </ContentItem.Attributes>
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="vLời_Lỗ_NgàySearch/Properties[vLời_Lỗ_Ngày]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-            <ContentItem
-              Name="RowTemplate"
-              Kind="Details"
-              DataType="vLời_Lỗ_NgàyItem">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression />
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="Ngày"
-                Kind="Value"
-                DataType=":Date">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Tiền_Lời"
-                Kind="Value"
-                DataType="Microsoft.LightSwitch.Extensions:Money?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vLời_Lỗ_NgàyItem/Properties[Tiền_Lời]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[ShowAsLink]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        Value="True"
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="625458240000000000"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[ShowAddNewRowProperty]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="False"
                         ResultType=":Boolean" />
                     </ChainExpression>
                   </ScreenExpressionTree>
@@ -158,42 +154,104 @@
             </ContentItem>
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
-                      Value="False"
+                      Value="2"
+                      ResultType=":Double" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="DetailsColumn"
+            Kind="Group">
+            <ContentItem
+              Name="Nhóm_Đối_TượngItemDetails"
+              Kind="Details"
+              DataType="Nhóm_Đối_TượngItem"
+              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Nhóm Đối Tượng Details" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="NhomNhaCungCapListDetail/Properties[NhomNhaCungCap]" />
+                    <MemberExpression
+                      Member="SelectedItem" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Tên1"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Nhóm_Đối_TượngItem/Properties[Tên]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Ghi_chú1"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Nhóm_Đối_TượngItem/Properties[Ghi_chú]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Top"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="True"
                       ResultType=":Boolean" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
               <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
-                      Value="Collapsed"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="Stretch"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="625458240000000000"
-                      ResultType=":String" />
+                      Value="3"
+                      ResultType=":Double" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
@@ -208,7 +266,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vLời_Lỗ_NgàySearch/Methods[Save]" />
+                    Target="NhomNhaCungCapListDetail/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -220,7 +278,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vLời_Lỗ_NgàySearch/Methods[Refresh]" />
+                    Target="NhomNhaCungCapListDetail/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -232,7 +290,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vLời_Lỗ_NgàySearch/Methods[Báo_cáo]" />
+                    Target="NhomNhaCungCapListDetail/Methods[Báo_cáo]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -256,7 +314,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vLời_Lỗ_NgàySearch/Methods[Close]" />
+                    Target="NhomNhaCungCapListDetail/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -307,97 +365,49 @@
       </ScreenMethod>
       <ScreenMethod
         Name="Báo_cáo" />
+      <ScreenMethod
+        Name="Nhóm_Đối_TượngItemListAddAndEditNew">
+        <ScreenMethod.Attributes>
+          <BuiltInMethodOverride
+            MethodName="AddAndEditNew" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="vLời_Lỗ_Ngày"
+        Name="NhomNhaCungCap"
         PageSize="45"
-        PropertyType="CollectionView$vLời_Lỗ_NgàyItem">
+        PropertyType="CollectionView$Nhóm_Đối_TượngItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="vLời_Lỗ_NgàyQuery"
-            ReturnType="vLời_Lỗ_NgàyItem*">
+            Name="NhomNhaCungCapQuery"
+            ReturnType="Nhóm_Đối_TượngItem*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <TernaryExpression
-                  NodeType="Between">
-                  <TernaryExpression.First>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
-                    </ChainExpression>
-                  </TernaryExpression.First>
-                  <TernaryExpression.Second>
-                    <ParameterExpression
-                      Parameter="Từ_ngày" />
-                  </TernaryExpression.Second>
-                  <TernaryExpression.Third>
-                    <ParameterExpression
-                      Parameter="Đến_ngày" />
-                  </TernaryExpression.Third>
-                </TernaryExpression>
-              </QueryFilterExpressionTree>
+              <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[vLời_Lỗ_Ngày]" />
+                  Member="BanHangData/Members[NhomNhaCungCap]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
-            <ScreenQueryDefinition.Parameters>
-              <QueryParameter
-                Name="Từ_ngày"
-                ParameterType=":Date?" />
-              <QueryParameter
-                Name="Đến_ngày"
-                ParameterType=":Date?" />
-            </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="vLời_Lỗ_NgàySearch/Properties[vLời_Lỗ_Ngày]/Query">
-              <ArgumentExpression
-                Parameter="Từ_ngày">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="vLời_Lỗ_NgàySearch/Properties[Từ_ngày]" />
-                </ChainExpression>
-              </ArgumentExpression>
-              <ArgumentExpression
-                Parameter="Đến_ngày">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="vLời_Lỗ_NgàySearch/Properties[Đến_ngày]" />
-                </ChainExpression>
-              </ArgumentExpression>
-            </CallExpression>
+              Target="NhomNhaCungCapListDetail/Properties[NhomNhaCungCap]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
-      <ScreenProperty
-        Name="Từ_ngày"
-        PropertyType=":Date">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="Đến_ngày"
-        PropertyType=":Date">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowvLời_Lỗ_NgàySearch">
+      Name="ShowNhomNhaCungCapListDetail">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="vLời_Lỗ_NgàySearch" />
+          TargetScreen="NhomNhaCungCapListDetail" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>
