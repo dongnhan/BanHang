@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="vDoanh_Thu_NgàyBrowse">
+    Name="vLời_Lỗ_NgàyBrowse">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangData" />
       <DisplayName
-        Value="DOANH THU" />
+        Value="LỜI LỖ" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,7 +22,7 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="vDoanh_Thu_NgàyItemList"
+            Name="vLời_Lỗ_NgàyItemList"
             Kind="Group">
             <ContentItem
               Name="Group"
@@ -37,7 +37,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vDoanh_Thu_NgàyBrowse/Properties[Từ_ngày]" />
+                        Member="vLời_Lỗ_NgàyBrowse/Properties[Từ_ngày]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -51,33 +51,33 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vDoanh_Thu_NgàyBrowse/Properties[Đến_ngày]" />
+                        Member="vLời_Lỗ_NgàyBrowse/Properties[Đến_ngày]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
             <ContentItem
-              Name="vDoanh_Thu_Ngày"
+              Name="vLời_Lỗ_Ngày"
               Kind="Collection"
-              DataType="CollectionView$vDoanh_Thu_NgàyItem"
+              DataType="CollectionView$vLời_Lỗ_NgàyItem"
               View="Microsoft.LightSwitch.MobileWeb:Table">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Doanh_Thu_Ngày" />
+                  Value="vLời_Lỗ_Ngày" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="vDoanh_Thu_NgàyBrowse/Properties[vDoanh_Thu_Ngày]" />
+                      Member="vLời_Lỗ_NgàyBrowse/Properties[vLời_Lỗ_Ngày]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="vDoanh_Thu_NgàyItem"
+                DataType="vLời_Lỗ_NgàyItem"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -96,7 +96,20 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="vDoanh_Thu_NgàyItem/Properties[Ngày]" />
+                          Member="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Tiền_Lời"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="vLời_Lỗ_NgàyItem/Properties[Tiền_Lời]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -107,31 +120,6 @@
                         <ChainExpression>
                           <ConstantExpression
                             Value="Large"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Doanh_thu"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="vDoanh_Thu_NgàyItem/Properties[Doanh_thu]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -157,7 +145,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vDoanh_Thu_NgàyBrowse/Properties[vDoanh_Thu_Ngày]" />
+                        Member="vLời_Lỗ_NgàyBrowse/Properties[vLời_Lỗ_Ngày]" />
                       <CallExpression
                         Target="viewSelected" />
                     </ChainExpression>
@@ -167,7 +155,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="SearchvDoanh_Thu_Ngày"
+                Name="SearchvLời_Lỗ_Ngày"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -179,7 +167,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="vDoanh_Thu_NgàyBrowse/Properties[vDoanh_Thu_Ngày]" />
+                          Member="vLời_Lỗ_NgàyBrowse/Properties[vLời_Lỗ_Ngày]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -244,13 +232,13 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="vDoanh_Thu_Ngày"
+        Name="vLời_Lỗ_Ngày"
         PageSize="45"
-        PropertyType="CollectionView$vDoanh_Thu_NgàyItem">
+        PropertyType="CollectionView$vLời_Lỗ_NgàyItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="vDoanh_Thu_NgàyQuery"
-            ReturnType="vDoanh_Thu_NgàyItem*">
+            Name="vLời_Lỗ_NgàyQuery"
+            ReturnType="vLời_Lỗ_NgàyItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <TernaryExpression
@@ -258,7 +246,7 @@
                   <TernaryExpression.First>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vDoanh_Thu_NgàyItem/Properties[Ngày]" />
+                        Member="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
                     </ChainExpression>
                   </TernaryExpression.First>
                   <TernaryExpression.Second>
@@ -275,7 +263,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[vDoanh_Thu_Ngay]" />
+                  Member="BanHangData/Members[vLoi_Lo_Ngay]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>
@@ -291,19 +279,19 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="vDoanh_Thu_NgàyBrowse/Properties[vDoanh_Thu_Ngày]/Query">
+              Target="vLời_Lỗ_NgàyBrowse/Properties[vLời_Lỗ_Ngày]/Query">
               <ArgumentExpression
                 Parameter="Từ_ngày">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vDoanh_Thu_NgàyBrowse/Properties[Từ_ngày]" />
+                    Member="vLời_Lỗ_NgàyBrowse/Properties[Từ_ngày]" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
                 Parameter="Đến_ngày">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vDoanh_Thu_NgàyBrowse/Properties[Đến_ngày]" />
+                    Member="vLời_Lỗ_NgàyBrowse/Properties[Đến_ngày]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -328,10 +316,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showvDoanh_Thu_NgàyBrowse">
+      Name="showvLời_Lỗ_NgàyBrowse">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="vDoanh_Thu_NgàyBrowse" />
+          TargetScreen="vLời_Lỗ_NgàyBrowse" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

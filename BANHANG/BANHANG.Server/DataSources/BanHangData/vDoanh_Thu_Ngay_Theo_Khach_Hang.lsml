@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="vLời_Lỗ_Ngày_Theo_Khách_HàngItem">
+    Name="vDoanh_Thu_Ngày_Theo_Khách_HàngItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -65,7 +65,7 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Tiền_Lời"
+        Name="Doanh_thu"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
         <EntityProperty.Attributes>
           <DecimalConstraint
@@ -81,7 +81,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <KeyProperty
-        Name="c__DoiTuong"
+        Name="c__KhachHang"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
           <Required />
@@ -105,11 +105,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="vLời_Lỗ_Ngày_Theo_Khách_Hàng"
-      EntityType="vLời_Lỗ_Ngày_Theo_Khách_HàngItem" />
+      Name="vDoanh_Thu_Ngay_Theo_Khach_Hang"
+      EntityType="vDoanh_Thu_Ngày_Theo_Khách_HàngItem" />
     <QueryOperation
-      Name="vLời_Lỗ_Ngày_Theo_Khách_Hàng_Single"
-      ReturnType="vLời_Lỗ_Ngày_Theo_Khách_HàngItem">
+      Name="vDoanh_Thu_Ngay_Theo_Khach_Hang_Single"
+      ReturnType="vDoanh_Thu_Ngày_Theo_Khách_HàngItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -152,12 +152,12 @@
                                 <BinaryExpression.Left>
                                   <ChainExpression>
                                     <MemberExpression
-                                      Member="c__DoiTuong" />
+                                      Member="c__KhachHang" />
                                   </ChainExpression>
                                 </BinaryExpression.Left>
                                 <BinaryExpression.Right>
                                   <ParameterExpression
-                                    Parameter="c__DoiTuong" />
+                                    Parameter="c__KhachHang" />
                                 </BinaryExpression.Right>
                               </BinaryExpression>
                             </BinaryExpression.Right>
@@ -235,7 +235,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vLời_Lỗ_Ngày_Theo_Khách_Hàng" />
+            Member="vDoanh_Thu_Ngay_Theo_Khach_Hang" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -271,11 +271,11 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
-        Name="c__DoiTuong"
+        Name="c__KhachHang"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'c__DoiTuong' key property of the entity to retrieve." />
+            Value="The value of the 'c__KhachHang' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
@@ -288,8 +288,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="vLời_Lỗ_Ngày_Theo_Khách_Hàng_SingleOrDefault"
-      ReturnType="vLời_Lỗ_Ngày_Theo_Khách_HàngItem">
+      Name="vDoanh_Thu_Ngay_Theo_Khach_Hang_SingleOrDefault"
+      ReturnType="vDoanh_Thu_Ngày_Theo_Khách_HàngItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -332,12 +332,12 @@
                                 <BinaryExpression.Left>
                                   <ChainExpression>
                                     <MemberExpression
-                                      Member="c__DoiTuong" />
+                                      Member="c__KhachHang" />
                                   </ChainExpression>
                                 </BinaryExpression.Left>
                                 <BinaryExpression.Right>
                                   <ParameterExpression
-                                    Parameter="c__DoiTuong" />
+                                    Parameter="c__KhachHang" />
                                 </BinaryExpression.Right>
                               </BinaryExpression>
                             </BinaryExpression.Right>
@@ -415,7 +415,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vLời_Lỗ_Ngày_Theo_Khách_Hàng" />
+            Member="vDoanh_Thu_Ngay_Theo_Khach_Hang" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -451,11 +451,11 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
-        Name="c__DoiTuong"
+        Name="c__KhachHang"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'c__DoiTuong' key property of the entity to retrieve." />
+            Value="The value of the 'c__KhachHang' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
@@ -474,59 +474,59 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="vLời_Lỗ_Ngày_Theo_Khách_Hàng">
+      EntitySet="vDoanh_Thu_Ngay_Theo_Khach_Hang">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="vLời Lỗ Ngày Theo Khách Hàng" />
+          Table="vDoanh Thu Ngày Theo Khách Hàng" />
         <IsView />
         <SsdlProperty
           Name="Ngày"
           Nullable="False"
           Type="date"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Ngày]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Ngày]" />
         <SsdlProperty
           Name="Số lượng"
           Nullable="True"
           Precision="38"
           Scale="2"
           Type="decimal"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Số_lượng]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Số_lượng]" />
         <SsdlProperty
           Name="Mã Sản Phẩm"
           Nullable="False"
           Type="int"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Mã_Sản_Phẩm]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Mã_Sản_Phẩm]" />
         <SsdlProperty
           MaxLength="500"
           Name="Tên Sản Phẩm"
           Nullable="False"
           Type="nvarchar"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Tên_Sản_Phẩm]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Tên_Sản_Phẩm]" />
         <SsdlProperty
           MaxLength="500"
           Name="Đơn Vị Tính"
           Nullable="False"
           Type="nvarchar"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Đơn_Vị_Tính]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Đơn_Vị_Tính]" />
         <SsdlProperty
-          Name="Tiền Lời"
+          Name="Doanh thu"
           Nullable="True"
           Precision="38"
           Scale="2"
           Type="decimal"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Tiền_Lời]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Doanh_thu]" />
         <SsdlProperty
-          Name="_DoiTuong"
+          Name="_KhachHang"
           Nullable="False"
           Type="int"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[c__DoiTuong]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[c__KhachHang]" />
         <SsdlProperty
           MaxLength="500"
           Name="Tên Khách Hàng"
           Nullable="False"
           Type="nvarchar"
-          Property="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Tên_Khách_Hàng]" />
+          Property="vDoanh_Thu_Ngày_Theo_Khách_HàngItem/Properties[Tên_Khách_Hàng]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

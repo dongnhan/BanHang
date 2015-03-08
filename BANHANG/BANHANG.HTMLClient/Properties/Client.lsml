@@ -55,5 +55,20 @@
     <ApplicationNavigationMethodLink
       Name="link4"
       Method="!module/Methods[showvDoanh_Thu_NgàyBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link5"
+      Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Khách_HàngBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link6"
+      Method="!module/Methods[showvDoanh_Thu_Ngày_Theo_Khách_HàngBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link7"
+      Method="!module/Methods[showvDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link8"
+      Method="!module/Methods[showvLời_Lỗ_NgàyBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link9"
+      Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse]" />
   </Application.NavigationItems>
 </Application>

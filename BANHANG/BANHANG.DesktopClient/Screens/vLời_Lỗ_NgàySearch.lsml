@@ -341,7 +341,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[vLời_Lỗ_Ngày]" />
+                  Member="BanHangData/Members[vLoi_Lo_Ngay]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>

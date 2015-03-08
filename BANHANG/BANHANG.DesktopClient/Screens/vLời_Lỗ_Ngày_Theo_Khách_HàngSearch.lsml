@@ -484,7 +484,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[vLời_Lỗ_Ngày_Theo_Khách_Hàng]" />
+                  Member="BanHangData/Members[vLoi_Lo_Ngay_Theo_Khach_Hang]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>

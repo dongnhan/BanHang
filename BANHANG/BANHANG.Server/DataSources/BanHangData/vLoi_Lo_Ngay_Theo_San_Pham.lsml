@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="vLời_Lỗ_NgàyItem">
+    Name="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -15,6 +15,44 @@
       </EntityMethod>
     </EntityType.Methods>
     <EntityType.Properties>
+      <EntityProperty
+        Name="Số_lượng"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="38"
+            Scale="2" />
+          <NotSearchable />
+          <StringValueFormat
+            Value="n0" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="Mã_Sản_Phẩm"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="Tên_Sản_Phẩm"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="500" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="Đơn_Vị_Tính"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="500" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
       <EntityProperty
         Name="Tiền_Lời"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
@@ -31,22 +69,6 @@
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
-      <KeyProperty
-        Name="Thang"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <KeyProperty
-        Name="Nam"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
       <KeyProperty
         Name="Ngày"
         PropertyType=":Date">
@@ -66,11 +88,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="vLời_Lỗ_Ngày"
-      EntityType="vLời_Lỗ_NgàyItem" />
+      Name="vLoi_Lo_Ngay_Theo_San_Pham"
+      EntityType="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem" />
     <QueryOperation
-      Name="vLời_Lỗ_Ngày_Single"
-      ReturnType="vLời_Lỗ_NgàyItem">
+      Name="vLoi_Lo_Ngay_Theo_San_Pham_Single"
+      ReturnType="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -85,16 +107,36 @@
                 NodeType="And">
                 <BinaryExpression.Left>
                   <BinaryExpression
-                    NodeType="Equal">
+                    NodeType="And">
                     <BinaryExpression.Left>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Ngày" />
-                      </ChainExpression>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Ngày" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Ngày" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
-                      <ParameterExpression
-                        Parameter="Ngày" />
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đơn_Vị_Tính" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Đơn_Vị_Tính" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Left>
@@ -104,12 +146,12 @@
                     <BinaryExpression.Left>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Nam" />
+                          Member="Tên_Sản_Phẩm" />
                       </ChainExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
                       <ParameterExpression
-                        Parameter="Nam" />
+                        Parameter="Tên_Sản_Phẩm" />
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Right>
@@ -121,12 +163,12 @@
                 <BinaryExpression.Left>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Thang" />
+                      Member="Mã_Sản_Phẩm" />
                   </ChainExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <ParameterExpression
-                    Parameter="Thang" />
+                    Parameter="Mã_Sản_Phẩm" />
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Right>
@@ -136,23 +178,31 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vLời_Lỗ_Ngày" />
+            Member="vLoi_Lo_Ngay_Theo_San_Pham" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="Thang"
+        Name="Mã_Sản_Phẩm"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'Thang' key property of the entity to retrieve." />
+            Value="The value of the 'Mã_Sản_Phẩm' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
-        Name="Nam"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        Name="Tên_Sản_Phẩm"
+        ParameterType="Microsoft.LightSwitch:String?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'Nam' key property of the entity to retrieve." />
+            Value="The value of the 'Tên_Sản_Phẩm' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Đơn_Vị_Tính"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Đơn_Vị_Tính' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
@@ -165,8 +215,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="vLời_Lỗ_Ngày_SingleOrDefault"
-      ReturnType="vLời_Lỗ_NgàyItem">
+      Name="vLoi_Lo_Ngay_Theo_San_Pham_SingleOrDefault"
+      ReturnType="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -181,16 +231,36 @@
                 NodeType="And">
                 <BinaryExpression.Left>
                   <BinaryExpression
-                    NodeType="Equal">
+                    NodeType="And">
                     <BinaryExpression.Left>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Ngày" />
-                      </ChainExpression>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Ngày" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Ngày" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
-                      <ParameterExpression
-                        Parameter="Ngày" />
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đơn_Vị_Tính" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Đơn_Vị_Tính" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Left>
@@ -200,12 +270,12 @@
                     <BinaryExpression.Left>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Nam" />
+                          Member="Tên_Sản_Phẩm" />
                       </ChainExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
                       <ParameterExpression
-                        Parameter="Nam" />
+                        Parameter="Tên_Sản_Phẩm" />
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Right>
@@ -217,12 +287,12 @@
                 <BinaryExpression.Left>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Thang" />
+                      Member="Mã_Sản_Phẩm" />
                   </ChainExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <ParameterExpression
-                    Parameter="Thang" />
+                    Parameter="Mã_Sản_Phẩm" />
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Right>
@@ -232,23 +302,31 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vLời_Lỗ_Ngày" />
+            Member="vLoi_Lo_Ngay_Theo_San_Pham" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="Thang"
+        Name="Mã_Sản_Phẩm"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'Thang' key property of the entity to retrieve." />
+            Value="The value of the 'Mã_Sản_Phẩm' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
-        Name="Nam"
-        ParameterType="Microsoft.LightSwitch:Int32?">
+        Name="Tên_Sản_Phẩm"
+        ParameterType="Microsoft.LightSwitch:String?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="The value of the 'Nam' key property of the entity to retrieve." />
+            Value="The value of the 'Tên_Sản_Phẩm' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Đơn_Vị_Tính"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Đơn_Vị_Tính' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
       <QueryOperationParameter
@@ -267,34 +345,48 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="vLời_Lỗ_Ngày">
+      EntitySet="vLoi_Lo_Ngay_Theo_San_Pham">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="vLời Lỗ Ngày" />
+          Table="vLời Lỗ Ngày Theo Sản Phẩm" />
         <IsView />
+        <SsdlProperty
+          Name="Số lượng"
+          Nullable="True"
+          Precision="38"
+          Scale="2"
+          Type="decimal"
+          Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Số_lượng]" />
+        <SsdlProperty
+          Name="Mã Sản Phẩm"
+          Nullable="False"
+          Type="int"
+          Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Mã_Sản_Phẩm]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Tên Sản Phẩm"
+          Nullable="False"
+          Type="nvarchar"
+          Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Tên_Sản_Phẩm]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Đơn Vị Tính"
+          Nullable="False"
+          Type="nvarchar"
+          Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Đơn_Vị_Tính]" />
         <SsdlProperty
           Name="Tiền Lời"
           Nullable="True"
           Precision="38"
           Scale="2"
           Type="decimal"
-          Property="vLời_Lỗ_NgàyItem/Properties[Tiền_Lời]" />
-        <SsdlProperty
-          Name="Thang"
-          Nullable="False"
-          Type="int"
-          Property="vLời_Lỗ_NgàyItem/Properties[Thang]" />
-        <SsdlProperty
-          Name="Nam"
-          Nullable="False"
-          Type="int"
-          Property="vLời_Lỗ_NgàyItem/Properties[Nam]" />
+          Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Tiền_Lời]" />
         <SsdlProperty
           Name="Ngày"
           Nullable="False"
           Type="date"
-          Property="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
+          Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Ngày]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
