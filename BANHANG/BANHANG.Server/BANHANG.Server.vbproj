@@ -298,6 +298,66 @@
     <Compile Include="XtraReport_Chi.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_DoanhThuAllKhachHang.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuAllKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuAllKhachHang.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuAllSanPham.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuAllSanPham.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuAllSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuKhachHang.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuKhachHang.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuNgay.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuNgay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuNgay.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuSanPham.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuSanPham.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoAllKhachHang.Designer.vb">
+      <DependentUpon>XtraReport_LoiLoAllKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoAllKhachHang.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoAllSanPham.Designer.vb">
+      <DependentUpon>XtraReport_LoiLoAllSanPham.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoAllSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoKhachHang.Designer.vb">
+      <DependentUpon>XtraReport_LoiLoKhachHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoKhachHang.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoNgay.Designer.vb">
+      <DependentUpon>XtraReport_LoiLoNgay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoNgay.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoSanPham.Designer.vb">
+      <DependentUpon>XtraReport_LoiLoSanPham.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_LoiLoSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_NhapSanPham.Designer.vb">
       <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
     </Compile>
@@ -420,6 +480,36 @@
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="XtraReport_Chi.resx">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuAllKhachHang.resx">
+      <DependentUpon>XtraReport_DoanhThuAllKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuAllSanPham.resx">
+      <DependentUpon>XtraReport_DoanhThuAllSanPham.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuKhachHang.resx">
+      <DependentUpon>XtraReport_DoanhThuKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuNgay.resx">
+      <DependentUpon>XtraReport_DoanhThuNgay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuSanPham.resx">
+      <DependentUpon>XtraReport_DoanhThuSanPham.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_LoiLoAllKhachHang.resx">
+      <DependentUpon>XtraReport_LoiLoAllKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_LoiLoAllSanPham.resx">
+      <DependentUpon>XtraReport_LoiLoAllSanPham.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_LoiLoKhachHang.resx">
+      <DependentUpon>XtraReport_LoiLoKhachHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_LoiLoNgay.resx">
+      <DependentUpon>XtraReport_LoiLoNgay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_LoiLoSanPham.resx">
+      <DependentUpon>XtraReport_LoiLoSanPham.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_NhapSanPham.resx">
       <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
