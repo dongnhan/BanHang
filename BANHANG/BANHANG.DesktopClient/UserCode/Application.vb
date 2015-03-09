@@ -7,6 +7,7 @@ Namespace LightSwitchApplication
         Public SoDienThoai As String = Nothing
         Public Email As String = Nothing
         Public KiemTraTonKho As Integer = Nothing
+        Public CachTinhBangGia As Integer = Nothing
     End Class
 
 End Namespace

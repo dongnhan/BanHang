@@ -304,6 +304,9 @@
     <Import Include="Microsoft.LightSwitch.Presentation.Extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
+      <Link>UserCode\Shared\BangGiaChiTiet.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\Chi.lsml.vb">
       <Link>UserCode\Shared\Chi.lsml.vb</Link>
     </Compile>
@@ -320,6 +323,9 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\Bảng_GiáListDetail.lsml.vb">
+      <DependentUpon>Bảng_GiáListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ChiReportPreviewScreen.lsml.vb">
       <DependentUpon>ChiReportPreviewScreen.lsml</DependentUpon>
     </Compile>

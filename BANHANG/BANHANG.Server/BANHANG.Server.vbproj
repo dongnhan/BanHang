@@ -262,6 +262,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
+      <DependentUpon>Bảng_Giá_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangData\Chi.lsml.vb">
       <DependentUpon>Chis.lsml</DependentUpon>
     </Compile>

@@ -60,37 +60,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Cách_tính"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-          <SupportedValue
-            DisplayName="Ghi giá trực tiếp"
-            Value="0" />
-          <SupportedValue
-            DisplayName="Tính theo 'Phần trăm chiết khấu'"
-            Value="1" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Phần_trăm_chiết_khấu"
-        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="2" />
-          <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@FormatParameter">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Giá_bán"
         PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
@@ -261,17 +230,6 @@
           Nullable="False"
           Type="decimal"
           Property="BangGiaChiTiet/Properties[Chi_phí]" />
-        <SsdlProperty
-          Name="Cách tính"
-          Nullable="False"
-          Type="int"
-          Property="BangGiaChiTiet/Properties[Cách_tính]" />
-        <SsdlProperty
-          Name="Phần trăm chiết khấu"
-          Nullable="False"
-          Scale="2"
-          Type="decimal"
-          Property="BangGiaChiTiet/Properties[Phần_trăm_chiết_khấu]" />
         <SsdlProperty
           Name="Giá bán"
           Nullable="False"
