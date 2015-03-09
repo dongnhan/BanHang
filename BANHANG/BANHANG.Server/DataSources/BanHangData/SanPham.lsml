@@ -66,9 +66,9 @@
         ToEnd="BangGiaChiTiet" />
       <NavigationProperty
         Name="Đặt_Hàng_Chi_Tiết"
-        Association="SanPham_Đặt_Hàng_Chi_TiếtItem"
+        Association="SanPham_DatHangChiTiet"
         FromEnd="SanPham"
-        ToEnd="Đặt_Hàng_Chi_Tiết" />
+        ToEnd="DatHangChiTiet" />
       <NavigationProperty
         Name="Nhập_Sản_Phẩm_Chi_Tiết"
         Association="SanPham_NhapSanPhamChiTiet"
@@ -112,7 +112,7 @@
       EntityType="BangGiaChiTiet" />
   </Association>
   <Association
-    Name="SanPham_Đặt_Hàng_Chi_TiếtItem">
+    Name="SanPham_DatHangChiTiet">
     <AssociationEnd
       Name="SanPham"
       Multiplicity="One"
@@ -122,9 +122,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Đặt_Hàng_Chi_Tiết"
+      Name="DatHangChiTiet"
       Multiplicity="Many"
-      EntityType="Đặt_Hàng_Chi_TiếtItem" />
+      EntityType="DatHangChiTiet" />
   </Association>
   <Association
     Name="SanPham_NhapSanPhamChiTiet">
@@ -195,12 +195,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm"
-      Association="SanPham_Đặt_Hàng_Chi_TiếtItem">
+      Association="SanPham_DatHangChiTiet">
       <AssociationSetEnd
         Name="SanPham"
         EntitySet="SanPham" />
       <AssociationSetEnd
-        Name="Đặt_Hàng_Chi_Tiết"
+        Name="DatHangChiTiet"
         EntitySet="Đặt_Hàng_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
@@ -389,7 +389,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm]/Members[Đặt_Hàng_Chi_Tiết]">
+          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Sản_Phẩm]/Members[DatHangChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_SanPham" />

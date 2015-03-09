@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Đặt_Hàng_Chi_TiếtItem">
+    Name="DatHangChiTiet">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -34,6 +34,8 @@
             Precision="18"
             Scale="2" />
           <NotSearchable />
+          <StringValueFormat
+            Value="n0" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -45,20 +47,35 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Đặt_HàngItem"
-        Association="FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng"
-        FromEnd="Đặt_Hàng_Chi_Tiết"
-        ToEnd="Đặt_Hàng" />
+        Name="DatHang"
+        Association="DatHang_DatHangChiTiet"
+        FromEnd="DatHangChiTiet"
+        ToEnd="DatHang">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đặt Hàng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Đơn_Vị_TínhItem"
-        Association="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính"
-        FromEnd="Đặt_Hàng_Chi_Tiết"
-        ToEnd="Đơn_Vị_Tính" />
+        Association="Đơn_Vị_TínhItem_DatHangChiTiet"
+        FromEnd="DatHangChiTiet"
+        ToEnd="Đơn_Vị_Tính">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đơn Vị Tính" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="SanPham"
-        Association="SanPham_Đặt_Hàng_Chi_TiếtItem"
-        FromEnd="Đặt_Hàng_Chi_Tiết"
-        ToEnd="SanPham" />
+        Association="SanPham_DatHangChiTiet"
+        FromEnd="DatHangChiTiet"
+        ToEnd="SanPham">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Sản Phẩm" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -71,10 +88,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Đặt_Hàng_Chi_TiếtItem" />
+      EntityType="DatHangChiTiet" />
     <QueryOperation
       Name="Đặt_Hàng_Chi_Tiết_Single"
-      ReturnType="Đặt_Hàng_Chi_TiếtItem">
+      ReturnType="DatHangChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -114,7 +131,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Đặt_Hàng_Chi_Tiết_SingleOrDefault"
-      ReturnType="Đặt_Hàng_Chi_TiếtItem">
+      ReturnType="DatHangChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -169,19 +186,19 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Đặt_Hàng_Chi_TiếtItem/Properties[Id]" />
+          Property="DatHangChiTiet/Properties[Id]" />
         <SsdlProperty
           Name="Số lượng"
           Nullable="False"
           Scale="2"
           Type="decimal"
-          Property="Đặt_Hàng_Chi_TiếtItem/Properties[Số_lượng]" />
+          Property="DatHangChiTiet/Properties[Số_lượng]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Đặt_Hàng_Chi_TiếtItem/Properties[Ghi_chú]" />
+          Property="DatHangChiTiet/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_DatHang"
           Nullable="False"

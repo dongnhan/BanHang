@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Đặt_HàngItem">
+    Name="DatHang">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -46,42 +46,47 @@
       </EntityProperty>
       <NavigationProperty
         Name="Đặt_Hàng_Chi_Tiết"
-        Association="FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng"
-        FromEnd="Đặt_Hàng"
-        ToEnd="Đặt_Hàng_Chi_Tiết" />
+        Association="DatHang_DatHangChiTiet"
+        FromEnd="DatHang"
+        ToEnd="DatHangChiTiet" />
       <NavigationProperty
         Name="Đối_TượngItem"
-        Association="FK_Đặt_Hàng_Khách_Hàng"
-        FromEnd="Đặt_Hàng"
-        ToEnd="Đối_Tượng" />
+        Association="Đối_TượngItem_DatHang"
+        FromEnd="DatHang"
+        ToEnd="Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đối Tượng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Xuất_Sản_Phẩm"
-        Association="Đặt_HàngItem_XuatSanPham"
-        FromEnd="Đặt_Hàng"
+        Association="DatHang_XuatSanPham"
+        FromEnd="DatHang"
         ToEnd="XuatSanPham" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng">
+    Name="DatHang_DatHangChiTiet">
     <AssociationEnd
-      Name="Đặt_Hàng"
+      Name="DatHang"
       Multiplicity="One"
-      EntityType="Đặt_HàngItem">
+      EntityType="DatHang">
       <AssociationEnd.Attributes>
         <DeleteRule
           Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Đặt_Hàng_Chi_Tiết"
+      Name="DatHangChiTiet"
       Multiplicity="Many"
-      EntityType="Đặt_Hàng_Chi_TiếtItem" />
+      EntityType="DatHangChiTiet" />
   </Association>
   <Association
-    Name="Đặt_HàngItem_XuatSanPham">
+    Name="DatHang_XuatSanPham">
     <AssociationEnd
-      Name="Đặt_Hàng"
-      EntityType="Đặt_HàngItem">
+      Name="DatHang"
+      EntityType="DatHang">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
@@ -101,22 +106,22 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Đặt_HàngItem" />
+      EntityType="DatHang" />
     <AssociationSet
       Name="FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng"
-      Association="FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng">
+      Association="DatHang_DatHangChiTiet">
       <AssociationSetEnd
-        Name="Đặt_Hàng"
+        Name="DatHang"
         EntitySet="Đặt_Hàng" />
       <AssociationSetEnd
-        Name="Đặt_Hàng_Chi_Tiết"
+        Name="DatHangChiTiet"
         EntitySet="Đặt_Hàng_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
       Name="FK_Xuất_Sản_Phẩm_Đặt_Hàng"
-      Association="Đặt_HàngItem_XuatSanPham">
+      Association="DatHang_XuatSanPham">
       <AssociationSetEnd
-        Name="Đặt_Hàng"
+        Name="DatHang"
         EntitySet="Đặt_Hàng" />
       <AssociationSetEnd
         Name="XuatSanPham"
@@ -124,7 +129,7 @@
     </AssociationSet>
     <QueryOperation
       Name="Đặt_Hàng_Single"
-      ReturnType="Đặt_HàngItem">
+      ReturnType="DatHang">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -164,7 +169,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Đặt_Hàng_SingleOrDefault"
-      ReturnType="Đặt_HàngItem">
+      ReturnType="DatHang">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -219,18 +224,18 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Đặt_HàngItem/Properties[Id]" />
+          Property="DatHang/Properties[Id]" />
         <SsdlProperty
           Name="Ngày tạo"
           Nullable="False"
           Type="datetime"
-          Property="Đặt_HàngItem/Properties[Ngày_tạo]" />
+          Property="DatHang/Properties[Ngày_tạo]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Đặt_HàngItem/Properties[Ghi_chú]" />
+          Property="DatHang/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="_KhachHang"
           Nullable="True"
@@ -244,14 +249,14 @@
         <SsdlAssociationSet
           Name="FK_Đặt Hàng Chi Tiết_Đặt Hàng" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng]/Members[Đặt_Hàng]">
+          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng]/Members[DatHang]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng]/Members[Đặt_Hàng_Chi_Tiết]">
+          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng]/Members[DatHangChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DatHang" />
@@ -265,7 +270,7 @@
         <SsdlAssociationSet
           Name="FK_Xuất Sản Phẩm_Đặt Hàng" />
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Đặt_Hàng]/Members[Đặt_Hàng]">
+          End="BanHangData/Members[FK_Xuất_Sản_Phẩm_Đặt_Hàng]/Members[DatHang]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />

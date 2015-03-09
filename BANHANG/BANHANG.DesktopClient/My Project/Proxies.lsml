@@ -25,13 +25,13 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Đặt_HàngItem" />
+        Target="ServiceInterface:DatHang" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Đặt_Hàng_Chi_TiếtItem" />
+        Target="ServiceInterface:DatHangChiTiet" />
     </EntityType.Attributes>
   </EntityType>
   <EntityType>
@@ -145,25 +145,25 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Đặt_Hàng_Chi_Tiết_Đặt_Hàng" />
+        Target="ServiceInterface:DatHang_DatHangChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính" />
+        Target="ServiceInterface:Đơn_Vị_TínhItem_DatHangChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:SanPham_Đặt_Hàng_Chi_TiếtItem" />
+        Target="ServiceInterface:SanPham_DatHangChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Đặt_Hàng_Khách_Hàng" />
+        Target="ServiceInterface:Đối_TượngItem_DatHang" />
     </Association.Attributes>
   </Association>
   <Association>
@@ -265,7 +265,7 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:Đặt_HàngItem_XuatSanPham" />
+        Target="ServiceInterface:DatHang_XuatSanPham" />
     </Association.Attributes>
   </Association>
   <Association>

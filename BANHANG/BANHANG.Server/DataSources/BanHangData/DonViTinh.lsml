@@ -49,9 +49,9 @@
         ToEnd="BangGiaChiTiet" />
       <NavigationProperty
         Name="Đặt_Hàng_Chi_Tiết"
-        Association="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính"
+        Association="Đơn_Vị_TínhItem_DatHangChiTiet"
         FromEnd="Đơn_Vị_Tính"
-        ToEnd="Đặt_Hàng_Chi_Tiết" />
+        ToEnd="DatHangChiTiet" />
       <NavigationProperty
         Name="Nhập_Sản_Phẩm_Chi_Tiết"
         Association="Đơn_Vị_TínhItem_NhapSanPhamChiTiet"
@@ -85,7 +85,7 @@
       EntityType="BangGiaChiTiet" />
   </Association>
   <Association
-    Name="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính">
+    Name="Đơn_Vị_TínhItem_DatHangChiTiet">
     <AssociationEnd
       Name="Đơn_Vị_Tính"
       Multiplicity="One"
@@ -95,9 +95,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Đặt_Hàng_Chi_Tiết"
+      Name="DatHangChiTiet"
       Multiplicity="Many"
-      EntityType="Đặt_Hàng_Chi_TiếtItem" />
+      EntityType="DatHangChiTiet" />
   </Association>
   <Association
     Name="Đơn_Vị_TínhItem_NhapSanPhamChiTiet">
@@ -167,12 +167,12 @@
     </AssociationSet>
     <AssociationSet
       Name="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính"
-      Association="FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính">
+      Association="Đơn_Vị_TínhItem_DatHangChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
         EntitySet="DonViTinh" />
       <AssociationSetEnd
-        Name="Đặt_Hàng_Chi_Tiết"
+        Name="DatHangChiTiet"
         EntitySet="Đặt_Hàng_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
@@ -351,7 +351,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính]/Members[Đặt_Hàng_Chi_Tiết]">
+          End="BanHangData/Members[FK_Đặt_Hàng_Chi_Tiết_Đơn_Vị_Tính]/Members[DatHangChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DonViTinh" />

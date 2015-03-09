@@ -8,10 +8,6 @@ Namespace LightSwitchApplication
 
         End Sub
 
-        Private Sub SanPham_Validate(results As EntityValidationResultsBuilder)
-            ' results.AddPropertyError("<Error-Message>")
-
-        End Sub
     End Class
 
 End Namespace

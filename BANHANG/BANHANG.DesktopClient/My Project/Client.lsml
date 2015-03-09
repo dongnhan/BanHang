@@ -108,6 +108,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowNhóm_Sản_PhẩmListDetail"
       Target="!module/Methods[ShowNhóm_Sản_PhẩmListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowĐặt_HàngListDetail"
+      Target="!module/Methods[ShowĐặt_HàngListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -144,6 +147,9 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
+      <ApplicationNavigationLink
+        Name="Đặt_HàngListDetail"
+        Command="!module/Commands[ScreenCommandShowĐặt_HàngListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
@@ -187,6 +193,9 @@
         <DisplayName
           Value="BÁN HÀNG" />
       </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link16"
+        Command="!module/Commands[ScreenCommandShowĐặt_HàngListDetail]" />
       <ApplicationNavigationLink
         Name="link15"
         Command="!module/Commands[ScreenCommandShowBảng_GiáListDetail]" />

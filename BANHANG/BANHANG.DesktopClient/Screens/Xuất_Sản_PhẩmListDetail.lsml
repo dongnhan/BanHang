@@ -102,19 +102,19 @@
                 <ContentItem
                   Name="Đặt_HàngItem"
                   Kind="Details"
-                  DataType="Đặt_HàngItem">
+                  DataType="DatHang">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="XuatSanPham/Properties[Đặt_HàngItem]" />
+                          Member="XuatSanPham/Properties[DatHang]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate2"
                     Kind="Details"
-                    DataType="Đặt_HàngItem">
+                    DataType="DatHang">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -755,19 +755,19 @@
                 <ContentItem
                   Name="Đặt_HàngItem1"
                   Kind="Details"
-                  DataType="Đặt_HàngItem">
+                  DataType="DatHang">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="XuatSanPham/Properties[Đặt_HàngItem]" />
+                          Member="XuatSanPham/Properties[DatHang]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate5"
                     Kind="Details"
-                    DataType="Đặt_HàngItem">
+                    DataType="DatHang">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

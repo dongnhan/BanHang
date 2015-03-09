@@ -59,10 +59,10 @@
         FromEnd="XuatSanPham"
         ToEnd="BangGia" />
       <NavigationProperty
-        Name="Đặt_HàngItem"
-        Association="Đặt_HàngItem_XuatSanPham"
+        Name="DatHang"
+        Association="DatHang_XuatSanPham"
         FromEnd="XuatSanPham"
-        ToEnd="Đặt_Hàng" />
+        ToEnd="DatHang" />
       <NavigationProperty
         Name="Đối_TượngItem"
         Association="Đối_TượngItem_XuatSanPham"

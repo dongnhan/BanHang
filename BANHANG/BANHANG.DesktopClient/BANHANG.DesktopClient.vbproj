@@ -404,6 +404,9 @@
     <Compile Include="Screens\Đơn_Vị_TínhListDetail.lsml.vb">
       <DependentUpon>Đơn_Vị_TínhListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Đặt_HàngListDetail.lsml.vb">
+      <DependentUpon>Đặt_HàngListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="UserCode\Application.vb" />
     <Compile Include="UserCode\Shared\IModule.vb" />
     <Compile Include="UserCode\Shared\MultiSelectGridExtensions.vb" />
@@ -451,6 +454,7 @@
     <LightSwitchModel Include="Screens\NhomKhachHangListDetail.lsml" />
     <LightSwitchModel Include="Screens\NhomNhaCungCapListDetail.lsml" />
     <LightSwitchModel Include="Screens\Nhóm_Sản_PhẩmListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Đặt_HàngListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

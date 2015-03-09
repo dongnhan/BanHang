@@ -38,9 +38,13 @@ Partial Public Class XtraReport_TonTienMat
         Me.xrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.DiaChi = New DevExpress.XtraReports.UI.XRLabel()
+        Me.DiaChiDonVi = New DevExpress.XtraReports.Parameters.Parameter()
         Me.TenCongTy = New DevExpress.XtraReports.UI.XRLabel()
+        Me.TenDonVi = New DevExpress.XtraReports.Parameters.Parameter()
         Me.NgayCT2 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.Nam = New DevExpress.XtraReports.Parameters.Parameter()
         Me.NgayCT1 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.Thang = New DevExpress.XtraReports.Parameters.Parameter()
         Me.xrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.Title = New DevExpress.XtraReports.UI.XRLabel()
         Me.xrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
@@ -59,15 +63,9 @@ Partial Public Class XtraReport_TonTienMat
         Me.xrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
         Me.xrLabel17 = New DevExpress.XtraReports.UI.XRLabel()
         Me.xrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.dataView1 = New System.Data.DataView()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.xrTable1 = New DevExpress.XtraReports.UI.XRTable()
-        Me.Thang = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.Nam = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.TenDonVi = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.DiaChiDonVi = New DevExpress.XtraReports.Parameters.Parameter()
         Me.LightSwitchDataSource1 = New DevExpress.XtraReports.LightSwitchDataSource()
-        CType(Me.dataView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -176,6 +174,12 @@ Partial Public Class XtraReport_TonTienMat
         Me.DiaChi.Text = "DiaChi"
         Me.DiaChi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
+        'DiaChiDonVi
+        '
+        Me.DiaChiDonVi.Description = "Parameter1"
+        Me.DiaChiDonVi.Name = "DiaChiDonVi"
+        Me.DiaChiDonVi.Visible = False
+        '
         'TenCongTy
         '
         Me.TenCongTy.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.TenDonVi, "Text", "")})
@@ -186,6 +190,12 @@ Partial Public Class XtraReport_TonTienMat
         Me.TenCongTy.SizeF = New System.Drawing.SizeF(525.0!, 25.0!)
         Me.TenCongTy.Text = "TenCongTy"
         Me.TenCongTy.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'TenDonVi
+        '
+        Me.TenDonVi.Description = "Parameter1"
+        Me.TenDonVi.Name = "TenDonVi"
+        Me.TenDonVi.Visible = False
         '
         'NgayCT2
         '
@@ -198,6 +208,14 @@ Partial Public Class XtraReport_TonTienMat
         Me.NgayCT2.Text = "NgayCT2"
         Me.NgayCT2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
+        'Nam
+        '
+        Me.Nam.Description = "Parameter1"
+        Me.Nam.Name = "Nam"
+        Me.Nam.Type = GetType(Integer)
+        Me.Nam.ValueInfo = "0"
+        Me.Nam.Visible = False
+        '
         'NgayCT1
         '
         Me.NgayCT1.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.Thang, "Text", "")})
@@ -208,6 +226,14 @@ Partial Public Class XtraReport_TonTienMat
         Me.NgayCT1.SizeF = New System.Drawing.SizeF(67.0!, 25.0!)
         Me.NgayCT1.Text = "NgayCT1"
         Me.NgayCT1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'Thang
+        '
+        Me.Thang.Description = "Parameter1"
+        Me.Thang.Name = "Thang"
+        Me.Thang.Type = GetType(Integer)
+        Me.Thang.ValueInfo = "0"
+        Me.Thang.Visible = False
         '
         'xrLabel1
         '
@@ -432,37 +458,9 @@ Partial Public Class XtraReport_TonTienMat
         Me.xrTable1.SizeF = New System.Drawing.SizeF(1050.0!, 25.0!)
         Me.xrTable1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
-        'Thang
-        '
-        Me.Thang.Description = "Parameter1"
-        Me.Thang.Name = "Thang"
-        Me.Thang.Type = GetType(Integer)
-        Me.Thang.ValueInfo = "0"
-        Me.Thang.Visible = False
-        '
-        'Nam
-        '
-        Me.Nam.Description = "Parameter1"
-        Me.Nam.Name = "Nam"
-        Me.Nam.Type = GetType(Integer)
-        Me.Nam.ValueInfo = "0"
-        Me.Nam.Visible = False
-        '
-        'TenDonVi
-        '
-        Me.TenDonVi.Description = "Parameter1"
-        Me.TenDonVi.Name = "TenDonVi"
-        Me.TenDonVi.Visible = False
-        '
-        'DiaChiDonVi
-        '
-        Me.DiaChiDonVi.Description = "Parameter1"
-        Me.DiaChiDonVi.Name = "DiaChiDonVi"
-        Me.DiaChiDonVi.Visible = False
-        '
         'LightSwitchDataSource1
         '
-        Me.LightSwitchDataSource1.CollectionName = "vTồn_Quỹ_Tiền_Mặt"
+        Me.LightSwitchDataSource1.CollectionName = "vTon_Quy_Tien_Mat"
         Me.LightSwitchDataSource1.DataSource = GetType(LightSwitchApplication.vTồn_Quỹ_Tiền_MặtItem)
         Me.LightSwitchDataSource1.DataSourceName = "BanHangData"
         '
@@ -478,7 +476,6 @@ Partial Public Class XtraReport_TonTienMat
         Me.PaperKind = System.Drawing.Printing.PaperKind.A4
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.Thang, Me.Nam, Me.TenDonVi, Me.DiaChiDonVi})
         Me.Version = "13.1"
-        CType(Me.dataView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
@@ -513,13 +510,12 @@ Partial Public Class XtraReport_TonTienMat
     Friend WithEvents xrLabel18 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents xrLabel17 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents xrLabel10 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents dataView1 As System.Data.DataView
     Friend WithEvents Detail As DevExpress.XtraReports.UI.DetailBand
     Friend WithEvents xrTable1 As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents xrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents LightSwitchDataSource1 As DevExpress.XtraReports.LightSwitchDataSource
     Friend WithEvents Thang As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents Nam As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents DiaChiDonVi As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents TenDonVi As DevExpress.XtraReports.Parameters.Parameter
+    Friend WithEvents LightSwitchDataSource1 As DevExpress.XtraReports.LightSwitchDataSource
 End Class
