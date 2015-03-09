@@ -159,7 +159,7 @@
         EntitySet="Bàn" />
       <AssociationSetEnd
         Name="ChonMon"
-        EntitySet="Chọn_Món" />
+        EntitySet="ChonMon" />
     </AssociationSet>
   </EntityContainer>
   <Association

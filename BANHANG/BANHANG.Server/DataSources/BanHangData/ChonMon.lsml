@@ -6,6 +6,10 @@
   </ServiceApplication.Attributes>
   <EntityType
     Name="ChonMon">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Chọn Món" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -81,7 +85,7 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Chọn_Món"
+      Name="ChonMon"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
@@ -91,13 +95,13 @@
       Association="ChonMon_ChonMonChiTiet">
       <AssociationSetEnd
         Name="ChonMon"
-        EntitySet="Chọn_Món" />
+        EntitySet="ChonMon" />
       <AssociationSetEnd
         Name="ChonMonChiTiet"
         EntitySet="ChonMonChiTiet" />
     </AssociationSet>
     <QueryOperation
-      Name="Chọn_Món_Single"
+      Name="ChonMon_Single"
       ReturnType="ChonMon">
       <QueryOperation.Attributes>
         <Generated />
@@ -124,7 +128,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Chọn_Món" />
+            Member="ChonMon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -137,7 +141,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Chọn_Món_SingleOrDefault"
+      Name="ChonMon_SingleOrDefault"
       ReturnType="ChonMon">
       <QueryOperation.Attributes>
         <Generated />
@@ -164,7 +168,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Chọn_Món" />
+            Member="ChonMon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -183,7 +187,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Chọn_Món">
+      EntitySet="ChonMon">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"

@@ -444,7 +444,7 @@
     <LightSwitchModel Include="DataSources\BanHangData\Khu_Vực.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Món.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nhóm_Món.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\Chọn_Món.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\ChonMon.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChonMonChiTiet.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
