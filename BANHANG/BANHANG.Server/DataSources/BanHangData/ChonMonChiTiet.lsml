@@ -5,7 +5,11 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="BànItem">
+    Name="ChonMonChiTiet">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Chi tiết" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -17,47 +21,45 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
-        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
-          <Hidden />
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Tên"
-        PropertyType=":String">
+        Name="Số_lượng"
+        PropertyType=":Int32">
         <EntityProperty.Attributes>
           <Required />
-          <MaxLength
-            Value="100" />
+          <NotSearchable />
+          <StringValueFormat
+            Value="n0" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Mã"
-        PropertyType=":String">
+        Name="Ghi_chú"
+        PropertyType=":String?">
         <EntityProperty.Attributes>
-          <Required />
           <MaxLength
-            Value="50" />
+            Value="500" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Khu_VựcItem"
-        Association="FK_Bàn_Khu_Vực"
-        FromEnd="Bàn"
-        ToEnd="Khu_Vực">
+        Name="ChonMon"
+        Association="ChonMon_ChonMonChiTiet"
+        FromEnd="ChonMonChiTiet"
+        ToEnd="ChonMon" />
+      <NavigationProperty
+        Name="MónItem"
+        Association="MónItem_ChonMonChiTiet"
+        FromEnd="ChonMonChiTiet"
+        ToEnd="Món">
         <NavigationProperty.Attributes>
           <DisplayName
-            Value="Khu Vực" />
+            Value="Món" />
         </NavigationProperty.Attributes>
       </NavigationProperty>
-      <NavigationProperty
-        Name="Chọn_Món"
-        Association="BànItem_ChonMon"
-        FromEnd="Bàn"
-        ToEnd="ChonMon" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -66,14 +68,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Bàn"
+      Name="ChonMonChiTiet"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="BànItem" />
+      EntityType="ChonMonChiTiet" />
     <QueryOperation
-      Name="Bàn_Single"
-      ReturnType="BànItem">
+      Name="ChonMonChiTiet_Single"
+      ReturnType="ChonMonChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -99,7 +101,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Bàn" />
+            Member="ChonMonChiTiet" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -112,8 +114,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Bàn_SingleOrDefault"
-      ReturnType="BànItem">
+      Name="ChonMonChiTiet_SingleOrDefault"
+      ReturnType="ChonMonChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -139,7 +141,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Bàn" />
+            Member="ChonMonChiTiet" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -151,88 +153,45 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="FK_Chọn_Món_Bàn"
-      Association="BànItem_ChonMon">
-      <AssociationSetEnd
-        Name="Bàn"
-        EntitySet="Bàn" />
-      <AssociationSetEnd
-        Name="ChonMon"
-        EntitySet="Chọn_Món" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="BànItem_ChonMon">
-    <AssociationEnd
-      Name="Bàn"
-      Multiplicity="One"
-      EntityType="BànItem">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="ChonMon"
-      Multiplicity="Many"
-      EntityType="ChonMon" />
-  </Association>
   <DataService
     Name="BanHangDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Bàn">
+      EntitySet="ChonMonChiTiet">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Bàn" />
+          Table="Chọn Món Chi Tiết" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
-          StoreGeneratedPattern="Identity"
           Type="int"
-          Property="BànItem/Properties[Id]" />
+          Property="ChonMonChiTiet/Properties[Id]" />
         <SsdlProperty
-          MaxLength="100"
-          Name="Tên"
+          Name="Số lượng"
           Nullable="False"
-          Type="nvarchar"
-          Property="BànItem/Properties[Tên]" />
+          Type="int"
+          Property="ChonMonChiTiet/Properties[Số_lượng]" />
         <SsdlProperty
-          MaxLength="50"
-          Name="Mã"
-          Nullable="False"
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
           Type="nvarchar"
-          Property="BànItem/Properties[Mã]" />
+          Property="ChonMonChiTiet/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
-          Name="_KhuVuc"
+          Name="_ChonMon"
           Nullable="False"
           Type="int"
-          PropertyName="c__KhuVuc" />
+          PropertyName="c__ChonMon" />
+        <SsdlForeignKeyProperty
+          Name="_Mon"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__Mon" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="FK_Chọn_Món_Bàn">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="FK_Chọn Món_Bàn" />
-        <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Chọn_Món_Bàn]/Members[Bàn]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="BanHangData/Members[FK_Chọn_Món_Bàn]/Members[ChonMon]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="_Ban" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>
