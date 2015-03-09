@@ -323,6 +323,9 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\BànListDetail.lsml.vb">
+      <DependentUpon>BànListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Bảng_GiáListDetail.lsml.vb">
       <DependentUpon>Bảng_GiáListDetail.lsml</DependentUpon>
     </Compile>
@@ -335,8 +338,14 @@
     <Compile Include="Screens\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Khu_VựcListDetail.lsml.vb">
+      <DependentUpon>Khu_VựcListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\MainListDetail.lsml.vb">
       <DependentUpon>MainListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MónListDetail.lsml.vb">
+      <DependentUpon>MónListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\NhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhaCungCapListDetail.lsml</DependentUpon>
@@ -349,6 +358,9 @@
     </Compile>
     <Compile Include="Screens\NhomNhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhomNhaCungCapListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Nhóm_MónListDetail.lsml.vb">
+      <DependentUpon>Nhóm_MónListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Nhóm_Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Nhóm_Sản_PhẩmListDetail.lsml</DependentUpon>
@@ -455,6 +467,10 @@
     <LightSwitchModel Include="Screens\NhomNhaCungCapListDetail.lsml" />
     <LightSwitchModel Include="Screens\Nhóm_Sản_PhẩmListDetail.lsml" />
     <LightSwitchModel Include="Screens\Đặt_HàngListDetail.lsml" />
+    <LightSwitchModel Include="Screens\BànListDetail.lsml" />
+    <LightSwitchModel Include="Screens\MónListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Khu_VựcListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Nhóm_MónListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

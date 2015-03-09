@@ -111,6 +111,18 @@
     <ApplicationCommand
       Name="ScreenCommandShowĐặt_HàngListDetail"
       Target="!module/Methods[ShowĐặt_HàngListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowBànListDetail"
+      Target="!module/Methods[ShowBànListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowMónListDetail"
+      Target="!module/Methods[ShowMónListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowKhu_VựcListDetail"
+      Target="!module/Methods[ShowKhu_VựcListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhóm_MónListDetail"
+      Target="!module/Methods[ShowNhóm_MónListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -150,31 +162,30 @@
       <ApplicationNavigationLink
         Name="Đặt_HàngListDetail"
         Command="!module/Commands[ScreenCommandShowĐặt_HàngListDetail]" />
+      <ApplicationNavigationLink
+        Name="BànListDetail"
+        Command="!module/Commands[ScreenCommandShowBànListDetail]" />
+      <ApplicationNavigationLink
+        Name="MónListDetail"
+        Command="!module/Commands[ScreenCommandShowMónListDetail]" />
+      <ApplicationNavigationLink
+        Name="Khu_VựcListDetail"
+        Command="!module/Commands[ScreenCommandShowKhu_VựcListDetail]" />
+      <ApplicationNavigationLink
+        Name="Nhóm_MónListDetail"
+        Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
-          Value="TIỀN MẶT" />
-      </ApplicationNavigationGroup.Attributes>
-      <ApplicationNavigationLink
-        Name="link"
-        Command="!module/Commands[ScreenCommandShowChisListDetail]" />
-      <ApplicationNavigationLink
-        Name="link2"
-        Command="!module/Commands[ScreenCommandShowThusListDetail]" />
-    </ApplicationNavigationGroup>
-    <ApplicationNavigationGroup
-      Name="Administration">
-      <ApplicationNavigationGroup.Attributes>
-        <DisplayName
           Value="QUẢN TRỊ" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="RolesScreen"
+        Name="link"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
       <ApplicationNavigationLink
-        Name="UsersScreen"
+        Name="link2"
         Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
