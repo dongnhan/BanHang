@@ -25,7 +25,7 @@
             <ContentItem
               Name="Nhóm_MónItemList"
               Kind="Collection"
-              DataType="CollectionView$Nhóm_MónItem"
+              DataType="CollectionView$NhomMon"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -38,7 +38,7 @@
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="Nhóm_MónItem">
+                DataType="NhomMon">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -52,7 +52,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Nhóm_MónItem/Properties[Mã]" />
+                          Member="NhomMon/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -65,7 +65,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Nhóm_MónItem/Properties[Tên]" />
+                          Member="NhomMon/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -175,7 +175,7 @@
             <ContentItem
               Name="Nhóm_MónItemDetails"
               Kind="Details"
-              DataType="Nhóm_MónItem">
+              DataType="NhomMon">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="Nhóm Món Item Details" />
@@ -198,7 +198,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Nhóm_MónItem/Properties[Mã]" />
+                        Member="NhomMon/Properties[Mã]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -211,7 +211,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Nhóm_MónItem/Properties[Tên]" />
+                        Member="NhomMon/Properties[Tên]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -372,18 +372,18 @@
       <ScreenCollectionProperty
         Name="Nhóm_Món"
         PageSize="45"
-        PropertyType="CollectionView$Nhóm_MónItem">
+        PropertyType="CollectionView$NhomMon">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Nhóm_MónQuery"
-            ReturnType="Nhóm_MónItem*">
+            ReturnType="NhomMon*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[Nhóm_Món]" />
+                  Member="BanHangData/Members[NhomMon]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>

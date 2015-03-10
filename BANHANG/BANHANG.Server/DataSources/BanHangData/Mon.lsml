@@ -96,6 +96,16 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="NhomMon"
+        Association="NhomMon_MónItem"
+        FromEnd="Món"
+        ToEnd="NhomMon">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Nhóm Món" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -265,6 +275,11 @@
           Nullable="True"
           Type="image"
           Property="MónItem/Properties[Hình_ảnh]" />
+        <SsdlForeignKeyProperty
+          Name="Mon_NhomMon"
+          Nullable="False"
+          Type="int"
+          PropertyName="Mon_NhomMon" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

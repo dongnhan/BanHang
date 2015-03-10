@@ -5,7 +5,11 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Nhóm_MónItem">
+    Name="NhomMon">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Nhóm Món" />
+    </EntityType.Attributes>
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -43,6 +47,11 @@
             Value="50" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="Món"
+        Association="NhomMon_MónItem"
+        FromEnd="NhomMon"
+        ToEnd="Món" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -51,14 +60,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Nhóm_Món"
+      Name="NhomMon"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Nhóm_MónItem" />
+      EntityType="NhomMon" />
     <QueryOperation
-      Name="Nhóm_Món_Single"
-      ReturnType="Nhóm_MónItem">
+      Name="NhomMon_Single"
+      ReturnType="NhomMon">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -84,7 +93,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Nhóm_Món" />
+            Member="NhomMon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -97,8 +106,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Nhóm_Món_SingleOrDefault"
-      ReturnType="Nhóm_MónItem">
+      Name="NhomMon_SingleOrDefault"
+      ReturnType="NhomMon">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -124,7 +133,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Nhóm_Món" />
+            Member="NhomMon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -136,14 +145,39 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_Món_Nhóm_Món"
+      Association="NhomMon_MónItem">
+      <AssociationSetEnd
+        Name="NhomMon"
+        EntitySet="NhomMon" />
+      <AssociationSetEnd
+        Name="Món"
+        EntitySet="Mon" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="NhomMon_MónItem">
+    <AssociationEnd
+      Name="NhomMon"
+      Multiplicity="One"
+      EntityType="NhomMon">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Món"
+      Multiplicity="Many"
+      EntityType="MónItem" />
+  </Association>
   <DataService
     Name="BanHangDataDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Nhóm_Món">
+      EntitySet="NhomMon">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
@@ -153,20 +187,41 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Nhóm_MónItem/Properties[Id]" />
+          Property="NhomMon/Properties[Id]" />
         <SsdlProperty
           MaxLength="100"
           Name="Tên"
           Nullable="False"
           Type="nvarchar"
-          Property="Nhóm_MónItem/Properties[Tên]" />
+          Property="NhomMon/Properties[Tên]" />
         <SsdlProperty
           MaxLength="50"
           Name="Mã"
           Nullable="False"
           Type="nvarchar"
-          Property="Nhóm_MónItem/Properties[Mã]" />
+          Property="NhomMon/Properties[Mã]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Món_Nhóm_Món">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Món_Nhóm Món" />
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Món_Nhóm_Món]/Members[NhomMon]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Món_Nhóm_Món]/Members[Món]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Mon_NhomMon" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

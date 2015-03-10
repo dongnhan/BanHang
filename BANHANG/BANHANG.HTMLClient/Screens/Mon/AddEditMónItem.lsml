@@ -88,6 +88,29 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem
+                  Name="Nhóm_MónItem"
+                  Kind="Details"
+                  DataType="NhomMon">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem/Properties[NhomMon]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="Nhóm_MónItem1"
+                    Kind="Details"
+                    DataType="NhomMon">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
@@ -130,7 +153,8 @@
                 <ContentItem
                   Name="Ghi_chú"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.MobileWeb:TextArea">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

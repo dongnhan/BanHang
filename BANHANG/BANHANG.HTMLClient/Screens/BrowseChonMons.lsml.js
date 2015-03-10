@@ -15,15 +15,15 @@ myapp.BrowseChonMons.CHỌN_execute = function (screen) {
     // Write code here.
     var list = screen.findContentItem("Món");
 
-    var count = lsWire.list.selectedCount(list);
+    //var count = lsWire.list.selectedCount(list);
 
     var selected = lsWire.list.selected(list);
 
-    var text = "Món bạn đã chọn gồm \n\n";
+    //var text = "Món bạn đã chọn gồm \n\n";
 
     _.forEach(selected, function (item) {
 
-        text += item.Mã + " - " + item.Tên + "\n";
+        //text += item.Mã + " - " + item.Tên + "\n";
         var newChiTiet = new myapp.ChonMonChiTiet();
         newChiTiet.setMónItem(item);
         newChiTiet.Số_lượng = 1;
@@ -40,9 +40,9 @@ myapp.BrowseChonMons.CHỌN_execute = function (screen) {
 
     });
 
-    text += "Số món : " + count;
+    //text += "Số món : " + count;
 
-    window.alert(text);
+    //window.alert(text);
 };
 myapp.BrowseChonMons.LƯU_execute = function (screen) {
     // Write code here.
@@ -86,3 +86,68 @@ myapp.BrowseChonMons.LƯU_execute = function (screen) {
       });
 };
 
+
+myapp.BrowseChonMons.THÊM_MÓN_execute = function (screen) {
+    // Write code here.
+    var list = screen.findContentItem("Món");
+
+    //var count = lsWire.list.selectedCount(list);
+
+    var selected = lsWire.list.selected(list);
+
+    //var text = "Món bạn đã chọn gồm \n\n";
+
+    _.forEach(selected, function (item) {
+
+        //text += item.Mã + " - " + item.Tên + "\n";
+        var newChiTiet = screen.Chọn_Món_Chi_Tiết.addNew();
+        newChiTiet.setMónItem(item);
+        newChiTiet.Số_lượng = 1;
+        //newChiTiet.setChonMon()
+        //        var myEntity = screen.details.dataWorkspace.QuanLyXetNghiemData.DinhDanhs_SingleOrDefault(item.Id)
+
+        //.execute().then(function (data) {
+
+        //    myEntity = data;
+        //    newChiTiet.setDinhDanh(myEntity);
+
+        //})
+
+        //    });
+
+    });
+
+    //text += "Số món : " + count;
+
+    //window.alert(text);
+};
+myapp.BrowseChonMons.XÓA_MÓN_execute = function (screen) {
+    screen.Chọn_Món_Chi_Tiết.deleteSelected();
+
+    //return myapp.commitChanges().then(null, function fail(e) {
+
+    //    myapp.cancelChanges();
+
+    //    throw e;
+
+   // });
+    // Write code here.
+    ////screen.Chọn_Món_Chi_Tiết.deleteSelected();
+
+    // Save changes
+   // myapp.commitChanges().then(function success() {
+        // If success.
+        //msls.showMessageBox("Xóa thành công !!!", { title: "XÓA" });
+        //}, function fail(e) {
+        //    // If error occurs,
+        //    msls.showMessageBox(e.message, { title: e.title }).then(function () {
+        //        // Cancel Changes
+        //        myapp.cancelChanges();
+        //    });
+        //});
+   // };
+}
+myapp.BrowseChonMons.XÓA_NHÓM_execute = function (screen) {
+    // Write code here.
+    screen.setNhóm(null);
+};

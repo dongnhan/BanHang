@@ -443,7 +443,7 @@
     <LightSwitchModel Include="DataSources\BanHangData\Ban.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Khu_Vực.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Mon.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\Nhóm_Món.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\NhomMon.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChonMons.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChonMonChiTiets.lsml" />
     <None Include="My Project\Application.myapp">

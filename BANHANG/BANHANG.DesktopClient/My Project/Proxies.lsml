@@ -367,7 +367,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Nhóm_MónItem" />
+        Target="ServiceInterface:NhomMon" />
     </EntityType.Attributes>
   </EntityType>
   <Association>
@@ -404,6 +404,12 @@
     <Association.Attributes>
       <Proxy
         Target="ServiceInterface:BànItem_ChonMon" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:NhomMon_MónItem" />
     </Association.Attributes>
   </Association>
 </Application>
