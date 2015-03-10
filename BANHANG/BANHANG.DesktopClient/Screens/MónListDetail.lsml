@@ -228,7 +228,7 @@
               Name="MónItemDetails"
               Kind="Details"
               DataType="MónItem"
-              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              View="Microsoft.LightSwitch.RichClient:RowsLayout">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="Món Item Details" />
@@ -304,6 +304,29 @@
                 Name="Group1"
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                <ContentItem
+                  Name="NhomMon"
+                  Kind="Details"
+                  DataType="NhomMon">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem/Properties[NhomMon]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="NhomMon1"
+                    Kind="Details"
+                    DataType="NhomMon">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
                 <ContentItem
                   Name="Hình_ảnh1"
                   Kind="Value"

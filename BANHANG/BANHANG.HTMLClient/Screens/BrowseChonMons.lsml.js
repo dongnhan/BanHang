@@ -5,11 +5,14 @@ myapp.BrowseChonMons.Món_postRender = function (element, contentItem) {
 };
 
 myapp.BrowseChonMons.THÊM_execute = function (screen) {
+    var list = screen.findContentItem("Món");
+       lsWire.list.selectAll(list, false);
     // Write code here.
     var newDK = new myapp.ChonMon();
     // Set the Status
     newDK.Ngày = new Date;
     screen.ChonMons.selectedItem = screen.ChonMons.data[0];
+    
 };
 myapp.BrowseChonMons.CHỌN_execute = function (screen) {
     // Write code here.
@@ -79,6 +82,8 @@ myapp.BrowseChonMons.LƯU_execute = function (screen) {
           //screen.ChonMons.refresh();
           screen.ChonMons.selectedItem = screen.ChonMons.data[0];
           screen.Chọn_Món_Chi_Tiết.refresh();
+          var list = screen.findContentItem("Món");
+          lsWire.list.selectAll(list, false);
           //window.location.reload();
           
           //screen.getChọn_Món_Chi_Tiết();
