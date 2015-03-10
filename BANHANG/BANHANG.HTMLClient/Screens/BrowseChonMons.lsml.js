@@ -42,6 +42,7 @@ myapp.BrowseChonMons.CHỌN_execute = function (screen) {
         //    });
 
     });
+    
 
     //text += "Số món : " + count;
 
@@ -84,6 +85,7 @@ myapp.BrowseChonMons.LƯU_execute = function (screen) {
           screen.Chọn_Món_Chi_Tiết.refresh();
           var list = screen.findContentItem("Món");
           lsWire.list.selectAll(list, false);
+          window.alert("LƯU THÀNH CÔNG !");
           //window.location.reload();
           
           //screen.getChọn_Món_Chi_Tiết();
@@ -121,6 +123,20 @@ myapp.BrowseChonMons.THÊM_MÓN_execute = function (screen) {
         //    });
 
     });
+    //return myapp.activeDataWorkspace.BanHangData
+    //      .saveChanges().then(function () {
+    //          // Refresh the Customers
+    //          //screen.ChonMons.refresh();
+    //          //screen.ChonMons.selectedItem = screen.ChonMons.data[0];
+    //          screen.Chọn_Món_Chi_Tiết.refresh();
+    //          var list = screen.findContentItem("Món");
+    //          lsWire.list.selectAll(list, false);
+    //          window.alert("THÊM MÓN THÀNH CÔNG !");
+    //          //window.location.reload();
+
+    //          //screen.getChọn_Món_Chi_Tiết();
+
+    //      });
 
     //text += "Số món : " + count;
 
@@ -128,6 +144,20 @@ myapp.BrowseChonMons.THÊM_MÓN_execute = function (screen) {
 };
 myapp.BrowseChonMons.XÓA_MÓN_execute = function (screen) {
     screen.Chọn_Món_Chi_Tiết.deleteSelected();
+    return myapp.activeDataWorkspace.BanHangData
+     .saveChanges().then(function () {
+         // Refresh the Customers
+         //screen.ChonMons.refresh();
+         //screen.ChonMons.selectedItem = screen.ChonMons.data[0];
+         //screen.Chọn_Món_Chi_Tiết.refresh();
+         //var list = screen.findContentItem("Món");
+         //lsWire.list.selectAll(list, false);
+         window.alert("XÓA THÀNH CÔNG !");
+         //window.location.reload();
+
+         //screen.getChọn_Món_Chi_Tiết();
+
+     });
 
     //return myapp.commitChanges().then(null, function fail(e) {
 
