@@ -442,7 +442,7 @@
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\BanHangData\Bàn.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Khu_Vực.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\Mon.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\Món.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nhóm_Món.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChonMon.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChonMonChiTiet.lsml" />

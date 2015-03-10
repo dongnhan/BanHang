@@ -67,7 +67,6 @@
     <Content Include="Content\jquery.mobile.theme-1.3.2.min.css" />
     <Content Include="Content\jquery.wijmo-pro.all.3.20142.48.min.css" />
     <Content Include="Content\light-theme-2.5.2.css" />
-    <Content Include="Content\lsWires.css" />
     <Content Include="Content\msls-2.5.2.css" />
     <Content Include="Content\msls-2.5.2.min.css" />
     <Content Include="Content\msls-dark-2.5.2.css" />
@@ -85,9 +84,6 @@
     <Content Include="Content\Web.config" />
     <Content Include="default.htm" />
     <Content Include="packages.config" />
-    <Content Include="Screens\ChonMonBrowse.lsml.js">
-      <DependentUpon>ChonMonBrowse.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
@@ -132,7 +128,6 @@
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\GPL-LICENSE.txt" />
-    <Content Include="Scripts\IsWires.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -163,7 +158,6 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
-    <LightSwitchModel Include="Screens\ChonMonBrowse.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSanPham.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />

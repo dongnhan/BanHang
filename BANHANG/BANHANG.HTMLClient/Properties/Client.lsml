@@ -70,8 +70,5 @@
     <ApplicationNavigationMethodLink
       Name="link9"
       Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link10"
-      Method="!module/Methods[showChonMonBrowse]" />
   </Application.NavigationItems>
 </Application>
