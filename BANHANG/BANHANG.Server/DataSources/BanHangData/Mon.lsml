@@ -180,7 +180,7 @@
         EntitySet="Mon" />
       <AssociationSetEnd
         Name="ChonMonChiTiet"
-        EntitySet="ChonMonChiTiet" />
+        EntitySet="ChonMonChiTiets" />
     </AssociationSet>
   </EntityContainer>
   <Association

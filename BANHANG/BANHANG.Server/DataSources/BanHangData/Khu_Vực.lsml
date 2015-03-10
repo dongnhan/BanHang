@@ -84,7 +84,7 @@
         EntitySet="Khu_Vực" />
       <AssociationSetEnd
         Name="Bàn"
-        EntitySet="Bàn" />
+        EntitySet="Ban" />
     </AssociationSet>
     <QueryOperation
       Name="Khu_Vực_Single"
