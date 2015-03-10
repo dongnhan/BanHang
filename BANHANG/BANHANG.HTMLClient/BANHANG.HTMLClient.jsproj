@@ -91,6 +91,9 @@
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Mon\ViewMónItem.lsml.js">
+      <DependentUpon>ViewMónItem.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Sản_Phẩm\ViewSanPham.lsml.js">
       <DependentUpon>ViewSanPham.lsml</DependentUpon>
     </Content>
@@ -163,6 +166,7 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
+    <LightSwitchModel Include="Properties\BanHangData\Mon.lsml" />
     <LightSwitchModel Include="Properties\BanHangData\SanPham.lsml" />
     <LightSwitchModel Include="Properties\BanHangData\DonViTinh.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
@@ -171,6 +175,9 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\BrowseChonMons.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
+    <LightSwitchModel Include="Screens\Mon\AddEditMónItem.lsml" />
+    <LightSwitchModel Include="Screens\Mon\BrowseMon.lsml" />
+    <LightSwitchModel Include="Screens\Mon\ViewMónItem.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSanPham.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\ViewSanPham.lsml" />

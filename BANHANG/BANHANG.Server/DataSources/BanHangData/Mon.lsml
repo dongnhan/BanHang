@@ -79,6 +79,23 @@
         Association="MónItem_ChonMonChiTiet"
         FromEnd="Món"
         ToEnd="ChonMonChiTiet" />
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Hình_ảnh"
+        PropertyType="Microsoft.LightSwitch.Extensions:Image?">
+        <EntityProperty.Attributes>
+          <NotSortable />
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -237,6 +254,17 @@
           Nullable="False"
           Type="int"
           Property="MónItem/Properties[Tình_trạng]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MónItem/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Hình ảnh"
+          Nullable="True"
+          Type="image"
+          Property="MónItem/Properties[Hình_ảnh]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

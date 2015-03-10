@@ -162,6 +162,16 @@
                           </ChainExpression>
                         </ScreenExpressionTree>
                       </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="10"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
                     </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem
@@ -184,6 +194,16 @@
                             <ConstantExpression
                               Value="Small"
                               ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="20"
+                              ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
                       </ControlPropertySource>
@@ -391,6 +411,23 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
+                Name="XEM_MÓN"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="BrowseChonMons/Properties[Món]" />
+                        <CallExpression
+                          Target="viewSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
                 Name="THÊM"
                 Kind="Command">
                 <ContentItem.PropertySources>
@@ -408,6 +445,10 @@
               <ContentItem
                 Name="CHỌN"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="NHẬN MÓN" />
+                </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
@@ -485,6 +526,8 @@
         Name="CHỌN" />
       <ScreenMethod
         Name="LƯU" />
+      <ScreenMethod
+        Name="XEM_MÓN" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
