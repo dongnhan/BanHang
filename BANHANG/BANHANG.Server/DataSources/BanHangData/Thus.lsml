@@ -255,7 +255,7 @@
           Property="Thu/Properties[Số_tiền]" />
         <SsdlForeignKeyProperty
           Name="_DoiTuong"
-          Nullable="False"
+          Nullable="True"
           Type="int"
           PropertyName="c__DoiTuong" />
       </EntitySetMapping.Attributes>

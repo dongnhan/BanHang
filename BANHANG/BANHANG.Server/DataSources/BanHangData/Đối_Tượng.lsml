@@ -170,7 +170,6 @@
     Name="FK_Chi_Đối_Tượng">
     <AssociationEnd
       Name="Đối_Tượng"
-      Multiplicity="One"
       EntityType="Đối_TượngItem">
       <AssociationEnd.Attributes>
         <DeleteRule />
@@ -229,7 +228,6 @@
     Name="FK_Thu_Đối_Tượng">
     <AssociationEnd
       Name="Đối_Tượng"
-      Multiplicity="One"
       EntityType="Đối_TượngItem">
       <AssociationEnd.Attributes>
         <DeleteRule />

@@ -11,7 +11,7 @@ Namespace LightSwitchApplication
         Private Sub Nhập_Sản_PhẩmItemListAddAndEditNew_Execute()
             Me.Nhập_Sản_Phẩm.AddNew()
             Me.FindControl("Đối_TượngItem1").Focus() ' Write your code here.
-            Me.Nhập_Sản_Phẩm.SelectedItem.Thanh_toán = 1 'ghi nợ
+
         End Sub
 
         Private Sub OK_Execute()
