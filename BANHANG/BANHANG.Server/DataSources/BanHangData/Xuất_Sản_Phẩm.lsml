@@ -125,6 +125,23 @@
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Thanh_toán"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="Thu tiền mặt"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Ghi nợ"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Chuyển khoản"
+            Value="2" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -273,6 +290,11 @@
           Nullable="True"
           Type="nvarchar"
           Property="XuatSanPham/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Thanh toán"
+          Nullable="False"
+          Type="int"
+          Property="XuatSanPham/Properties[Thanh_toán]" />
         <SsdlForeignKeyProperty
           Name="_BangGia"
           Nullable="True"
