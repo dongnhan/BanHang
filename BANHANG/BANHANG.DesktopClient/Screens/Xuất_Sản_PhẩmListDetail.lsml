@@ -1192,6 +1192,19 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
+                <ContentItem
+                  Name="Thanh_toán"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="XuatSanPham/Properties[Thanh_toán]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem>
               <ContentItem
                 Name="Group2"
