@@ -13,7 +13,6 @@ Namespace LightSwitchApplication
             ' Write your code here.
             Me.Xuất_Sản_Phẩm.AddNew()
             Me.FindControl("Đối_TượngItem1").Focus()
-            Me.Xuất_Sản_Phẩm.SelectedItem.Thanh_toán = 0 'tiền mặt
         End Sub
 
         Private Sub OK_Execute()
