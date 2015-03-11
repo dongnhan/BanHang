@@ -424,4 +424,76 @@
         Target="ServiceInterface:NhomMon_MónItem" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChiCongNo" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChiCongNoChiTiet" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ThuCongNo" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ThuCongNoChiTiet" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChiCongNo_ChiCongNoChiTiet" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đối_TượngItem_ChiCongNoChiTiet" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đối_TượngItem_ChiCongNo" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:NhapSanPham_ChiCongNo" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đối_TượngItem_ThuCongNoChiTiet" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ThuCongNo_ThuCongNoChiTiet" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đối_TượngItem_ThuCongNo" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:XuatSanPham_ThuCongNo" />
+    </Association.Attributes>
+  </Association>
 </Application>

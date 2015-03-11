@@ -150,6 +150,26 @@
         Association="Đối_TượngItem_XuatSanPham"
         FromEnd="Đối_Tượng"
         ToEnd="XuatSanPham" />
+      <NavigationProperty
+        Name="Chi_Công_Nợ_Chi_Tiết"
+        Association="Đối_TượngItem_ChiCongNoChiTiet"
+        FromEnd="Đối_Tượng"
+        ToEnd="ChiCongNoChiTiet" />
+      <NavigationProperty
+        Name="Chi_Công_Nợ"
+        Association="Đối_TượngItem_ChiCongNo"
+        FromEnd="Đối_Tượng"
+        ToEnd="ChiCongNo" />
+      <NavigationProperty
+        Name="Thu_Công_Nợ_Chi_Tiết"
+        Association="Đối_TượngItem_ThuCongNoChiTiet"
+        FromEnd="Đối_Tượng"
+        ToEnd="ThuCongNoChiTiet" />
+      <NavigationProperty
+        Name="Thu_Công_Nợ"
+        Association="Đối_TượngItem_ThuCongNo"
+        FromEnd="Đối_Tượng"
+        ToEnd="ThuCongNo" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -170,6 +190,7 @@
     Name="FK_Chi_Đối_Tượng">
     <AssociationEnd
       Name="Đối_Tượng"
+      Multiplicity="One"
       EntityType="Đối_TượngItem">
       <AssociationEnd.Attributes>
         <DeleteRule />
@@ -228,6 +249,7 @@
     Name="FK_Thu_Đối_Tượng">
     <AssociationEnd
       Name="Đối_Tượng"
+      Multiplicity="One"
       EntityType="Đối_TượngItem">
       <AssociationEnd.Attributes>
         <DeleteRule />
@@ -414,7 +436,105 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng"
+      Association="Đối_TượngItem_ChiCongNoChiTiet">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="ChiCongNoChiTiet"
+        EntitySet="ChiCongNoChiTiets" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Chi_Công_Nợ_Đối_Tượng"
+      Association="Đối_TượngItem_ChiCongNo">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="ChiCongNo"
+        EntitySet="ChiCongNos" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng"
+      Association="Đối_TượngItem_ThuCongNoChiTiet">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="ThuCongNoChiTiet"
+        EntitySet="ThuCongNoChiTiets" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Thu_Công_Nợ_Đối_Tượng"
+      Association="Đối_TượngItem_ThuCongNo">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="ThuCongNo"
+        EntitySet="ThuCongNos" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="Đối_TượngItem_ChiCongNoChiTiet">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      EntityType="Đối_TượngItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ChiCongNoChiTiet"
+      Multiplicity="Many"
+      EntityType="ChiCongNoChiTiet" />
+  </Association>
+  <Association
+    Name="Đối_TượngItem_ChiCongNo">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ChiCongNo"
+      Multiplicity="Many"
+      EntityType="ChiCongNo" />
+  </Association>
+  <Association
+    Name="Đối_TượngItem_ThuCongNoChiTiet">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      EntityType="Đối_TượngItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ThuCongNoChiTiet"
+      Multiplicity="Many"
+      EntityType="ThuCongNoChiTiet" />
+  </Association>
+  <Association
+    Name="Đối_TượngItem_ThuCongNo">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ThuCongNo"
+      Multiplicity="Many"
+      EntityType="ThuCongNo" />
+  </Association>
   <DataService
     Name="BanHangDataDataService">
     <DataService.Attributes>
@@ -519,6 +639,48 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
+      AssociationSet="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Chi Công Nợ Chi Tiết_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[ChiCongNoChiTiet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChiCongNoChiTiet_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Chi_Công_Nợ_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Chi Công Nợ_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Chi_Công_Nợ_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Chi_Công_Nợ_Đối_Tượng]/Members[ChiCongNo]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChiCongNo_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
       AssociationSet="FK_Chi_Đối_Tượng">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
@@ -598,6 +760,48 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Thu Công Nợ Chi Tiết_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[ThuCongNoChiTiet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ThuCongNoChiTiet_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Thu_Công_Nợ_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Thu Công Nợ_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Thu_Công_Nợ_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData/Members[FK_Thu_Công_Nợ_Đối_Tượng]/Members[ThuCongNo]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ThuCongNo_DoiTuong" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

@@ -329,6 +329,9 @@
     <Compile Include="Screens\Bảng_GiáListDetail.lsml.vb">
       <DependentUpon>Bảng_GiáListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\ChiCongNosListDetail.lsml.vb">
+      <DependentUpon>ChiCongNosListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ChiReportPreviewScreen.lsml.vb">
       <DependentUpon>ChiReportPreviewScreen.lsml</DependentUpon>
     </Compile>
@@ -370,6 +373,9 @@
     </Compile>
     <Compile Include="Screens\Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Sản_PhẩmListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ThuCongNosListDetail.lsml.vb">
+      <DependentUpon>ThuCongNosListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\vTheKhoReportPreviewScreen.lsml.vb">
       <DependentUpon>vTheKhoReportPreviewScreen.lsml</DependentUpon>
@@ -471,6 +477,8 @@
     <LightSwitchModel Include="Screens\MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\Khu_VựcListDetail.lsml" />
     <LightSwitchModel Include="Screens\Nhóm_MónListDetail.lsml" />
+    <LightSwitchModel Include="Screens\ChiCongNosListDetail.lsml" />
+    <LightSwitchModel Include="Screens\ThuCongNosListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

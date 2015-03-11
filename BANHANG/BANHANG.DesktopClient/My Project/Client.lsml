@@ -123,6 +123,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowNhóm_MónListDetail"
       Target="!module/Methods[ShowNhóm_MónListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowChiCongNosListDetail"
+      Target="!module/Methods[ShowChiCongNosListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowThuCongNosListDetail"
+      Target="!module/Methods[ShowThuCongNosListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -174,6 +180,12 @@
       <ApplicationNavigationLink
         Name="Nhóm_MónListDetail"
         Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
+      <ApplicationNavigationLink
+        Name="ChiCongNosListDetail"
+        Command="!module/Commands[ScreenCommandShowChiCongNosListDetail]" />
+      <ApplicationNavigationLink
+        Name="ThuCongNosListDetail"
+        Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
