@@ -111,12 +111,6 @@
         <EntityProperty.Attributes>
           <Computed />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

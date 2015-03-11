@@ -25,6 +25,12 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
+        Target="ServiceInterface:DatHang" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
         Target="ServiceInterface:DatHangChiTiet" />
     </EntityType.Attributes>
   </EntityType>

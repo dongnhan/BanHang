@@ -57,32 +57,17 @@
         Name="BangGia"
         Association="BangGia_XuatSanPham"
         FromEnd="XuatSanPham"
-        ToEnd="BangGia">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Bảng Giá" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
+        ToEnd="BangGia" />
       <NavigationProperty
         Name="DatHang"
         Association="DatHang_XuatSanPham"
         FromEnd="XuatSanPham"
-        ToEnd="DatHang">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Đặt Hàng" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
+        ToEnd="DatHang" />
       <NavigationProperty
         Name="Đối_TượngItem"
         Association="Đối_TượngItem_XuatSanPham"
         FromEnd="XuatSanPham"
-        ToEnd="Đối_Tượng">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Khách Hàng" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
+        ToEnd="Đối_Tượng" />
       <EntityProperty
         Name="Thành_tiền"
         PropertyType="Microsoft.LightSwitch.Extensions:Money">

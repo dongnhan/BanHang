@@ -10,14 +10,6 @@
         Target="ServiceInterface:XuatSanPham" />
     </EntityType.Attributes>
     <EntityType.Properties>
-      <KeyProperty>
-        <KeyProperty.Attributes>
-          <Proxy
-            Target="ServiceInterface:XuatSanPham/Properties[Id]" />
-          <DisplayName
-            Value="Mã" />
-        </KeyProperty.Attributes>
-      </KeyProperty>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
@@ -41,38 +33,4 @@
       </EntityProperty>
     </EntityType.Properties>
   </EntityType>
-  <EntityContainer
-    Name="BanHangData">
-    <EntityContainer.Attributes>
-      <Partial />
-    </EntityContainer.Attributes>
-    <QueryOperation>
-      <QueryOperation.Attributes>
-        <Proxy
-          Target="ServiceInterface:BanHangData/Members[Xuất_Sản_Phẩm_Single]" />
-      </QueryOperation.Attributes>
-      <QueryOperationParameter>
-        <QueryOperationParameter.Attributes>
-          <Proxy
-            Target="ServiceInterface:BanHangData/Members[Xuất_Sản_Phẩm_Single]/Parameters[Id]" />
-          <DisplayName
-            Value="Mã" />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation>
-      <QueryOperation.Attributes>
-        <Proxy
-          Target="ServiceInterface:BanHangData/Members[Xuất_Sản_Phẩm_SingleOrDefault]" />
-      </QueryOperation.Attributes>
-      <QueryOperationParameter>
-        <QueryOperationParameter.Attributes>
-          <Proxy
-            Target="ServiceInterface:BanHangData/Members[Xuất_Sản_Phẩm_SingleOrDefault]/Parameters[Id]" />
-          <DisplayName
-            Value="Mã" />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-  </EntityContainer>
 </Application>
