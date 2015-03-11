@@ -1,7 +1,8 @@
-﻿
+﻿Imports System.Collections.ObjectModel
 Namespace LightSwitchApplication
 
     Public Class Xuất_Sản_PhẩmListDetail
+        Public dathangchitiet As New ObservableCollection(Of DatHangChiTiet)()
         Dim flagEdit As Boolean
         Private Sub Xuất_Sản_PhẩmItemListAddAndEditNew_CanExecute(ByRef result As Boolean)
             ' Write your code here.
@@ -69,6 +70,7 @@ Namespace LightSwitchApplication
                 FindControl("Tồn_Thực").IsVisible = False
                 FindControl("Sản_Phẩm").IsVisible = True
             End If
+            Me.FindControl("Đặt_Hàng_Chi_Tiết").AddCheckBoxColumnForMultiSelection(Of DatHangChiTiet)(dathangchitiet)
         End Sub
 
         Private Sub Xuất_Sản_Phẩm_SelectionChanged()
@@ -86,7 +88,16 @@ Namespace LightSwitchApplication
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.KiemTraTonKho = Me.Application.KiemTraTonKho
                 Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
-                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
+                If IsNothing(Me.Xuất_Sản_Phẩm.SelectedItem.BangGia.Id) = True Then 'nếu chưa chọn bảng giá
+                    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
+                Else
+                    For Each d In Me.Bảng_Giá_Chi_Tiết
+                        If Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham.Id = d.SanPham.Id Then
+                            Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = d.Giá_bán
+                        End If
+                    Next
+                End If
+
                 'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
                 'Me.Tồn = Tồn_Thực.Tồn
@@ -143,10 +154,53 @@ Namespace LightSwitchApplication
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Sản_Phẩm.Giá
                 'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
                 'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
-                
+
             Catch ex As Exception
 
             End Try
+        End Sub
+
+        Private Sub Chọn_tất_cả_Execute()
+            ' Write your code here.
+            Dim pageCount As Integer = Me.Details.Properties.Đặt_Hàng_Chi_Tiết.PageCount
+            Dim CurrentPageNumber As Integer = 1
+            For i As Integer = 0 To pageCount
+                Me.Details.Properties.Đặt_Hàng_Chi_Tiết.PageNumber = CurrentPageNumber
+                CurrentPageNumber = CurrentPageNumber + 1
+                '=====DO WORKS HERE======//
+                For Each p As DatHangChiTiet In Đặt_Hàng_Chi_Tiết
+                    dathangchitiet.Add(p)
+                Next
+            Next
+            Đặt_Hàng_Chi_Tiết.Refresh()
+            Me.Details.Properties.Đặt_Hàng_Chi_Tiết.PageNumber = 1 ' Write your code here.
+        End Sub
+
+        Private Sub Bỏ_tất_cả_Execute()
+            ' Write your code here.
+            Dim pageCount As Integer = Me.Details.Properties.Đặt_Hàng_Chi_Tiết.PageCount
+            Dim CurrentPageNumber As Integer = 1
+            For i As Integer = 0 To pageCount
+                Me.Details.Properties.Đặt_Hàng_Chi_Tiết.PageNumber = CurrentPageNumber
+                CurrentPageNumber = CurrentPageNumber + 1
+                '=====DO WORKS HERE======//
+                For Each p As DatHangChiTiet In Đặt_Hàng_Chi_Tiết
+                    dathangchitiet.Remove(p)
+                Next
+            Next
+            Đặt_Hàng_Chi_Tiết.Refresh()
+            Me.Details.Properties.Đặt_Hàng_Chi_Tiết.PageNumber = 1 ' Write your code here.
+        End Sub
+
+        Private Sub Chuyển_qua_Execute()
+            ' Write your code here.
+            For Each item In dathangchitiet
+                Dim xuatchitiet As XuatSanPhamChiTiet = Xuất_Sản_Phẩm_Chi_Tiết.AddNew
+                xuatchitiet.Số_lượng = item.Số_lượng
+                xuatchitiet.SanPham = item.SanPham
+                xuatchitiet.Đơn_Vị_TínhItem = item.SanPham.Đơn_Vị_TínhItem
+            Next
+            Me.Bỏ_tất_cả() ' Write your code here.
         End Sub
     End Class
 

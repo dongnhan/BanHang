@@ -433,6 +433,7 @@
     <LightSwitchModel Include="My Project\BanHangData\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData\Đặt_Hàng.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
