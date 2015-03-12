@@ -131,15 +131,6 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
-          <SupportedValue
-            DisplayName="Tiền mặt"
-            Value="0" />
-          <SupportedValue
-            DisplayName="Ghi nợ"
-            Value="1" />
-          <SupportedValue
-            DisplayName="Chuyển khoản"
-            Value="2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

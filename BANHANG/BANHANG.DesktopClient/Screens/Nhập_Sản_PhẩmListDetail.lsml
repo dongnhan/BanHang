@@ -539,18 +539,6 @@
                   Name="Đối_TượngItem1"
                   Kind="Details"
                   DataType="Đối_TượngItem">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Nhà Cung Cấp" />
-                  </ContentItem.Attributes>
-                  <ContentItem.ChoicesSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Nhập_Sản_PhẩmListDetail/Properties[NhaCungCap]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.ChoicesSource>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -562,78 +550,13 @@
                   <ContentItem
                     Name="RowTemplate2"
                     Kind="Details"
-                    DataType="Đối_TượngItem"
-                    View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                    DataType="Đối_TượngItem">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
-                    <ContentItem
-                      Name="Tên"
-                      Kind="Value"
-                      DataType=":String">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Đối_TượngItem/Properties[Tên]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem
-                      Name="Địa_chỉ"
-                      Kind="Value"
-                      DataType=":String?">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Đối_TượngItem/Properties[Địa_chỉ]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem
-                      Name="Điện_thoại_di_động"
-                      Kind="Value"
-                      DataType=":String">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Đối_TượngItem/Properties[Điện_thoại_di_động]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
                   </ContentItem>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox/Properties[AutoCompleteBoxFilterMode]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Contains"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Thanh_toán"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="NhapSanPham/Properties[Thanh_toán]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
                   Name="Ghi_chú1"
@@ -1164,32 +1087,6 @@
           <ChainExpression>
             <CallExpression
               Target="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm_Chi_Tiết]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="NhaCungCap"
-        PageSize="45"
-        PropertyType="CollectionView$Đối_TượngItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="NhaCungCapQuery"
-            ReturnType="Đối_TượngItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="BanHangData/Members[NhaCungCap]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="Nhập_Sản_PhẩmListDetail/Properties[NhaCungCap]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>

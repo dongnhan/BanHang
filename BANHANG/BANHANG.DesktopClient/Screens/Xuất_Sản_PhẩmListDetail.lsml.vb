@@ -12,7 +12,6 @@ Namespace LightSwitchApplication
             ' Write your code here.
             Me.Xuất_Sản_Phẩm.AddNew()
             Me.FindControl("Đối_TượngItem1").Focus()
-            Me.Xuất_Sản_Phẩm.SelectedItem.Thanh_toán = 0
         End Sub
 
         Private Sub OK_Execute()
@@ -87,16 +86,7 @@ Namespace LightSwitchApplication
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.KiemTraTonKho = Me.Application.KiemTraTonKho
                 Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
-                If IsNothing(Me.Xuất_Sản_Phẩm.SelectedItem.BangGia.Id) Then
-                    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
-                Else
-                    For Each d In Bảng_Giá_Chi_Tiết
-                        If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham.Id = d.SanPham.Id Then
-                            Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = d.Giá_bán
-                        End If
-                    Next
-                End If
-
+                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
                 'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
                 'Me.Tồn = Tồn_Thực.Tồn

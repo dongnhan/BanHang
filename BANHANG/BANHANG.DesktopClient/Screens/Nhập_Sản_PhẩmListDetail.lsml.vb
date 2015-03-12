@@ -57,11 +57,6 @@ Namespace LightSwitchApplication
             Me.Application.ShowNhapSanPhamReportPreviewScreen(Me.Nhập_Sản_Phẩm.SelectedItem.Id, NumToText(Me.Nhập_Sản_Phẩm.SelectedItem.Tổng_tiền)) ' Write your code here.
 
         End Sub
-
-        Private Sub Nhập_Sản_PhẩmListDetail_InitializeDataWorkspace(saveChangesTo As List(Of Microsoft.LightSwitch.IDataService))
-            ' Write your code here.
-
-        End Sub
     End Class
 
 End Namespace
