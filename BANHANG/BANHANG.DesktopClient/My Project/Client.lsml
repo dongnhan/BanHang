@@ -227,19 +227,6 @@
         Command="!module/Commands[ScreenCommandShowXuất_Sản_PhẩmListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
-      Name="group6">
-      <ApplicationNavigationGroup.Attributes>
-        <DisplayName
-          Value="CÔNG NỢ" />
-      </ApplicationNavigationGroup.Attributes>
-      <ApplicationNavigationLink
-        Name="link17"
-        Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
-      <ApplicationNavigationLink
-        Name="link18"
-        Command="!module/Commands[ScreenCommandShowChiCongNosListDetail]" />
-    </ApplicationNavigationGroup>
-    <ApplicationNavigationGroup
       Name="group3">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
@@ -254,6 +241,19 @@
       <ApplicationNavigationLink
         Name="link6"
         Command="!module/Commands[ScreenCommandShowvTồn_Quỹ_Tiền_MặtSearch]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group4">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="KHO" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link7"
+        Command="!module/Commands[ScreenCommandShowvTồn_Tổng_HợpSearch]" />
+      <ApplicationNavigationLink
+        Name="link8"
+        Command="!module/Commands[ScreenCommandShowvThẻ_Kho_Tổng_HợpSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group5">
@@ -279,19 +279,6 @@
       <ApplicationNavigationLink
         Name="link14"
         Command="!module/Commands[ScreenCommandShowvLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch]" />
-    </ApplicationNavigationGroup>
-    <ApplicationNavigationGroup
-      Name="group4">
-      <ApplicationNavigationGroup.Attributes>
-        <DisplayName
-          Value="KHO" />
-      </ApplicationNavigationGroup.Attributes>
-      <ApplicationNavigationLink
-        Name="link7"
-        Command="!module/Commands[ScreenCommandShowvTồn_Tổng_HợpSearch]" />
-      <ApplicationNavigationLink
-        Name="link8"
-        Command="!module/Commands[ScreenCommandShowvThẻ_Kho_Tổng_HợpSearch]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>
