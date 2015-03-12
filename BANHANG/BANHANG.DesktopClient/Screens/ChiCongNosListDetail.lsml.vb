@@ -51,6 +51,12 @@ Namespace LightSwitchApplication
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = True
         End Sub
+
+        Private Sub Nhập_Sản_Phẩm_SelectionChanged()
+            'If IsNothing(Me.ChiCongNos.SelectedItem.Nhập_Sản_PhẩmItem.Id) Then
+            '    Me.ChiCongNos.SelectedItem.Nhập_Sản_PhẩmItem = Nothing
+            'End If
+        End Sub
     End Class
 
 End Namespace
