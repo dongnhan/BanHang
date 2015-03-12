@@ -25,229 +25,460 @@
             Name="ListColumn"
             Kind="Group">
             <ContentItem
-              Name="ThuCongNoList"
-              Kind="Collection"
-              DataType="CollectionView$ThuCongNo"
-              View="C1.LightSwitch.FlexGrid:C1FlexGrid">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Danh sách Phải Thu" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="ThuCongNosListDetail/Properties[ThuCongNos]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
+              Name="Group2"
+              Kind="Group">
               <ContentItem
-                Name="RowTemplate"
-                Kind="Details"
-                DataType="ThuCongNo">
+                Name="ThuCongNoList"
+                Kind="Collection"
+                DataType="CollectionView$ThuCongNo"
+                View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Danh sách Phải Thu" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
-                    <ChainExpression />
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ThuCongNosListDetail/Properties[ThuCongNos]" />
+                    </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="Ngày_nhập"
-                  Kind="Value"
-                  DataType=":Date">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Ngày_nhập]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Số_hóa_đơn"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Số_hóa_đơn]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Ngày_hóa_đơn"
-                  Kind="Value"
-                  DataType=":Date?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Ngày_hóa_đơn]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Xuất_Sản_PhẩmItem"
+                  Name="RowTemplate"
                   Kind="Details"
-                  DataType="XuatSanPham">
+                  DataType="ThuCongNo">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Xuất_Sản_PhẩmItem]" />
-                      </ChainExpression>
+                      <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="RowTemplate2"
+                    Name="Id1"
+                    Kind="Value"
+                    DataType=":Int32">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Mã" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Id]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Ngày_nhập"
+                    Kind="Value"
+                    DataType=":Date">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Ngày_nhập]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Số_hóa_đơn"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Số_hóa_đơn]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Ngày_hóa_đơn"
+                    Kind="Value"
+                    DataType=":Date?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Ngày_hóa_đơn]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Xuất_Sản_PhẩmItem"
                     Kind="Details"
                     DataType="XuatSanPham">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression />
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Xuất_Sản_PhẩmItem]" />
+                        </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem
+                      Name="RowTemplate2"
+                      Kind="Details"
+                      DataType="XuatSanPham">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
                   </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="Đối_TượngItem"
-                  Kind="Details"
-                  DataType="Đối_TượngItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Đối_TượngItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
                   <ContentItem
-                    Name="RowTemplate1"
+                    Name="Đối_TượngItem"
                     Kind="Details"
                     DataType="Đối_TượngItem">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression />
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Đối_TượngItem]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="RowTemplate1"
+                      Kind="Details"
+                      DataType="Đối_TượngItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Số_tiền"
+                    Kind="Value"
+                    DataType="Microsoft.LightSwitch.Extensions:Money">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Số_tiền]" />
+                        </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
+                  <ContentItem
+                    Name="Ghi_chú"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNo/Properties[Ghi_chú]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="True"
+                            ResultType=":Boolean" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
-                <ContentItem
-                  Name="Số_tiền"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Số_tiền]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Ghi_chú"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNo/Properties[Ghi_chú]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="ThuCongNoListAddAndEditNew"
+                    Kind="Command">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Add..." />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ThuCongNosListDetail/Methods[ThuCongNoListAddAndEditNew]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="ThuCongNos_DeleteSelected"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNosListDetail/Properties[ThuCongNos]" />
+                          <CallExpression
+                            Target="DeleteSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="True"
+                          Value="Collapsed"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Stretch"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="625458240000000000"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[ShowAddNewRowProperty]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
                           ResultType=":Boolean" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Name="ThuCongNoListAddAndEditNew"
-                  Kind="Command">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Add..." />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="ThuCongNosListDetail/Methods[ThuCongNoListAddAndEditNew]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="ThuCongNos_DeleteSelected"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ThuCongNosListDetail/Properties[ThuCongNos]" />
-                        <CallExpression
-                          Target="DeleteSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                  Property="Microsoft.LightSwitch.RichClient:RowsLayout/Properties[IsRowResizable]">
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        Value="Collapsed"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Stretch"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="625458240000000000"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[ShowAddNewRowProperty]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="False"
+                        Value="True"
                         ResultType=":Boolean" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="Group3"
+              Kind="Group">
+              <ContentItem
+                Name="Xuất_Sản_Phẩm"
+                Kind="Collection"
+                DataType="CollectionView$XuatSanPham"
+                View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Xuất_Sản_PhẩmTemplate"
+                  Kind="Details"
+                  DataType="XuatSanPham">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="Id"
+                    Kind="Value"
+                    DataType=":Int32">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Id]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Ngày_xuất"
+                    Kind="Value"
+                    DataType=":Date">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Ngày_xuất]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Ghi_chú4"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Ghi_chú]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Đối_TượngItem5"
+                    Kind="Details"
+                    DataType="Đối_TượngItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Đối_TượngItem]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="Đối_TượngItem6"
+                      Kind="Details"
+                      DataType="Đối_TượngItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Thanh_toán"
+                    Kind="Value"
+                    DataType=":Int32">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Thanh_toán]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Thành_tiền"
+                    Kind="Value"
+                    DataType="Microsoft.LightSwitch.Extensions:Money">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Thành_tiền]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Tiền_thuế"
+                    Kind="Value"
+                    DataType="Microsoft.LightSwitch.Extensions:Money">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Tiền_thuế]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Tổng_tiền"
+                    Kind="Value"
+                    DataType="Microsoft.LightSwitch.Extensions:Money">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Tổng_tiền]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="Xuất_Sản_Phẩm_AddAndEditNew"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
+                          <CallExpression
+                            Target="AddAndEditNew" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Xuất_Sản_Phẩm_EditSelected"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
+                          <CallExpression
+                            Target="EditSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Xuất_Sản_Phẩm_DeleteSelected"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
+                          <CallExpression
+                            Target="DeleteSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="625458240000000000"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
             </ContentItem>
             <ContentItem
               Name="GroupChiTiet"
@@ -461,6 +692,23 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
+                  Name="Id2"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Mã" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ThuCongNo/Properties[Id]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Ngày_nhập1"
                   Kind="Value"
                   DataType=":Date">
@@ -503,6 +751,14 @@
                   Name="Đối_TượngItem1"
                   Kind="Details"
                   DataType="Đối_TượngItem">
+                  <ContentItem.ChoicesSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ThuCongNosListDetail/Properties[KhachHang]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.ChoicesSource>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -514,13 +770,65 @@
                   <ContentItem
                     Name="RowTemplate3"
                     Kind="Details"
-                    DataType="Đối_TượngItem">
+                    DataType="Đối_TượngItem"
+                    View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem
+                      Name="Tên"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_TượngItem/Properties[Tên]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Điện_thoại_di_động"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_TượngItem/Properties[Điện_thoại_di_động]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Địa_chỉ"
+                      Kind="Value"
+                      DataType=":String?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_TượngItem/Properties[Địa_chỉ]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
                   </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox/Properties[AutoCompleteBoxFilterMode]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Contains"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
               </ContentItem>
               <ContentItem
@@ -1007,6 +1315,93 @@
           <ChainExpression>
             <CallExpression
               Target="ThuCongNosListDetail/Properties[Thu_Công_Nợ_Chi_Tiết]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="KhachHang"
+        PageSize="45"
+        PropertyType="CollectionView$Đối_TượngItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="KhachHangQuery"
+            ReturnType="Đối_TượngItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangData/Members[KhachHang]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ThuCongNosListDetail/Properties[KhachHang]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Xuất_Sản_Phẩm"
+        PageSize="45"
+        PropertyType="CollectionView$XuatSanPham">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="Xuất_Sản_PhẩmQuery"
+            ReturnType="XuatSanPham*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="XuatSanPham/Properties[Đối_TượngItem]" />
+                      <MemberExpression
+                        Member="Id" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ParameterExpression
+                      Parameter="IdKhachHang" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangData/Members[Xuất_Sản_Phẩm]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="IdKhachHang"
+                ParameterType=":Int32?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]/Query">
+              <ArgumentExpression
+                Parameter="IdKhachHang">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ThuCongNosListDetail/Properties[ThuCongNos]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="Đối_TượngItem" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
