@@ -65,6 +65,7 @@ Partial Public Class XtraReport_DoanhThuKhachHang
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.KhachHang = New DevExpress.XtraReports.Parameters.Parameter()
+        Me.LightSwitchDataSource1 = New DevExpress.XtraReports.LightSwitchDataSource()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -489,9 +490,16 @@ Partial Public Class XtraReport_DoanhThuKhachHang
         Me.KhachHang.ValueInfo = "0"
         Me.KhachHang.Visible = False
         '
+        'LightSwitchDataSource1
+        '
+        Me.LightSwitchDataSource1.CollectionName = "vDoanh_Thu_Ngay_Theo_Khach_Hang"
+        Me.LightSwitchDataSource1.DataSource = GetType(LightSwitchApplication.vDoanh_Thu_Ngày_Theo_Khách_HàngItem)
+        Me.LightSwitchDataSource1.DataSourceName = "BanHangData"
+        '
         'XtraReport_DoanhThuKhachHang
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.ReportHeader, Me.ReportFooter, Me.BottomMargin, Me.PageHeader, Me.TopMarginBand1})
+        Me.DataSource = Me.LightSwitchDataSource1
         Me.FilterString = "[Ngày] Between(?TuNgay, ?DenNgay) And [c__KhachHang] = ?KhachHang"
         Me.Landscape = True
         Me.Margins = New System.Drawing.Printing.Margins(16, 16, 25, 25)
@@ -547,4 +555,5 @@ Partial Public Class XtraReport_DoanhThuKhachHang
     Friend WithEvents TopMarginBand1 As DevExpress.XtraReports.UI.TopMarginBand
     Friend WithEvents Detail As DevExpress.XtraReports.UI.DetailBand
     Friend WithEvents KhachHang As DevExpress.XtraReports.Parameters.Parameter
+    Friend WithEvents LightSwitchDataSource1 As DevExpress.XtraReports.LightSwitchDataSource
 End Class

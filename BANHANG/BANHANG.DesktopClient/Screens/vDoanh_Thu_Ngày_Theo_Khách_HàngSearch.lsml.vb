@@ -13,6 +13,11 @@ Namespace LightSwitchApplication
             Me.Application.ShowvDoanhThuAllKhachHangReportPreviewScreen(Me.Từ_ngày, Me.Đến_ngày) ' Write your code here.
 
         End Sub
+
+        Private Sub Báo_cáo_từng_Khách_Hàng_Execute()
+            Me.Application.ShowvDoanhThuKhachHangReportPreviewScreen(Me.Từ_ngày, Me.Đến_ngày, Me.Khách_Hàng.Id, Me.Khách_Hàng.Tên) ' Write your code here.
+
+        End Sub
     End Class
 
 End Namespace
