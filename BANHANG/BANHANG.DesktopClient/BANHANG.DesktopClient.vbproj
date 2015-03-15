@@ -380,6 +380,9 @@
     <Compile Include="Screens\vDoanhThuAllKhachHangReportPreviewScreen.lsml.vb">
       <DependentUpon>vDoanhThuAllKhachHangReportPreviewScreen.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\vDoanhThuAllSanPhamReportPreviewScreen.lsml.vb">
+      <DependentUpon>vDoanhThuAllSanPhamReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\vDoanhThuKhachHangReportPreviewScreen.lsml.vb">
       <DependentUpon>vDoanhThuKhachHangReportPreviewScreen.lsml</DependentUpon>
     </Compile>
@@ -487,6 +490,7 @@
     <LightSwitchModel Include="Screens\ThuCongNosListDetail.lsml" />
     <LightSwitchModel Include="Screens\vDoanhThuAllKhachHangReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\vDoanhThuKhachHangReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\vDoanhThuAllSanPhamReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
