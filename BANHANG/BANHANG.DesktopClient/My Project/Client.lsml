@@ -129,9 +129,6 @@
     <ApplicationCommand
       Name="ScreenCommandShowThuCongNosListDetail"
       Target="!module/Methods[ShowThuCongNosListDetail]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowvDoanhThuAllSanPhamReportPreviewScreen"
-      Target="!module/Methods[ShowvDoanhThuAllSanPhamReportPreviewScreen]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -189,9 +186,6 @@
       <ApplicationNavigationLink
         Name="ThuCongNosListDetail"
         Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
-      <ApplicationNavigationLink
-        Name="vDoanhThuAllSanPhamReportPreviewScreen"
-        Command="!module/Commands[ScreenCommandShowvDoanhThuAllSanPhamReportPreviewScreen]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

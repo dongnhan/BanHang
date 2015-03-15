@@ -5,10 +5,10 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="vDoanhThuAllSanPhamReportPreviewScreen">
+    Name="vDoanhThuSanPhamReportPreviewScreen">
     <Screen.Attributes>
       <DisplayName
-        Value="DOANH THU TẤT CẢ SẢN PHẨM" />
+        Value="DOANH THU TỪNG SẢN PHẨM" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -31,7 +31,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vDoanhThuAllSanPhamReportPreviewScreen/Methods[Save]" />
+                    Target="vDoanhThuSanPhamReportPreviewScreen/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -43,7 +43,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vDoanhThuAllSanPhamReportPreviewScreen/Methods[Refresh]" />
+                    Target="vDoanhThuSanPhamReportPreviewScreen/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -55,7 +55,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vDoanhThuAllSanPhamReportPreviewScreen/Methods[Close]" />
+                    Target="vDoanhThuSanPhamReportPreviewScreen/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -125,14 +125,30 @@
           <IsParameter />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenProperty
+        Name="IdSanPham"
+        PropertyType=":Int32">
+        <ScreenProperty.Attributes>
+          <Required />
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="TenSanPham"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowvDoanhThuAllSanPhamReportPreviewScreen">
+      Name="ShowvDoanhThuSanPhamReportPreviewScreen">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="vDoanhThuAllSanPhamReportPreviewScreen" />
+          TargetScreen="vDoanhThuSanPhamReportPreviewScreen" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
         Name="TuNgay"
@@ -140,6 +156,12 @@
       <ApplicationMethodParameter
         Name="DenNgay"
         ParameterType=":Date" />
+      <ApplicationMethodParameter
+        Name="IdSanPham"
+        ParameterType=":Int32" />
+      <ApplicationMethodParameter
+        Name="TenSanPham"
+        ParameterType=":String" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>
