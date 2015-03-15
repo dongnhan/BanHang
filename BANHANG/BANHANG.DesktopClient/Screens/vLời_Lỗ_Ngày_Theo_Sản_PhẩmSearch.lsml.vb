@@ -10,7 +10,7 @@ Namespace LightSwitchApplication
         End Sub
 
         Private Sub Báo_cáo_tất_cả_Sản_Phẩm_Execute()
-            ' Write your code here.
+            Me.Application.ShowvLoiLoAllSanPhamReportPreviewScreen(Me.Từ_ngày, Me.Đến_ngày) ' Write your code here.
 
         End Sub
 
