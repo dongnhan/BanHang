@@ -377,6 +377,9 @@
     <Compile Include="Screens\ThuCongNosListDetail.lsml.vb">
       <DependentUpon>ThuCongNosListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\vDoanhThuAllKhachHangReportPreviewScreen.lsml.vb">
+      <DependentUpon>vDoanhThuAllKhachHangReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\vTheKhoReportPreviewScreen.lsml.vb">
       <DependentUpon>vTheKhoReportPreviewScreen.lsml</DependentUpon>
     </Compile>
@@ -479,6 +482,7 @@
     <LightSwitchModel Include="Screens\Nhóm_MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\ChiCongNosListDetail.lsml" />
     <LightSwitchModel Include="Screens\ThuCongNosListDetail.lsml" />
+    <LightSwitchModel Include="Screens\vDoanhThuAllKhachHangReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
