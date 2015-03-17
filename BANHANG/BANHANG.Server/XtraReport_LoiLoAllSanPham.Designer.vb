@@ -382,7 +382,7 @@ Partial Public Class XtraReport_LoiLoAllSanPham
         'GroupHeader1
         '
         Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel6})
-        Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Tên_Khách_Hàng", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Tên_Sản_Phẩm", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
         Me.GroupHeader1.HeightF = 23.0!
         Me.GroupHeader1.Name = "GroupHeader1"
         '

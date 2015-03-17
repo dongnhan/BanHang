@@ -54,6 +54,23 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
+                    Name="Id1"
+                    Kind="Value"
+                    DataType=":Int32">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Mã" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="XuatSanPham/Properties[Id]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
                     Name="Ngày_xuất"
                     Kind="Value"
                     DataType=":Date">
@@ -857,6 +874,10 @@
                   Name="Id"
                   Kind="Value"
                   DataType=":Int32">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Mã" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -1060,6 +1081,18 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Warning"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="Tiền_thuế"
@@ -1073,6 +1106,18 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Warning"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="Tổng_tiền"
@@ -1086,6 +1131,18 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Warning"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
               </ContentItem>
               <ContentItem.PropertySources>
@@ -1305,6 +1362,7 @@
                 </ContentItem>
                 <ContentItem
                   Name="Xuất_Sản_Phẩm_Chi_TiếtEditSelected"
+                  IsHidden="True"
                   Kind="Command">
                   <ContentItem.Attributes>
                     <DisplayName
