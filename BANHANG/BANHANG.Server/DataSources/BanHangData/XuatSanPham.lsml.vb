@@ -17,7 +17,7 @@ Namespace LightSwitchApplication
         Private Sub Tiền_thuế_Compute(ByRef result As Decimal)
             Dim tien = 0.0
             For Each d In Xuất_Sản_Phẩm_Chi_Tiết
-                tien += d.Thành_tiền
+                tien += d.Tiền_thuế
             Next
             If tien > 0 Then
                 result = tien
@@ -27,7 +27,7 @@ Namespace LightSwitchApplication
         Private Sub Tổng_tiền_Compute(ByRef result As Decimal)
             Dim tien = 0.0
             For Each d In Xuất_Sản_Phẩm_Chi_Tiết
-                tien += d.Thành_tiền
+                tien += d.Tổng_tiền
             Next
             If tien > 0 Then
                 result = tien

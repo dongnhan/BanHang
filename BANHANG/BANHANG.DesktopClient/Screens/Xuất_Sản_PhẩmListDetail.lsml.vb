@@ -18,6 +18,13 @@ Namespace LightSwitchApplication
         Private Sub OK_Execute()
             ' Write your code here.
             Me.CloseModalWindow("GroupChiTiet")
+            If Me.Application.KiemTraTonKho = 0 Then
+                FindControl("Tồn_Thực").Focus()
+            End If
+            'ẩn tồn_thực nếu KiemTraTonKho = 2
+            If Me.Application.KiemTraTonKho = 2 Then
+                FindControl("Sản_Phẩm").Focus()
+            End If
         End Sub
 
         Private Sub Hủy_Execute()
@@ -87,12 +94,16 @@ Namespace LightSwitchApplication
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.KiemTraTonKho = Me.Application.KiemTraTonKho
                 Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(DataWorkspace.BanHangData.SanPham_Single(Tồn_Thực.Mã_Sản_Phẩm).Đơn_Vị_TínhItem.Id)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
-                If IsNothing(Me.Xuất_Sản_Phẩm.SelectedItem.BangGia.Id) Then
-                    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
-                Else
+                If IsNothing(Me.Xuất_Sản_Phẩm.SelectedItem.BangGia.Id) Then 'lấy từ tồn (giá trung bình)
+                    If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
+                        Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
+                    End If
+                Else ' lấy từ bảng giá 
                     For Each d In Bảng_Giá_Chi_Tiết
                         If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.SanPham.Id = d.SanPham.Id Then
-                            Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = d.Giá_bán
+                            If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
+                                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = d.Giá_bán
+                            End If
                         End If
                     Next
                 End If
@@ -104,6 +115,7 @@ Namespace LightSwitchApplication
                 '    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Me.Tồn_Kho.Giá
                 'End If
                 'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Me.Tồn_Kho.Giá_nhập
+                Me.FindControl("Số_lượng1").Focus()
             Catch ex As Exception
 
             End Try ' re' results.AddPropertyError("<Error-Message>")
@@ -150,7 +162,9 @@ Namespace LightSwitchApplication
                 'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.KiemTraTonKho = Me.Application.KiemTraTonKho
                 Dim donvitinh = DataWorkspace.BanHangData.DonViTinh_Single(Sản_Phẩm.Đơn_Vị_TínhItem.Id)
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
-                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Sản_Phẩm.Giá
+                If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
+                    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Sản_Phẩm.Giá
+                End If
                 'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
                 'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
                 

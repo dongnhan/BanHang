@@ -14,7 +14,7 @@ Namespace LightSwitchApplication
         End Sub
 
         Private Sub Tổng_tiền_Compute(ByRef result As Decimal)
-            result = Thành_tiền + Tổng_tiền
+            result = Thành_tiền + Tiền_thuế
         End Sub
 
         Private Sub Tồn_Compute(ByRef result As Integer)
