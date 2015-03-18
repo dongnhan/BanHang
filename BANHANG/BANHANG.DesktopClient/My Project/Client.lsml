@@ -31,6 +31,9 @@
     <EntityContainerGroupProperty
       Name="XtraReportsServiceData"
       EntityContainer="XtraReportsServiceData" />
+    <EntityContainerGroupProperty
+      Name="BanHangData1"
+      EntityContainer="BanHangData1" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -129,6 +132,18 @@
     <ApplicationCommand
       Name="ScreenCommandShowThuCongNosListDetail"
       Target="!module/Methods[ShowThuCongNosListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowChi_Công_Nợ_Đầu_KỳListDetail"
+      Target="!module/Methods[ShowChi_Công_Nợ_Đầu_KỳListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowThu_Công_Nợ_Đầu_KỳListDetail"
+      Target="!module/Methods[ShowThu_Công_Nợ_Đầu_KỳListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhập_Sản_Phẩm_Đầu_KỳListDetail"
+      Target="!module/Methods[ShowNhập_Sản_Phẩm_Đầu_KỳListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowTiền_Mặt_Đầu_KỳListDetail"
+      Target="!module/Methods[ShowTiền_Mặt_Đầu_KỳListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -186,6 +201,18 @@
       <ApplicationNavigationLink
         Name="ThuCongNosListDetail"
         Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
+      <ApplicationNavigationLink
+        Name="Chi_Công_Nợ_Đầu_KỳListDetail"
+        Command="!module/Commands[ScreenCommandShowChi_Công_Nợ_Đầu_KỳListDetail]" />
+      <ApplicationNavigationLink
+        Name="Thu_Công_Nợ_Đầu_KỳListDetail"
+        Command="!module/Commands[ScreenCommandShowThu_Công_Nợ_Đầu_KỳListDetail]" />
+      <ApplicationNavigationLink
+        Name="Nhập_Sản_Phẩm_Đầu_KỳListDetail"
+        Command="!module/Commands[ScreenCommandShowNhập_Sản_Phẩm_Đầu_KỳListDetail]" />
+      <ApplicationNavigationLink
+        Name="Tiền_Mặt_Đầu_KỳListDetail"
+        Command="!module/Commands[ScreenCommandShowTiền_Mặt_Đầu_KỳListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">
@@ -241,6 +268,19 @@
       <ApplicationNavigationLink
         Name="link6"
         Command="!module/Commands[ScreenCommandShowvTồn_Quỹ_Tiền_MặtSearch]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group6">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="CÔNG NỢ" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link17"
+        Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
+      <ApplicationNavigationLink
+        Name="link18"
+        Command="!module/Commands[ScreenCommandShowChiCongNosListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group4">

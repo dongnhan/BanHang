@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Chi_Công_Nợ_Đầu_KỳItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Ngày"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Số_hóa_đơn"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ngày_hóa_đơn"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Số_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Đối_TượngItem"
+        Association="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng"
+        FromEnd="Chi_Công_Nợ_Đầu_Kỳ"
+        ToEnd="Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Nhà cung cấp" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="BanHangData1">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Chi_Công_Nợ_Đầu_Kỳ"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Chi_Công_Nợ_Đầu_KỳItem" />
+    <QueryOperation
+      Name="Chi_Công_Nợ_Đầu_Kỳ_Single"
+      ReturnType="Chi_Công_Nợ_Đầu_KỳItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Chi_Công_Nợ_Đầu_Kỳ" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Chi_Công_Nợ_Đầu_Kỳ_SingleOrDefault"
+      ReturnType="Chi_Công_Nợ_Đầu_KỳItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Chi_Công_Nợ_Đầu_Kỳ" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="BanHangData1DataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Chi_Công_Nợ_Đầu_Kỳ">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Chi Công Nợ Đầu Kỳ" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Chi_Công_Nợ_Đầu_KỳItem/Properties[Id]" />
+        <SsdlProperty
+          Name="Ngày"
+          Nullable="False"
+          Type="date"
+          Property="Chi_Công_Nợ_Đầu_KỳItem/Properties[Ngày]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Số hóa đơn"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Chi_Công_Nợ_Đầu_KỳItem/Properties[Số_hóa_đơn]" />
+        <SsdlProperty
+          Name="Ngày hóa đơn"
+          Nullable="True"
+          Type="date"
+          Property="Chi_Công_Nợ_Đầu_KỳItem/Properties[Ngày_hóa_đơn]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Chi_Công_Nợ_Đầu_KỳItem/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Số tiền"
+          Nullable="False"
+          Type="decimal"
+          Property="Chi_Công_Nợ_Đầu_KỳItem/Properties[Số_tiền]" />
+        <SsdlForeignKeyProperty
+          Name="ChiCongNoDauKy_DoiTuong"
+          Nullable="False"
+          Type="int"
+          PropertyName="ChiCongNoDauKy_DoiTuong" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+  </DataService>
+</ServiceApplication>

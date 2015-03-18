@@ -447,15 +447,24 @@
     <LightSwitchModel Include="DataSources\BanHangData\ChonMons.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChonMonChiTiets.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ChiCongNos.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\ChiCongNoChiTiets.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ThuCongNos.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\ThuCongNoChiTiets.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\ChiCongNoChiTiets.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Chi_Công_Nợ_Đầu_Kỳ.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Đối_Tượng.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Đơn_Vị_Tính.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Thu_Công_Nợ_Đầu_Kỳ.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Tiền_Mặt_Đầu_Kỳ.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <LightSwitchModel Include="My Project\DataSources\BanHangData.lsml" />
     <LightSwitchModel Include="My Project\DataSources\XtraReportsServiceData.lsml" />
+    <LightSwitchModel Include="My Project\DataSources\BanHangData1.lsml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

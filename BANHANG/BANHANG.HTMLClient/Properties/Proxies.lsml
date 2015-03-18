@@ -496,4 +496,94 @@
         Target="ServiceInterface:XuatSanPham_ThuCongNo" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Chi_Công_Nợ_Đầu_KỳItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đối_TượngItem1" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đơn_Vị_TínhItem1" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Nhập_Sản_Phẩm_Đầu_KỳItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Sản_PhẩmItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Thu_Công_Nợ_Đầu_KỳItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Nhập_Sản_Phẩm_Đầu_Kỳ" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Sản_Phẩm_Đơn_Vị_Tính" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng" />
+    </Association.Attributes>
+  </Association>
+  <EntityContainer>
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:BanHangData1" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Tiền_Mặt_Đầu_KỳItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

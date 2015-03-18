@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Sản_PhẩmItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Tên"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Giá"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Giá_thử"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+        Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm"
+        FromEnd="Sản_Phẩm"
+        ToEnd="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+      <NavigationProperty
+        Name="Đơn_Vị_TínhItem"
+        Association="FK_Sản_Phẩm_Đơn_Vị_Tính"
+        FromEnd="Sản_Phẩm"
+        ToEnd="Đơn_Vị_Tính">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đơn Vị Tính" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm">
+    <AssociationEnd
+      Name="Sản_Phẩm"
+      Multiplicity="One"
+      EntityType="Sản_PhẩmItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+      Multiplicity="Many"
+      EntityType="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem" />
+  </Association>
+  <EntityContainer
+    Name="BanHangData1">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Sản_Phẩm"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Sản_PhẩmItem" />
+    <AssociationSet
+      Name="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm"
+      Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm">
+      <AssociationSetEnd
+        Name="Sản_Phẩm"
+        EntitySet="Sản_Phẩm" />
+      <AssociationSetEnd
+        Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+        EntitySet="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Sản_Phẩm_Single"
+      ReturnType="Sản_PhẩmItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Sản_Phẩm" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Sản_Phẩm_SingleOrDefault"
+      ReturnType="Sản_PhẩmItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Sản_Phẩm" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="BanHangData1DataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Sản_Phẩm">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Sản Phẩm" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Sản_PhẩmItem/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Tên"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Sản_PhẩmItem/Properties[Tên]" />
+        <SsdlProperty
+          Name="Giá"
+          Nullable="False"
+          Type="decimal"
+          Property="Sản_PhẩmItem/Properties[Giá]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Sản_PhẩmItem/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Giá thử"
+          Nullable="True"
+          Type="decimal"
+          Property="Sản_PhẩmItem/Properties[Giá_thử]" />
+        <SsdlForeignKeyProperty
+          Name="_DonViTinh"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__DonViTinh" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Nhập Sản Phẩm Đầu Kỳ Chi Tiết_Sản Phẩm" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm]/Members[Sản_Phẩm]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm]/Members[Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="NhapSanPhamDauKyChiTiet_SanPham" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

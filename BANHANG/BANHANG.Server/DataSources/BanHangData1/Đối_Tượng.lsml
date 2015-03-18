@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Đối_TượngItem1">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Tên"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Điện_thoại_di_động"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Điện_thoại_bàn"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Địa_chỉ"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Email"
+        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Website"
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Facebook"
+        PropertyType="Microsoft.LightSwitch.Extensions:WebAddress?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Là_Khách_Hàng"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Là_Nhà_Cung_Cấp"
+        PropertyType=":Boolean?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="c__NhomDoiTuong"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Chi_Công_Nợ_Đầu_Kỳ"
+        Association="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Chi_Công_Nợ_Đầu_Kỳ" />
+      <NavigationProperty
+        Name="Thu_Công_Nợ_Đầu_Kỳ"
+        Association="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Thu_Công_Nợ_Đầu_Kỳ" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Chi_Công_Nợ_Đầu_Kỳ"
+      Multiplicity="Many"
+      EntityType="Chi_Công_Nợ_Đầu_KỳItem" />
+  </Association>
+  <Association
+    Name="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Thu_Công_Nợ_Đầu_Kỳ"
+      Multiplicity="Many"
+      EntityType="Thu_Công_Nợ_Đầu_KỳItem" />
+  </Association>
+  <EntityContainer
+    Name="BanHangData1">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Đối_Tượng"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Đối_TượngItem1" />
+    <AssociationSet
+      Name="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng"
+      Association="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Chi_Công_Nợ_Đầu_Kỳ"
+        EntitySet="Chi_Công_Nợ_Đầu_Kỳ" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng"
+      Association="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Thu_Công_Nợ_Đầu_Kỳ"
+        EntitySet="Thu_Công_Nợ_Đầu_Kỳ" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Đối_Tượng_Single"
+      ReturnType="Đối_TượngItem1">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Đối_Tượng" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Đối_Tượng_SingleOrDefault"
+      ReturnType="Đối_TượngItem1">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Đối_Tượng" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="BanHangData1DataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Đối_Tượng">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Đối Tượng" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Đối_TượngItem1/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Tên"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Tên]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Điện thoại di động"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Điện_thoại_di_động]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Điện thoại bàn"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Điện_thoại_bàn]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Địa chỉ"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Địa_chỉ]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Email"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Email]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Website"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Website]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Facebook"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Facebook]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Đối_TượngItem1/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Là Khách Hàng"
+          Nullable="True"
+          Type="bit"
+          Property="Đối_TượngItem1/Properties[Là_Khách_Hàng]" />
+        <SsdlProperty
+          Name="Là Nhà Cung Cấp"
+          Nullable="True"
+          Type="bit"
+          Property="Đối_TượngItem1/Properties[Là_Nhà_Cung_Cấp]" />
+        <SsdlProperty
+          Name="_NhomDoiTuong"
+          Nullable="True"
+          Type="int"
+          Property="Đối_TượngItem1/Properties[c__NhomDoiTuong]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Chi Công Nợ Đầu Kỳ_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng]/Members[Chi_Công_Nợ_Đầu_Kỳ]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChiCongNoDauKy_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Thu Công Nợ Đầu Kỳ_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng]/Members[Thu_Công_Nợ_Đầu_Kỳ]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ThuCongNoDauKy_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

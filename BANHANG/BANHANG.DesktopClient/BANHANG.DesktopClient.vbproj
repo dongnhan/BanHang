@@ -338,6 +338,18 @@
     <Compile Include="Screens\ChisListDetail.lsml.vb">
       <DependentUpon>ChisListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\DauKy\Chi_Công_Nợ_Đầu_KỳListDetail.lsml.vb">
+      <DependentUpon>Chi_Công_Nợ_Đầu_KỳListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DauKy\Nhập_Sản_Phẩm_Đầu_KỳListDetail.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm_Đầu_KỳListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DauKy\Thu_Công_Nợ_Đầu_KỳListDetail.lsml.vb">
+      <DependentUpon>Thu_Công_Nợ_Đầu_KỳListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DauKy\Tiền_Mặt_Đầu_KỳListDetail.lsml.vb">
+      <DependentUpon>Tiền_Mặt_Đầu_KỳListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
     </Compile>
@@ -469,6 +481,8 @@
     <LightSwitchModel Include="My Project\BanHangData\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -516,6 +530,10 @@
     <LightSwitchModel Include="Screens\vLoiLoAllKhachHangReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\vLoiLoSanPhamReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\vLoiLoAllSanPhamReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\Chi_Công_Nợ_Đầu_KỳListDetail.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\Thu_Công_Nợ_Đầu_KỳListDetail.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\Nhập_Sản_Phẩm_Đầu_KỳListDetail.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\Tiền_Mặt_Đầu_KỳListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
@@ -536,6 +554,7 @@
   <ItemGroup>
     <Resource Include="Resources\WallPaper.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

@@ -32,6 +32,9 @@
     <EntityContainerGroupProperty
       Name="XtraReportsServiceData"
       EntityContainer="XtraReportsServiceData" />
+    <EntityContainerGroupProperty
+      Name="BanHangData1"
+      EntityContainer="BanHangData1" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
