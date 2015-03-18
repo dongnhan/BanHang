@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem">
+    Name="NhapSanPhamDauKyChiTiet">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -82,8 +82,8 @@
       </EntityProperty>
       <NavigationProperty
         Name="Đơn_Vị_TínhItem"
-        Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính"
-        FromEnd="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+        Association="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet"
+        FromEnd="NhapSanPhamDauKyChiTiet"
         ToEnd="Đơn_Vị_Tính">
         <NavigationProperty.Attributes>
           <DisplayName
@@ -91,14 +91,14 @@
         </NavigationProperty.Attributes>
       </NavigationProperty>
       <NavigationProperty
-        Name="Nhập_Sản_Phẩm_Đầu_KỳItem"
-        Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Nhập_Sản_Phẩm_Đầu_Kỳ"
-        FromEnd="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
-        ToEnd="Nhập_Sản_Phẩm_Đầu_Kỳ" />
+        Name="NhapSanPhamDauKy"
+        Association="NhapSanPhamDauKy_NhapSanPhamDauKyChiTiet"
+        FromEnd="NhapSanPhamDauKyChiTiet"
+        ToEnd="NhapSanPhamDauKy" />
       <NavigationProperty
         Name="Sản_PhẩmItem"
-        Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm"
-        FromEnd="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+        Association="Sản_PhẩmItem_NhapSanPhamDauKyChiTiet"
+        FromEnd="NhapSanPhamDauKyChiTiet"
         ToEnd="Sản_Phẩm">
         <NavigationProperty.Attributes>
           <DisplayName
@@ -159,10 +159,10 @@
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem" />
+      EntityType="NhapSanPhamDauKyChiTiet" />
     <QueryOperation
       Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Single"
-      ReturnType="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem">
+      ReturnType="NhapSanPhamDauKyChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -202,7 +202,7 @@
     </QueryOperation>
     <QueryOperation
       Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_SingleOrDefault"
-      ReturnType="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem">
+      ReturnType="NhapSanPhamDauKyChiTiet">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -257,30 +257,30 @@
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem/Properties[Id]" />
+          Property="NhapSanPhamDauKyChiTiet/Properties[Id]" />
         <SsdlProperty
           Name="Số lượng"
           Nullable="False"
           Scale="2"
           Type="decimal"
-          Property="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem/Properties[Số_lượng]" />
+          Property="NhapSanPhamDauKyChiTiet/Properties[Số_lượng]" />
         <SsdlProperty
           Name="Giá nhập"
           Nullable="False"
           Type="decimal"
-          Property="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem/Properties[Giá_nhập]" />
+          Property="NhapSanPhamDauKyChiTiet/Properties[Giá_nhập]" />
         <SsdlProperty
           Name="Phần trăm thuế"
           Nullable="False"
           Scale="2"
           Type="decimal"
-          Property="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem/Properties[Phần_trăm_thuế]" />
+          Property="NhapSanPhamDauKyChiTiet/Properties[Phần_trăm_thuế]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem/Properties[Ghi_chú]" />
+          Property="NhapSanPhamDauKyChiTiet/Properties[Ghi_chú]" />
         <SsdlForeignKeyProperty
           Name="NhapSanPhamDauKyChiTiet_DonViTinh"
           Nullable="False"

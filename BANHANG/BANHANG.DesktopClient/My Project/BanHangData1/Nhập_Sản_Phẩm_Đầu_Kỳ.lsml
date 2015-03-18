@@ -7,28 +7,28 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Nhập_Sản_Phẩm_Đầu_KỳItem" />
+        Target="ServiceInterface:NhapSanPhamDauKy" />
     </EntityType.Attributes>
     <EntityType.Properties>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:Nhập_Sản_Phẩm_Đầu_KỳItem/Properties[Thành_tiền]" />
+            Target="LightSwitchServiceApplication:NhapSanPhamDauKy/Properties[Thành_tiền]" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:Nhập_Sản_Phẩm_Đầu_KỳItem/Properties[Tiền_thuế]" />
+            Target="LightSwitchServiceApplication:NhapSanPhamDauKy/Properties[Tiền_thuế]" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:Nhập_Sản_Phẩm_Đầu_KỳItem/Properties[Tổng_tiền]" />
+            Target="LightSwitchServiceApplication:NhapSanPhamDauKy/Properties[Tổng_tiền]" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

@@ -523,19 +523,19 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính" />
+        Target="ServiceInterface:Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Nhập_Sản_Phẩm_Đầu_Kỳ" />
+        Target="ServiceInterface:NhapSanPhamDauKy_NhapSanPhamDauKyChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Sản_Phẩm" />
+        Target="ServiceInterface:Sản_PhẩmItem_NhapSanPhamDauKyChiTiet" />
     </Association.Attributes>
   </Association>
   <Association>

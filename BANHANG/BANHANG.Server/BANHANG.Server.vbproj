@@ -262,6 +262,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKy.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm_Đầu_Kỳ.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <DependentUpon>Bảng_Giá_Chi_Tiết.lsml</DependentUpon>
     </Compile>

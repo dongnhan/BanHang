@@ -44,9 +44,9 @@
       </EntityProperty>
       <NavigationProperty
         Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
-        Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính"
+        Association="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet"
         FromEnd="Đơn_Vị_Tính"
-        ToEnd="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+        ToEnd="NhapSanPhamDauKyChiTiet" />
       <NavigationProperty
         Name="Sản_Phẩm"
         Association="FK_Sản_Phẩm_Đơn_Vị_Tính"
@@ -55,7 +55,7 @@
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính">
+    Name="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet">
     <AssociationEnd
       Name="Đơn_Vị_Tính"
       Multiplicity="One"
@@ -65,9 +65,9 @@
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+      Name="NhapSanPhamDauKyChiTiet"
       Multiplicity="Many"
-      EntityType="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_TiếtItem" />
+      EntityType="NhapSanPhamDauKyChiTiet" />
   </Association>
   <Association
     Name="FK_Sản_Phẩm_Đơn_Vị_Tính">
@@ -97,12 +97,12 @@
       EntityType="Đơn_Vị_TínhItem1" />
     <AssociationSet
       Name="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính"
-      Association="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính">
+      Association="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet">
       <AssociationSetEnd
         Name="Đơn_Vị_Tính"
         EntitySet="Đơn_Vị_Tính" />
       <AssociationSetEnd
-        Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+        Name="NhapSanPhamDauKyChiTiet"
         EntitySet="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
     </AssociationSet>
     <AssociationSet
@@ -240,7 +240,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính]/Members[Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết]">
+          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính]/Members[NhapSanPhamDauKyChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="NhapSanPhamDauKyChiTiet_DonViTinh" />

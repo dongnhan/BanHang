@@ -304,6 +304,12 @@
     <Import Include="Microsoft.LightSwitch.Presentation.Extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\NhapSanPhamDauKy.lsml.vb">
+      <Link>UserCode\Shared\NhapSanPhamDauKy.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
+      <Link>UserCode\Shared\NhapSanPhamDauKyChiTiet.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <Link>UserCode\Shared\BangGiaChiTiet.lsml.vb</Link>
     </Compile>
