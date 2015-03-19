@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="Tiền_Mặt_Đầu_KỳListDetail">
+    Name="Tiền_Mặt_Đầu_Kỳ1ListDetail">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangData1" />
       <DisplayName
-        Value="TIỀN MẶT (ĐK)" />
+        Value="TIỀN MẶT ĐẦU KỲ" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -25,19 +25,19 @@
             Name="DetailsColumn"
             Kind="Group">
             <ContentItem
-              Name="Tiền_Mặt_Đầu_KỳItemDetails"
+              Name="Tiền_Mặt_Đầu_KỳItem1Details"
               Kind="Details"
-              DataType="Tiền_Mặt_Đầu_KỳItem"
+              DataType="Tiền_Mặt_Đầu_KỳItem1"
               View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Tiền Mặt Đầu Kỳ Item Details" />
+                  Value="Tiền Mặt Đầu Kỳ Item1 Details" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Tiền_Mặt_Đầu_KỳListDetail/Properties[Tiền_Mặt_Đầu_Kỳ]" />
+                      Member="Tiền_Mặt_Đầu_Kỳ1ListDetail/Properties[Tiền_Mặt_Đầu_Kỳ1]" />
                     <MemberExpression
                       Member="SelectedItem" />
                   </ChainExpression>
@@ -51,7 +51,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tiền_Mặt_Đầu_KỳItem/Properties[Ngày]" />
+                        Member="Tiền_Mặt_Đầu_KỳItem1/Properties[Ngày]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -59,12 +59,12 @@
               <ContentItem
                 Name="Số_tiền1"
                 Kind="Value"
-                DataType=":Decimal">
+                DataType="Microsoft.LightSwitch.Extensions:Money">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Tiền_Mặt_Đầu_KỳItem/Properties[Số_tiền]" />
+                        Member="Tiền_Mặt_Đầu_KỳItem1/Properties[Số_tiền]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -114,7 +114,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Tiền_Mặt_Đầu_KỳListDetail/Methods[Save]" />
+                    Target="Tiền_Mặt_Đầu_Kỳ1ListDetail/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -126,7 +126,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Tiền_Mặt_Đầu_KỳListDetail/Methods[Refresh]" />
+                    Target="Tiền_Mặt_Đầu_Kỳ1ListDetail/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -138,7 +138,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Tiền_Mặt_Đầu_KỳListDetail/Methods[Close]" />
+                    Target="Tiền_Mặt_Đầu_Kỳ1ListDetail/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -190,20 +190,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Tiền_Mặt_Đầu_Kỳ"
+        Name="Tiền_Mặt_Đầu_Kỳ1"
         PageSize="45"
-        PropertyType="CollectionView$Tiền_Mặt_Đầu_KỳItem">
+        PropertyType="CollectionView$Tiền_Mặt_Đầu_KỳItem1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="Tiền_Mặt_Đầu_KỳQuery"
-            ReturnType="Tiền_Mặt_Đầu_KỳItem*">
+            Name="Tiền_Mặt_Đầu_Kỳ1Query"
+            ReturnType="Tiền_Mặt_Đầu_KỳItem1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData1/Members[Tiền_Mặt_Đầu_Kỳ]" />
+                  Member="BanHangData1/Members[Tiền_Mặt_Đầu_Kỳ1]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -211,7 +211,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="Tiền_Mặt_Đầu_KỳListDetail/Properties[Tiền_Mặt_Đầu_Kỳ]/Query" />
+              Target="Tiền_Mặt_Đầu_Kỳ1ListDetail/Properties[Tiền_Mặt_Đầu_Kỳ1]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -219,10 +219,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowTiền_Mặt_Đầu_KỳListDetail">
+      Name="ShowTiền_Mặt_Đầu_Kỳ1ListDetail">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="Tiền_Mặt_Đầu_KỳListDetail" />
+          TargetScreen="Tiền_Mặt_Đầu_Kỳ1ListDetail" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

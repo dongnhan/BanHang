@@ -142,8 +142,8 @@
       Name="ScreenCommandShowNhập_Sản_Phẩm_Đầu_KỳListDetail"
       Target="!module/Methods[ShowNhập_Sản_Phẩm_Đầu_KỳListDetail]" />
     <ApplicationCommand
-      Name="ScreenCommandShowTiền_Mặt_Đầu_KỳListDetail"
-      Target="!module/Methods[ShowTiền_Mặt_Đầu_KỳListDetail]" />
+      Name="ScreenCommandShowTiền_Mặt_Đầu_Kỳ1ListDetail"
+      Target="!module/Methods[ShowTiền_Mặt_Đầu_Kỳ1ListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -211,8 +211,8 @@
         Name="Nhập_Sản_Phẩm_Đầu_KỳListDetail"
         Command="!module/Commands[ScreenCommandShowNhập_Sản_Phẩm_Đầu_KỳListDetail]" />
       <ApplicationNavigationLink
-        Name="Tiền_Mặt_Đầu_KỳListDetail"
-        Command="!module/Commands[ScreenCommandShowTiền_Mặt_Đầu_KỳListDetail]" />
+        Name="Tiền_Mặt_Đầu_Kỳ1ListDetail"
+        Command="!module/Commands[ScreenCommandShowTiền_Mặt_Đầu_Kỳ1ListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group">

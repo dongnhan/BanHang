@@ -8,6 +8,8 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:XuatSanPham" />
+      <SummaryProperty
+        Property="XuatSanPham/Properties[Id]" />
     </EntityType.Attributes>
     <EntityType.Properties>
       <EntityProperty>

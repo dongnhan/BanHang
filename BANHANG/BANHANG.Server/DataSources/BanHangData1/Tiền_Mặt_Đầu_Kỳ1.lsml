@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Tiền_Mặt_Đầu_KỳItem">
+    Name="Tiền_Mặt_Đầu_KỳItem1">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -38,13 +38,19 @@
       </EntityProperty>
       <EntityProperty
         Name="Số_tiền"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="2" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
@@ -55,14 +61,14 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Tiền_Mặt_Đầu_Kỳ"
+      Name="Tiền_Mặt_Đầu_Kỳ1"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Tiền_Mặt_Đầu_KỳItem" />
+      EntityType="Tiền_Mặt_Đầu_KỳItem1" />
     <QueryOperation
-      Name="Tiền_Mặt_Đầu_Kỳ_Single"
-      ReturnType="Tiền_Mặt_Đầu_KỳItem">
+      Name="Tiền_Mặt_Đầu_Kỳ1_Single"
+      ReturnType="Tiền_Mặt_Đầu_KỳItem1">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -88,7 +94,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Tiền_Mặt_Đầu_Kỳ" />
+            Member="Tiền_Mặt_Đầu_Kỳ1" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -101,8 +107,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Tiền_Mặt_Đầu_Kỳ_SingleOrDefault"
-      ReturnType="Tiền_Mặt_Đầu_KỳItem">
+      Name="Tiền_Mặt_Đầu_Kỳ1_SingleOrDefault"
+      ReturnType="Tiền_Mặt_Đầu_KỳItem1">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -128,7 +134,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Tiền_Mặt_Đầu_Kỳ" />
+            Member="Tiền_Mặt_Đầu_Kỳ1" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -147,27 +153,27 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Tiền_Mặt_Đầu_Kỳ">
+      EntitySet="Tiền_Mặt_Đầu_Kỳ1">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Tiền_Mặt_Đầu_Kỳ" />
+          Table="Tiền Mặt Đầu Kỳ" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Tiền_Mặt_Đầu_KỳItem/Properties[Id]" />
+          Property="Tiền_Mặt_Đầu_KỳItem1/Properties[Id]" />
         <SsdlProperty
           Name="Ngày"
           Nullable="False"
           Type="date"
-          Property="Tiền_Mặt_Đầu_KỳItem/Properties[Ngày]" />
+          Property="Tiền_Mặt_Đầu_KỳItem1/Properties[Ngày]" />
         <SsdlProperty
           Name="Số_tiền"
           Nullable="False"
           Type="decimal"
-          Property="Tiền_Mặt_Đầu_KỳItem/Properties[Số_tiền]" />
+          Property="Tiền_Mặt_Đầu_KỳItem1/Properties[Số_tiền]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

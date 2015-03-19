@@ -316,11 +316,17 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\Chi.lsml.vb">
       <Link>UserCode\Shared\Chi.lsml.vb</Link>
     </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\ChiCongNo.lsml.vb">
+      <Link>UserCode\Shared\ChiCongNo.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\NhapSanPham.lsml.vb">
       <Link>UserCode\Shared\NhapSanPham.lsml.vb</Link>
     </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\NhapSanPhamChiTiet.lsml.vb">
       <Link>UserCode\Shared\NhapSanPhamChiTiet.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData\ThuCongNo.lsml.vb">
+      <Link>UserCode\Shared\ThuCongNo.lsml.vb</Link>
     </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\XuatSanPham.lsml.vb">
       <Link>UserCode\Shared\XuatSanPham.lsml.vb</Link>
@@ -353,8 +359,8 @@
     <Compile Include="Screens\DauKy\Thu_Công_Nợ_Đầu_KỳListDetail.lsml.vb">
       <DependentUpon>Thu_Công_Nợ_Đầu_KỳListDetail.lsml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\DauKy\Tiền_Mặt_Đầu_KỳListDetail.lsml.vb">
-      <DependentUpon>Tiền_Mặt_Đầu_KỳListDetail.lsml</DependentUpon>
+    <Compile Include="Screens\DauKy\Tiền_Mặt_Đầu_Kỳ1ListDetail.lsml.vb">
+      <DependentUpon>Tiền_Mặt_Đầu_Kỳ1ListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
@@ -539,7 +545,7 @@
     <LightSwitchModel Include="Screens\DauKy\Chi_Công_Nợ_Đầu_KỳListDetail.lsml" />
     <LightSwitchModel Include="Screens\DauKy\Thu_Công_Nợ_Đầu_KỳListDetail.lsml" />
     <LightSwitchModel Include="Screens\DauKy\Nhập_Sản_Phẩm_Đầu_KỳListDetail.lsml" />
-    <LightSwitchModel Include="Screens\DauKy\Tiền_Mặt_Đầu_KỳListDetail.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\Tiền_Mặt_Đầu_Kỳ1ListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

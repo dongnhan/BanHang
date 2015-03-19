@@ -559,7 +559,7 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Tiền_Mặt_Đầu_KỳItem" />
+        Target="ServiceInterface:Tiền_Mặt_Đầu_KỳItem1" />
     </EntityType.Attributes>
   </EntityType>
 </Application>

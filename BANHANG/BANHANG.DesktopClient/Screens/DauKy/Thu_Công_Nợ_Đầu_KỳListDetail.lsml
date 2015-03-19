@@ -303,6 +303,14 @@
                   Name="Đối_TượngItem1"
                   Kind="Details"
                   DataType="Đối_TượngItem1">
+                  <ContentItem.ChoicesSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Thu_Công_Nợ_Đầu_KỳListDetail/Properties[Đối_Tượng]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.ChoicesSource>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -542,6 +550,47 @@
           <ChainExpression>
             <CallExpression
               Target="Thu_Công_Nợ_Đầu_KỳListDetail/Properties[Thu_Công_Nợ_Đầu_Kỳ]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Đối_Tượng"
+        PageSize="45"
+        PropertyType="CollectionView$Đối_TượngItem1">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="Đối_TượngQuery"
+            ReturnType="Đối_TượngItem1*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Đối_TượngItem1/Properties[Là_Khách_Hàng]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean?" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangData1/Members[Đối_Tượng]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Thu_Công_Nợ_Đầu_KỳListDetail/Properties[Đối_Tượng]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
