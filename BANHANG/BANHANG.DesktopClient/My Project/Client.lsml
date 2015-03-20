@@ -215,6 +215,25 @@
         Command="!module/Commands[ScreenCommandShowTiền_Mặt_Đầu_Kỳ1ListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
+      Name="group7">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="ĐẦU KỲ" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link22"
+        Command="!module/Commands[ScreenCommandShowTiền_Mặt_Đầu_Kỳ1ListDetail]" />
+      <ApplicationNavigationLink
+        Name="link19"
+        Command="!module/Commands[ScreenCommandShowNhập_Sản_Phẩm_Đầu_KỳListDetail]" />
+      <ApplicationNavigationLink
+        Name="link20"
+        Command="!module/Commands[ScreenCommandShowChi_Công_Nợ_Đầu_KỳListDetail]" />
+      <ApplicationNavigationLink
+        Name="link21"
+        Command="!module/Commands[ScreenCommandShowThu_Công_Nợ_Đầu_KỳListDetail]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
       Name="group">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName

@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="BanHangData1" />
       <DisplayName
-        Value="TỒN KHO (ĐK)" />
+        Value="TỒN KHO" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
