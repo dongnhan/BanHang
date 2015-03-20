@@ -22,27 +22,37 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="ChonMonList"
-            Kind="Group">
+            Name="Group1"
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Menu" />
+            </ContentItem.Attributes>
             <ContentItem
-              Name="Group1"
-              Kind="Group"
-              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+              Name="Nhóm"
+              Kind="Details"
+              DataType="NhomMon"
+              View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseChonMons/Properties[Nhóm]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
               <ContentItem
-                Name="Nhóm"
+                Name="NhómTemplate"
                 Kind="Details"
-                DataType="NhomMon"
-                View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
+                DataType="NhomMon">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="BrowseChonMons/Properties[Nhóm]" />
-                    </ChainExpression>
+                    <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="NhómTemplate"
+                  Name="Nhóm_MónItem"
                   Kind="Details"
                   DataType="NhomMon">
                   <ContentItem.DataSource>
@@ -50,16 +60,6 @@
                       <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem
-                    Name="Nhóm_MónItem"
-                    Kind="Details"
-                    DataType="NhomMon">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
               </ContentItem>
             </ContentItem>
@@ -208,6 +208,14 @@
                 </ContentItem>
               </ContentItem>
             </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Name="ChonMonList"
+            Kind="Group">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Phiếu" />
+            </ContentItem.Attributes>
             <ContentItem
               Name="Group"
               Kind="Group"

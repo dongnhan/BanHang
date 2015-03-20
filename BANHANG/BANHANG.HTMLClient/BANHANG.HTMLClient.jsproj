@@ -85,6 +85,30 @@
     <Content Include="Content\Web.config" />
     <Content Include="default.htm" />
     <Content Include="packages.config" />
+    <Content Include="Screens\BaoCao\vDoanh_Thu_NgàyBrowse.lsml.js">
+      <DependentUpon>vDoanh_Thu_NgàyBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml.js">
+      <DependentUpon>vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml.js">
+      <DependentUpon>vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vLời_Lỗ_NgàyBrowse.lsml.js">
+      <DependentUpon>vLời_Lỗ_NgàyBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml.js">
+      <DependentUpon>vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml.js">
+      <DependentUpon>vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vTồn_Quỹ_Tiền_MặtBrowse.lsml.js">
+      <DependentUpon>vTồn_Quỹ_Tiền_MặtBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vTồn_Tổng_HợpBrowse.lsml.js">
+      <DependentUpon>vTồn_Tổng_HợpBrowse.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\BrowseChonMons.lsml.js">
       <DependentUpon>BrowseChonMons.lsml</DependentUpon>
     </Content>
@@ -96,30 +120,6 @@
     </Content>
     <Content Include="Screens\Sản_Phẩm\ViewSanPham.lsml.js">
       <DependentUpon>ViewSanPham.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vDoanh_Thu_NgàyBrowse.lsml.js">
-      <DependentUpon>vDoanh_Thu_NgàyBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml.js">
-      <DependentUpon>vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml.js">
-      <DependentUpon>vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vLời_Lỗ_NgàyBrowse.lsml.js">
-      <DependentUpon>vLời_Lỗ_NgàyBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml.js">
-      <DependentUpon>vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml.js">
-      <DependentUpon>vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vTồn_Quỹ_Tiền_MặtBrowse.lsml.js">
-      <DependentUpon>vTồn_Quỹ_Tiền_MặtBrowse.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\vTồn_Tổng_HợpBrowse.lsml.js">
-      <DependentUpon>vTồn_Tổng_HợpBrowse.lsml</DependentUpon>
     </Content>
     <Content Include="Screens\Đơn_Vị_Tính\ViewĐơn_Vị_TínhItem.lsml.js">
       <DependentUpon>ViewĐơn_Vị_TínhItem.lsml</DependentUpon>
@@ -173,6 +173,14 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vDoanh_Thu_NgàyBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vLời_Lỗ_NgàyBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vTồn_Quỹ_Tiền_MặtBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vTồn_Tổng_HợpBrowse.lsml" />
     <LightSwitchModel Include="Screens\BrowseChonMons.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
     <LightSwitchModel Include="Screens\Mon\AddEditMónItem.lsml" />
@@ -181,14 +189,6 @@
     <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSanPham.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\ViewSanPham.lsml" />
-    <LightSwitchModel Include="Screens\vDoanh_Thu_NgàyBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vLời_Lỗ_NgàyBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vTồn_Quỹ_Tiền_MặtBrowse.lsml" />
-    <LightSwitchModel Include="Screens\vTồn_Tổng_HợpBrowse.lsml" />
     <LightSwitchModel Include="Screens\Đơn_Vị_Tính\AddEditĐơn_Vị_TínhItem.lsml" />
     <LightSwitchModel Include="Screens\Đơn_Vị_Tính\BrowseĐơn_Vị_Tính.lsml" />
     <LightSwitchModel Include="Screens\Đơn_Vị_Tính\ViewĐơn_Vị_TínhItem.lsml" />
