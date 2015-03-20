@@ -176,6 +176,7 @@
     Name="Đối_TượngItem_ChiChiTiet">
     <AssociationEnd
       Name="Đối_Tượng"
+      Multiplicity="One"
       EntityType="Đối_TượngItem">
       <AssociationEnd.Attributes>
         <DeleteRule />

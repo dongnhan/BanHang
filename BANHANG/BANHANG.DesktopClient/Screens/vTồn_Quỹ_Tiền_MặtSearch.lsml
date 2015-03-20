@@ -95,6 +95,138 @@
               </ControlPropertySource>
             </ContentItem.PropertySources>
           </ContentItem>
+          <ContentItem
+            Name="vTồn_Quỹ_Tiền_Mặt"
+            Kind="Collection"
+            DataType="CollectionView$vTồn_Quỹ_Tiền_MặtItem"
+            View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="vTồn_Quỹ_Tiền_MặtSearch/Properties[vTồn_Quỹ_Tiền_Mặt]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="vTồn_Quỹ_Tiền_MặtTemplate"
+              Kind="Details"
+              DataType="vTồn_Quỹ_Tiền_MặtItem">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Đầu_Kỳ"
+                Kind="Value"
+                DataType="Microsoft.LightSwitch.Extensions:Money?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtItem/Properties[Đầu_Kỳ]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Thu"
+                Kind="Value"
+                DataType="Microsoft.LightSwitch.Extensions:Money?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtItem/Properties[Thu]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Chi"
+                Kind="Value"
+                DataType="Microsoft.LightSwitch.Extensions:Money?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtItem/Properties[Chi]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Cuối_Kỳ"
+                Kind="Value"
+                DataType="Microsoft.LightSwitch.Extensions:Money?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtItem/Properties[Cuối_Kỳ]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="vTồn_Quỹ_Tiền_Mặt_AddAndEditNew"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtSearch/Properties[vTồn_Quỹ_Tiền_Mặt]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="vTồn_Quỹ_Tiền_Mặt_EditSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtSearch/Properties[vTồn_Quỹ_Tiền_Mặt]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="vTồn_Quỹ_Tiền_Mặt_DeleteSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Quỹ_Tiền_MặtSearch/Properties[vTồn_Quỹ_Tiền_Mặt]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="625458240000000000"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
         </ContentItem>
         <ContentItem.CommandItems>
           <ContentItem
@@ -211,6 +343,93 @@
       <ScreenProperty
         Name="Năm"
         PropertyType="NămItem" />
+      <ScreenCollectionProperty
+        Name="vTồn_Quỹ_Tiền_Mặt"
+        PageSize="45"
+        PropertyType="CollectionView$vTồn_Quỹ_Tiền_MặtItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="vTồn_Quỹ_Tiền_MặtQuery"
+            ReturnType="vTồn_Quỹ_Tiền_MặtItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="And">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="vTồn_Quỹ_Tiền_MặtItem/Properties[Thang]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="Thang" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="vTồn_Quỹ_Tiền_MặtItem/Properties[Nam]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="Nam" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangData/Members[vTồn_Quỹ_Tiền_Mặt]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="Thang"
+                ParameterType=":Int32?" />
+              <QueryParameter
+                Name="Nam"
+                ParameterType=":Int32?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="vTồn_Quỹ_Tiền_MặtSearch/Properties[vTồn_Quỹ_Tiền_Mặt]/Query">
+              <ArgumentExpression
+                Parameter="Thang">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="vTồn_Quỹ_Tiền_MặtSearch/Properties[Tháng]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Nam">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="vTồn_Quỹ_Tiền_MặtSearch/Properties[Năm]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

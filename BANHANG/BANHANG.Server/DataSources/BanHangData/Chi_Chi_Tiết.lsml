@@ -243,7 +243,7 @@
           PropertyName="c__Chi" />
         <SsdlForeignKeyProperty
           Name="_DoiTuong"
-          Nullable="True"
+          Nullable="False"
           Type="int"
           PropertyName="c__DoiTuong" />
       </EntitySetMapping.Attributes>

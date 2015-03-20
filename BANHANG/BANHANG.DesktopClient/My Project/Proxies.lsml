@@ -556,4 +556,10 @@
         Target="ServiceInterface:Tiền_Mặt_Đầu_KỳItem1" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vTồn_Quỹ_Tiền_MặtItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>
