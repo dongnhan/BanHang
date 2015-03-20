@@ -94,6 +94,16 @@
         Association="SanPham_XuatSanPhamChiTiet"
         FromEnd="SanPham"
         ToEnd="XuatSanPhamChiTiet" />
+      <EntityProperty
+        Name="Giá_thử"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -348,6 +358,11 @@
           Nullable="True"
           Type="nvarchar"
           Property="SanPham/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Giá thử"
+          Nullable="True"
+          Type="decimal"
+          Property="SanPham/Properties[Giá_thử]" />
         <SsdlForeignKeyProperty
           Name="_DonViTinh"
           Nullable="False"

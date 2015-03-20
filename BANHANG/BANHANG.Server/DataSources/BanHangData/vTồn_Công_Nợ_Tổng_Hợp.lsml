@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="vTồn_Quỹ_Tiền_MặtItem">
+    Name="vTồn_Công_Nợ_Tổng_HợpItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -33,66 +33,42 @@
       </KeyProperty>
       <EntityProperty
         Name="Đầu_Kỳ"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Thu"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Chi"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
         Name="Cuối_Kỳ"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
@@ -103,11 +79,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="vTon_Quy_Tien_Mat"
-      EntityType="vTồn_Quỹ_Tiền_MặtItem" />
+      Name="vTồn_Công_Nợ_Tổng_Hợp"
+      EntityType="vTồn_Công_Nợ_Tổng_HợpItem" />
     <QueryOperation
-      Name="vTon_Quy_Tien_Mat_Single"
-      ReturnType="vTồn_Quỹ_Tiền_MặtItem">
+      Name="vTồn_Công_Nợ_Tổng_Hợp_Single"
+      ReturnType="vTồn_Công_Nợ_Tổng_HợpItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -153,7 +129,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vTon_Quy_Tien_Mat" />
+            Member="vTồn_Công_Nợ_Tổng_Hợp" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -174,8 +150,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="vTon_Quy_Tien_Mat_SingleOrDefault"
-      ReturnType="vTồn_Quỹ_Tiền_MặtItem">
+      Name="vTồn_Công_Nợ_Tổng_Hợp_SingleOrDefault"
+      ReturnType="vTồn_Công_Nợ_Tổng_HợpItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -221,7 +197,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vTon_Quy_Tien_Mat" />
+            Member="vTồn_Công_Nợ_Tổng_Hợp" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -248,46 +224,46 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="vTon_Quy_Tien_Mat">
+      EntitySet="vTồn_Công_Nợ_Tổng_Hợp">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="vTồn Quỹ Tiền Mặt" />
+          Table="vTồn Công Nợ Tổng Hợp" />
         <IsView />
         <SsdlProperty
           Name="Thang"
           Nullable="False"
           Type="int"
-          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Thang]" />
+          Property="vTồn_Công_Nợ_Tổng_HợpItem/Properties[Thang]" />
         <SsdlProperty
           Name="Nam"
           Nullable="False"
           Type="int"
-          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Nam]" />
+          Property="vTồn_Công_Nợ_Tổng_HợpItem/Properties[Nam]" />
         <SsdlProperty
           Name="Đầu Kỳ"
           Nullable="True"
           Precision="38"
           Type="decimal"
-          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Đầu_Kỳ]" />
+          Property="vTồn_Công_Nợ_Tổng_HợpItem/Properties[Đầu_Kỳ]" />
         <SsdlProperty
           Name="Thu"
           Nullable="True"
           Precision="38"
           Type="decimal"
-          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Thu]" />
+          Property="vTồn_Công_Nợ_Tổng_HợpItem/Properties[Thu]" />
         <SsdlProperty
           Name="Chi"
           Nullable="True"
           Precision="38"
           Type="decimal"
-          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Chi]" />
+          Property="vTồn_Công_Nợ_Tổng_HợpItem/Properties[Chi]" />
         <SsdlProperty
           Name="Cuối Kỳ"
           Nullable="True"
           Precision="38"
           Type="decimal"
-          Property="vTồn_Quỹ_Tiền_MặtItem/Properties[Cuối_Kỳ]" />
+          Property="vTồn_Công_Nợ_Tổng_HợpItem/Properties[Cuối_Kỳ]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

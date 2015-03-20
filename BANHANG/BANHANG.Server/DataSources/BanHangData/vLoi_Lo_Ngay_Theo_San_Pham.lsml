@@ -59,7 +59,7 @@
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
-            Scale="2" />
+            Scale="6" />
           <NotSearchable />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
@@ -379,7 +379,7 @@
           Name="Tiền Lời"
           Nullable="True"
           Precision="38"
-          Scale="2"
+          Scale="6"
           Type="decimal"
           Property="vLời_Lỗ_Ngày_Theo_Sản_PhẩmItem/Properties[Tiền_Lời]" />
         <SsdlProperty

@@ -67,15 +67,25 @@ Namespace LightSwitchApplication
             If Me.Application.KiemTraTonKho = 0 Then
                 'FindControl("Tồn_Thực").SetProperty("IsReadOnly", False)
                 'FindControl("Sản_Phẩm").SetProperty("IsReadOnly", True)
-                FindControl("Tồn_Thực").IsVisible = True
-                FindControl("Sản_Phẩm").IsVisible = False
+                Try
+                    FindControl("Tồn_Thực").IsVisible = True
+                    FindControl("Sản_Phẩm").IsVisible = False
+                Catch ex As Exception
+
+                End Try
+                
             End If
             'ẩn tồn_thực nếu KiemTraTonKho = 2
             If Me.Application.KiemTraTonKho = 2 Then
                 'FindControl("Tồn_Thực").SetProperty("IsReadOnly", False)
                 'FindControl("Sản_Phẩm").SetProperty("IsReadOnly", True)
-                FindControl("Tồn_Thực").IsVisible = False
-                FindControl("Sản_Phẩm").IsVisible = True
+                Try
+                    FindControl("Tồn_Thực").IsVisible = False
+                    FindControl("Sản_Phẩm").IsVisible = True
+                Catch ex As Exception
+
+                End Try
+               
             End If
         End Sub
 
@@ -96,7 +106,7 @@ Namespace LightSwitchApplication
                 Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Đơn_Vị_TínhItem = donvitinh
                 If IsNothing(Me.Xuất_Sản_Phẩm.SelectedItem.BangGia.Id) Then 'lấy từ tồn (giá trung bình)
                     If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
-                        Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
+                        'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Tồn_Thực.Giá
                     End If
                 Else ' lấy từ bảng giá 
                     For Each d In Bảng_Giá_Chi_Tiết
@@ -109,7 +119,7 @@ Namespace LightSwitchApplication
                 End If
 
                 'Dim gianhap As Decimal = Convert.ToDecimal(Math.Round(Tồn_Thực.Giá_nhập, 2))
-                Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
+                'Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_vốn = Tồn_Thực.Giá_nhập
                 'Me.Tồn = Tồn_Thực.Tồn
                 'If Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = 0 Then
                 '    Me.Xuất_Sản_Phẩm_Chi_Tiết.SelectedItem.Giá_bán = Me.Tồn_Kho.Giá

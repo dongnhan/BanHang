@@ -21,7 +21,7 @@
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
-            Scale="2" />
+            Scale="6" />
           <NotSearchable />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
@@ -274,10 +274,15 @@
           Table="vLời Lỗ Ngày" />
         <IsView />
         <SsdlProperty
+          Name="Ngày"
+          Nullable="False"
+          Type="date"
+          Property="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
+        <SsdlProperty
           Name="Tiền Lời"
           Nullable="True"
           Precision="38"
-          Scale="2"
+          Scale="6"
           Type="decimal"
           Property="vLời_Lỗ_NgàyItem/Properties[Tiền_Lời]" />
         <SsdlProperty
@@ -290,11 +295,6 @@
           Nullable="False"
           Type="int"
           Property="vLời_Lỗ_NgàyItem/Properties[Nam]" />
-        <SsdlProperty
-          Name="Ngày"
-          Nullable="False"
-          Type="date"
-          Property="vLời_Lỗ_NgàyItem/Properties[Ngày]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

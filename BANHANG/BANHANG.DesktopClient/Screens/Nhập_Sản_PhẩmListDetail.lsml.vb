@@ -62,6 +62,18 @@ Namespace LightSwitchApplication
             ' Write your code here.
 
         End Sub
+
+        Private Sub Nhập_Sản_Phẩm_Chi_Tiết_Validate(results As ScreenValidationResultsBuilder)
+            Try
+                If Nhập_Sản_Phẩm_Chi_Tiết.SelectedItem.Số_lượng = 0 Then
+                    results.AddPropertyError("Phải chọn số lượng nhập khác 0")
+                    Me.OpenModalWindow("GroupChiTiet")
+                End If
+            Catch ex As Exception
+
+            End Try ' results.AddPropertyError("<Error-Message>")
+
+        End Sub
     End Class
 
 End Namespace

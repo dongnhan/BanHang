@@ -25,6 +25,13 @@ Namespace LightSwitchApplication
             End Try ' results.AddPropertyError("<Error-Message>")
 
         End Sub
+
+        Private Sub Số_lượng_Validate(results As EntityValidationResultsBuilder)
+            If Số_lượng = 0 Then
+                results.AddPropertyError("Số lượng phải lớn hơn 0 !")
+            End If ' results.AddPropertyError("<Error-Message>")
+
+        End Sub
     End Class
 
 End Namespace

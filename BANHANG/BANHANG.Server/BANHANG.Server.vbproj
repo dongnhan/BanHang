@@ -436,7 +436,6 @@
     <LightSwitchModel Include="DataSources\BanHangData\NhaCungCap.lsml">
       <DependentUpon>Đối_Tượng.lsml</DependentUpon>
     </LightSwitchModel>
-    <LightSwitchModel Include="DataSources\BanHangData\vTon_Quy_Tien_Mat.lsml" />
     <LightSwitchModel Include="DataSources\XtraReportsServiceData\MessageEnvelopes.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\vDoanh_Thu_Ngay.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\vDoanh_Thu_Ngay_Theo_Khach_Hang.lsml" />

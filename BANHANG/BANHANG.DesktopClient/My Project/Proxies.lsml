@@ -283,12 +283,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:vTồn_Quỹ_Tiền_MặtItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:MessageEnvelope" />
     </EntityType.Attributes>
   </EntityType>
