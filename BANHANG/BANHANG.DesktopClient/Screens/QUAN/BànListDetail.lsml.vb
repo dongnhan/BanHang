@@ -3,14 +3,14 @@ Namespace LightSwitchApplication
 
     Public Class BànListDetail
 
-        Private Sub BànItemListAddAndEditNew_CanExecute(ByRef result As Boolean)
+        Private Sub BànItem1ListAddAndEditNew_CanExecute(ByRef result As Boolean)
             ' Write your code here.
 
         End Sub
 
-        Private Sub BànItemListAddAndEditNew_Execute()
-            Me.Bàn.AddNew() ' Write your code here.
-            Me.FindControl("Mã1").Focus()
+        Private Sub BànItem1ListAddAndEditNew_Execute()
+            Me.FindControl("Mã1").Focus() ' Write your code here.
+
         End Sub
     End Class
 

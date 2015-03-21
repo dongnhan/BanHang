@@ -8,7 +8,7 @@
     Name="Khu_VựcListDetail">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
         Value="KHU VỰC" />
     </Screen.Attributes>
@@ -25,9 +25,9 @@
             Name="ListColumn"
             Kind="Group">
             <ContentItem
-              Name="Khu_VựcItemList"
+              Name="Khu_VựcItem1List"
               Kind="Collection"
-              DataType="CollectionView$Khu_VựcItem"
+              DataType="CollectionView$Khu_VựcItem1"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -40,7 +40,7 @@
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="Khu_VựcItem">
+                DataType="Khu_VựcItem1">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -54,7 +54,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Khu_VựcItem/Properties[Mã]" />
+                          Member="Khu_VựcItem1/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -67,15 +67,27 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Khu_VựcItem/Properties[Tên]" />
+                          Member="Khu_VựcItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="Khu_VựcItemListAddAndEditNew"
+                  Name="Khu_VựcItem1ListAddAndEditNew"
                   Kind="Command">
                   <ContentItem.Attributes>
                     <DisplayName
@@ -85,7 +97,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="Khu_VựcListDetail/Methods[Khu_VựcItemListAddAndEditNew]" />
+                          Target="Khu_VựcListDetail/Methods[Khu_VựcItem1ListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -175,13 +187,13 @@
             Name="DetailsColumn"
             Kind="Group">
             <ContentItem
-              Name="Khu_VựcItemDetails"
+              Name="Khu_VựcItem1Details"
               Kind="Details"
-              DataType="Khu_VựcItem"
+              DataType="Khu_VựcItem1"
               View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Khu Vực Item Details" />
+                  Value="Khu Vực Item1 Details" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -201,7 +213,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Khu_VựcItem/Properties[Mã]" />
+                        Member="Khu_VựcItem1/Properties[Mã]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -214,7 +226,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Khu_VựcItem/Properties[Tên]" />
+                        Member="Khu_VựcItem1/Properties[Tên]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -322,7 +334,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
-                      Value="Microsoft.LightSwitch.UserImageResources::Resources\report.jpg"
+                      Value="Microsoft.LightSwitch.UserImageResources::Resources\close.png"
                       ResultType=":String" />
                   </ChainExpression>
                 </ScreenExpressionTree>
@@ -364,7 +376,7 @@
       <ScreenMethod
         Name="Báo_cáo" />
       <ScreenMethod
-        Name="Khu_VựcItemListAddAndEditNew">
+        Name="Khu_VựcItem1ListAddAndEditNew">
         <ScreenMethod.Attributes>
           <BuiltInMethodOverride
             MethodName="AddAndEditNew" />
@@ -375,18 +387,18 @@
       <ScreenCollectionProperty
         Name="Khu_Vực"
         PageSize="45"
-        PropertyType="CollectionView$Khu_VựcItem">
+        PropertyType="CollectionView$Khu_VựcItem1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Khu_VựcQuery"
-            ReturnType="Khu_VựcItem*">
+            ReturnType="Khu_VựcItem1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[Khu_Vực]" />
+                  Member="BanHangDataQuan/Members[Khu_Vực]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>

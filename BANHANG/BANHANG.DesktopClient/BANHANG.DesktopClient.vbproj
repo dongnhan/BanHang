@@ -347,14 +347,23 @@
     <Compile Include="Screens\CongNo\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch.lsml.vb">
       <DependentUpon>vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch.lsml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Quan\BànListDetail.lsml.vb">
-      <DependentUpon>BànListDetail.lsml</DependentUpon>
-    </Compile>
     <Compile Include="Screens\BanHang\Bảng_GiáListDetail.lsml.vb">
       <DependentUpon>Bảng_GiáListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\CongNo\ChiCongNosListDetail.lsml.vb">
       <DependentUpon>ChiCongNosListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Quan\BànListDetail.lsml.vb">
+      <DependentUpon>BànListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Quan\Khu_VựcListDetail.lsml.vb">
+      <DependentUpon>Khu_VựcListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Quan\MónListDetail1.lsml.vb">
+      <DependentUpon>MónListDetail1.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Quan\Nhóm_MónListDetail.lsml.vb">
+      <DependentUpon>Nhóm_MónListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\TienMat\ChiReportPreviewScreen.lsml.vb">
       <DependentUpon>ChiReportPreviewScreen.lsml</DependentUpon>
@@ -377,9 +386,6 @@
     <Compile Include="Screens\DanhMuc\KhachHangListDetail.lsml.vb">
       <DependentUpon>KhachHangListDetail.lsml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Quan\Khu_VựcListDetail.lsml.vb">
-      <DependentUpon>Khu_VựcListDetail.lsml</DependentUpon>
-    </Compile>
     <Compile Include="Screens\MainListDetail.lsml.vb">
       <DependentUpon>MainListDetail.lsml</DependentUpon>
     </Compile>
@@ -397,9 +403,6 @@
     </Compile>
     <Compile Include="Screens\DanhMuc\NhomNhaCungCapListDetail.lsml.vb">
       <DependentUpon>NhomNhaCungCapListDetail.lsml</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Quan\Nhóm_MónListDetail.lsml.vb">
-      <DependentUpon>Nhóm_MónListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\DanhMuc\Nhóm_Sản_PhẩmListDetail.lsml.vb">
       <DependentUpon>Nhóm_Sản_PhẩmListDetail.lsml</DependentUpon>
@@ -541,10 +544,7 @@
     <LightSwitchModel Include="Screens\DanhMuc\NhomNhaCungCapListDetail.lsml" />
     <LightSwitchModel Include="Screens\DanhMuc\Nhóm_Sản_PhẩmListDetail.lsml" />
     <LightSwitchModel Include="Screens\BanHang\Đặt_HàngListDetail.lsml" />
-    <LightSwitchModel Include="Screens\Quan\BànListDetail.lsml" />
     <LightSwitchModel Include="Screens\Quan\MónListDetail.lsml" />
-    <LightSwitchModel Include="Screens\Quan\Khu_VựcListDetail.lsml" />
-    <LightSwitchModel Include="Screens\Quan\Nhóm_MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\CongNo\ChiCongNosListDetail.lsml" />
     <LightSwitchModel Include="Screens\CongNo\ThuCongNosListDetail.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vDoanhThuAllKhachHangReportPreviewScreen.lsml" />
@@ -562,6 +562,10 @@
     <LightSwitchModel Include="Screens\CongNo\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch.lsml" />
     <LightSwitchModel Include="Screens\CongNo\vTonCongNoPhaiThuKhachHangReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\CongNo\vCongNoPhaiTraNhaCungCapReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\Quan\BànListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Quan\Khu_VựcListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Quan\MónListDetail1.lsml" />
+    <LightSwitchModel Include="Screens\Quan\Nhóm_MónListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

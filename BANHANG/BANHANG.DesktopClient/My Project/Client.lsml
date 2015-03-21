@@ -34,6 +34,9 @@
     <EntityContainerGroupProperty
       Name="BanHangData1"
       EntityContainer="BanHangData1" />
+    <EntityContainerGroupProperty
+      Name="BanHangDataQuan"
+      EntityContainer="BanHangDataQuan" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -115,17 +118,8 @@
       Name="ScreenCommandShowĐặt_HàngListDetail"
       Target="!module/Methods[ShowĐặt_HàngListDetail]" />
     <ApplicationCommand
-      Name="ScreenCommandShowBànListDetail"
-      Target="!module/Methods[ShowBànListDetail]" />
-    <ApplicationCommand
       Name="ScreenCommandShowMónListDetail"
       Target="!module/Methods[ShowMónListDetail]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowKhu_VựcListDetail"
-      Target="!module/Methods[ShowKhu_VựcListDetail]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowNhóm_MónListDetail"
-      Target="!module/Methods[ShowNhóm_MónListDetail]" />
     <ApplicationCommand
       Name="ScreenCommandShowChiCongNosListDetail"
       Target="!module/Methods[ShowChiCongNosListDetail]" />
@@ -150,6 +144,18 @@
     <ApplicationCommand
       Name="ScreenCommandShowvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch"
       Target="!module/Methods[ShowvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowBànListDetail"
+      Target="!module/Methods[ShowBànListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowKhu_VựcListDetail"
+      Target="!module/Methods[ShowKhu_VựcListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowMónListDetail1"
+      Target="!module/Methods[ShowMónListDetail1]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhóm_MónListDetail"
+      Target="!module/Methods[ShowNhóm_MónListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -317,6 +323,28 @@
       <ApplicationNavigationLink
         Name="link14"
         Command="!module/Commands[ScreenCommandShowvLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group8">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="QUÁN" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link25"
+        Command="!module/Commands[ScreenCommandShowMónListDetail]" />
+      <ApplicationNavigationLink
+        Name="link26"
+        Command="!module/Commands[ScreenCommandShowBànListDetail]" />
+      <ApplicationNavigationLink
+        Name="link27"
+        Command="!module/Commands[ScreenCommandShowKhu_VựcListDetail]" />
+      <ApplicationNavigationLink
+        Name="link28"
+        Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
+      <ApplicationNavigationLink
+        Name="link29"
+        Command="!module/Commands[ScreenCommandShowMónListDetail1]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

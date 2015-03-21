@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangData" />
+      <DisplayName
+        Value="MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

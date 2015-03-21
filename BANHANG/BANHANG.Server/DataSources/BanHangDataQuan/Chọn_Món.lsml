@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="Chọn_MónItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        IsReadOnly="True"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Ngày"
+        PropertyType=":DateTime">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="3"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ChonMon_KhachHang"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Trạng_thái"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="In_phiếu"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Giảm_giá"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Chọn_Món_Chi_Tiết"
+        Association="FK_Chọn_Món_Chi_Tiết_Chọn_Món"
+        FromEnd="Chọn_Món"
+        ToEnd="Chọn_Món_Chi_Tiết" />
+      <NavigationProperty
+        Name="BànItem"
+        Association="FK_Chọn_Món_Bàn"
+        FromEnd="Chọn_Món"
+        ToEnd="Bàn" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_Chọn_Món_Chi_Tiết_Chọn_Món">
+    <AssociationEnd
+      Name="Chọn_Món"
+      Multiplicity="One"
+      EntityType="Chọn_MónItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Chọn_Món_Chi_Tiết"
+      Multiplicity="Many"
+      EntityType="Chọn_Món_Chi_TiếtItem" />
+  </Association>
+  <EntityContainer
+    Name="BanHangDataQuan">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Chọn_Món"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="Chọn_MónItem" />
+    <AssociationSet
+      Name="FK_Chọn_Món_Chi_Tiết_Chọn_Món"
+      Association="FK_Chọn_Món_Chi_Tiết_Chọn_Món">
+      <AssociationSetEnd
+        Name="Chọn_Món"
+        EntitySet="Chọn_Món" />
+      <AssociationSetEnd
+        Name="Chọn_Món_Chi_Tiết"
+        EntitySet="Chọn_Món_Chi_Tiết" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Chọn_Món_Single"
+      ReturnType="Chọn_MónItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Chọn_Món" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Chọn_Món_SingleOrDefault"
+      ReturnType="Chọn_MónItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Chọn_Món" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="BanHangDataQuanDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Chọn_Món">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Chọn Món" />
+        <SsdlProperty
+          Name="Id"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="int"
+          Property="Chọn_MónItem/Properties[Id]" />
+        <SsdlProperty
+          Name="Ngày"
+          Nullable="False"
+          Type="datetime"
+          Property="Chọn_MónItem/Properties[Ngày]" />
+        <SsdlProperty
+          Name="ChonMon_KhachHang"
+          Nullable="True"
+          Type="int"
+          Property="Chọn_MónItem/Properties[ChonMon_KhachHang]" />
+        <SsdlProperty
+          Name="Trạng thái"
+          Nullable="False"
+          Type="int"
+          Property="Chọn_MónItem/Properties[Trạng_thái]" />
+        <SsdlProperty
+          Name="In phiếu"
+          Nullable="False"
+          Type="int"
+          Property="Chọn_MónItem/Properties[In_phiếu]" />
+        <SsdlProperty
+          Name="Giảm giá"
+          Nullable="False"
+          Type="int"
+          Property="Chọn_MónItem/Properties[Giảm_giá]" />
+        <SsdlForeignKeyProperty
+          Name="ChonMon_Ban"
+          Nullable="False"
+          Type="int"
+          PropertyName="ChonMon_Ban" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Chọn_Món_Chi_Tiết_Chọn_Món">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Chọn Món Chi Tiết_Chọn Món" />
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Chọn_Món]/Members[Chọn_Món]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Chọn_Món]/Members[Chọn_Món_Chi_Tiết]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChonMon_ChonMonChiTiet" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

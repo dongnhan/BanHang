@@ -30,6 +30,9 @@
     <EntityContainerGroupProperty
       Name="BanHangData1"
       EntityContainer="BanHangData1" />
+    <EntityContainerGroupProperty
+      Name="BanHangDataQuan"
+      EntityContainer="BanHangDataQuan" />
   </EntityContainerGroup>
   <GlobalAttributeGroup
     Name="LightSwitchServiceApplicationGroup">

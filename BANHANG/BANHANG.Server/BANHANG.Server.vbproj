@@ -484,6 +484,12 @@
     <LightSwitchModel Include="DataSources\BanHangData\vTồn_Quỹ_Tiền_Mặt.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\vTồn_Công_Nợ_Phải_Thu_Khách_Hàng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_Cấp.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Bàn.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Chọn_Món.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Chọn_Món_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Khu_Vực.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Món.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Nhóm_Món.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -491,6 +497,7 @@
     <LightSwitchModel Include="My Project\DataSources\BanHangData.lsml" />
     <LightSwitchModel Include="My Project\DataSources\XtraReportsServiceData.lsml" />
     <LightSwitchModel Include="My Project\DataSources\BanHangData1.lsml" />
+    <LightSwitchModel Include="My Project\DataSources\BanHangDataQuan.lsml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

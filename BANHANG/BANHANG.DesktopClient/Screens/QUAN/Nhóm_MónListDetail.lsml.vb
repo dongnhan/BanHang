@@ -9,8 +9,9 @@ Namespace LightSwitchApplication
         End Sub
 
         Private Sub Nhóm_MónItemListAddAndEditNew_Execute()
-            Me.Nhóm_Món.AddNew() ' Write your code here.
-            Me.FindControl("Mã1").Focus()
+            Me.Nhóm_Món.AddNew()
+            Me.FindControl("Mã1").Focus() ' Write your code here.
+
         End Sub
     End Class
 

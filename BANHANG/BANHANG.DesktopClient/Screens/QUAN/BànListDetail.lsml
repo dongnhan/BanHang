@@ -8,7 +8,7 @@
     Name="BànListDetail">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
         Value="BÀN" />
     </Screen.Attributes>
@@ -25,9 +25,9 @@
             Name="ListColumn"
             Kind="Group">
             <ContentItem
-              Name="BànItemList"
+              Name="BànItem1List"
               Kind="Collection"
-              DataType="CollectionView$BànItem"
+              DataType="CollectionView$BànItem1"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -40,7 +40,7 @@
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="BànItem">
+                DataType="BànItem1">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -54,7 +54,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BànItem/Properties[Mã]" />
+                          Member="BànItem1/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -67,7 +67,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BànItem/Properties[Tên]" />
+                          Member="BànItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -75,19 +75,19 @@
                 <ContentItem
                   Name="Khu_VựcItem"
                   Kind="Details"
-                  DataType="Khu_VựcItem">
+                  DataType="Khu_VựcItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BànItem/Properties[Khu_VựcItem]" />
+                          Member="BànItem1/Properties[Khu_VựcItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate1"
                     Kind="Details"
-                    DataType="Khu_VựcItem">
+                    DataType="Khu_VựcItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -95,10 +95,22 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="BànItemListAddAndEditNew"
+                  Name="BànItem1ListAddAndEditNew"
                   Kind="Command">
                   <ContentItem.Attributes>
                     <DisplayName
@@ -108,7 +120,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="BànListDetail/Methods[BànItemListAddAndEditNew]" />
+                          Target="BànListDetail/Methods[BànItem1ListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -198,13 +210,13 @@
             Name="DetailsColumn"
             Kind="Group">
             <ContentItem
-              Name="BànItemDetails"
+              Name="BànItem1Details"
               Kind="Details"
-              DataType="BànItem"
+              DataType="BànItem1"
               View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Bàn Item Details" />
+                  Value="Bàn Item1 Details" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -224,7 +236,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="BànItem/Properties[Mã]" />
+                        Member="BànItem1/Properties[Mã]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -237,7 +249,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="BànItem/Properties[Tên]" />
+                        Member="BànItem1/Properties[Tên]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -245,19 +257,19 @@
               <ContentItem
                 Name="Khu_VựcItem1"
                 Kind="Details"
-                DataType="Khu_VựcItem">
+                DataType="Khu_VựcItem1">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="BànItem/Properties[Khu_VựcItem]" />
+                        Member="BànItem1/Properties[Khu_VựcItem]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
                   Name="RowTemplate2"
                   Kind="Details"
-                  DataType="Khu_VựcItem">
+                  DataType="Khu_VựcItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
@@ -422,7 +434,7 @@
       <ScreenMethod
         Name="Báo_cáo" />
       <ScreenMethod
-        Name="BànItemListAddAndEditNew">
+        Name="BànItem1ListAddAndEditNew">
         <ScreenMethod.Attributes>
           <BuiltInMethodOverride
             MethodName="AddAndEditNew" />
@@ -433,18 +445,18 @@
       <ScreenCollectionProperty
         Name="Bàn"
         PageSize="45"
-        PropertyType="CollectionView$BànItem">
+        PropertyType="CollectionView$BànItem1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="BànQuery"
-            ReturnType="BànItem*">
+            ReturnType="BànItem1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[Ban]" />
+                  Member="BanHangDataQuan/Members[Bàn]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>

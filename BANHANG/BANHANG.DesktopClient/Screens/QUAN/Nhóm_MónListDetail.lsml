@@ -8,7 +8,9 @@
     Name="Nhóm_MónListDetail">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
+      <DisplayName
+        Value="NHÓM MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -25,7 +27,7 @@
             <ContentItem
               Name="Nhóm_MónItemList"
               Kind="Collection"
-              DataType="CollectionView$NhomMon"
+              DataType="CollectionView$Nhóm_MónItem"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
@@ -38,7 +40,7 @@
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="NhomMon">
+                DataType="Nhóm_MónItem">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -52,7 +54,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhomMon/Properties[Mã]" />
+                          Member="Nhóm_MónItem/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -65,11 +67,23 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhomMon/Properties[Tên]" />
+                          Member="Nhóm_MónItem/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
@@ -157,16 +171,6 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="True"
-                      ResultType=":Boolean" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
             </ContentItem.PropertySources>
           </ContentItem>
           <ContentItem
@@ -175,7 +179,8 @@
             <ContentItem
               Name="Nhóm_MónItemDetails"
               Kind="Details"
-              DataType="NhomMon">
+              DataType="Nhóm_MónItem"
+              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="Nhóm Món Item Details" />
@@ -198,7 +203,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="NhomMon/Properties[Mã]" />
+                        Member="Nhóm_MónItem/Properties[Mã]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -211,7 +216,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="NhomMon/Properties[Tên]" />
+                        Member="Nhóm_MónItem/Properties[Tên]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -372,18 +377,18 @@
       <ScreenCollectionProperty
         Name="Nhóm_Món"
         PageSize="45"
-        PropertyType="CollectionView$NhomMon">
+        PropertyType="CollectionView$Nhóm_MónItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Nhóm_MónQuery"
-            ReturnType="NhomMon*">
+            ReturnType="Nhóm_MónItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[NhomMon]" />
+                  Member="BanHangDataQuan/Members[Nhóm_Món]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
