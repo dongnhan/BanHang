@@ -335,6 +335,18 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\CongNo\vCongNoPhaiTraNhaCungCapReportPreviewScreen.lsml.vb">
+      <DependentUpon>vCongNoPhaiTraNhaCungCapReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CongNo\vTonCongNoPhaiThuKhachHangReportPreviewScreen.lsml.vb">
+      <DependentUpon>vTonCongNoPhaiThuKhachHangReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CongNo\vTồn_Công_Nợ_Phải_Thu_Khách_HàngSearch.lsml.vb">
+      <DependentUpon>vTồn_Công_Nợ_Phải_Thu_Khách_HàngSearch.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CongNo\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch.lsml.vb">
+      <DependentUpon>vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Quan\BànListDetail.lsml.vb">
       <DependentUpon>BànListDetail.lsml</DependentUpon>
     </Compile>
@@ -546,6 +558,10 @@
     <LightSwitchModel Include="Screens\DauKy\Thu_Công_Nợ_Đầu_KỳListDetail.lsml" />
     <LightSwitchModel Include="Screens\DauKy\Nhập_Sản_Phẩm_Đầu_KỳListDetail.lsml" />
     <LightSwitchModel Include="Screens\DauKy\Tiền_Mặt_Đầu_Kỳ1ListDetail.lsml" />
+    <LightSwitchModel Include="Screens\CongNo\vTồn_Công_Nợ_Phải_Thu_Khách_HàngSearch.lsml" />
+    <LightSwitchModel Include="Screens\CongNo\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch.lsml" />
+    <LightSwitchModel Include="Screens\CongNo\vTonCongNoPhaiThuKhachHangReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\CongNo\vCongNoPhaiTraNhaCungCapReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

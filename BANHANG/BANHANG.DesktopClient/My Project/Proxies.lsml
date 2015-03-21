@@ -562,4 +562,16 @@
         Target="ServiceInterface:vTồn_Quỹ_Tiền_MặtItem" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

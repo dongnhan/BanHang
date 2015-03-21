@@ -144,6 +144,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowTiền_Mặt_Đầu_Kỳ1ListDetail"
       Target="!module/Methods[ShowTiền_Mặt_Đầu_Kỳ1ListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvTồn_Công_Nợ_Phải_Thu_Khách_HàngSearch"
+      Target="!module/Methods[ShowvTồn_Công_Nợ_Phải_Thu_Khách_HàngSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch"
+      Target="!module/Methods[ShowvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -180,39 +186,6 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
-      <ApplicationNavigationLink
-        Name="Đặt_HàngListDetail"
-        Command="!module/Commands[ScreenCommandShowĐặt_HàngListDetail]" />
-      <ApplicationNavigationLink
-        Name="BànListDetail"
-        Command="!module/Commands[ScreenCommandShowBànListDetail]" />
-      <ApplicationNavigationLink
-        Name="MónListDetail"
-        Command="!module/Commands[ScreenCommandShowMónListDetail]" />
-      <ApplicationNavigationLink
-        Name="Khu_VựcListDetail"
-        Command="!module/Commands[ScreenCommandShowKhu_VựcListDetail]" />
-      <ApplicationNavigationLink
-        Name="Nhóm_MónListDetail"
-        Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
-      <ApplicationNavigationLink
-        Name="ChiCongNosListDetail"
-        Command="!module/Commands[ScreenCommandShowChiCongNosListDetail]" />
-      <ApplicationNavigationLink
-        Name="ThuCongNosListDetail"
-        Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
-      <ApplicationNavigationLink
-        Name="Chi_Công_Nợ_Đầu_KỳListDetail"
-        Command="!module/Commands[ScreenCommandShowChi_Công_Nợ_Đầu_KỳListDetail]" />
-      <ApplicationNavigationLink
-        Name="Thu_Công_Nợ_Đầu_KỳListDetail"
-        Command="!module/Commands[ScreenCommandShowThu_Công_Nợ_Đầu_KỳListDetail]" />
-      <ApplicationNavigationLink
-        Name="Nhập_Sản_Phẩm_Đầu_KỳListDetail"
-        Command="!module/Commands[ScreenCommandShowNhập_Sản_Phẩm_Đầu_KỳListDetail]" />
-      <ApplicationNavigationLink
-        Name="Tiền_Mặt_Đầu_Kỳ1ListDetail"
-        Command="!module/Commands[ScreenCommandShowTiền_Mặt_Đầu_Kỳ1ListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">
@@ -298,8 +271,14 @@
         Name="link17"
         Command="!module/Commands[ScreenCommandShowThuCongNosListDetail]" />
       <ApplicationNavigationLink
+        Name="link24"
+        Command="!module/Commands[ScreenCommandShowvTồn_Công_Nợ_Phải_Thu_Khách_HàngSearch]" />
+      <ApplicationNavigationLink
         Name="link18"
         Command="!module/Commands[ScreenCommandShowChiCongNosListDetail]" />
+      <ApplicationNavigationLink
+        Name="link23"
+        Command="!module/Commands[ScreenCommandShowvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group4">

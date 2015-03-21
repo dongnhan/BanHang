@@ -460,9 +460,9 @@ Partial Public Class XtraReport_TonTienMat
         '
         'LightSwitchDataSource1
         '
-        'Me.LightSwitchDataSource1.CollectionName = "vTon_Quy_Tien_Mat"
-        'Me.LightSwitchDataSource1.DataSource = GetType(LightSwitchApplication.vTồn_Quỹ_Tiền_MặtItem)
-        'Me.LightSwitchDataSource1.DataSourceName = "BanHangData"
+        Me.LightSwitchDataSource1.CollectionName = "vTồn_Quỹ_Tiền_Mặt"
+        Me.LightSwitchDataSource1.DataSource = GetType(LightSwitchApplication.vTồn_Quỹ_Tiền_MặtItem)
+        Me.LightSwitchDataSource1.DataSourceName = "BanHangData"
         '
         'XtraReport_TonTienMat
         '

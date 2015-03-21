@@ -310,6 +310,18 @@
     <Compile Include="XtraReport_Chi.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_CongNoPhaiThu.Designer.vb">
+      <DependentUpon>XtraReport_CongNoPhaiThu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_CongNoPhaiThu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_CongNoPhaiTra.Designer.vb">
+      <DependentUpon>XtraReport_CongNoPhaiTra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_CongNoPhaiTra.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_DoanhThuAllKhachHang.Designer.vb">
       <DependentUpon>XtraReport_DoanhThuAllKhachHang.vb</DependentUpon>
     </Compile>
@@ -470,6 +482,8 @@
     <LightSwitchModel Include="DataSources\BanHangData1\Thu_Công_Nợ_Đầu_Kỳ.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Tiền_Mặt_Đầu_Kỳ1.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\vTồn_Quỹ_Tiền_Mặt.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\vTồn_Công_Nợ_Phải_Thu_Khách_Hàng.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_Cấp.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -511,6 +525,12 @@
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="XtraReport_Chi.resx">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_CongNoPhaiThu.resx">
+      <DependentUpon>XtraReport_CongNoPhaiThu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_CongNoPhaiTra.resx">
+      <DependentUpon>XtraReport_CongNoPhaiTra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_DoanhThuAllKhachHang.resx">
       <DependentUpon>XtraReport_DoanhThuAllKhachHang.vb</DependentUpon>

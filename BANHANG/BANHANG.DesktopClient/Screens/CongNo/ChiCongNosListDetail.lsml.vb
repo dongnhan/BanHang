@@ -51,6 +51,11 @@ Namespace LightSwitchApplication
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = True
         End Sub
+
+        Private Sub Báo_cáo_Execute()
+
+
+        End Sub
     End Class
 
 End Namespace
