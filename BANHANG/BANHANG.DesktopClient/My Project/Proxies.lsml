@@ -583,18 +583,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Chọn_MónItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Chọn_Món_Chi_TiếtItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Khu_VựcItem1" />
     </EntityType.Attributes>
   </EntityType>
@@ -644,6 +632,12 @@
     <Association.Attributes>
       <Proxy
         Target="ServiceInterface:FK_Món_Nhóm_Món" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chọn_Món_Khu_Vực" />
     </Association.Attributes>
   </Association>
 </Application>

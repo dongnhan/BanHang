@@ -268,6 +268,12 @@
     <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <DependentUpon>Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\BanHangDataQuan\Chọn_MónItem.lsml.vb">
+      <DependentUpon>Chọn_Món.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangDataQuan\Chọn_Món_Chi_TiếtItem.lsml.vb">
+      <DependentUpon>Chọn_Món_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <DependentUpon>Bảng_Giá_Chi_Tiết.lsml</DependentUpon>
     </Compile>

@@ -310,6 +310,12 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <Link>UserCode\Shared\NhapSanPhamDauKyChiTiet.lsml.vb</Link>
     </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\Chọn_MónItem.lsml.vb">
+      <Link>UserCode\Shared\Chọn_MónItem.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\Chọn_Món_Chi_TiếtItem.lsml.vb">
+      <Link>UserCode\Shared\Chọn_Món_Chi_TiếtItem.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <Link>UserCode\Shared\BangGiaChiTiet.lsml.vb</Link>
     </Compile>
@@ -510,6 +516,8 @@
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
+    <LightSwitchModel Include="My Project\BanHangDataQuan\Chọn_Món.lsml" />
+    <LightSwitchModel Include="My Project\BanHangDataQuan\Chọn_Món_Chi_Tiết.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -566,6 +574,7 @@
     <LightSwitchModel Include="Screens\Quan\Khu_VựcListDetail.lsml" />
     <LightSwitchModel Include="Screens\Quan\MónListDetail1.lsml" />
     <LightSwitchModel Include="Screens\Quan\Nhóm_MónListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Quan\Chọn_MónListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

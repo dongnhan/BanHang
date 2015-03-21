@@ -670,4 +670,10 @@
         Target="ServiceInterface:FK_Món_Nhóm_Món" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chọn_Món_Khu_Vực" />
+    </Association.Attributes>
+  </Association>
 </Application>

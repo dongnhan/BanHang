@@ -156,6 +156,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowNhóm_MónListDetail"
       Target="!module/Methods[ShowNhóm_MónListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowChọn_MónListDetail"
+      Target="!module/Methods[ShowChọn_MónListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -192,6 +195,9 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
+      <ApplicationNavigationLink
+        Name="Chọn_MónListDetail"
+        Command="!module/Commands[ScreenCommandShowChọn_MónListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">

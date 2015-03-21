@@ -49,6 +49,15 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Chưa tính tiền"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Gọi tính tiền"
+            Value="1" />
+          <SupportedValue
+            DisplayName="Đã tính tiền"
+            Value="2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -57,6 +66,12 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Chưa in"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Đã in"
+            Value="1" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -65,6 +80,12 @@
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <SupportedValue
+            DisplayName="Khách thường"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Khách VIP (giảm 10%)"
+            Value="1" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -76,7 +97,64 @@
         Name="BànItem"
         Association="FK_Chọn_Món_Bàn"
         FromEnd="Chọn_Món"
-        ToEnd="Bàn" />
+        ToEnd="Bàn">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Bàn" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="Khu_VựcItem"
+        Association="FK_Chọn_Món_Khu_Vực"
+        FromEnd="Chọn_Món"
+        ToEnd="Khu_Vực">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Khu Vực" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <EntityProperty
+        Name="Thành_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tiền_giảm"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tiền_thanh_toán"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -244,6 +322,11 @@
           Nullable="False"
           Type="int"
           PropertyName="ChonMon_Ban" />
+        <SsdlForeignKeyProperty
+          Name="ChonMon_KhuVuc"
+          Nullable="False"
+          Type="int"
+          PropertyName="ChonMon_KhuVuc" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
