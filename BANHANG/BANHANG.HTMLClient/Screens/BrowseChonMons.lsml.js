@@ -5,8 +5,8 @@ myapp.BrowseChonMons.Món_postRender = function (element, contentItem) {
 };
 
 myapp.BrowseChonMons.THÊM_execute = function (screen) {
-    var list = screen.findContentItem("Món");
-       lsWire.list.selectAll(list, false);
+    //var list = screen.findContentItem("Món");
+    //   lsWire.list.selectAll(list, false);
     // Write code here.
     var newDK = new myapp.ChonMon();
     // Set the Status
@@ -185,4 +185,14 @@ myapp.BrowseChonMons.XÓA_MÓN_execute = function (screen) {
 myapp.BrowseChonMons.XÓA_NHÓM_execute = function (screen) {
     // Write code here.
     screen.setNhóm(null);
+};
+myapp.BrowseChonMons.TÌM_MÓN_execute = function (screen) {
+    // Write code here.
+    screen.setNhóm(null);
+    screen.Món.enableSearch = screen.Món.enableSearch === false;
+};
+myapp.BrowseChonMons.BỎ_CHỌN_execute = function (screen) {
+    // Write code here.
+    var list = screen.findContentItem("Món");
+    lsWire.list.selectAll(list, false);
 };

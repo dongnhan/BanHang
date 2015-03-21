@@ -299,6 +299,11 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="Group1"
+                Kind="Group"
+                View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
                   Name="Đối_TượngItem1"
                   Kind="Details"
@@ -322,12 +327,52 @@
                   <ContentItem
                     Name="RowTemplate2"
                     Kind="Details"
-                    DataType="Đối_TượngItem1">
+                    DataType="Đối_TượngItem1"
+                    View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem
+                      Name="Tên"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_TượngItem1/Properties[Tên]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Địa_chỉ"
+                      Kind="Value"
+                      DataType=":String?">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_TượngItem1/Properties[Địa_chỉ]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                    <ContentItem
+                      Name="Điện_thoại_di_động"
+                      Kind="Value"
+                      DataType=":String">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_TượngItem1/Properties[Điện_thoại_di_động]" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
                   </ContentItem>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
@@ -342,11 +387,6 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Group1"
-                Kind="Group"
-                View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
                   Name="Số_tiền1"
                   Kind="Value"
