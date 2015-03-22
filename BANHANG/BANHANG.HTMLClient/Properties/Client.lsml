@@ -47,12 +47,6 @@
   </GlobalAttributeGroup>
   <Application.NavigationItems>
     <ApplicationNavigationMethodLink
-      Name="link"
-      Method="!module/Methods[showBrowseĐơn_Vị_Tính]" />
-    <ApplicationNavigationMethodLink
-      Name="link1"
-      Method="!module/Methods[showBrowseSản_Phẩm]" />
-    <ApplicationNavigationMethodLink
       Name="link2"
       Method="!module/Methods[showvTồn_Quỹ_Tiền_MặtBrowse]" />
     <ApplicationNavigationMethodLink
@@ -80,7 +74,19 @@
       Name="link11"
       Method="!module/Methods[showBrowseChonMons]" />
     <ApplicationNavigationMethodLink
+      Name="link"
+      Method="!module/Methods[showBrowseMón]" />
+    <ApplicationNavigationMethodLink
+      Name="link1"
+      Method="!module/Methods[showBrowseNhóm_Món]" />
+    <ApplicationNavigationMethodLink
       Name="link10"
-      Method="!module/Methods[showBrowseMon]" />
+      Method="!module/Methods[showBrowseBàn]" />
+    <ApplicationNavigationMethodLink
+      Name="link12"
+      Method="!module/Methods[showBrowseKhuVuc]" />
+    <ApplicationNavigationMethodLink
+      Name="link13"
+      Method="!module/Methods[showChọn_MónBrowse]" />
   </Application.NavigationItems>
 </Application>

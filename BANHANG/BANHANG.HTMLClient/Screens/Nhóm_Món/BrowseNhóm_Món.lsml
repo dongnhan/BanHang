@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseSản_Phẩm">
+    Name="BrowseNhóm_Món">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="Sản_Phẩm" />
+        Value="NHÓM MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,29 +22,29 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="SanPhamList"
+            Name="Nhóm_MónItemList"
             Kind="Group">
             <ContentItem
-              Name="Sản_Phẩm"
+              Name="Nhóm_Món"
               Kind="Collection"
-              DataType="CollectionView$SanPham"
-              View="Microsoft.LightSwitch.MobileWeb:Table">
+              DataType="CollectionView$Nhóm_MónItem"
+              View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Sản_Phẩm" />
+                  Value="Nhóm_Món" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseSản_Phẩm/Properties[Sản_Phẩm]" />
+                      Member="BrowseNhóm_Món/Properties[Nhóm_Món]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="SanPham"
+                DataType="Nhóm_MónItem"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -63,7 +63,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="SanPham/Properties[Tên]" />
+                          Member="Nhóm_MónItem/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -81,39 +81,14 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Giá"
+                  Name="Mã"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="SanPham/Properties[Giá]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Ghi_chú"
-                  Kind="Value"
-                  DataType=":String?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="SanPham/Properties[Ghi_chú]" />
+                          Member="Nhóm_MónItem/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -149,16 +124,16 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewSanPham]">
+                        Target="!module/Methods[showViewNhóm_MónItem]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowseSản_Phẩm/Properties[Sản_Phẩm]" />
+                            Collection="BrowseNhóm_Món/Properties[Nhóm_Món]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
-                          Parameter="SanPham">
+                          Parameter="Nhóm_MónItem">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowseSản_Phẩm/Properties[Sản_Phẩm]" />
+                              Member="BrowseNhóm_Món/Properties[Nhóm_Món]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -171,7 +146,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddSanPham"
+                Name="AddNhóm_MónItem"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -183,12 +158,12 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditSanPham]">
+                          Target="!module/Methods[showAddEditNhóm_MónItem]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowseSản_Phẩm/Properties[Sản_Phẩm]" />
+                              Collection="BrowseNhóm_Món/Properties[Nhóm_Món]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditSanPham]/Parameters[SanPham]" />
+                              TargetParameter="!module/Methods[showAddEditNhóm_MónItem]/Parameters[Nhóm_MónItem]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>
@@ -207,7 +182,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchSản_Phẩm"
+                Name="SearchNhóm_Món"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -219,7 +194,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseSản_Phẩm/Properties[Sản_Phẩm]" />
+                          Member="BrowseNhóm_Món/Properties[Nhóm_Món]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -284,20 +259,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Sản_Phẩm"
+        Name="Nhóm_Món"
         PageSize="45"
-        PropertyType="CollectionView$SanPham">
+        PropertyType="CollectionView$Nhóm_MónItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="Sản_PhẩmQuery"
-            ReturnType="SanPham*">
+            Name="Nhóm_MónQuery"
+            ReturnType="Nhóm_MónItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[SanPham]" />
+                  Member="BanHangDataQuan/Members[NhomMon]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -305,7 +280,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseSản_Phẩm/Properties[Sản_Phẩm]/Query" />
+              Target="BrowseNhóm_Món/Properties[Nhóm_Món]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -313,10 +288,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseSản_Phẩm">
+      Name="showBrowseNhóm_Món">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseSản_Phẩm" />
+          TargetScreen="BrowseNhóm_Món" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

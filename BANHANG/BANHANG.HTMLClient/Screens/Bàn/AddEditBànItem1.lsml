@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditMónItem">
+    Name="AddEditBànItem1">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="MónItem" />
+        Value="BànItem1" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="MónItem"
+              DataType="BànItem1"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,7 +42,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditMónItem/Properties[MónItem]" />
+                      Member="AddEditBànItem1/Properties[BànItem1]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -57,7 +57,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Tên]" />
+                          Member="BànItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -70,46 +70,10 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Mã]" />
+                          Member="BànItem1/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Giá"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Giá]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Nhóm_MónItem"
-                  Kind="Details"
-                  DataType="NhomMon">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[NhomMon]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="Nhóm_MónItem1"
-                    Kind="Details"
-                    DataType="NhomMon">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -138,44 +102,27 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="Tình_trạng"
-                  Kind="Value"
-                  DataType=":Int32">
+                  Name="Khu_VựcItem"
+                  Kind="Details"
+                  DataType="Khu_VựcItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Tình_trạng]" />
+                          Member="BànItem1/Properties[Khu_VựcItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Ghi_chú"
-                  Kind="Value"
-                  DataType=":String?"
-                  View="Microsoft.LightSwitch.MobileWeb:TextArea">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Ghi_chú]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Hình_ảnh"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Hình_ảnh]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate"
+                    Kind="Details"
+                    DataType="Khu_VựcItem1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -257,8 +204,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="MónItem"
-        PropertyType="MónItem">
+        Name="BànItem1"
+        PropertyType="BànItem1">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -267,14 +214,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditMónItem">
+      Name="showAddEditBànItem1">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditMónItem" />
+          TargetScreen="AddEditBànItem1" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="MónItem"
-        ParameterType="MónItem" />
+        Name="BànItem1"
+        ParameterType="BànItem1" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

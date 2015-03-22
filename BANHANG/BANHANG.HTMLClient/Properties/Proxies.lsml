@@ -601,12 +601,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:BànItem1" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Chọn_MónItem" />
     </EntityType.Attributes>
   </EntityType>
@@ -614,18 +608,6 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:Chọn_Món_Chi_TiếtItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Khu_VựcItem1" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:MónItem1" />
     </EntityType.Attributes>
   </EntityType>
   <Association>
@@ -658,12 +640,6 @@
         Target="ServiceInterface:BanHangDataQuan" />
     </EntityContainer.Attributes>
   </EntityContainer>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Nhóm_MónItem" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
@@ -676,4 +652,22 @@
         Target="ServiceInterface:FK_Chọn_Món_Khu_Vực" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:MónItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:SanPham" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đơn_Vị_TínhItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

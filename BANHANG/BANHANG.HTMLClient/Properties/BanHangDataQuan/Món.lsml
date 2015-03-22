@@ -7,12 +7,12 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:SanPham" />
+        Target="ServiceInterface:MónItem1" />
       <DefaultScreen
-        Value="ViewSanPham">
+        Value="ViewMónItem1">
         <DefaultScreen.Attributes>
           <ScreenParameterMapping
-            ScreenParameter="ViewSanPham/Properties[SanPham]" />
+            ScreenParameter="ViewMónItem1/Properties[MónItem1]" />
         </DefaultScreen.Attributes>
       </DefaultScreen>
     </EntityType.Attributes>

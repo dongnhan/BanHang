@@ -222,6 +222,16 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-search"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
@@ -234,6 +244,37 @@
                       <ChainExpression>
                         <CallExpression
                           Target="BrowseChonMons/Methods[BỎ_CHỌN]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-decline"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="XEM_MÓN1"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="XEM MÓN" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="BrowseChonMons/Properties[Món]" />
+                        <CallExpression
+                          Target="viewSelected" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -841,6 +882,8 @@
         Name="TÌM_MÓN" />
       <ScreenMethod
         Name="BỎ_CHỌN" />
+      <ScreenMethod
+        Name="XEM_MÓN1" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

@@ -112,17 +112,20 @@
     <Content Include="Screens\BrowseChonMons.lsml.js">
       <DependentUpon>BrowseChonMons.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\Bàn\ViewBànItem1.lsml.js">
+      <DependentUpon>ViewBànItem1.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\Mon\ViewMónItem.lsml.js">
-      <DependentUpon>ViewMónItem.lsml</DependentUpon>
+    <Content Include="Screens\KhuVuc\ViewKhu_VựcItem1.lsml.js">
+      <DependentUpon>ViewKhu_VựcItem1.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\Sản_Phẩm\ViewSanPham.lsml.js">
-      <DependentUpon>ViewSanPham.lsml</DependentUpon>
+    <Content Include="Screens\Món\ViewMónItem1.lsml.js">
+      <DependentUpon>ViewMónItem1.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\Đơn_Vị_Tính\ViewĐơn_Vị_TínhItem.lsml.js">
-      <DependentUpon>ViewĐơn_Vị_TínhItem.lsml</DependentUpon>
+    <Content Include="Screens\Nhóm_Món\ViewNhóm_MónItem.lsml.js">
+      <DependentUpon>ViewNhóm_MónItem.lsml</DependentUpon>
     </Content>
     <Content Include="Scripts\amplify-vsdoc.js" />
     <Content Include="Scripts\amplify.js" />
@@ -166,9 +169,10 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
-    <LightSwitchModel Include="Properties\BanHangData\Mon.lsml" />
-    <LightSwitchModel Include="Properties\BanHangData\SanPham.lsml" />
-    <LightSwitchModel Include="Properties\BanHangData\DonViTinh.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\Bàn.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\KhuVuc.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\Món.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\Nhóm_Món.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
@@ -182,16 +186,20 @@
     <LightSwitchModel Include="Screens\BaoCao\vTồn_Quỹ_Tiền_MặtBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vTồn_Tổng_HợpBrowse.lsml" />
     <LightSwitchModel Include="Screens\BrowseChonMons.lsml" />
+    <LightSwitchModel Include="Screens\Bàn\AddEditBànItem1.lsml" />
+    <LightSwitchModel Include="Screens\Bàn\BrowseBàn.lsml" />
+    <LightSwitchModel Include="Screens\Bàn\ViewBànItem1.lsml" />
+    <LightSwitchModel Include="Screens\Chọn_MónBrowse.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
-    <LightSwitchModel Include="Screens\Mon\AddEditMónItem.lsml" />
-    <LightSwitchModel Include="Screens\Mon\BrowseMon.lsml" />
-    <LightSwitchModel Include="Screens\Mon\ViewMónItem.lsml" />
-    <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSanPham.lsml" />
-    <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />
-    <LightSwitchModel Include="Screens\Sản_Phẩm\ViewSanPham.lsml" />
-    <LightSwitchModel Include="Screens\Đơn_Vị_Tính\AddEditĐơn_Vị_TínhItem.lsml" />
-    <LightSwitchModel Include="Screens\Đơn_Vị_Tính\BrowseĐơn_Vị_Tính.lsml" />
-    <LightSwitchModel Include="Screens\Đơn_Vị_Tính\ViewĐơn_Vị_TínhItem.lsml" />
+    <LightSwitchModel Include="Screens\KhuVuc\AddEditKhu_VựcItem1.lsml" />
+    <LightSwitchModel Include="Screens\KhuVuc\BrowseKhuVuc.lsml" />
+    <LightSwitchModel Include="Screens\KhuVuc\ViewKhu_VựcItem1.lsml" />
+    <LightSwitchModel Include="Screens\Món\AddEditMónItem1.lsml" />
+    <LightSwitchModel Include="Screens\Món\BrowseMón.lsml" />
+    <LightSwitchModel Include="Screens\Món\ViewMónItem1.lsml" />
+    <LightSwitchModel Include="Screens\Nhóm_Món\AddEditNhóm_MónItem.lsml" />
+    <LightSwitchModel Include="Screens\Nhóm_Món\BrowseNhóm_Món.lsml" />
+    <LightSwitchModel Include="Screens\Nhóm_Món\ViewNhóm_MónItem.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">
@@ -209,6 +217,9 @@
     <_ClientBuildFile Include="GeneratedArtifacts\resources.js">
       <SubFolder>Scripts\Generated</SubFolder>
     </_ClientBuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\BanHangData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />

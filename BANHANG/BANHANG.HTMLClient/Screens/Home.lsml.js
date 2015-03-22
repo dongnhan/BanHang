@@ -14,7 +14,7 @@ myapp.Home.ScreenContent_render = function (element, contentItem) {
     var width = "width:254px;";
 
     var items = [];
-    var excluded = ["Screen", "ViewSanPham","BrowseSản_Phẩm","AddEditSanPham","ViewĐơn_Vị_TínhItem","BrowseĐơn_Vị_Tính","AddEditĐơn_Vị_TínhItem"];
+    var excluded = ["Screen", "AddEditMónItem1", "AddEditBànItem1", "ViewBànItem1", "AddEditKhu_VựcItem1", "ViewKhu_VựcItem1", "AddEditMónItem1", "ViewMónItem1", "AddEditNhóm_MónItem", "ViewNhóm_MónItem","BrowseChonMons"];
     excluded.push(contentItem.screen.details.getModel().name);
 
     $.each(myapp, function (key, value) {

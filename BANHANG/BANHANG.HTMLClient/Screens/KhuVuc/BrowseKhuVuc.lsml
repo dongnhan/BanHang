@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseĐơn_Vị_Tính">
+    Name="BrowseKhuVuc">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="Đơn_Vị_Tính" />
+        Value="KHU VỰC" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,29 +22,29 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="Đơn_Vị_TínhItemList"
+            Name="Khu_VựcItem1List"
             Kind="Group">
             <ContentItem
-              Name="Đơn_Vị_Tính"
+              Name="KhuVuc"
               Kind="Collection"
-              DataType="CollectionView$Đơn_Vị_TínhItem"
+              DataType="CollectionView$Khu_VựcItem1"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Đơn_Vị_Tính" />
+                  Value="KhuVuc" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseĐơn_Vị_Tính/Properties[Đơn_Vị_Tính]" />
+                      Member="BrowseKhuVuc/Properties[KhuVuc]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="Đơn_Vị_TínhItem"
+                DataType="Khu_VựcItem1"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -63,7 +63,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Đơn_Vị_TínhItem/Properties[Tên]" />
+                          Member="Khu_VựcItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -81,14 +81,14 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Ghi_chú"
+                  Name="Mã"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Đơn_Vị_TínhItem/Properties[Ghi_chú]" />
+                          Member="Khu_VựcItem1/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -124,16 +124,16 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewĐơn_Vị_TínhItem]">
+                        Target="!module/Methods[showViewKhu_VựcItem1]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowseĐơn_Vị_Tính/Properties[Đơn_Vị_Tính]" />
+                            Collection="BrowseKhuVuc/Properties[KhuVuc]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
-                          Parameter="Đơn_Vị_TínhItem">
+                          Parameter="Khu_VựcItem1">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowseĐơn_Vị_Tính/Properties[Đơn_Vị_Tính]" />
+                              Member="BrowseKhuVuc/Properties[KhuVuc]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -146,7 +146,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddĐơn_Vị_TínhItem"
+                Name="AddKhu_VựcItem1"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -158,12 +158,12 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditĐơn_Vị_TínhItem]">
+                          Target="!module/Methods[showAddEditKhu_VựcItem1]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowseĐơn_Vị_Tính/Properties[Đơn_Vị_Tính]" />
+                              Collection="BrowseKhuVuc/Properties[KhuVuc]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditĐơn_Vị_TínhItem]/Parameters[Đơn_Vị_TínhItem]" />
+                              TargetParameter="!module/Methods[showAddEditKhu_VựcItem1]/Parameters[Khu_VựcItem1]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>
@@ -182,7 +182,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchĐơn_Vị_Tính"
+                Name="SearchKhuVuc"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -194,7 +194,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseĐơn_Vị_Tính/Properties[Đơn_Vị_Tính]" />
+                          Member="BrowseKhuVuc/Properties[KhuVuc]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -259,20 +259,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Đơn_Vị_Tính"
+        Name="KhuVuc"
         PageSize="45"
-        PropertyType="CollectionView$Đơn_Vị_TínhItem">
+        PropertyType="CollectionView$Khu_VựcItem1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="Đơn_Vị_TínhQuery"
-            ReturnType="Đơn_Vị_TínhItem*">
+            Name="KhuVucQuery"
+            ReturnType="Khu_VựcItem1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[DonViTinh]" />
+                  Member="BanHangDataQuan/Members[KhuVuc]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -280,7 +280,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseĐơn_Vị_Tính/Properties[Đơn_Vị_Tính]/Query" />
+              Target="BrowseKhuVuc/Properties[KhuVuc]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -288,10 +288,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseĐơn_Vị_Tính">
+      Name="showBrowseKhuVuc">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseĐơn_Vị_Tính" />
+          TargetScreen="BrowseKhuVuc" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

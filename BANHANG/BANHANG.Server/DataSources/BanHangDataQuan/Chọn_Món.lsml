@@ -155,6 +155,29 @@
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Đã_xóa"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+          <SupportedValue
+            DisplayName="Chưa xóa"
+            Value="0" />
+          <SupportedValue
+            DisplayName="Đã xóa"
+            Value="1" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="UserName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -317,6 +340,17 @@
           Nullable="False"
           Type="int"
           Property="Chọn_MónItem/Properties[Giảm_giá]" />
+        <SsdlProperty
+          Name="Đã xóa"
+          Nullable="False"
+          Type="int"
+          Property="Chọn_MónItem/Properties[Đã_xóa]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="UserName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Chọn_MónItem/Properties[UserName]" />
         <SsdlForeignKeyProperty
           Name="ChonMon_Ban"
           Nullable="False"

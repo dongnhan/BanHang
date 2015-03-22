@@ -129,7 +129,7 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Món"
+      Name="Mon"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
@@ -139,13 +139,13 @@
       Association="FK_Chọn_Món_Chi_Tiết_Món">
       <AssociationSetEnd
         Name="Món"
-        EntitySet="Món" />
+        EntitySet="Mon" />
       <AssociationSetEnd
         Name="Chọn_Món_Chi_Tiết"
         EntitySet="Chọn_Món_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
-      Name="Món_Single"
+      Name="Mon_Single"
       ReturnType="MónItem1">
       <QueryOperation.Attributes>
         <Generated />
@@ -172,7 +172,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Món" />
+            Member="Mon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -185,7 +185,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Món_SingleOrDefault"
+      Name="Mon_SingleOrDefault"
       ReturnType="MónItem1">
       <QueryOperation.Attributes>
         <Generated />
@@ -212,7 +212,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Món" />
+            Member="Mon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -231,7 +231,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Món">
+      EntitySet="Mon">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"

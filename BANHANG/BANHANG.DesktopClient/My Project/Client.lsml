@@ -195,9 +195,6 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
-      <ApplicationNavigationLink
-        Name="Chọn_MónListDetail"
-        Command="!module/Commands[ScreenCommandShowChọn_MónListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">
@@ -337,8 +334,8 @@
           Value="QUÁN" />
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
-        Name="link25"
-        Command="!module/Commands[ScreenCommandShowMónListDetail]" />
+        Name="link29"
+        Command="!module/Commands[ScreenCommandShowMónListDetail1]" />
       <ApplicationNavigationLink
         Name="link26"
         Command="!module/Commands[ScreenCommandShowBànListDetail]" />
@@ -349,8 +346,8 @@
         Name="link28"
         Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
       <ApplicationNavigationLink
-        Name="link29"
-        Command="!module/Commands[ScreenCommandShowMónListDetail1]" />
+        Name="link25"
+        Command="!module/Commands[ScreenCommandShowChọn_MónListDetail]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

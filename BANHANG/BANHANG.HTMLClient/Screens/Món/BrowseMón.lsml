@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="BrowseMon">
+    Name="BrowseMón">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="Mon" />
+        Value="MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,29 +22,29 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="MónItemList"
+            Name="MónItem1List"
             Kind="Group">
             <ContentItem
-              Name="Mon"
+              Name="Món"
               Kind="Collection"
-              DataType="CollectionView$MónItem"
+              DataType="CollectionView$MónItem1"
               View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Mon" />
+                  Value="Món" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="BrowseMon/Properties[Mon]" />
+                      Member="BrowseMón/Properties[Món]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="columns"
                 Kind="Details"
-                DataType="MónItem"
+                DataType="MónItem1"
                 View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -63,7 +63,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Hình_ảnh]" />
+                          Member="MónItem1/Properties[Hình_ảnh]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -84,7 +84,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="MónItem/Properties[Tên]" />
+                            Member="MónItem1/Properties[Tên]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -109,7 +109,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="MónItem/Properties[Mã]" />
+                            Member="MónItem1/Properties[Mã]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -134,7 +134,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="MónItem/Properties[Giá]" />
+                            Member="MónItem1/Properties[Giá]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -150,55 +150,6 @@
                         </ScreenExpressionTree>
                       </ControlPropertySource>
                     </ContentItem.PropertySources>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Hình_ảnh1"
-                    Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:Image?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MónItem/Properties[Hình_ảnh]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Ghi_chú"
-                    Kind="Value"
-                    DataType=":String?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MónItem/Properties[Ghi_chú]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Nhóm_MónItem"
-                    Kind="Details"
-                    DataType="NhomMon">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MónItem/Properties[NhomMon]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="Nhóm_MónItem1"
-                      Kind="Details"
-                      DataType="NhomMon">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
                   </ContentItem>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
@@ -220,16 +171,16 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showViewMónItem]">
+                        Target="!module/Methods[showViewMónItem1]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
-                            Collection="BrowseMon/Properties[Mon]" />
+                            Collection="BrowseMón/Properties[Món]" />
                         </CallExpression.Attributes>
                         <ArgumentExpression
-                          Parameter="MónItem">
+                          Parameter="MónItem1">
                           <ChainExpression>
                             <MemberExpression
-                              Member="BrowseMon/Properties[Mon]" />
+                              Member="BrowseMón/Properties[Món]" />
                             <MemberExpression
                               Member="selectedItem" />
                           </ChainExpression>
@@ -242,7 +193,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="AddMónItem"
+                Name="AddMónItem1"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -254,12 +205,12 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showAddEditMónItem]">
+                          Target="!module/Methods[showAddEditMónItem1]">
                           <CallExpression.Attributes>
                             <AssociatedCollection
-                              Collection="BrowseMon/Properties[Mon]" />
+                              Collection="BrowseMón/Properties[Món]" />
                             <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditMónItem]/Parameters[MónItem]" />
+                              TargetParameter="!module/Methods[showAddEditMónItem1]/Parameters[MónItem1]" />
                           </CallExpression.Attributes>
                         </CallExpression>
                       </ChainExpression>
@@ -278,7 +229,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="SearchMon"
+                Name="SearchMón"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -290,7 +241,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="BrowseMon/Properties[Mon]" />
+                          Member="BrowseMón/Properties[Món]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -355,20 +306,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Mon"
+        Name="Món"
         PageSize="45"
-        PropertyType="CollectionView$MónItem">
+        PropertyType="CollectionView$MónItem1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="MonQuery"
-            ReturnType="MónItem*">
+            Name="MónQuery"
+            ReturnType="MónItem1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[Mon]" />
+                  Member="BanHangDataQuan/Members[Mon]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -376,7 +327,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseMon/Properties[Mon]/Query" />
+              Target="BrowseMón/Properties[Món]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -384,10 +335,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showBrowseMon">
+      Name="showBrowseMón">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="BrowseMon" />
+          TargetScreen="BrowseMón" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

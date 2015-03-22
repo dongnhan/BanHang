@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Khu_VựcItem1">
+    Name="Nhóm_MónItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -44,31 +44,26 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Bàn"
-        Association="FK_Bàn_Khu_Vực1"
-        FromEnd="Khu_Vực"
-        ToEnd="Bàn" />
-      <NavigationProperty
-        Name="Chọn_Món"
-        Association="FK_Chọn_Món_Khu_Vực"
-        FromEnd="Khu_Vực"
-        ToEnd="Chọn_Món" />
+        Name="Món"
+        Association="FK_Món_Nhóm_Món"
+        FromEnd="Nhóm_Món"
+        ToEnd="Món" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_Bàn_Khu_Vực1">
+    Name="FK_Món_Nhóm_Món">
     <AssociationEnd
-      Name="Khu_Vực"
+      Name="Nhóm_Món"
       Multiplicity="One"
-      EntityType="Khu_VựcItem1">
+      EntityType="Nhóm_MónItem">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Bàn"
+      Name="Món"
       Multiplicity="Many"
-      EntityType="BànItem1" />
+      EntityType="MónItem1" />
   </Association>
   <EntityContainer
     Name="BanHangDataQuan">
@@ -76,24 +71,24 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Khu_Vực"
+      Name="NhomMon"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Khu_VựcItem1" />
+      EntityType="Nhóm_MónItem" />
     <AssociationSet
-      Name="FK_Bàn_Khu_Vực"
-      Association="FK_Bàn_Khu_Vực1">
+      Name="FK_Món_Nhóm_Món"
+      Association="FK_Món_Nhóm_Món">
       <AssociationSetEnd
-        Name="Khu_Vực"
-        EntitySet="Khu_Vực" />
+        Name="Nhóm_Món"
+        EntitySet="NhomMon" />
       <AssociationSetEnd
-        Name="Bàn"
-        EntitySet="Bàn" />
+        Name="Món"
+        EntitySet="Mon" />
     </AssociationSet>
     <QueryOperation
-      Name="Khu_Vực_Single"
-      ReturnType="Khu_VựcItem1">
+      Name="NhomMon_Single"
+      ReturnType="Nhóm_MónItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -119,7 +114,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Khu_Vực" />
+            Member="NhomMon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -132,8 +127,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Khu_Vực_SingleOrDefault"
-      ReturnType="Khu_VựcItem1">
+      Name="NhomMon_SingleOrDefault"
+      ReturnType="Nhóm_MónItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -159,7 +154,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Khu_Vực" />
+            Member="NhomMon" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -171,101 +166,55 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="FK_Chọn_Món_Khu_Vực"
-      Association="FK_Chọn_Món_Khu_Vực">
-      <AssociationSetEnd
-        Name="Khu_Vực"
-        EntitySet="Khu_Vực" />
-      <AssociationSetEnd
-        Name="Chọn_Món"
-        EntitySet="Chọn_Món" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="FK_Chọn_Món_Khu_Vực">
-    <AssociationEnd
-      Name="Khu_Vực"
-      Multiplicity="One"
-      EntityType="Khu_VựcItem1">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Chọn_Món"
-      Multiplicity="Many"
-      EntityType="Chọn_MónItem" />
-  </Association>
   <DataService
     Name="BanHangDataQuanDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Khu_Vực">
+      EntitySet="NhomMon">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Khu Vực" />
+          Table="Nhóm Món" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Khu_VựcItem1/Properties[Id]" />
+          Property="Nhóm_MónItem/Properties[Id]" />
         <SsdlProperty
           MaxLength="100"
           Name="Tên"
           Nullable="False"
           Type="nvarchar"
-          Property="Khu_VựcItem1/Properties[Tên]" />
+          Property="Nhóm_MónItem/Properties[Tên]" />
         <SsdlProperty
           MaxLength="50"
           Name="Mã"
           Nullable="False"
           Type="nvarchar"
-          Property="Khu_VựcItem1/Properties[Mã]" />
+          Property="Nhóm_MónItem/Properties[Mã]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Bàn_Khu_Vực">
+      AssociationSet="FK_Món_Nhóm_Món">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="FK_Bàn_Khu Vực" />
+          Name="FK_Món_Nhóm Món" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Bàn_Khu_Vực]/Members[Khu_Vực]">
+          End="BanHangDataQuan/Members[FK_Món_Nhóm_Món]/Members[Nhóm_Món]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Bàn_Khu_Vực]/Members[Bàn]">
+          End="BanHangDataQuan/Members[FK_Món_Nhóm_Món]/Members[Món]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="Ban_KhuVuc" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="FK_Chọn_Món_Khu_Vực">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="FK_Chọn Món_Khu Vực" />
-        <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Khu_Vực]/Members[Khu_Vực]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Khu_Vực]/Members[Chọn_Món]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="ChonMon_KhuVuc" />
+              Name="Mon_NhomMon" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

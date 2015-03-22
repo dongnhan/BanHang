@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="ViewĐơn_Vị_TínhItem">
+    Name="AddEditKhu_VựcItem1">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="Đơn_Vị_TínhItem" />
+        Value="Khu_VựcItem1" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="Đơn_Vị_TínhItem"
+              DataType="Khu_VựcItem1"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,7 +42,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="ViewĐơn_Vị_TínhItem/Properties[Đơn_Vị_TínhItem]" />
+                      Member="AddEditKhu_VựcItem1/Properties[Khu_VựcItem1]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -57,7 +57,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Đơn_Vị_TínhItem/Properties[Tên]" />
+                          Member="Khu_VựcItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -89,14 +89,14 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="Ghi_chú"
+                  Name="Mã"
                   Kind="Value"
-                  DataType=":String?">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Đơn_Vị_TínhItem/Properties[Ghi_chú]" />
+                          Member="Khu_VựcItem1/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -125,63 +125,34 @@
                 </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
-            <ContentItem.CommandItems>
-              <ContentItem
-                Name="EditĐơn_Vị_TínhItem"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Edit" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showAddEditĐơn_Vị_TínhItem]">
-                          <ArgumentExpression
-                            Parameter="Đơn_Vị_TínhItem">
-                            <ChainExpression>
-                              <MemberExpression
-                                Member="ViewĐơn_Vị_TínhItem/Properties[Đơn_Vị_TínhItem]" />
-                            </ChainExpression>
-                          </ArgumentExpression>
-                        </CallExpression>
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-edit"
-                          ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-            </ContentItem.CommandItems>
           </ContentItem>
-          <ContentItem.PropertySources>
-            <ControlPropertySource
-              Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <ConstantExpression
-                    Value="True"
-                    ResultType=":Boolean" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ControlPropertySource>
-          </ContentItem.PropertySources>
         </ContentItem>
         <ContentItem
           Name="Popups"
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+        <ContentItem.PropertySources>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ScreenType]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="Edit"
+                  ResultType=":String" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="True"
+                  ResultType=":Boolean" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+        </ContentItem.PropertySources>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -210,8 +181,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="Đơn_Vị_TínhItem"
-        PropertyType="Đơn_Vị_TínhItem">
+        Name="Khu_VựcItem1"
+        PropertyType="Khu_VựcItem1">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -220,14 +191,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showViewĐơn_Vị_TínhItem">
+      Name="showAddEditKhu_VựcItem1">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="ViewĐơn_Vị_TínhItem" />
+          TargetScreen="AddEditKhu_VựcItem1" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="Đơn_Vị_TínhItem"
-        ParameterType="Đơn_Vị_TínhItem" />
+        Name="Khu_VựcItem1"
+        ParameterType="Khu_VựcItem1" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

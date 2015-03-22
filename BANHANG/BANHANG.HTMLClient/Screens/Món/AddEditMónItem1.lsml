@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditSanPham">
+    Name="AddEditMónItem1">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="SanPham" />
+        Value="XEM MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="SanPham"
+              DataType="MónItem1"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,13 +42,26 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditSanPham/Properties[SanPham]" />
+                      Member="AddEditMónItem1/Properties[MónItem1]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="left"
                 Kind="Group">
+                <ContentItem
+                  Name="Mã"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem1/Properties[Mã]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
                 <ContentItem
                   Name="Tên"
                   Kind="Value"
@@ -57,7 +70,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="SanPham/Properties[Tên]" />
+                          Member="MónItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -70,7 +83,20 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="SanPham/Properties[Giá]" />
+                          Member="MónItem1/Properties[Giá]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Tình_trạng"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem1/Properties[Tình_trạng]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -102,6 +128,42 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
+                  Name="Nhóm_MónItem"
+                  Kind="Details"
+                  DataType="Nhóm_MónItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem1/Properties[Nhóm_MónItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate"
+                    Kind="Details"
+                    DataType="Nhóm_MónItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  Name="Hình_ảnh"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Image?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem1/Properties[Hình_ảnh]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Ghi_chú"
                   Kind="Value"
                   DataType=":String?">
@@ -109,33 +171,10 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="SanPham/Properties[Ghi_chú]" />
+                          Member="MónItem1/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Đơn_Vị_TínhItem"
-                  Kind="Details"
-                  DataType="Đơn_Vị_TínhItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="SanPham/Properties[Đơn_Vị_TínhItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate"
-                    Kind="Details"
-                    DataType="Đơn_Vị_TínhItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -217,8 +256,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="SanPham"
-        PropertyType="SanPham">
+        Name="MónItem1"
+        PropertyType="MónItem1">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -227,14 +266,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditSanPham">
+      Name="showAddEditMónItem1">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditSanPham" />
+          TargetScreen="AddEditMónItem1" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="SanPham"
-        ParameterType="SanPham" />
+        Name="MónItem1"
+        ParameterType="MónItem1" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>
