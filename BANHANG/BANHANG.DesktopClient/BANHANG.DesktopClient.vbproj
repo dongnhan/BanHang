@@ -310,11 +310,8 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <Link>UserCode\Shared\NhapSanPhamDauKyChiTiet.lsml.vb</Link>
     </Compile>
-    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\Chọn_MónItem.lsml.vb">
-      <Link>UserCode\Shared\Chọn_MónItem.lsml.vb</Link>
-    </Compile>
-    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\Chọn_Món_Chi_TiếtItem.lsml.vb">
-      <Link>UserCode\Shared\Chọn_Món_Chi_TiếtItem.lsml.vb</Link>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\ChonMon1.lsml.vb">
+      <Link>UserCode\Shared\ChonMon1.lsml.vb</Link>
     </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <Link>UserCode\Shared\BangGiaChiTiet.lsml.vb</Link>
@@ -516,8 +513,6 @@
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
-    <LightSwitchModel Include="My Project\BanHangDataQuan\Chọn_Món.lsml" />
-    <LightSwitchModel Include="My Project\BanHangDataQuan\Chọn_Món_Chi_Tiết.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -595,7 +590,9 @@
   <ItemGroup>
     <Resource Include="Resources\WallPaper.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="My Project\BanHangDataQuan\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

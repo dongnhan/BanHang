@@ -86,7 +86,7 @@
       Name="link12"
       Method="!module/Methods[showBrowseKhuVuc]" />
     <ApplicationNavigationMethodLink
-      Name="link13"
-      Method="!module/Methods[showChọn_MónBrowse]" />
+      Name="link14"
+      Method="!module/Methods[showBrowseChonMons1]" />
   </Application.NavigationItems>
 </Application>

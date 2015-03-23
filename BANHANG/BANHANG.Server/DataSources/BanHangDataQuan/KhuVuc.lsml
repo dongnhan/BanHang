@@ -49,10 +49,10 @@
         FromEnd="Khu_Vực"
         ToEnd="Bàn" />
       <NavigationProperty
-        Name="Chọn_Món"
+        Name="ChonMons"
         Association="FK_Chọn_Món_Khu_Vực"
         FromEnd="Khu_Vực"
-        ToEnd="Chọn_Món" />
+        ToEnd="ChonMon" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -172,30 +172,29 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="FK_Chọn_Món_Khu_Vực"
+      Name="FK_Chọn_Món_Khu_Vực1"
       Association="FK_Chọn_Món_Khu_Vực">
       <AssociationSetEnd
         Name="Khu_Vực"
         EntitySet="KhuVuc" />
       <AssociationSetEnd
-        Name="Chọn_Món"
-        EntitySet="Chọn_Món" />
+        Name="ChonMon"
+        EntitySet="ChonMons" />
     </AssociationSet>
   </EntityContainer>
   <Association
     Name="FK_Chọn_Món_Khu_Vực">
     <AssociationEnd
       Name="Khu_Vực"
-      Multiplicity="One"
       EntityType="Khu_VựcItem1">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Chọn_Món"
+      Name="ChonMon"
       Multiplicity="Many"
-      EntityType="Chọn_MónItem" />
+      EntityType="ChonMon1" />
   </Association>
   <DataService
     Name="BanHangDataQuanDataService">
@@ -250,19 +249,19 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Chọn_Món_Khu_Vực">
+      AssociationSet="FK_Chọn_Món_Khu_Vực1">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="FK_Chọn Món_Khu Vực" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Khu_Vực]/Members[Khu_Vực]">
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Khu_Vực1]/Members[Khu_Vực]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Khu_Vực]/Members[Chọn_Món]">
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Khu_Vực1]/Members[ChonMon]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ChonMon_KhuVuc" />

@@ -54,27 +54,12 @@
         </NavigationProperty.Attributes>
       </NavigationProperty>
       <NavigationProperty
-        Name="Chọn_Món"
+        Name="ChonMons"
         Association="FK_Chọn_Món_Bàn"
         FromEnd="Bàn"
-        ToEnd="Chọn_Món" />
+        ToEnd="ChonMon" />
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="FK_Chọn_Món_Bàn">
-    <AssociationEnd
-      Name="Bàn"
-      Multiplicity="One"
-      EntityType="BànItem1">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Chọn_Món"
-      Multiplicity="Many"
-      EntityType="Chọn_MónItem" />
-  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
@@ -86,16 +71,6 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="BànItem1" />
-    <AssociationSet
-      Name="FK_Chọn_Món_Bàn"
-      Association="FK_Chọn_Món_Bàn">
-      <AssociationSetEnd
-        Name="Bàn"
-        EntitySet="Ban" />
-      <AssociationSetEnd
-        Name="Chọn_Món"
-        EntitySet="Chọn_Món" />
-    </AssociationSet>
     <QueryOperation
       Name="Ban_Single"
       ReturnType="BànItem1">
@@ -176,7 +151,31 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_Chọn_Món_Bàn1"
+      Association="FK_Chọn_Món_Bàn">
+      <AssociationSetEnd
+        Name="Bàn"
+        EntitySet="Ban" />
+      <AssociationSetEnd
+        Name="ChonMon"
+        EntitySet="ChonMons" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="FK_Chọn_Món_Bàn">
+    <AssociationEnd
+      Name="Bàn"
+      EntityType="BànItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ChonMon"
+      Multiplicity="Many"
+      EntityType="ChonMon1" />
+  </Association>
   <DataService
     Name="BanHangDataQuanDataService">
     <DataService.Attributes>
@@ -214,19 +213,19 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Chọn_Món_Bàn">
+      AssociationSet="FK_Chọn_Món_Bàn1">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="FK_Chọn Món_Bàn" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Bàn]/Members[Bàn]">
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Bàn1]/Members[Bàn]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Bàn]/Members[Chọn_Món]">
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Bàn1]/Members[ChonMon]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ChonMon_Ban" />

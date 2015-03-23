@@ -5,10 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="Chọn_MónBrowse">
+    Name="BrowseChonMons1">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
+      <DisplayName
+        Value="TEST" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -20,29 +22,29 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="Chọn_MónItemList"
+            Name="ChonMon1List"
             Kind="Group">
             <ContentItem
-              Name="Chọn_Món"
+              Name="ChonMons"
               Kind="Collection"
-              DataType="CollectionView$Chọn_MónItem"
-              View="Microsoft.LightSwitch.MobileWeb:Table">
+              DataType="CollectionView$ChonMon1"
+              View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Chọn_Món" />
+                  Value="ChonMons" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Chọn_MónBrowse/Properties[Chọn_Món]" />
+                      Member="BrowseChonMons1/Properties[ChonMons]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="Chọn_MónItem"
+                DataType="ChonMon1"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -54,18 +56,14 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="Id"
+                  Name="UserName"
                   Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Mã" />
-                  </ContentItem.Attributes>
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Chọn_MónItem/Properties[Id]" />
+                          Member="ChonMon1/Properties[UserName]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -90,7 +88,32 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Chọn_MónItem/Properties[Ngày]" />
+                          Member="ChonMon1/Properties[Ngày]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="ChonMon_KhachHang"
+                  Kind="Value"
+                  DataType=":Int32?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMon1/Properties[ChonMon_KhachHang]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -125,10 +148,22 @@
                   Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
                   <ScreenExpressionTree>
                     <ChainExpression>
-                      <MemberExpression
-                        Member="Chọn_MónBrowse/Properties[Chọn_Món]" />
                       <CallExpression
-                        Target="viewSelected" />
+                        Target="!module/Methods[showViewChonMon11]">
+                        <CallExpression.Attributes>
+                          <AssociatedCollection
+                            Collection="BrowseChonMons1/Properties[ChonMons]" />
+                        </CallExpression.Attributes>
+                        <ArgumentExpression
+                          Parameter="ChonMon1">
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="BrowseChonMons1/Properties[ChonMons]" />
+                            <MemberExpression
+                              Member="selectedItem" />
+                          </ChainExpression>
+                        </ArgumentExpression>
+                      </CallExpression>
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -136,7 +171,43 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="SearchChọn_Món"
+                Name="AddChonMon1"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Add" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditChonMon11]">
+                          <CallExpression.Attributes>
+                            <AssociatedCollection
+                              Collection="BrowseChonMons1/Properties[ChonMons]" />
+                            <CreateNewEntity
+                              TargetParameter="!module/Methods[showAddEditChonMon11]/Parameters[ChonMon1]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-add"
+                          ResultType="Microsoft.LightSwitch:String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="SearchChonMons"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -148,7 +219,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Chọn_MónBrowse/Properties[Chọn_Món]" />
+                          Member="BrowseChonMons1/Properties[ChonMons]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -213,20 +284,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Chọn_Món"
+        Name="ChonMons"
         PageSize="45"
-        PropertyType="CollectionView$Chọn_MónItem">
+        PropertyType="CollectionView$ChonMon1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="Chọn_MónQuery"
-            ReturnType="Chọn_MónItem*">
+            Name="ChonMonsQuery"
+            ReturnType="ChonMon1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangDataQuan/Members[Chọn_Món]" />
+                  Member="BanHangDataQuan/Members[ChonMons]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -234,7 +305,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="Chọn_MónBrowse/Properties[Chọn_Món]/Query" />
+              Target="BrowseChonMons1/Properties[ChonMons]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -242,10 +313,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showChọn_MónBrowse">
+      Name="showBrowseChonMons1">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="Chọn_MónBrowse" />
+          TargetScreen="BrowseChonMons1" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

@@ -598,40 +598,10 @@
         Target="ServiceInterface:vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpItem" />
     </EntityType.Attributes>
   </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Chọn_MónItem" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:Chọn_Món_Chi_TiếtItem" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
         Target="ServiceInterface:FK_Bàn_Khu_Vực1" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_Chọn_Món_Chi_Tiết_Chọn_Món" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_Chọn_Món_Chi_Tiết_Món" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_Chọn_Món_Bàn" />
     </Association.Attributes>
   </Association>
   <EntityContainer>
@@ -644,12 +614,6 @@
     <Association.Attributes>
       <Proxy
         Target="ServiceInterface:FK_Món_Nhóm_Món" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_Chọn_Món_Khu_Vực" />
     </Association.Attributes>
   </Association>
   <EntityType>
@@ -670,4 +634,34 @@
         Target="ServiceInterface:Đơn_Vị_TínhItem" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChonMonChiTiet1" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chọn_Món_Chi_Tiết_Chọn_Món" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chọn_Món_Chi_Tiết_Món" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chọn_Món_Bàn" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chọn_Món_Khu_Vực" />
+    </Association.Attributes>
+  </Association>
 </Application>

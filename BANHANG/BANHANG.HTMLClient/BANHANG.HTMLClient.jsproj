@@ -115,6 +115,12 @@
     <Content Include="Screens\Bàn\ViewBànItem1.lsml.js">
       <DependentUpon>ViewBànItem1.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\ChonMons\AddEditChonMon11.lsml.js">
+      <DependentUpon>AddEditChonMon11.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\ChonMons\ViewChonMon11.lsml.js">
+      <DependentUpon>ViewChonMon11.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\Home.lsml.js">
       <DependentUpon>Home.lsml</DependentUpon>
     </Content>
@@ -162,6 +168,10 @@
     <Content Include="Scripts\README.txt" />
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\ChonMon1.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ServiceMetadataReference Include="..\BANHANG.Server\BANHANG.Server.vbproj">
@@ -169,10 +179,11 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
-    <LightSwitchModel Include="Properties\BanHangDataQuan\Bàn.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\Ban.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\ChonMons.lsml" />
     <LightSwitchModel Include="Properties\BanHangDataQuan\KhuVuc.lsml" />
-    <LightSwitchModel Include="Properties\BanHangDataQuan\Món.lsml" />
-    <LightSwitchModel Include="Properties\BanHangDataQuan\Nhóm_Món.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\Mon.lsml" />
+    <LightSwitchModel Include="Properties\BanHangDataQuan\NhomMon.lsml" />
     <LightSwitchModel Include="Properties\Client.lsml">
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
@@ -189,7 +200,9 @@
     <LightSwitchModel Include="Screens\Bàn\AddEditBànItem1.lsml" />
     <LightSwitchModel Include="Screens\Bàn\BrowseBàn.lsml" />
     <LightSwitchModel Include="Screens\Bàn\ViewBànItem1.lsml" />
-    <LightSwitchModel Include="Screens\Chọn_MónBrowse.lsml" />
+    <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon11.lsml" />
+    <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons1.lsml" />
+    <LightSwitchModel Include="Screens\ChonMons\ViewChonMon11.lsml" />
     <LightSwitchModel Include="Screens\Home.lsml" />
     <LightSwitchModel Include="Screens\KhuVuc\AddEditKhu_VựcItem1.lsml" />
     <LightSwitchModel Include="Screens\KhuVuc\BrowseKhuVuc.lsml" />

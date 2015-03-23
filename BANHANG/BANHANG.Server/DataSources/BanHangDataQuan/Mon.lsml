@@ -92,11 +92,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Chọn_Món_Chi_Tiết"
-        Association="FK_Chọn_Món_Chi_Tiết_Món"
-        FromEnd="Món"
-        ToEnd="Chọn_Món_Chi_Tiết" />
-      <NavigationProperty
         Name="Nhóm_MónItem"
         Association="FK_Món_Nhóm_Món"
         FromEnd="Món"
@@ -106,23 +101,13 @@
             Value="Nhóm Món" />
         </NavigationProperty.Attributes>
       </NavigationProperty>
+      <NavigationProperty
+        Name="ChonMonChiTiets"
+        Association="FK_Chọn_Món_Chi_Tiết_Món"
+        FromEnd="Món"
+        ToEnd="ChonMonChiTiet" />
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="FK_Chọn_Món_Chi_Tiết_Món">
-    <AssociationEnd
-      Name="Món"
-      Multiplicity="One"
-      EntityType="MónItem1">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Chọn_Món_Chi_Tiết"
-      Multiplicity="Many"
-      EntityType="Chọn_Món_Chi_TiếtItem" />
-  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
@@ -134,16 +119,6 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="MónItem1" />
-    <AssociationSet
-      Name="FK_Chọn_Món_Chi_Tiết_Món"
-      Association="FK_Chọn_Món_Chi_Tiết_Món">
-      <AssociationSetEnd
-        Name="Món"
-        EntitySet="Mon" />
-      <AssociationSetEnd
-        Name="Chọn_Món_Chi_Tiết"
-        EntitySet="Chọn_Món_Chi_Tiết" />
-    </AssociationSet>
     <QueryOperation
       Name="Mon_Single"
       ReturnType="MónItem1">
@@ -224,7 +199,32 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_Chọn_Món_Chi_Tiết_Món1"
+      Association="FK_Chọn_Món_Chi_Tiết_Món">
+      <AssociationSetEnd
+        Name="Món"
+        EntitySet="Mon" />
+      <AssociationSetEnd
+        Name="ChonMonChiTiet"
+        EntitySet="ChonMonChiTiets" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="FK_Chọn_Món_Chi_Tiết_Món">
+    <AssociationEnd
+      Name="Món"
+      Multiplicity="One"
+      EntityType="MónItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ChonMonChiTiet"
+      Multiplicity="Many"
+      EntityType="ChonMonChiTiet1" />
+  </Association>
   <DataService
     Name="BanHangDataQuanDataService">
     <DataService.Attributes>
@@ -283,19 +283,19 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Chọn_Món_Chi_Tiết_Món">
+      AssociationSet="FK_Chọn_Món_Chi_Tiết_Món1">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
           Name="FK_Chọn Món Chi Tiết_Món" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Món]/Members[Món]">
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Món1]/Members[Món]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Món]/Members[Chọn_Món_Chi_Tiết]">
+          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Món1]/Members[ChonMonChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ChonMonChiTiet_Mon" />
