@@ -26,14 +26,6 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Số_lượng"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Giá"
         PropertyType=":Decimal">
         <EntityProperty.Attributes>
@@ -62,6 +54,16 @@
         Association="FK_Chọn_Món_Chi_Tiết_Món"
         FromEnd="ChonMonChiTiet"
         ToEnd="Món" />
+      <NavigationProperty
+        Name="SoLuong"
+        Association="FK_ChonMonChiTiet_SoLuong"
+        FromEnd="ChonMonChiTiet"
+        ToEnd="SoLuong">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Số lượng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -174,11 +176,6 @@
           Type="int"
           Property="ChonMonChiTiet1/Properties[Id]" />
         <SsdlProperty
-          Name="Số lượng"
-          Nullable="False"
-          Type="int"
-          Property="ChonMonChiTiet1/Properties[Số_lượng]" />
-        <SsdlProperty
           Name="Giá"
           Nullable="False"
           Type="decimal"
@@ -199,6 +196,11 @@
           Nullable="False"
           Type="int"
           PropertyName="ChonMonChiTiet_Mon" />
+        <SsdlForeignKeyProperty
+          Name="Số lượng"
+          Nullable="False"
+          Type="int"
+          PropertyName="Số_lượng" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

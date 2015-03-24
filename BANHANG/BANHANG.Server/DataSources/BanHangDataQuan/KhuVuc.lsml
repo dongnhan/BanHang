@@ -186,6 +186,7 @@
     Name="FK_Chọn_Món_Khu_Vực">
     <AssociationEnd
       Name="Khu_Vực"
+      Multiplicity="One"
       EntityType="Khu_VựcItem1">
       <AssociationEnd.Attributes>
         <DeleteRule />

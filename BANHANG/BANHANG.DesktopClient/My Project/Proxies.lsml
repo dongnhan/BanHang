@@ -652,4 +652,16 @@
         Target="ServiceInterface:FK_Chọn_Món_Khu_Vực" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:SoLuong" />
+    </EntityType.Attributes>
+  </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_ChonMonChiTiet_SoLuong" />
+    </Association.Attributes>
+  </Association>
 </Application>
