@@ -24,7 +24,7 @@ Namespace LightSwitchApplication
                                 ShowMessageBox("docbaovem !!!")
                             End Sub)
                     End Sub _
-                   , Nothing, 15000, 30000 _
+                   , Nothing, 15, 30000 _
                    )
             End If
         End Sub
