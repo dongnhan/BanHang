@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Đơn_Vị_TínhItem1">
+    Name="Xuất_Sản_PhẩmItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -26,12 +26,28 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Tên"
-        PropertyType=":String">
+        Name="Ngày_xuất"
+        PropertyType=":Date">
         <EntityProperty.Attributes>
           <Required />
-          <MaxLength
-            Value="500" />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="c__DatHang"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="c__BangGia"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -42,52 +58,61 @@
             Value="500" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Thanh_toán"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
-        Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
-        Association="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet"
-        FromEnd="Đơn_Vị_Tính"
-        ToEnd="NhapSanPhamDauKyChiTiet" />
-      <NavigationProperty
-        Name="Sản_Phẩm"
-        Association="FK_Sản_Phẩm_Đơn_Vị_Tính"
-        FromEnd="Đơn_Vị_Tính"
-        ToEnd="Sản_Phẩm" />
+        Name="Thu_Công_Nợ"
+        Association="FK_Thu_Công_Nợ_Xuất_Sản_Phẩm"
+        FromEnd="Xuất_Sản_Phẩm"
+        ToEnd="Thu_Công_Nợ" />
       <NavigationProperty
         Name="Xuất_Sản_Phẩm_Chi_Tiết"
-        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
-        FromEnd="Đơn_Vị_Tính"
+        Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm"
+        FromEnd="Xuất_Sản_Phẩm"
         ToEnd="Xuất_Sản_Phẩm_Chi_Tiết" />
+      <NavigationProperty
+        Name="Đối_TượngItem"
+        Association="FK_Xuất_Sản_Phẩm_Khách_Hàng"
+        FromEnd="Xuất_Sản_Phẩm"
+        ToEnd="Đối_Tượng" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet">
+    Name="FK_Thu_Công_Nợ_Xuất_Sản_Phẩm">
     <AssociationEnd
-      Name="Đơn_Vị_Tính"
+      Name="Xuất_Sản_Phẩm"
       Multiplicity="One"
-      EntityType="Đơn_Vị_TínhItem1">
+      EntityType="Xuất_Sản_PhẩmItem">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="NhapSanPhamDauKyChiTiet"
+      Name="Thu_Công_Nợ"
       Multiplicity="Many"
-      EntityType="NhapSanPhamDauKyChiTiet" />
+      EntityType="Thu_Công_NợItem" />
   </Association>
   <Association
-    Name="FK_Sản_Phẩm_Đơn_Vị_Tính">
+    Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm">
     <AssociationEnd
-      Name="Đơn_Vị_Tính"
+      Name="Xuất_Sản_Phẩm"
       Multiplicity="One"
-      EntityType="Đơn_Vị_TínhItem1">
+      EntityType="Xuất_Sản_PhẩmItem">
       <AssociationEnd.Attributes>
-        <DeleteRule />
+        <DeleteRule
+          Action="Cascade" />
       </AssociationEnd.Attributes>
     </AssociationEnd>
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="Xuất_Sản_Phẩm_Chi_Tiết"
       Multiplicity="Many"
-      EntityType="Sản_PhẩmItem" />
+      EntityType="Xuất_Sản_Phẩm_Chi_TiếtItem" />
   </Association>
   <EntityContainer
     Name="BanHangData1">
@@ -95,34 +120,34 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Đơn_Vị_Tính"
+      Name="Xuất_Sản_Phẩm"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Đơn_Vị_TínhItem1" />
+      EntityType="Xuất_Sản_PhẩmItem" />
     <AssociationSet
-      Name="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính"
-      Association="Đơn_Vị_TínhItem1_NhapSanPhamDauKyChiTiet">
+      Name="FK_Thu_Công_Nợ_Xuất_Sản_Phẩm"
+      Association="FK_Thu_Công_Nợ_Xuất_Sản_Phẩm">
       <AssociationSetEnd
-        Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        Name="Xuất_Sản_Phẩm"
+        EntitySet="Xuất_Sản_Phẩm" />
       <AssociationSetEnd
-        Name="NhapSanPhamDauKyChiTiet"
-        EntitySet="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+        Name="Thu_Công_Nợ"
+        EntitySet="ThuCongNo" />
     </AssociationSet>
     <AssociationSet
-      Name="FK_Sản_Phẩm_Đơn_Vị_Tính"
-      Association="FK_Sản_Phẩm_Đơn_Vị_Tính">
+      Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm"
+      Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm">
       <AssociationSetEnd
-        Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
+        Name="Xuất_Sản_Phẩm"
+        EntitySet="Xuất_Sản_Phẩm" />
       <AssociationSetEnd
-        Name="Sản_Phẩm"
-        EntitySet="Sản_Phẩm" />
+        Name="Xuất_Sản_Phẩm_Chi_Tiết"
+        EntitySet="Xuất_Sản_Phẩm_Chi_Tiết" />
     </AssociationSet>
     <QueryOperation
-      Name="Đơn_Vị_Tính_Single"
-      ReturnType="Đơn_Vị_TínhItem1">
+      Name="Xuất_Sản_Phẩm_Single"
+      ReturnType="Xuất_Sản_PhẩmItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -148,7 +173,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đơn_Vị_Tính" />
+            Member="Xuất_Sản_Phẩm" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -161,8 +186,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Đơn_Vị_Tính_SingleOrDefault"
-      ReturnType="Đơn_Vị_TínhItem1">
+      Name="Xuất_Sản_Phẩm_SingleOrDefault"
+      ReturnType="Xuất_Sản_PhẩmItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -188,7 +213,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đơn_Vị_Tính" />
+            Member="Xuất_Sản_Phẩm" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -200,122 +225,95 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính"
-      Association="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
-      <AssociationSetEnd
-        Name="Đơn_Vị_Tính"
-        EntitySet="Đơn_Vị_Tính" />
-      <AssociationSetEnd
-        Name="Xuất_Sản_Phẩm_Chi_Tiết"
-        EntitySet="Xuất_Sản_Phẩm_Chi_Tiết" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
-    <AssociationEnd
-      Name="Đơn_Vị_Tính"
-      Multiplicity="One"
-      EntityType="Đơn_Vị_TínhItem1">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Xuất_Sản_Phẩm_Chi_Tiết"
-      Multiplicity="Many"
-      EntityType="Xuất_Sản_Phẩm_Chi_TiếtItem" />
-  </Association>
   <DataService
     Name="BanHangData1DataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Đơn_Vị_Tính">
+      EntitySet="Xuất_Sản_Phẩm">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Đơn Vị Tính" />
+          Table="Xuất Sản Phẩm" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Đơn_Vị_TínhItem1/Properties[Id]" />
+          Property="Xuất_Sản_PhẩmItem/Properties[Id]" />
         <SsdlProperty
-          MaxLength="500"
-          Name="Tên"
+          Name="Ngày xuất"
           Nullable="False"
-          Type="nvarchar"
-          Property="Đơn_Vị_TínhItem1/Properties[Tên]" />
+          Type="date"
+          Property="Xuất_Sản_PhẩmItem/Properties[Ngày_xuất]" />
+        <SsdlProperty
+          Name="_DatHang"
+          Nullable="True"
+          Type="int"
+          Property="Xuất_Sản_PhẩmItem/Properties[c__DatHang]" />
+        <SsdlProperty
+          Name="_BangGia"
+          Nullable="True"
+          Type="int"
+          Property="Xuất_Sản_PhẩmItem/Properties[c__BangGia]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Đơn_Vị_TínhItem1/Properties[Ghi_chú]" />
+          Property="Xuất_Sản_PhẩmItem/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Thanh toán"
+          Nullable="False"
+          Type="int"
+          Property="Xuất_Sản_PhẩmItem/Properties[Thanh_toán]" />
+        <SsdlForeignKeyProperty
+          Name="_KhachHang"
+          Nullable="False"
+          Type="int"
+          PropertyName="c__KhachHang" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính">
+      AssociationSet="FK_Thu_Công_Nợ_Xuất_Sản_Phẩm">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="FK_Nhập Sản Phẩm Đầu Kỳ Chi Tiết_Đơn Vị Tính" />
+          Name="FK_Thu Công Nợ_Xuất Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính]/Members[Đơn_Vị_Tính]">
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Xuất_Sản_Phẩm]/Members[Xuất_Sản_Phẩm]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Đơn_Vị_Tính]/Members[NhapSanPhamDauKyChiTiet]">
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Xuất_Sản_Phẩm]/Members[Thu_Công_Nợ]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="NhapSanPhamDauKyChiTiet_DonViTinh" />
+              Name="ThuCongNo_XuatSanPham" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Sản_Phẩm_Đơn_Vị_Tính">
+      AssociationSet="FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="FK_Sản Phẩm_Đơn Vị Tính" />
+          Name="FK_Xuất Sản Phẩm Chi Tiết_Xuất Sản Phẩm" />
         <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Sản_Phẩm_Đơn_Vị_Tính]/Members[Đơn_Vị_Tính]">
+          End="BanHangData1/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm]/Members[Xuất_Sản_Phẩm]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Sản_Phẩm_Đơn_Vị_Tính]/Members[Sản_Phẩm]">
+          End="BanHangData1/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Xuất_Sản_Phẩm]/Members[Xuất_Sản_Phẩm_Chi_Tiết]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="_DonViTinh" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
-    <AssociationSetMapping
-      AssociationSet="FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="FK_Xuất Sản Phẩm Chi Tiết_Đơn Vị Tính" />
-        <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính]/Members[Đơn_Vị_Tính]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="BanHangData1/Members[FK_Xuất_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính]/Members[Xuất_Sản_Phẩm_Chi_Tiết]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="_DonViTinh" />
+              Name="_XuatSanPham" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

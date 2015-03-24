@@ -159,6 +159,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowChọn_MónListDetail"
       Target="!module/Methods[ShowChọn_MónListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowThu_Công_NợListDetail"
+      Target="!module/Methods[ShowThu_Công_NợListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -326,28 +329,6 @@
       <ApplicationNavigationLink
         Name="link14"
         Command="!module/Commands[ScreenCommandShowvLời_Lỗ_Ngày_Theo_Sản_PhẩmSearch]" />
-    </ApplicationNavigationGroup>
-    <ApplicationNavigationGroup
-      Name="group8">
-      <ApplicationNavigationGroup.Attributes>
-        <DisplayName
-          Value="QUÁN" />
-      </ApplicationNavigationGroup.Attributes>
-      <ApplicationNavigationLink
-        Name="link29"
-        Command="!module/Commands[ScreenCommandShowMónListDetail1]" />
-      <ApplicationNavigationLink
-        Name="link26"
-        Command="!module/Commands[ScreenCommandShowBànListDetail]" />
-      <ApplicationNavigationLink
-        Name="link27"
-        Command="!module/Commands[ScreenCommandShowKhu_VựcListDetail]" />
-      <ApplicationNavigationLink
-        Name="link28"
-        Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
-      <ApplicationNavigationLink
-        Name="link25"
-        Command="!module/Commands[ScreenCommandShowChọn_MónListDetail]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

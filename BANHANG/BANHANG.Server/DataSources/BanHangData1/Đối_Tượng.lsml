@@ -122,6 +122,31 @@
         Association="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng"
         FromEnd="Đối_Tượng"
         ToEnd="Thu_Công_Nợ_Đầu_Kỳ" />
+      <NavigationProperty
+        Name="Chi_Công_Nợ_Chi_Tiết"
+        Association="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Chi_Công_Nợ_Chi_Tiết" />
+      <NavigationProperty
+        Name="Chi_Công_Nợ"
+        Association="FK_Chi_Công_Nợ_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Chi_Công_Nợ" />
+      <NavigationProperty
+        Name="Thu_Công_Nợ_Chi_Tiết"
+        Association="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Thu_Công_Nợ_Chi_Tiết" />
+      <NavigationProperty
+        Name="Thu_Công_Nợ"
+        Association="FK_Thu_Công_Nợ_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Thu_Công_Nợ" />
+      <NavigationProperty
+        Name="Xuất_Sản_Phẩm"
+        Association="FK_Xuất_Sản_Phẩm_Khách_Hàng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Xuất_Sản_Phẩm" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -265,7 +290,132 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng"
+      Association="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Chi_Công_Nợ_Chi_Tiết"
+        EntitySet="Chi_Công_Nợ_Chi_Tiết" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Chi_Công_Nợ_Đối_Tượng"
+      Association="FK_Chi_Công_Nợ_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Chi_Công_Nợ"
+        EntitySet="Chi_Công_Nợ" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng"
+      Association="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Thu_Công_Nợ_Chi_Tiết"
+        EntitySet="ThuCongNoChiTiet" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Thu_Công_Nợ_Đối_Tượng"
+      Association="FK_Thu_Công_Nợ_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Thu_Công_Nợ"
+        EntitySet="ThuCongNo" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Xuất_Sản_Phẩm_Khách_Hàng"
+      Association="FK_Xuất_Sản_Phẩm_Khách_Hàng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Xuất_Sản_Phẩm"
+        EntitySet="Xuất_Sản_Phẩm" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Chi_Công_Nợ_Chi_Tiết"
+      Multiplicity="Many"
+      EntityType="Chi_Công_Nợ_Chi_TiếtItem" />
+  </Association>
+  <Association
+    Name="FK_Chi_Công_Nợ_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Chi_Công_Nợ"
+      Multiplicity="Many"
+      EntityType="Chi_Công_NợItem" />
+  </Association>
+  <Association
+    Name="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Thu_Công_Nợ_Chi_Tiết"
+      Multiplicity="Many"
+      EntityType="Thu_Công_Nợ_Chi_TiếtItem" />
+  </Association>
+  <Association
+    Name="FK_Thu_Công_Nợ_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Thu_Công_Nợ"
+      Multiplicity="Many"
+      EntityType="Thu_Công_NợItem" />
+  </Association>
+  <Association
+    Name="FK_Xuất_Sản_Phẩm_Khách_Hàng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Xuất_Sản_Phẩm"
+      Multiplicity="Many"
+      EntityType="Xuất_Sản_PhẩmItem" />
+  </Association>
   <DataService
     Name="BanHangData1DataService">
     <DataService.Attributes>
@@ -349,6 +499,27 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
+      AssociationSet="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Chi Công Nợ Chi Tiết_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[Chi_Công_Nợ_Chi_Tiết]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChiCongNoChiTiet_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
       AssociationSet="FK_Chi_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
@@ -370,6 +541,48 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
+      AssociationSet="FK_Chi_Công_Nợ_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Chi Công Nợ_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Chi_Công_Nợ_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Chi_Công_Nợ_Đối_Tượng]/Members[Chi_Công_Nợ]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChiCongNo_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Thu Công Nợ Chi Tiết_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Chi_Tiết_Đối_Tượng]/Members[Thu_Công_Nợ_Chi_Tiết]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ThuCongNoChiTiet_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
       AssociationSet="FK_Thu_Công_Nợ_Đầu_Kỳ_Đối_Tượng">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
@@ -386,6 +599,48 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ThuCongNoDauKy_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Thu_Công_Nợ_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Thu Công Nợ_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Thu_Công_Nợ_Đối_Tượng]/Members[Thu_Công_Nợ]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ThuCongNo_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Xuất_Sản_Phẩm_Khách_Hàng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Xuất Sản Phẩm_Khách Hàng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Xuất_Sản_Phẩm_Khách_Hàng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Xuất_Sản_Phẩm_Khách_Hàng]/Members[Xuất_Sản_Phẩm]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="_KhachHang" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

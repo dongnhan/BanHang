@@ -74,25 +74,13 @@
               <ContentItem
                 Name="MónTemplate"
                 Kind="Details"
-                DataType="MónItem1">
+                DataType="MónItem1"
+                View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem
-                  Name="Mã"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Mã]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
                 <ContentItem
                   Name="Tên"
                   Kind="Value"
@@ -154,6 +142,18 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="Hidden"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
             <ContentItem.CommandItems>
@@ -755,6 +755,7 @@
             <ScreenQueryDefinition.Parameters>
               <QueryParameter
                 Name="Id"
+                IsOptional="True"
                 ParameterType=":Int32?" />
             </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>

@@ -67,7 +67,7 @@
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
-            Scale="2" />
+            Scale="0" />
           <NotSearchable />
           <Attribute
             Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">

@@ -47,6 +47,9 @@
     <LightSwitchSDKPath Condition=" '$(LightSwitchSDKPath)' != '' and !HasTrailingSlash('$(LightSwitchSDKPath)')">$(LightSwitchSDKPath)\</LightSwitchSDKPath>
     <WCFRIASERVICESSDKPath Condition=" '$(WCFRIASERVICESSDKPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WCFRIAServices\v1.0@InstallPath)</WCFRIASERVICESSDKPath>
     <WCFRIASERVICESSDKPath Condition=" '$(WCFRIASERVICESSDKPath)' == '' ">$(Registry:HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\WCFRIAServices\v1.0@InstallPath)</WCFRIASERVICESSDKPath>
+    <SignManifests>False</SignManifests>
+    <ManifestCertificateThumbprint />
+    <ManifestKeyFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -338,6 +341,9 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\CongNo\Thu_Công_NợListDetail.lsml.vb">
+      <DependentUpon>Thu_Công_NợListDetail.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\CongNo\vCongNoPhaiTraNhaCungCapReportPreviewScreen.lsml.vb">
       <DependentUpon>vCongNoPhaiTraNhaCungCapReportPreviewScreen.lsml</DependentUpon>
     </Compile>
@@ -513,6 +519,7 @@
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\Xuất_Sản_Phẩm.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -570,6 +577,7 @@
     <LightSwitchModel Include="Screens\Quan\MónListDetail1.lsml" />
     <LightSwitchModel Include="Screens\Quan\Nhóm_MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\Quan\Chọn_MónListDetail.lsml" />
+    <LightSwitchModel Include="Screens\CongNo\Thu_Công_NợListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
