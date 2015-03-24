@@ -88,5 +88,8 @@
     <ApplicationNavigationMethodLink
       Name="link14"
       Method="!module/Methods[showBrowseChonMons1]" />
+    <ApplicationNavigationMethodLink
+      Name="link13"
+      Method="!module/Methods[showChonMonsBrowse]" />
   </Application.NavigationItems>
 </Application>

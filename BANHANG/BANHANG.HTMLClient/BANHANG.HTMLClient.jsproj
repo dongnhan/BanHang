@@ -115,6 +115,9 @@
     <Content Include="Screens\Bàn\ViewBànItem1.lsml.js">
       <DependentUpon>ViewBànItem1.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\ChonMonsBrowse.lsml.js">
+      <DependentUpon>ChonMonsBrowse.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\ChonMons\AddEditChonMon11.lsml.js">
       <DependentUpon>AddEditChonMon11.lsml</DependentUpon>
     </Content>
@@ -200,6 +203,7 @@
     <LightSwitchModel Include="Screens\Bàn\AddEditBànItem1.lsml" />
     <LightSwitchModel Include="Screens\Bàn\BrowseBàn.lsml" />
     <LightSwitchModel Include="Screens\Bàn\ViewBànItem1.lsml" />
+    <LightSwitchModel Include="Screens\ChonMonsBrowse.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon11.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons1.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\ViewChonMon11.lsml" />
