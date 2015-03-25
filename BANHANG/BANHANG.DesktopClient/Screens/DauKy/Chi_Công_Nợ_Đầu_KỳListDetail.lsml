@@ -47,6 +47,23 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
+                  Name="Id"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Mã" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chi_Công_Nợ_Đầu_KỳItem/Properties[Id]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Ngày"
                   Kind="Value"
                   DataType=":Date">
@@ -261,6 +278,23 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
+                  Name="Id1"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Mã" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Chi_Công_Nợ_Đầu_KỳItem/Properties[Id]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Ngày1"
                   Kind="Value"
                   DataType=":Date">
@@ -328,7 +362,7 @@
                     Name="RowTemplate2"
                     Kind="Details"
                     DataType="Đối_TượngItem1"
-                    View="Microsoft.LightSwitch.RichClient:RowsLayout">
+                    View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

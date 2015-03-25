@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse">
+    Name="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangData1" />
       <DisplayName
-        Value="LỜI LỖ KHÁCH HÀNG" />
+        Value="TỒN PHẢI THU" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -22,39 +22,79 @@
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:TabPages">
           <ContentItem
-            Name="vLời_Lỗ_Ngày_Theo_Khách_HàngItemList"
+            Name="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItemList"
             Kind="Group">
             <ContentItem
               Name="Group"
               Kind="Group"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem
-                Name="Từ_ngày"
-                Kind="Value"
-                DataType=":Date"
-                View="Microsoft.LightSwitch.MobileWeb:DatePicker">
+                Name="Tháng"
+                Kind="Details"
+                DataType="ThángItem"
+                View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[Từ_ngày]" />
+                        Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[Tháng]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem
+                  Name="ThángTemplate"
+                  Kind="Details"
+                  DataType="ThángItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="ThángItem"
+                    Kind="Details"
+                    DataType="ThángItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
               </ContentItem>
               <ContentItem
-                Name="Đến_ngày"
-                Kind="Value"
-                DataType=":Date"
-                View="Microsoft.LightSwitch.MobileWeb:DatePicker">
+                Name="Năm"
+                Kind="Details"
+                DataType="NămItem"
+                View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[Đến_ngày]" />
+                        Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[Năm]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem
+                  Name="NămTemplate"
+                  Kind="Details"
+                  DataType="NămItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="NămItem"
+                    Kind="Details"
+                    DataType="NămItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
               </ContentItem>
               <ContentItem
                 Name="Khách_Hàng"
@@ -65,7 +105,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[KhachHang]" />
+                        Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[KhachHang]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.ChoicesSource>
@@ -73,7 +113,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[Khách_Hàng]" />
+                        Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[Khách_Hàng]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -100,26 +140,26 @@
               </ContentItem>
             </ContentItem>
             <ContentItem
-              Name="vLời_Lỗ_Ngày_Theo_Khách_Hàng"
+              Name="vTồn_Công_Nợ_Phải_Thu_Khách_Hàng"
               Kind="Collection"
-              DataType="CollectionView$vLời_Lỗ_Ngày_Theo_Khách_HàngItem"
+              DataType="CollectionView$vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem"
               View="Microsoft.LightSwitch.MobileWeb:Table">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="vLời_Lỗ_Ngày_Theo_Khách_Hàng" />
+                  Value="Tồn công nợ phải thu" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[vLời_Lỗ_Ngày_Theo_Khách_Hàng]" />
+                      Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[vTồn_Công_Nợ_Phải_Thu_Khách_Hàng]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="rows"
                 Kind="Details"
-                DataType="vLời_Lỗ_Ngày_Theo_Khách_HàngItem"
+                DataType="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem"
                 View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -131,102 +171,61 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="Ngày"
-                  Kind="Value"
-                  DataType=":Date">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Ngày]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Tên_Sản_Phẩm"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Tên_Sản_Phẩm]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Large"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Đơn_Vị_Tính"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Đơn_Vị_Tính]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Số_lượng"
-                  Kind="Value"
-                  DataType=":Decimal?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Số_lượng]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Small"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Tiền_Lời"
+                  Name="Đầu_Kỳ"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Tiền_Lời]" />
+                          Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[Đầu_Kỳ]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Thu"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Phát sinh" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[Thu]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Chi"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Thanh toán" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[Chi]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Cuối_Kỳ"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[Cuối_Kỳ]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -250,7 +249,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[vLời_Lỗ_Ngày_Theo_Khách_Hàng]" />
+                        Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[vTồn_Công_Nợ_Phải_Thu_Khách_Hàng]" />
                       <CallExpression
                         Target="viewSelected" />
                     </ChainExpression>
@@ -260,7 +259,7 @@
             </ContentItem>
             <ContentItem.CommandItems>
               <ContentItem
-                Name="SearchvLời_Lỗ_Ngày_Theo_Khách_Hàng"
+                Name="SearchvTồn_Công_Nợ_Phải_Thu_Khách_Hàng"
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
@@ -272,7 +271,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[vLời_Lỗ_Ngày_Theo_Khách_Hàng]" />
+                          Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[vTồn_Công_Nợ_Phải_Thu_Khách_Hàng]" />
                         <CallExpression
                           Target="showSearch" />
                       </ChainExpression>
@@ -337,35 +336,51 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="vLời_Lỗ_Ngày_Theo_Khách_Hàng"
+        Name="vTồn_Công_Nợ_Phải_Thu_Khách_Hàng"
         PageSize="45"
-        PropertyType="CollectionView$vLời_Lỗ_Ngày_Theo_Khách_HàngItem">
+        PropertyType="CollectionView$vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="vLời_Lỗ_Ngày_Theo_Khách_HàngQuery"
-            ReturnType="vLời_Lỗ_Ngày_Theo_Khách_HàngItem*">
+            Name="vTồn_Công_Nợ_Phải_Thu_Khách_HàngQuery"
+            ReturnType="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <BinaryExpression
                   NodeType="And">
                   <BinaryExpression.Left>
-                    <TernaryExpression
-                      NodeType="Between">
-                      <TernaryExpression.First>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[Ngày]" />
-                        </ChainExpression>
-                      </TernaryExpression.First>
-                      <TernaryExpression.Second>
-                        <ParameterExpression
-                          Parameter="Từ_ngày" />
-                      </TernaryExpression.Second>
-                      <TernaryExpression.Third>
-                        <ParameterExpression
-                          Parameter="Đến_ngày" />
-                      </TernaryExpression.Third>
-                    </TernaryExpression>
+                    <BinaryExpression
+                      NodeType="And">
+                      <BinaryExpression.Left>
+                        <BinaryExpression
+                          NodeType="Equal">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[Thang]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="Thang" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <BinaryExpression
+                          NodeType="Equal">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[Nam]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="Nam" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
                   </BinaryExpression.Left>
                   <BinaryExpression.Right>
                     <BinaryExpression
@@ -373,12 +388,12 @@
                       <BinaryExpression.Left>
                         <ChainExpression>
                           <MemberExpression
-                            Member="vLời_Lỗ_Ngày_Theo_Khách_HàngItem/Properties[c__DoiTuong]" />
+                            Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngItem/Properties[IdDoiTuong]" />
                         </ChainExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
                         <ParameterExpression
-                          Parameter="IdKhachHang" />
+                          Parameter="IdDoiTuong" />
                       </BinaryExpression.Right>
                     </BinaryExpression>
                   </BinaryExpression.Right>
@@ -388,18 +403,18 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[vLoi_Lo_Ngay_Theo_Khach_Hang]" />
+                  Member="BanHangData1/Members[vTồn_Công_Nợ_Phải_Thu_Khách_Hàng]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>
               <QueryParameter
-                Name="Từ_ngày"
-                ParameterType=":Date?" />
+                Name="Thang"
+                ParameterType=":Int32?" />
               <QueryParameter
-                Name="Đến_ngày"
-                ParameterType=":Date?" />
+                Name="Nam"
+                ParameterType=":Int32?" />
               <QueryParameter
-                Name="IdKhachHang"
+                Name="IdDoiTuong"
                 ParameterType=":Int32?" />
             </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>
@@ -407,26 +422,30 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[vLời_Lỗ_Ngày_Theo_Khách_Hàng]/Query">
+              Target="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[vTồn_Công_Nợ_Phải_Thu_Khách_Hàng]/Query">
               <ArgumentExpression
-                Parameter="Từ_ngày">
+                Parameter="Thang">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[Từ_ngày]" />
+                    Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[Tháng]" />
+                  <MemberExpression
+                    Member="Id" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
-                Parameter="Đến_ngày">
+                Parameter="Nam">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[Đến_ngày]" />
+                    Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[Năm]" />
+                  <MemberExpression
+                    Member="Id" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
-                Parameter="IdKhachHang">
+                Parameter="IdDoiTuong">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[Khách_Hàng]" />
+                    Member="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[Khách_Hàng]" />
                   <MemberExpression
                     Member="Id" />
                 </ChainExpression>
@@ -436,19 +455,11 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenProperty
-        Name="Từ_ngày"
-        PropertyType=":Date">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
+        Name="Tháng"
+        PropertyType="ThángItem" />
       <ScreenProperty
-        Name="Đến_ngày"
-        PropertyType=":Date">
-        <ScreenProperty.Attributes>
-          <Required />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
+        Name="Năm"
+        PropertyType="NămItem" />
       <ScreenProperty
         Name="Khách_Hàng"
         PropertyType="Đối_TượngItem" />
@@ -474,7 +485,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse/Properties[KhachHang]/Query" />
+              Target="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse/Properties[KhachHang]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -482,10 +493,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showvLời_Lỗ_Ngày_Theo_Khách_HàngBrowse">
+      Name="showvTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse" />
+          TargetScreen="vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

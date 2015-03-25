@@ -61,6 +61,14 @@
                 Kind="Details"
                 DataType="Đối_TượngItem"
                 View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
+                <ContentItem.ChoicesSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse/Properties[KhachHang]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.ChoicesSource>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -444,6 +452,32 @@
       <ScreenProperty
         Name="Khách_Hàng"
         PropertyType="Đối_TượngItem" />
+      <ScreenCollectionProperty
+        Name="KhachHang"
+        PageSize="45"
+        PropertyType="CollectionView$Đối_TượngItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="KhachHangQuery"
+            ReturnType="Đối_TượngItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangData/Members[KhachHang]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse/Properties[KhachHang]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

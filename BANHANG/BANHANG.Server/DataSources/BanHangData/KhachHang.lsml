@@ -33,7 +33,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đối_Tượng" />
+            Member="DoiTuong" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
     </QueryOperation>

@@ -37,7 +37,7 @@ Namespace LightSwitchApplication
         Private Sub Chi_Công_Nợ_Chi_TiếtAddAndEditNew_Execute()
             ' Write your code here.
             Me.Chi_Công_Nợ_Chi_Tiết.AddNew()
-            Dim ncc = DataWorkspace.BanHangData.Đối_Tượng_SingleOrDefault(Me.ChiCongNos.SelectedItem.Đối_TượngItem.Id)
+            Dim ncc = DataWorkspace.BanHangData.DoiTuong_Single(Me.ChiCongNos.SelectedItem.Đối_TượngItem.Id)
             Me.Chi_Công_Nợ_Chi_Tiết.SelectedItem.Đối_TượngItem = ncc
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = False

@@ -94,5 +94,11 @@
     <ApplicationNavigationMethodLink
       Name="link15"
       Method="!module/Methods[showBrowseChonMonChiTiets]" />
+    <ApplicationNavigationMethodLink
+      Name="link16"
+      Method="!module/Methods[showvTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link17"
+      Method="!module/Methods[showvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse]" />
   </Application.NavigationItems>
 </Application>

@@ -282,7 +282,7 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Đối_Tượng"
+      Name="DoiTuong"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
@@ -292,7 +292,7 @@
       Association="Đối_TượngItem_ChiChiTiet">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="ChiChiTiet"
         EntitySet="Chi_Chi_Tiết" />
@@ -302,7 +302,7 @@
       Association="FK_Chi_Đối_Tượng">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="Chi"
         EntitySet="Chis" />
@@ -312,7 +312,7 @@
       Association="Đối_TượngItem_DatHang">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="DatHang"
         EntitySet="Đặt_Hàng" />
@@ -322,7 +322,7 @@
       Association="Đối_TượngItem_NhapSanPham">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="NhapSanPham"
         EntitySet="Nhập_Sản_Phẩm" />
@@ -332,7 +332,7 @@
       Association="Đối_TượngItem_ThuChiTiet">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="ThuChiTiet"
         EntitySet="Thu_Chi_Tiết" />
@@ -342,7 +342,7 @@
       Association="FK_Thu_Đối_Tượng">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="Thu"
         EntitySet="Thus" />
@@ -352,13 +352,13 @@
       Association="Đối_TượngItem_XuatSanPham">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="XuatSanPham"
         EntitySet="Xuất_Sản_Phẩm" />
     </AssociationSet>
     <QueryOperation
-      Name="Đối_Tượng_Single"
+      Name="DoiTuong_Single"
       ReturnType="Đối_TượngItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -385,7 +385,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đối_Tượng" />
+            Member="DoiTuong" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -398,7 +398,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Đối_Tượng_SingleOrDefault"
+      Name="DoiTuong_SingleOrDefault"
       ReturnType="Đối_TượngItem">
       <QueryOperation.Attributes>
         <Generated />
@@ -425,7 +425,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Đối_Tượng" />
+            Member="DoiTuong" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -442,7 +442,7 @@
       Association="Đối_TượngItem_ChiCongNoChiTiet">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="ChiCongNoChiTiet"
         EntitySet="ChiCongNoChiTiets" />
@@ -452,7 +452,7 @@
       Association="Đối_TượngItem_ChiCongNo">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="ChiCongNo"
         EntitySet="ChiCongNos" />
@@ -462,7 +462,7 @@
       Association="Đối_TượngItem_ThuCongNoChiTiet">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="ThuCongNoChiTiet"
         EntitySet="ThuCongNoChiTiets" />
@@ -472,7 +472,7 @@
       Association="Đối_TượngItem_ThuCongNo">
       <AssociationSetEnd
         Name="Đối_Tượng"
-        EntitySet="Đối_Tượng" />
+        EntitySet="DoiTuong" />
       <AssociationSetEnd
         Name="ThuCongNo"
         EntitySet="ThuCongNos" />
@@ -542,7 +542,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Đối_Tượng">
+      EntitySet="DoiTuong">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"

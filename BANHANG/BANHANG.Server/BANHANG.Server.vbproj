@@ -434,7 +434,7 @@
     <LightSwitchModel Include="DataSources\BanHangData\Chi_Chi_Tiết.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Đặt_Hàng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Đặt_Hàng_Chi_Tiết.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\Đối_Tượng.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\DoiTuong.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Đơn_Vị_Sử_Dụng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\DonViTinh.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Nam.lsml" />
@@ -451,10 +451,10 @@
     <LightSwitchModel Include="DataSources\BanHangData\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\KhachHang.lsml">
-      <DependentUpon>Đối_Tượng.lsml</DependentUpon>
+      <DependentUpon>DoiTuong.lsml</DependentUpon>
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\BanHangData\NhaCungCap.lsml">
-      <DependentUpon>Đối_Tượng.lsml</DependentUpon>
+      <DependentUpon>DoiTuong.lsml</DependentUpon>
     </LightSwitchModel>
     <LightSwitchModel Include="DataSources\XtraReportsServiceData\MessageEnvelopes.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData\vDoanh_Thu_Ngay.lsml" />

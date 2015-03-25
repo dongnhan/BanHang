@@ -103,6 +103,12 @@
     <Content Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml.js">
       <DependentUpon>vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\BaoCao\vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse.lsml.js">
+      <DependentUpon>vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\BaoCao\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse.lsml.js">
+      <DependentUpon>vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\BaoCao\vTồn_Quỹ_Tiền_MặtBrowse.lsml.js">
       <DependentUpon>vTồn_Quỹ_Tiền_MặtBrowse.lsml</DependentUpon>
     </Content>
@@ -195,12 +201,14 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vDoanh_Thu_NgàyBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vLời_Lỗ_NgàyBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vTồn_Quỹ_Tiền_MặtBrowse.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vTồn_Tổng_HợpBrowse.lsml" />
     <LightSwitchModel Include="Screens\BrowseChonMons.lsml" />
