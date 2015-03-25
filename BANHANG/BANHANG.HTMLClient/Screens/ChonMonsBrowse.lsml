@@ -482,7 +482,7 @@
                 <ContentItem
                   Name="Giá1"
                   Kind="Value"
-                  DataType=":Decimal">
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

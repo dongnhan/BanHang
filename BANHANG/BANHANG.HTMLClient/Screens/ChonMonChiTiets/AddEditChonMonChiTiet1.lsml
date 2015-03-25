@@ -79,7 +79,7 @@
                 <ContentItem
                   Name="Giá"
                   Kind="Value"
-                  DataType=":Decimal"
+                  DataType="Microsoft.LightSwitch.Extensions:Money"
                   View="Microsoft.LightSwitch.MobileWeb:Text">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>

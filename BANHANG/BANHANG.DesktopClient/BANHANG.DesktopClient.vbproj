@@ -578,6 +578,7 @@
     <LightSwitchModel Include="Screens\Quan\Nhóm_MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\Quan\Chọn_MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\CongNo\Thu_Công_NợListDetail.lsml" />
+    <LightSwitchModel Include="Screens\MainQuanListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

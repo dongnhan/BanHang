@@ -23,6 +23,8 @@
           <Hidden />
           <Required />
           <NotSearchable />
+          <DisplayName
+            Value="Mã" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -120,12 +122,22 @@
         Name="BànItem"
         Association="FK_Chọn_Món_Bàn"
         FromEnd="ChonMon"
-        ToEnd="Bàn" />
+        ToEnd="Bàn">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Bàn" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <NavigationProperty
         Name="Khu_VựcItem"
         Association="FK_Chọn_Món_Khu_Vực"
         FromEnd="ChonMon"
-        ToEnd="Khu_Vực" />
+        ToEnd="Khu_Vực">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Khu Vực" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -202,6 +214,8 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -242,6 +256,8 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>

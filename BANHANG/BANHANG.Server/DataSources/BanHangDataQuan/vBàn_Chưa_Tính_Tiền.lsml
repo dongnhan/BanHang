@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="ChonMonChiTiet1">
+    Name="vBàn_Chưa_Tính_TiềnItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -17,64 +17,21 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
-        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
-          <Hidden />
           <Required />
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
-      <EntityProperty
-        Name="Giá"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
+      <KeyProperty
+        Name="Bàn"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
           <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="Ghi_chú"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
           <MaxLength
-            Value="500" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Name="ChonMon"
-        Association="FK_Chọn_Món_Chi_Tiết_Chọn_Món"
-        FromEnd="ChonMonChiTiet"
-        ToEnd="ChonMon" />
-      <NavigationProperty
-        Name="MónItem"
-        Association="FK_Chọn_Món_Chi_Tiết_Món"
-        FromEnd="ChonMonChiTiet"
-        ToEnd="Món">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Món" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <NavigationProperty
-        Name="SoLuong"
-        Association="FK_ChonMonChiTiet_SoLuong"
-        FromEnd="ChonMonChiTiet"
-        ToEnd="SoLuong">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Số lượng" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
+            Value="100" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -83,14 +40,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="ChonMonChiTiets"
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="ChonMonChiTiet1" />
+      Name="vBàn_Chưa_Tính_Tiền"
+      EntityType="vBàn_Chưa_Tính_TiềnItem" />
     <QueryOperation
-      Name="ChonMonChiTiets_Single"
-      ReturnType="ChonMonChiTiet1">
+      Name="vBàn_Chưa_Tính_Tiền_Single"
+      ReturnType="vBàn_Chưa_Tính_TiềnItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -99,16 +53,36 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Bàn" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Bàn" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Id" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Id" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -116,7 +90,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ChonMonChiTiets" />
+            Member="vBàn_Chưa_Tính_Tiền" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -127,10 +101,18 @@
             Value="The value of the 'Id' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Bàn"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Bàn' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="ChonMonChiTiets_SingleOrDefault"
-      ReturnType="ChonMonChiTiet1">
+      Name="vBàn_Chưa_Tính_Tiền_SingleOrDefault"
+      ReturnType="vBàn_Chưa_Tính_TiềnItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -139,16 +121,36 @@
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree>
           <BinaryExpression
-            NodeType="Equal">
+            NodeType="And">
             <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Id" />
-              </ChainExpression>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Bàn" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Bàn" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="Id" />
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="Id" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="Id" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -156,7 +158,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ChonMonChiTiets" />
+            Member="vBàn_Chưa_Tính_Tiền" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -165,6 +167,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Bàn"
+        ParameterType="Microsoft.LightSwitch:String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Bàn' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -175,43 +185,23 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="ChonMonChiTiets">
+      EntitySet="vBàn_Chưa_Tính_Tiền">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="ChonMonChiTiet" />
+          Table="vBàn Chưa Tính Tiền" />
+        <IsView />
         <SsdlProperty
           Name="Id"
           Nullable="False"
-          StoreGeneratedPattern="Identity"
           Type="int"
-          Property="ChonMonChiTiet1/Properties[Id]" />
+          Property="vBàn_Chưa_Tính_TiềnItem/Properties[Id]" />
         <SsdlProperty
-          Name="Giá"
+          MaxLength="100"
+          Name="Bàn"
           Nullable="False"
-          Type="decimal"
-          Property="ChonMonChiTiet1/Properties[Giá]" />
-        <SsdlProperty
-          MaxLength="500"
-          Name="Ghi chú"
-          Nullable="True"
           Type="nvarchar"
-          Property="ChonMonChiTiet1/Properties[Ghi_chú]" />
-        <SsdlForeignKeyProperty
-          Name="ChonMon_ChonMonChiTiet"
-          Nullable="False"
-          Type="int"
-          PropertyName="ChonMon_ChonMonChiTiet" />
-        <SsdlForeignKeyProperty
-          Name="ChonMonChiTiet_Mon"
-          Nullable="False"
-          Type="int"
-          PropertyName="ChonMonChiTiet_Mon" />
-        <SsdlForeignKeyProperty
-          Name="Số lượng"
-          Nullable="False"
-          Type="int"
-          PropertyName="Số_lượng" />
+          Property="vBàn_Chưa_Tính_TiềnItem/Properties[Bàn]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>
