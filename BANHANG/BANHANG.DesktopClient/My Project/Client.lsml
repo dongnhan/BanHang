@@ -162,9 +162,6 @@
     <ApplicationCommand
       Name="ScreenCommandShowThu_Công_NợListDetail"
       Target="!module/Methods[ShowThu_Công_NợListDetail]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowMainQuanListDetail"
-      Target="!module/Methods[ShowMainQuanListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -201,9 +198,6 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
-      <ApplicationNavigationLink
-        Name="MainQuanListDetail"
-        Command="!module/Commands[ScreenCommandShowMainQuanListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">

@@ -27,19 +27,13 @@
       </KeyProperty>
       <EntityProperty
         Name="Giá"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        PropertyType=":Decimal">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -59,12 +53,7 @@
         Name="MónItem"
         Association="FK_Chọn_Món_Chi_Tiết_Món"
         FromEnd="ChonMonChiTiet"
-        ToEnd="Món">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Món" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
+        ToEnd="Món" />
       <NavigationProperty
         Name="SoLuong"
         Association="FK_ChonMonChiTiet_SoLuong"
