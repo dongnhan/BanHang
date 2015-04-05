@@ -103,7 +103,7 @@
       </NavigationProperty>
       <NavigationProperty
         Name="ChonMonChiTiets"
-        Association="FK_Chọn_Món_Chi_Tiết_Món"
+        Association="FK_ChonMonChiTiet_Món"
         FromEnd="Món"
         ToEnd="ChonMonChiTiet" />
     </EntityType.Properties>
@@ -200,8 +200,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <AssociationSet
-      Name="FK_Chọn_Món_Chi_Tiết_Món1"
-      Association="FK_Chọn_Món_Chi_Tiết_Món">
+      Name="FK_ChonMonChiTiet_Món"
+      Association="FK_ChonMonChiTiet_Món">
       <AssociationSetEnd
         Name="Món"
         EntitySet="Mon" />
@@ -211,7 +211,7 @@
     </AssociationSet>
   </EntityContainer>
   <Association
-    Name="FK_Chọn_Món_Chi_Tiết_Món">
+    Name="FK_ChonMonChiTiet_Món">
     <AssociationEnd
       Name="Món"
       Multiplicity="One"
@@ -283,19 +283,19 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_Chọn_Món_Chi_Tiết_Món1">
+      AssociationSet="FK_ChonMonChiTiet_Món">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="FK_Chọn Món Chi Tiết_Món" />
+          Name="FK_ChonMonChiTiet_Món" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Món1]/Members[Món]">
+          End="BanHangDataQuan/Members[FK_ChonMonChiTiet_Món]/Members[Món]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Món1]/Members[ChonMonChiTiet]">
+          End="BanHangDataQuan/Members[FK_ChonMonChiTiet_Món]/Members[ChonMonChiTiet]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ChonMonChiTiet_Mon" />

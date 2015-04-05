@@ -157,11 +157,14 @@
       Name="ScreenCommandShowNhóm_MónListDetail"
       Target="!module/Methods[ShowNhóm_MónListDetail]" />
     <ApplicationCommand
-      Name="ScreenCommandShowChọn_MónListDetail"
-      Target="!module/Methods[ShowChọn_MónListDetail]" />
-    <ApplicationCommand
       Name="ScreenCommandShowThu_Công_NợListDetail"
       Target="!module/Methods[ShowThu_Công_NợListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowChonMonsListDetail"
+      Target="!module/Methods[ShowChonMonsListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowQuanListDetail1"
+      Target="!module/Methods[ShowQuanListDetail1]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -198,6 +201,12 @@
       <ApplicationNavigationLink
         Name="MainListDetail"
         Command="!module/Commands[ScreenCommandShowMainListDetail]" />
+      <ApplicationNavigationLink
+        Name="ChonMonsListDetail"
+        Command="!module/Commands[ScreenCommandShowChonMonsListDetail]" />
+      <ApplicationNavigationLink
+        Name="QuanListDetail1"
+        Command="!module/Commands[ScreenCommandShowQuanListDetail1]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">

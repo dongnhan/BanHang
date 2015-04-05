@@ -52,7 +52,7 @@
                 <ContentItem
                   Name="Giá"
                   Kind="Value"
-                  DataType=":Decimal">
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -117,29 +117,6 @@
                     Name="RowTemplate"
                     Kind="Details"
                     DataType="ChonMon1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="MónItem"
-                  Kind="Details"
-                  DataType="MónItem1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMonChiTiet1/Properties[MónItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate1"
-                    Kind="Details"
-                    DataType="MónItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

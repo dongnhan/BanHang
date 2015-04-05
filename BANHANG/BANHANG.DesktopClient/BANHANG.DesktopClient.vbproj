@@ -316,6 +316,12 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\ChonMon1.lsml.vb">
       <Link>UserCode\Shared\ChonMon1.lsml.vb</Link>
     </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\ChonMonChiTiet1.lsml.vb">
+      <Link>UserCode\Shared\ChonMonChiTiet1.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\MónItem1.lsml.vb">
+      <Link>UserCode\Shared\MónItem1.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <Link>UserCode\Shared\BangGiaChiTiet.lsml.vb</Link>
     </Compile>
@@ -341,6 +347,9 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\BaoCaoQuan\PhieuTinhTienReportPreviewScreen.lsml.vb">
+      <DependentUpon>PhieuTinhTienReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\CongNo\Thu_Công_NợListDetail.lsml.vb">
       <DependentUpon>Thu_Công_NợListDetail.lsml</DependentUpon>
     </Compile>
@@ -364,6 +373,9 @@
     </Compile>
     <Compile Include="Screens\Quan\BànListDetail.lsml.vb">
       <DependentUpon>BànListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Quan\ChonMonsListDetail.lsml.vb">
+      <DependentUpon>ChonMonsListDetail.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Quan\Khu_VựcListDetail.lsml.vb">
       <DependentUpon>Khu_VựcListDetail.lsml</DependentUpon>
@@ -576,8 +588,10 @@
     <LightSwitchModel Include="Screens\Quan\Khu_VựcListDetail.lsml" />
     <LightSwitchModel Include="Screens\Quan\MónListDetail1.lsml" />
     <LightSwitchModel Include="Screens\Quan\Nhóm_MónListDetail.lsml" />
-    <LightSwitchModel Include="Screens\Quan\Chọn_MónListDetail.lsml" />
     <LightSwitchModel Include="Screens\CongNo\Thu_Công_NợListDetail.lsml" />
+    <LightSwitchModel Include="Screens\Quan\ChonMonsListDetail.lsml" />
+    <LightSwitchModel Include="Screens\BaoCaoQuan\PhieuTinhTienReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\QuanListDetail1.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

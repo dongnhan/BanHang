@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditChonMon11">
+    Name="ViewNhóm_MónItem">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="ChonMon1" />
+        Value="Nhóm_MónItem" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="ChonMon1"
+              DataType="Nhóm_MónItem"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,7 +42,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditChonMon11/Properties[ChonMon1]" />
+                      Member="ViewNhóm_MónItem/Properties[Nhóm_MónItem]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -50,53 +50,14 @@
                 Name="left"
                 Kind="Group">
                 <ContentItem
-                  Name="Ngày"
+                  Name="Tên"
                   Kind="Value"
-                  DataType=":DateTime">
+                  DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ChonMon1/Properties[Ngày]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Trạng_thái"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[Trạng_thái]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="In_phiếu"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[In_phiếu]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Giảm_giá"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[Giảm_giá]" />
+                          Member="Nhóm_MónItem/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -128,53 +89,17 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="Đã_xóa"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[Đã_xóa]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="UserName"
+                  Name="Mã"
                   Kind="Value"
                   DataType=":String">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ChonMon1/Properties[UserName]" />
+                          Member="Nhóm_MónItem/Properties[Mã]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="BànItem"
-                  Kind="Details"
-                  DataType="BànItem1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[BànItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate"
-                    Kind="Details"
-                    DataType="BànItem1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -200,34 +125,63 @@
                 </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="EditNhóm_MónItem"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Edit" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditNhóm_MónItem]">
+                          <ArgumentExpression
+                            Parameter="Nhóm_MónItem">
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="ViewNhóm_MónItem/Properties[Nhóm_MónItem]" />
+                            </ChainExpression>
+                          </ArgumentExpression>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-edit"
+                          ResultType="Microsoft.LightSwitch:String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem.CommandItems>
           </ContentItem>
+          <ContentItem.PropertySources>
+            <ControlPropertySource
+              Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[BrowseOnly]">
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+          </ContentItem.PropertySources>
         </ContentItem>
         <ContentItem
           Name="Popups"
           Kind="Group"
           View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
-        <ContentItem.PropertySources>
-          <ControlPropertySource
-            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ScreenType]">
-            <ScreenExpressionTree>
-              <ChainExpression>
-                <ConstantExpression
-                  Value="Edit"
-                  ResultType=":String" />
-              </ChainExpression>
-            </ScreenExpressionTree>
-          </ControlPropertySource>
-          <ControlPropertySource
-            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
-            <ScreenExpressionTree>
-              <ChainExpression>
-                <ConstantExpression
-                  Value="True"
-                  ResultType=":Boolean" />
-              </ChainExpression>
-            </ScreenExpressionTree>
-          </ControlPropertySource>
-        </ContentItem.PropertySources>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -256,8 +210,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="ChonMon1"
-        PropertyType="ChonMon1">
+        Name="Nhóm_MónItem"
+        PropertyType="Nhóm_MónItem">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -266,14 +220,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditChonMon11">
+      Name="showViewNhóm_MónItem">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditChonMon11" />
+          TargetScreen="ViewNhóm_MónItem" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="ChonMon1"
-        ParameterType="ChonMon1" />
+        Name="Nhóm_MónItem"
+        ParameterType="Nhóm_MónItem" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

@@ -5,10 +5,10 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="vDoanhThuNgayTheoKhachHangReportPreviewScreen">
+    Name="PhieuTinhTienReportPreviewScreen">
     <Screen.Attributes>
       <DisplayName
-        Value="DOANH THU TỪNG KH" />
+        Value="IN PHIẾU TÍNH TIỀN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -31,7 +31,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vDoanhThuNgayTheoKhachHangReportPreviewScreen/Methods[Save]" />
+                    Target="PhieuTinhTienReportPreviewScreen/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -43,7 +43,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vDoanhThuNgayTheoKhachHangReportPreviewScreen/Methods[Refresh]" />
+                    Target="PhieuTinhTienReportPreviewScreen/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -55,7 +55,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vDoanhThuNgayTheoKhachHangReportPreviewScreen/Methods[Close]" />
+                    Target="PhieuTinhTienReportPreviewScreen/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -110,32 +110,8 @@
         Name="ReportTypeName"
         PropertyType=":String" />
       <ScreenProperty
-        Name="TuNgay"
-        PropertyType=":Date">
-        <ScreenProperty.Attributes>
-          <Required />
-          <IsParameter />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="DenNgay"
-        PropertyType=":Date">
-        <ScreenProperty.Attributes>
-          <Required />
-          <IsParameter />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="KhachHang"
+        Name="Id"
         PropertyType=":Int32">
-        <ScreenProperty.Attributes>
-          <Required />
-          <IsParameter />
-        </ScreenProperty.Attributes>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="TenKhachHang"
-        PropertyType=":String">
         <ScreenProperty.Attributes>
           <Required />
           <IsParameter />
@@ -145,23 +121,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowvDoanhThuNgayTheoKhachHangReportPreviewScreen">
+      Name="ShowPhieuTinhTienReportPreviewScreen">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="vDoanhThuNgayTheoKhachHangReportPreviewScreen" />
+          TargetScreen="PhieuTinhTienReportPreviewScreen" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="TuNgay"
-        ParameterType=":Date" />
-      <ApplicationMethodParameter
-        Name="DenNgay"
-        ParameterType=":Date" />
-      <ApplicationMethodParameter
-        Name="KhachHang"
+        Name="Id"
         ParameterType=":Int32" />
-      <ApplicationMethodParameter
-        Name="TenKhachHang"
-        ParameterType=":String" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

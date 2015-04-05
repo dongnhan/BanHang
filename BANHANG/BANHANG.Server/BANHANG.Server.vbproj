@@ -272,6 +272,12 @@
     <Compile Include="DataSources\BanHangDataQuan\ChonMon1.lsml.vb">
       <DependentUpon>ChonMons.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\BanHangDataQuan\ChonMonChiTiet1.lsml.vb">
+      <DependentUpon>ChonMonChiTiets.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangDataQuan\MónItem1.lsml.vb">
+      <DependentUpon>Mon.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangDataQuan\_BanHangDataQuanService.lsml.vb" />
     <Compile Include="DataSources\BanHangData\BangGiaChiTiet.lsml.vb">
       <DependentUpon>Bảng_Giá_Chi_Tiết.lsml</DependentUpon>
@@ -394,6 +400,12 @@
       <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
     </Compile>
     <Compile Include="XtraReport_NhapSanPham.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_PhieuTinhTien.Designer.vb">
+      <DependentUpon>XtraReport_PhieuTinhTien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_PhieuTinhTien.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReport_TheKhoTongHop.Designer.vb">
@@ -589,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_NhapSanPham.resx">
       <DependentUpon>XtraReport_NhapSanPham.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_PhieuTinhTien.resx">
+      <DependentUpon>XtraReport_PhieuTinhTien.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_TheKhoTongHop.resx">
       <DependentUpon>XtraReport_TheKhoTongHop.vb</DependentUpon>

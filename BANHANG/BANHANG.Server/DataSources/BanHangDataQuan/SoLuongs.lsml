@@ -38,21 +38,6 @@
         ToEnd="ChonMonChiTiet" />
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="FK_ChonMonChiTiet_SoLuong">
-    <AssociationEnd
-      Name="SoLuong"
-      Multiplicity="One"
-      EntityType="SoLuong">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="ChonMonChiTiet"
-      Multiplicity="Many"
-      EntityType="ChonMonChiTiet1" />
-  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
@@ -64,16 +49,6 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="SoLuong" />
-    <AssociationSet
-      Name="FK_ChonMonChiTiet_SoLuong"
-      Association="FK_ChonMonChiTiet_SoLuong">
-      <AssociationSetEnd
-        Name="SoLuong"
-        EntitySet="SoLuongs" />
-      <AssociationSetEnd
-        Name="ChonMonChiTiet"
-        EntitySet="ChonMonChiTiets" />
-    </AssociationSet>
     <QueryOperation
       Name="SoLuongs_Single"
       ReturnType="SoLuong">
@@ -154,7 +129,32 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_ChonMonChiTiet_SoLuong"
+      Association="FK_ChonMonChiTiet_SoLuong">
+      <AssociationSetEnd
+        Name="SoLuong"
+        EntitySet="SoLuongs" />
+      <AssociationSetEnd
+        Name="ChonMonChiTiet"
+        EntitySet="ChonMonChiTiets" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="FK_ChonMonChiTiet_SoLuong">
+    <AssociationEnd
+      Name="SoLuong"
+      Multiplicity="One"
+      EntityType="SoLuong">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ChonMonChiTiet"
+      Multiplicity="Many"
+      EntityType="ChonMonChiTiet1" />
+  </Association>
   <DataService
     Name="BanHangDataQuanDataService">
     <DataService.Attributes>

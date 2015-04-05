@@ -23,6 +23,8 @@
           <Hidden />
           <Required />
           <NotSearchable />
+          <DisplayName
+            Value="Mã" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -37,13 +39,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="ChonMon_KhachHang"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Trạng_thái"
         PropertyType=":Int32">
         <EntityProperty.Attributes>
@@ -53,11 +48,8 @@
             DisplayName="Chưa tính tiền"
             Value="0" />
           <SupportedValue
-            DisplayName="Gọi tính tiền"
-            Value="1" />
-          <SupportedValue
             DisplayName="Đã tính tiền"
-            Value="2" />
+            Value="1" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -121,11 +113,66 @@
         Association="FK_Chọn_Món_Bàn"
         FromEnd="ChonMon"
         ToEnd="Bàn" />
-      <NavigationProperty
-        Name="Khu_VựcItem"
-        Association="FK_Chọn_Món_Khu_Vực"
-        FromEnd="ChonMon"
-        ToEnd="Khu_Vực" />
+      <EntityProperty
+        Name="Khách_hàng"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="100" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Thành_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tiền_giảm"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Tổng_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -202,6 +249,8 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -242,6 +291,8 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -269,10 +320,11 @@
           Type="datetime"
           Property="ChonMon1/Properties[Ngày]" />
         <SsdlProperty
-          Name="ChonMon_KhachHang"
-          Nullable="True"
-          Type="int"
-          Property="ChonMon1/Properties[ChonMon_KhachHang]" />
+          MaxLength="100"
+          Name="Khách hàng"
+          Nullable="False"
+          Type="nvarchar"
+          Property="ChonMon1/Properties[Khách_hàng]" />
         <SsdlProperty
           Name="Trạng thái"
           Nullable="False"
@@ -299,23 +351,33 @@
           Nullable="False"
           Type="nvarchar"
           Property="ChonMon1/Properties[UserName]" />
+        <SsdlProperty
+          Name="Thành_tiền"
+          Nullable="False"
+          Type="decimal"
+          Property="ChonMon1/Properties[Thành_tiền]" />
+        <SsdlProperty
+          Name="Tiền_giảm"
+          Nullable="False"
+          Type="decimal"
+          Property="ChonMon1/Properties[Tiền_giảm]" />
+        <SsdlProperty
+          Name="Tổng_tiền"
+          Nullable="False"
+          Type="decimal"
+          Property="ChonMon1/Properties[Tổng_tiền]" />
         <SsdlForeignKeyProperty
           Name="ChonMon_Ban"
           Nullable="False"
           Type="int"
           PropertyName="ChonMon_Ban" />
-        <SsdlForeignKeyProperty
-          Name="ChonMon_KhuVuc"
-          Nullable="False"
-          Type="int"
-          PropertyName="ChonMon_KhuVuc" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
       AssociationSet="FK_Chọn_Món_Chi_Tiết_Chọn_Món1">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="FK_Chọn Món Chi Tiết_Chọn Món" />
+          Name="FK_ChonMonChiTiet_ChonMon" />
         <SsdlAssociationSetEnd
           End="BanHangDataQuan/Members[FK_Chọn_Món_Chi_Tiết_Chọn_Món1]/Members[ChonMon]">
           <SsdlAssociationSetEnd.Attributes>

@@ -27,13 +27,19 @@
       </KeyProperty>
       <EntityProperty
         Name="Giá"
-        PropertyType=":Decimal">
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
-            Scale="0" />
+            Scale="9" />
           <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -49,9 +55,26 @@
         Association="FK_Chọn_Món_Chi_Tiết_Chọn_Món"
         FromEnd="ChonMonChiTiet"
         ToEnd="ChonMon" />
+      <EntityProperty
+        Name="Thành_tiền"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="DecimalDigits"
+              Value="0" />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
       <NavigationProperty
         Name="MónItem"
-        Association="FK_Chọn_Món_Chi_Tiết_Món"
+        Association="FK_ChonMonChiTiet_Món"
         FromEnd="ChonMonChiTiet"
         ToEnd="Món" />
       <NavigationProperty
@@ -180,6 +203,11 @@
           Nullable="False"
           Type="decimal"
           Property="ChonMonChiTiet1/Properties[Giá]" />
+        <SsdlProperty
+          Name="Thành_tiền"
+          Nullable="False"
+          Type="decimal"
+          Property="ChonMonChiTiet1/Properties[Thành_tiền]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"

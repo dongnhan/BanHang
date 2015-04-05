@@ -63,19 +63,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="ChonMon_KhachHang"
-                  Kind="Value"
-                  DataType=":Int32?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[ChonMon_KhachHang]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Trạng_thái"
                   Kind="Value"
                   DataType=":Int32">
@@ -182,29 +169,6 @@
                     Name="RowTemplate"
                     Kind="Details"
                     DataType="BànItem1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="Khu_VựcItem"
-                  Kind="Details"
-                  DataType="Khu_VựcItem1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMon1/Properties[Khu_VựcItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate1"
-                    Kind="Details"
-                    DataType="Khu_VựcItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -339,7 +303,7 @@
                 <ContentItem
                   Name="Giá"
                   Kind="Value"
-                  DataType=":Decimal">
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
