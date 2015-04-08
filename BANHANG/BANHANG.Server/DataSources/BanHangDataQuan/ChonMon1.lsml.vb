@@ -18,6 +18,11 @@ Namespace LightSwitchApplication
         Private Sub Tổng_tiền_Validate(results As EntityValidationResultsBuilder)
             Me.Tổng_tiền = Thành_tiền - Tiền_giảm
         End Sub
+
+     
+        Private Sub Tiền_giảm_Validate(results As EntityValidationResultsBuilder)
+            Me.Tổng_tiền = Thành_tiền - Tiền_giảm
+        End Sub
     End Class
 
 End Namespace

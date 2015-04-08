@@ -22,7 +22,7 @@
     <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>Forms</AuthenticationType>
     <ApplicationName>BANHANG</ApplicationName>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <AssemblyVersion>1.0.9.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -188,17 +188,8 @@
     </_BuildFile>
   </ItemGroup>
   <ItemGroup>
-    <PublishParameter Include="BanHangData">
-      <Value>workstation id=QuanLyBH.mssql.somee.com;packet size=4096;user id=dvdonline005_SQLLogin_1;pwd=pw9qttitit;data source=QuanLyBH.mssql.somee.com;persist security info=False;initial catalog=QuanLyBH</Value>
-    </PublishParameter>
-    <PublishParameter Include="BanHangData1">
-      <Value>workstation id=QuanLyBH.mssql.somee.com;packet size=4096;user id=dvdonline005_SQLLogin_1;pwd=pw9qttitit;data source=QuanLyBH.mssql.somee.com;persist security info=False;initial catalog=QuanLyBH</Value>
-    </PublishParameter>
-    <PublishParameter Include="BanHangDataQuan">
-      <Value>workstation id=QuanLyBH.mssql.somee.com;packet size=4096;user id=dvdonline005_SQLLogin_1;pwd=pw9qttitit;data source=QuanLyBH.mssql.somee.com;persist security info=False;initial catalog=QuanLyBH</Value>
-    </PublishParameter>
     <PublishParameter Include="DevExpress.XtraReports.LightSwitch.Server.XtraReportsService">
-      <Value>workstation id=QuanLyBH.mssql.somee.com;packet size=4096;user id=dvdonline005_SQLLogin_1;pwd=pw9qttitit;data source=QuanLyBH.mssql.somee.com;persist security info=False;initial catalog=QuanLyBH</Value>
+      <Value>Data Source=.\sqlexpress;Initial Catalog=BanHang;Persist Security Info=True;User ID=sa;Password=lekhanhky</Value>
     </PublishParameter>
   </ItemGroup>
   <ItemGroup>
