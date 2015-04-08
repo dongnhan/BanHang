@@ -371,6 +371,9 @@
     <Compile Include="Screens\CongNo\ChiCongNosListDetail.lsml.vb">
       <DependentUpon>ChiCongNosListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\QuanListDetail1.lsml.vb">
+      <DependentUpon>QuanListDetail1.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Quan\BànListDetail.lsml.vb">
       <DependentUpon>BànListDetail.lsml</DependentUpon>
     </Compile>

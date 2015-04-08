@@ -754,4 +754,22 @@
         Target="ServiceInterface:FK_ChonMonChiTiet_SoLuong" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vBàn_Chờ_Tính_TiềnItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vBàn_Chưa_Tính_TiềnItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vBàn_Đã_Tính_TiềnItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

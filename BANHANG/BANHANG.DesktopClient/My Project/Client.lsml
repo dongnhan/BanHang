@@ -228,6 +228,31 @@
         Command="!module/Commands[ScreenCommandShowThu_Công_Nợ_Đầu_KỳListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
+      Name="group8">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="QUÁN" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link25"
+        Command="!module/Commands[ScreenCommandShowKhu_VựcListDetail]" />
+      <ApplicationNavigationLink
+        Name="link26"
+        Command="!module/Commands[ScreenCommandShowBànListDetail]" />
+      <ApplicationNavigationLink
+        Name="link27"
+        Command="!module/Commands[ScreenCommandShowMónListDetail]" />
+      <ApplicationNavigationLink
+        Name="link28"
+        Command="!module/Commands[ScreenCommandShowMónListDetail1]" />
+      <ApplicationNavigationLink
+        Name="link30"
+        Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />
+      <ApplicationNavigationLink
+        Name="link29"
+        Command="!module/Commands[ScreenCommandShowQuanListDetail1]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
       Name="group">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
