@@ -784,4 +784,22 @@
         Target="ServiceInterface:vBàn_Đã_Tính_TiềnItem" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vDoanh_Thu_Quán_Theo_MónItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vDoanh_Thu_Quán_Theo_PhiếuItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vDoanh_Thu_Quán_Tổng_HợpItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

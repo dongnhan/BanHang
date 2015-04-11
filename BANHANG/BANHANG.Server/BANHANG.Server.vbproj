@@ -360,6 +360,12 @@
     <Compile Include="XtraReport_DoanhThuNgay.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_DoanhThuQuanTongHop.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuQuanTongHop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuQuanTongHop.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_DoanhThuSanPham.Designer.vb">
       <DependentUpon>XtraReport_DoanhThuSanPham.vb</DependentUpon>
     </Compile>
@@ -520,6 +526,9 @@
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vBàn_Chờ_Tính_Tiền.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vBàn_Chưa_Tính_Tiền.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vBàn_Đã_Tính_Tiền.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTheoMons.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTheoPhieus.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTongHops.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -584,6 +593,9 @@
     <EmbeddedResource Include="XtraReport_DoanhThuNgay.resx">
       <DependentUpon>XtraReport_DoanhThuNgay.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuQuanTongHop.resx">
+      <DependentUpon>XtraReport_DoanhThuQuanTongHop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_DoanhThuSanPham.resx">
       <DependentUpon>XtraReport_DoanhThuSanPham.vb</DependentUpon>
     </EmbeddedResource>
@@ -643,7 +655,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:6004/</IISUrl>
+          <IISUrl>http://localhost:1437/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

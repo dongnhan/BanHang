@@ -23,6 +23,24 @@ Namespace LightSwitchApplication
         Private Sub Tiền_giảm_Validate(results As EntityValidationResultsBuilder)
             Me.Tổng_tiền = Thành_tiền - Tiền_giảm
         End Sub
+
+        Private Sub Giảm_giá_Validate(results As EntityValidationResultsBuilder)
+            Try
+                If Giảm_giá = 0 Then
+                    Tiền_giảm = 0
+                End If
+                If Giảm_giá = 1 Then
+                    Tiền_giảm = Thành_tiền * 10 / 100
+                End If
+                If Giảm_giá = 2 Then
+                    Tiền_giảm = Thành_tiền * 20 / 100
+                End If
+            Catch ex As Exception
+
+            End Try
+            ' results.AddPropertyError("<Error-Message>")
+
+        End Sub
     End Class
 
 End Namespace

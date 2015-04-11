@@ -79,8 +79,11 @@
             DisplayName="Không giảm"
             Value="0" />
           <SupportedValue
-            DisplayName="Giảm 10% (VIP)"
+            DisplayName="Giảm 10% "
             Value="1" />
+          <SupportedValue
+            DisplayName="Giảm 20%"
+            Value="2" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty

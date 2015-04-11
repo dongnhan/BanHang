@@ -443,7 +443,7 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="20"
+                              Value="25"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
@@ -453,7 +453,17 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="20"
+                              Value="25"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Height]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="100"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
@@ -575,12 +585,58 @@
                         </ScreenExpressionTree>
                       </ContentItem.DataSource>
                     </ContentItem>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="40"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="40"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="FixedSize"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="200"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem
                     Name="SoLuong"
                     Kind="Details"
                     DataType="SoLuong"
                     View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="SL" />
+                    </ContentItem.Attributes>
                     <ContentItem.ChoicesSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -623,7 +679,7 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="10"
+                              Value="7"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
@@ -633,7 +689,7 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="10"
+                              Value="7"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
@@ -658,7 +714,7 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="20"
+                              Value="15"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
@@ -668,7 +724,7 @@
                         <ScreenExpressionTree>
                           <ChainExpression>
                             <ConstantExpression
-                              Value="20"
+                              Value="15"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>
@@ -727,7 +783,8 @@
             </ContentItem>
             <ContentItem
               Name="Group2"
-              Kind="Group">
+              Kind="Group"
+              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem
                 Name="ChonMons_selectedItem_Thành_tiền"
                 Kind="Value"
@@ -746,10 +803,28 @@
                 </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
+                Name="ChonMons_selectedItem_Giảm_giá"
+                Kind="Value"
+                DataType=":Int32"
+                View="Microsoft.LightSwitch.MobileWeb:ValueDropdown">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ChonMonsBrowse/Properties[ChonMons]" />
+                      <MemberExpression
+                        Member="selectedItem" />
+                      <MemberExpression
+                        Member="Giảm_giá" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
                 Name="ChonMons_selectedItem_Tiền_giảm"
                 Kind="Value"
                 DataType="Microsoft.LightSwitch.Extensions:Money"
-                View="Microsoft.LightSwitch.MobileWeb:TextBox">
+                View="Microsoft.LightSwitch.MobileWeb:Text">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
