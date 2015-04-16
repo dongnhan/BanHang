@@ -56,19 +56,6 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="Hình_ảnh"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Hình_ảnh]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="rows"
                   Kind="Group"
                   View="Microsoft.LightSwitch.MobileWeb:RowsLayout">

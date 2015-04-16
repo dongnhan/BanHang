@@ -141,19 +141,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Hình_ảnh"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Hình_ảnh]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Nhóm_MónItem"
                   Kind="Details"
                   DataType="Nhóm_MónItem">

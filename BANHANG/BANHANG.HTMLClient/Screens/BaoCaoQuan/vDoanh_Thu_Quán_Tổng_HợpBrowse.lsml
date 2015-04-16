@@ -95,7 +95,7 @@
                 <ContentItem
                   Name="Ngày"
                   Kind="Value"
-                  DataType=":Date?">
+                  DataType=":Date">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>

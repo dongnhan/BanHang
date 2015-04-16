@@ -82,15 +82,6 @@
             Value="500" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <EntityProperty
-        Name="Hình_ảnh"
-        PropertyType="Microsoft.LightSwitch.Extensions:Image?">
-        <EntityProperty.Attributes>
-          <NotSortable />
-          <MaxLength />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Name="Nhóm_MónItem"
         Association="FK_Món_Nhóm_Món"
@@ -270,11 +261,6 @@
           Nullable="True"
           Type="nvarchar"
           Property="MónItem1/Properties[Ghi_chú]" />
-        <SsdlProperty
-          Name="Hình ảnh"
-          Nullable="True"
-          Type="image"
-          Property="MónItem1/Properties[Hình_ảnh]" />
         <SsdlForeignKeyProperty
           Name="Mon_NhomMon"
           Nullable="False"

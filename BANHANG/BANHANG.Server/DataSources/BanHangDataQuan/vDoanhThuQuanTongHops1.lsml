@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="vDoanh_Thu_Quán_Tổng_HợpItem">
+    Name="vDoanhThuQuanTongHop">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -31,31 +31,21 @@
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
-      <EntityProperty
+      <KeyProperty
         Name="Ngày"
         PropertyType=":Date">
-        <EntityProperty.Attributes>
-          <DateTimeConstraint
-            Precision="0"
-            PreserveSeconds="True" />
-          <NotSearchable />
+        <KeyProperty.Attributes>
           <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        </KeyProperty.Attributes>
+      </KeyProperty>
       <EntityProperty
         Name="Tiền"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        PropertyType=":Decimal?">
         <EntityProperty.Attributes>
           <DecimalConstraint
             Precision="38"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
@@ -66,11 +56,11 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="vDoanhThuQuanTongHops"
-      EntityType="vDoanh_Thu_Quán_Tổng_HợpItem" />
+      Name="vDoanhThuQuanTongHops1"
+      EntityType="vDoanhThuQuanTongHop" />
     <QueryOperation
-      Name="vDoanhThuQuanTongHops_Single"
-      ReturnType="vDoanh_Thu_Quán_Tổng_HợpItem">
+      Name="vDoanhThuQuanTongHops1_Single"
+      ReturnType="vDoanhThuQuanTongHop">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -82,16 +72,36 @@
             NodeType="And">
             <BinaryExpression.Left>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="And">
                 <BinaryExpression.Left>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="Nam" />
-                  </ChainExpression>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Ngày" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="Ngày" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
-                  <ParameterExpression
-                    Parameter="Nam" />
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nam" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="Nam" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Left>
@@ -116,7 +126,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vDoanhThuQuanTongHops" />
+            Member="vDoanhThuQuanTongHops1" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -135,10 +145,18 @@
             Value="The value of the 'Nam' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Ngày"
+        ParameterType=":Date?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Ngày' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="vDoanhThuQuanTongHops_SingleOrDefault"
-      ReturnType="vDoanh_Thu_Quán_Tổng_HợpItem">
+      Name="vDoanhThuQuanTongHops1_SingleOrDefault"
+      ReturnType="vDoanhThuQuanTongHop">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -150,16 +168,36 @@
             NodeType="And">
             <BinaryExpression.Left>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="And">
                 <BinaryExpression.Left>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="Nam" />
-                  </ChainExpression>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Ngày" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="Ngày" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
-                  <ParameterExpression
-                    Parameter="Nam" />
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nam" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="Nam" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Left>
@@ -184,7 +222,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="vDoanhThuQuanTongHops" />
+            Member="vDoanhThuQuanTongHops1" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -203,6 +241,14 @@
             Value="The value of the 'Nam' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Ngày"
+        ParameterType=":Date?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Ngày' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
   <DataService
@@ -211,33 +257,33 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="vDoanhThuQuanTongHops">
+      EntitySet="vDoanhThuQuanTongHops1">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="vDoanh Thu Quán Tổng Hợp" />
+          Table="vDoanhThuQuanTongHop" />
         <IsView />
         <SsdlProperty
           Name="Thang"
           Nullable="False"
           Type="int"
-          Property="vDoanh_Thu_Quán_Tổng_HợpItem/Properties[Thang]" />
+          Property="vDoanhThuQuanTongHop/Properties[Thang]" />
         <SsdlProperty
           Name="Nam"
           Nullable="False"
           Type="int"
-          Property="vDoanh_Thu_Quán_Tổng_HợpItem/Properties[Nam]" />
+          Property="vDoanhThuQuanTongHop/Properties[Nam]" />
         <SsdlProperty
           Name="Ngày"
           Nullable="False"
           Type="date"
-          Property="vDoanh_Thu_Quán_Tổng_HợpItem/Properties[Ngày]" />
+          Property="vDoanhThuQuanTongHop/Properties[Ngày]" />
         <SsdlProperty
           Name="Tiền"
           Nullable="True"
           Precision="38"
           Type="decimal"
-          Property="vDoanh_Thu_Quán_Tổng_HợpItem/Properties[Tiền]" />
+          Property="vDoanhThuQuanTongHop/Properties[Tiền]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
   </DataService>

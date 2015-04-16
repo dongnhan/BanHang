@@ -184,6 +184,17 @@
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Ngày_thực"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -330,6 +341,11 @@
           Nullable="False"
           Type="datetime"
           Property="ChonMon1/Properties[Ngày]" />
+        <SsdlProperty
+          Name="Ngày thực"
+          Nullable="False"
+          Type="date"
+          Property="ChonMon1/Properties[Ngày_thực]" />
         <SsdlProperty
           MaxLength="100"
           Name="Khách hàng"

@@ -15,17 +15,6 @@
       </EntityMethod>
     </EntityType.Methods>
     <EntityType.Properties>
-      <EntityProperty
-        Name="Ngày"
-        PropertyType=":DateTime">
-        <EntityProperty.Attributes>
-          <DateTimeConstraint
-            Precision="3"
-            PreserveSeconds="True" />
-          <NotSearchable />
-          <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <KeyProperty
         Name="Tên"
         PropertyType=":String">
@@ -69,6 +58,17 @@
           <NotSearchable />
         </KeyProperty.Attributes>
       </KeyProperty>
+      <KeyProperty
+        Name="Ngày_thực"
+        PropertyType=":Date">
+        <KeyProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -96,16 +96,36 @@
                 NodeType="And">
                 <BinaryExpression.Left>
                   <BinaryExpression
-                    NodeType="Equal">
+                    NodeType="And">
                     <BinaryExpression.Left>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Nam" />
-                      </ChainExpression>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Ngày_thực" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Ngày_thực" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
-                      <ParameterExpression
-                        Parameter="Nam" />
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Nam" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Nam" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Left>
@@ -174,6 +194,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Nam' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Ngày_thực"
+        ParameterType="Microsoft.LightSwitch:Date?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Ngày_thực' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -194,16 +222,36 @@
                 NodeType="And">
                 <BinaryExpression.Left>
                   <BinaryExpression
-                    NodeType="Equal">
+                    NodeType="And">
                     <BinaryExpression.Left>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Nam" />
-                      </ChainExpression>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Ngày_thực" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Ngày_thực" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Left>
                     <BinaryExpression.Right>
-                      <ParameterExpression
-                        Parameter="Nam" />
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Nam" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Nam" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
                     </BinaryExpression.Right>
                   </BinaryExpression>
                 </BinaryExpression.Left>
@@ -274,6 +322,14 @@
             Value="The value of the 'Nam' key property of the entity to retrieve." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Ngày_thực"
+        ParameterType="Microsoft.LightSwitch:Date?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Ngày_thực' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
   <DataService
@@ -289,10 +345,10 @@
           Table="vDoanh Thu Quán Theo Món" />
         <IsView />
         <SsdlProperty
-          Name="Ngày"
+          Name="Ngày thực"
           Nullable="False"
-          Type="datetime"
-          Property="vDoanh_Thu_Quán_Theo_MónItem/Properties[Ngày]" />
+          Type="date"
+          Property="vDoanh_Thu_Quán_Theo_MónItem/Properties[Ngày_thực]" />
         <SsdlProperty
           MaxLength="100"
           Name="Tên"

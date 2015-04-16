@@ -173,51 +173,6 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
-                <ContentItem
-                  Name="Hình_ảnh"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Hình_ảnh]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Hidden"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="60"
-                            ResultType=":Double" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="60"
-                            ResultType=":Double" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
               </ContentItem>
             </ContentItem>
             <ContentItem.CommandItems>
@@ -291,6 +246,43 @@
                         <ConstantExpression
                           Value="msls-refresh"
                           ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="POP"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ChonMonsBrowse/Methods[showDialog]">
+                          <ArgumentExpression
+                            Parameter="dialogName">
+                            <ConstantExpression
+                              Value="Group4"
+                              ResultType=":String" />
+                          </ArgumentExpression>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="POP2"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ChonMonsBrowse/Methods[POP2]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -1012,7 +1004,198 @@
         <ContentItem
           Name="Popups"
           Kind="Group"
-          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages">
+          <ContentItem
+            Name="Group4"
+            Kind="Group">
+            <ContentItem
+              Name="Group5"
+              Kind="Group"
+              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+              <ContentItem
+                Name="Nhóm1"
+                Kind="Details"
+                DataType="Nhóm_MónItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ChonMonsBrowse/Properties[Nhóm]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Nhóm_MónItem1"
+                  Kind="Details"
+                  DataType="Nhóm_MónItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="Tên11"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ChonMonsBrowse/Properties[Tên1]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="ClosePOP"
+                Kind="Command"
+                View="Microsoft.LightSwitch.MobileWeb:Button">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Đóng" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ChonMonsBrowse/Methods[ClosePOP]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Hidden"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="Món1"
+              Kind="Collection"
+              DataType="CollectionView$MónItem1"
+              View="Microsoft.LightSwitch.MobileWeb:Table">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ChonMonsBrowse/Properties[Món1]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Món1Template"
+                Kind="Details"
+                DataType="MónItem1">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Tên2"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem1/Properties[Tên]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Giá2"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MónItem1/Properties[Giá]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              Name="Group7"
+              Kind="Group">
+              <ContentItem
+                Name="Tên12"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ChonMonsBrowse/Properties[Tên1]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Close"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Đóng" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ChonMonsBrowse/Methods[Close]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Name="Group6"
+            Kind="Group">
+            <ContentItem
+              Name="Nhóm2"
+              Kind="Details"
+              DataType="Nhóm_MónItem">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ChonMonsBrowse/Properties[Nhóm]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Nhóm_MónItem2"
+                Kind="Details"
+                DataType="Nhóm_MónItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -1056,6 +1239,14 @@
         Name="TỔNG_TIỀN" />
       <ScreenMethod
         Name="LÀM_TƯƠI" />
+      <ScreenMethod
+        Name="POP" />
+      <ScreenMethod
+        Name="ClosePOP" />
+      <ScreenMethod
+        Name="POP2" />
+      <ScreenMethod
+        Name="Close" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -1290,6 +1481,98 @@
           <Required />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="Món1"
+        PageSize="45"
+        PropertyType="CollectionView$MónItem1">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="Món1Query"
+            ReturnType="MónItem1*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="And">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MónItem1/Properties[Nhóm_MónItem]" />
+                          <MemberExpression
+                            Member="Id" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="NhomId" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Contains">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MónItem1/Properties[Tên]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="Tên" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangDataQuan/Members[Mon]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="NhomId"
+                IsOptional="True"
+                ParameterType=":Int32?" />
+              <QueryParameter
+                Name="Tên"
+                IsOptional="True"
+                ParameterType=":String?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ChonMonsBrowse/Properties[Món1]/Query">
+              <ArgumentExpression
+                Parameter="NhomId">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ChonMonsBrowse/Properties[Nhóm]" />
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Tên">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ChonMonsBrowse/Properties[Tên1]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="Tên1"
+        PropertyType=":String?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>

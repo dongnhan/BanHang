@@ -802,4 +802,10 @@
         Target="ServiceInterface:vDoanh_Thu_Quán_Tổng_HợpItem" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vDoanhThuQuanTongHop" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>
