@@ -275,6 +275,9 @@
     <Compile Include="DataSources\BanHangDataQuan\ChonMonChiTiet1.lsml.vb">
       <DependentUpon>ChonMonChiTiets.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\BanHangDataQuan\MonDinhLuong.lsml.vb">
+      <DependentUpon>MonDinhLuongs.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangDataQuan\MónItem1.lsml.vb">
       <DependentUpon>Mon.lsml</DependentUpon>
     </Compile>
@@ -358,6 +361,12 @@
       <DependentUpon>XtraReport_DoanhThuNgay.vb</DependentUpon>
     </Compile>
     <Compile Include="XtraReport_DoanhThuNgay.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuQuanTheoMon.Designer.vb">
+      <DependentUpon>XtraReport_DoanhThuQuanTheoMon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DoanhThuQuanTheoMon.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReport_DoanhThuQuanTongHop.Designer.vb">
@@ -529,7 +538,9 @@
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTheoMons.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTheoPhieus.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTongHops.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTongHops1.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Đơn_Vị_Tính.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\MonDinhLuongs.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Sản_Phẩm.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -593,6 +604,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_DoanhThuNgay.resx">
       <DependentUpon>XtraReport_DoanhThuNgay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DoanhThuQuanTheoMon.resx">
+      <DependentUpon>XtraReport_DoanhThuQuanTheoMon.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_DoanhThuQuanTongHop.resx">
       <DependentUpon>XtraReport_DoanhThuQuanTongHop.vb</DependentUpon>

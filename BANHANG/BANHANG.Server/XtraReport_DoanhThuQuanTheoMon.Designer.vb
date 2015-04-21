@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Public Class XtraReport_DoanhThuQuanTongHop
+Partial Public Class XtraReport_DoanhThuQuanTheoMon
     Inherits DevExpress.XtraReports.UI.LightSwitchReport
 
     'XtraReport overrides dispose to clean up the component list.
@@ -72,9 +72,9 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.StylePriority.UseFont = False
         Me.XrTableCell2.StylePriority.UseTextAlignment = False
-        Me.XrTableCell2.Text = "NGÀY"
+        Me.XrTableCell2.Text = "MÓN"
         Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell2.Weight = 0.30926373945556823R
+        Me.XrTableCell2.Weight = 0.30926377483826162R
         '
         'XrTableCell3
         '
@@ -85,18 +85,18 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
         Me.XrTableCell3.StylePriority.UseTextAlignment = False
         Me.XrTableCell3.Text = "TIỀN"
         Me.XrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell3.Weight = 0.44991926458728682R
+        Me.XrTableCell3.Weight = 0.44991922920459354R
         '
         'XrTableCell5
         '
-        Me.XrTableCell5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Ngày", "{0:dd/MM/yyyy}")})
+        Me.XrTableCell5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Tên", "{0:dd/MM/yyyy}")})
         Me.XrTableCell5.Font = New System.Drawing.Font("Times New Roman", 7.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell5.Name = "XrTableCell5"
         Me.XrTableCell5.StylePriority.UseFont = False
         Me.XrTableCell5.StylePriority.UseTextAlignment = False
         Me.XrTableCell5.Text = "XrTableCell5"
         Me.XrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.XrTableCell5.Weight = 0.30007659103753381R
+        Me.XrTableCell5.Weight = 0.30007667686652434R
         '
         'XrTableRow2
         '
@@ -122,7 +122,7 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
         Me.XrTableCell10.StylePriority.UseTextAlignment = False
         Me.XrTableCell10.Text = "XrTableCell10"
         Me.XrTableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
-        Me.XrTableCell10.Weight = 0.43655373910771594R
+        Me.XrTableCell10.Weight = 0.43655365327872547R
         '
         'XrTable2
         '
@@ -165,7 +165,7 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
-        Me.Detail.HeightF = 25.0!
+        Me.Detail.HeightF = 20.83333!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -251,7 +251,7 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(158.1761!, 13.0!)
         Me.XrLabel6.StylePriority.UseFont = False
         Me.XrLabel6.StylePriority.UseTextAlignment = False
-        Me.XrLabel6.Text = "DOANH THU TỔNG HỢP"
+        Me.XrLabel6.Text = "DOANH THU MÓN"
         Me.XrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
         'BottomMargin
@@ -275,15 +275,15 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
         '
         'LightSwitchDataSource1
         '
-        Me.LightSwitchDataSource1.CollectionName = "vDoanhThuQuanTongHops"
-        Me.LightSwitchDataSource1.DataSource = GetType(LightSwitchApplication.vDoanh_Thu_Quán_Tổng_HợpItem)
+        Me.LightSwitchDataSource1.CollectionName = "vDoanhThuQuanTheoMons"
+        Me.LightSwitchDataSource1.DataSource = GetType(LightSwitchApplication.vDoanh_Thu_Quán_Theo_MónItem)
         Me.LightSwitchDataSource1.DataSourceName = "BanHangDataQuan"
         '
-        'XtraReport_DoanhThuQuanTongHop
+        'XtraReport_DoanhThuQuanTheoMon
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.PageHeader, Me.ReportFooter})
         Me.DataSource = Me.LightSwitchDataSource1
-        Me.FilterString = "[Ngày] Between(?TuNgay, ?DenNgay)"
+        Me.FilterString = "[Ngày_thực] Between(?TuNgay, ?DenNgay)"
         Me.Margins = New System.Drawing.Printing.Margins(0, 0, 91, 13)
         Me.PageHeight = 400
         Me.PageWidth = 200
@@ -313,11 +313,11 @@ Partial Public Class XtraReport_DoanhThuQuanTongHop
     Friend WithEvents XrLabel4 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel6 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents BottomMargin As DevExpress.XtraReports.UI.BottomMarginBand
-    Friend WithEvents LightSwitchDataSource1 As DevExpress.XtraReports.LightSwitchDataSource
     Friend WithEvents TuNgay As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents DenNgay As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents XrLabel3 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents PageHeader As DevExpress.XtraReports.UI.PageHeaderBand
     Friend WithEvents ReportFooter As DevExpress.XtraReports.UI.ReportFooterBand
+    Friend WithEvents LightSwitchDataSource1 As DevExpress.XtraReports.LightSwitchDataSource
 End Class

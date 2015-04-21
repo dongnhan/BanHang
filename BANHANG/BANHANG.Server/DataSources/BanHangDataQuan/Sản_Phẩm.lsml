@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="ChonMonChiTiet1">
+    Name="Sản_PhẩmItem1">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -26,20 +26,23 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
+        Name="Tên"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
         Name="Giá"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        PropertyType=":Decimal">
         <EntityProperty.Attributes>
           <Required />
           <DecimalConstraint
             Precision="18"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -51,80 +54,71 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="ChonMon"
-        Association="FK_Chọn_Món_Chi_Tiết_Chọn_Món"
-        FromEnd="ChonMonChiTiet"
-        ToEnd="ChonMon" />
+        Name="MonDinhLuongs"
+        Association="FK_MonDinhLuong_Sản_Phẩm"
+        FromEnd="Sản_Phẩm"
+        ToEnd="MonDinhLuong" />
+      <NavigationProperty
+        Name="Đơn_Vị_TínhItem"
+        Association="FK_Sản_Phẩm_Đơn_Vị_Tính1"
+        FromEnd="Sản_Phẩm"
+        ToEnd="Đơn_Vị_Tính">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đơn Vị Tính" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
       <EntityProperty
-        Name="Thành_tiền"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
+        Name="Giá_thử"
+        PropertyType=":Decimal?">
         <EntityProperty.Attributes>
-          <Required />
           <DecimalConstraint
             Precision="18"
             Scale="0" />
           <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Name="MónItem"
-        Association="FK_ChonMonChiTiet_Món"
-        FromEnd="ChonMonChiTiet"
-        ToEnd="Món">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Món" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <NavigationProperty
-        Name="SoLuong"
-        Association="FK_ChonMonChiTiet_SoLuong"
-        FromEnd="ChonMonChiTiet"
-        ToEnd="SoLuong">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Số lượng" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <EntityProperty
-        Name="Tiền_giảm"
-        PropertyType="Microsoft.LightSwitch.Extensions:Money">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="2" />
-          <NotSearchable />
-          <Attribute
-            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
-            <Property
-              Name="DecimalDigits"
-              Value="0" />
-          </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
   </EntityType>
+  <Association
+    Name="FK_MonDinhLuong_Sản_Phẩm">
+    <AssociationEnd
+      Name="Sản_Phẩm"
+      Multiplicity="One"
+      EntityType="Sản_PhẩmItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MonDinhLuong"
+      Multiplicity="Many"
+      EntityType="MonDinhLuong" />
+  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="ChonMonChiTiets"
+      Name="Sản_Phẩm"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="ChonMonChiTiet1" />
+      EntityType="Sản_PhẩmItem1" />
+    <AssociationSet
+      Name="FK_MonDinhLuong_Sản_Phẩm"
+      Association="FK_MonDinhLuong_Sản_Phẩm">
+      <AssociationSetEnd
+        Name="Sản_Phẩm"
+        EntitySet="Sản_Phẩm" />
+      <AssociationSetEnd
+        Name="MonDinhLuong"
+        EntitySet="MonDinhLuongs" />
+    </AssociationSet>
     <QueryOperation
-      Name="ChonMonChiTiets_Single"
-      ReturnType="ChonMonChiTiet1">
+      Name="Sản_Phẩm_Single"
+      ReturnType="Sản_PhẩmItem1">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -150,7 +144,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ChonMonChiTiets" />
+            Member="Sản_Phẩm" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -163,8 +157,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="ChonMonChiTiets_SingleOrDefault"
-      ReturnType="ChonMonChiTiet1">
+      Name="Sản_Phẩm_SingleOrDefault"
+      ReturnType="Sản_PhẩmItem1">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -190,7 +184,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="ChonMonChiTiets" />
+            Member="Sản_Phẩm" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -209,54 +203,66 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="ChonMonChiTiets">
+      EntitySet="Sản_Phẩm">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="ChonMonChiTiet" />
+          Table="Sản Phẩm" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="ChonMonChiTiet1/Properties[Id]" />
+          Property="Sản_PhẩmItem1/Properties[Id]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Tên"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Sản_PhẩmItem1/Properties[Tên]" />
         <SsdlProperty
           Name="Giá"
           Nullable="False"
           Type="decimal"
-          Property="ChonMonChiTiet1/Properties[Giá]" />
-        <SsdlProperty
-          Name="Thành_tiền"
-          Nullable="False"
-          Type="decimal"
-          Property="ChonMonChiTiet1/Properties[Thành_tiền]" />
-        <SsdlProperty
-          Name="Tiền_giảm"
-          Nullable="False"
-          Type="decimal"
-          Property="ChonMonChiTiet1/Properties[Tiền_giảm]" />
+          Property="Sản_PhẩmItem1/Properties[Giá]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="ChonMonChiTiet1/Properties[Ghi_chú]" />
+          Property="Sản_PhẩmItem1/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Giá thử"
+          Nullable="True"
+          Type="decimal"
+          Property="Sản_PhẩmItem1/Properties[Giá_thử]" />
         <SsdlForeignKeyProperty
-          Name="ChonMon_ChonMonChiTiet"
+          Name="_DonViTinh"
           Nullable="False"
           Type="int"
-          PropertyName="ChonMon_ChonMonChiTiet" />
-        <SsdlForeignKeyProperty
-          Name="ChonMonChiTiet_Mon"
-          Nullable="False"
-          Type="int"
-          PropertyName="ChonMonChiTiet_Mon" />
-        <SsdlForeignKeyProperty
-          Name="Số lượng"
-          Nullable="False"
-          Type="int"
-          PropertyName="Số_lượng" />
+          PropertyName="c__DonViTinh" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonDinhLuong_Sản_Phẩm">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonDinhLuong_Sản Phẩm" />
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_MonDinhLuong_Sản_Phẩm]/Members[Sản_Phẩm]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_MonDinhLuong_Sản_Phẩm]/Members[MonDinhLuong]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DinhLuong_SanPham" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

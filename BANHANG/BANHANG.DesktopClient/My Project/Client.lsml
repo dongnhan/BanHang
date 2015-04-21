@@ -118,9 +118,6 @@
       Name="ScreenCommandShowĐặt_HàngListDetail"
       Target="!module/Methods[ShowĐặt_HàngListDetail]" />
     <ApplicationCommand
-      Name="ScreenCommandShowMónListDetail"
-      Target="!module/Methods[ShowMónListDetail]" />
-    <ApplicationCommand
       Name="ScreenCommandShowChiCongNosListDetail"
       Target="!module/Methods[ShowChiCongNosListDetail]" />
     <ApplicationCommand
@@ -151,9 +148,6 @@
       Name="ScreenCommandShowKhu_VựcListDetail"
       Target="!module/Methods[ShowKhu_VựcListDetail]" />
     <ApplicationCommand
-      Name="ScreenCommandShowMónListDetail1"
-      Target="!module/Methods[ShowMónListDetail1]" />
-    <ApplicationCommand
       Name="ScreenCommandShowNhóm_MónListDetail"
       Target="!module/Methods[ShowNhóm_MónListDetail]" />
     <ApplicationCommand
@@ -165,11 +159,17 @@
     <ApplicationCommand
       Name="ScreenCommandShowQuanListDetail1"
       Target="!module/Methods[ShowQuanListDetail1]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowSản_PhẩmListDetail1"
+      Target="!module/Methods[ShowSản_PhẩmListDetail1]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowMonListDetail"
+      Target="!module/Methods[ShowMonListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[MainListDetail]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[QuanListDetail1]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="DANH MỤC" />
@@ -207,6 +207,12 @@
       <ApplicationNavigationLink
         Name="QuanListDetail1"
         Command="!module/Commands[ScreenCommandShowQuanListDetail1]" />
+      <ApplicationNavigationLink
+        Name="Sản_PhẩmListDetail1"
+        Command="!module/Commands[ScreenCommandShowSản_PhẩmListDetail1]" />
+      <ApplicationNavigationLink
+        Name="MonListDetail"
+        Command="!module/Commands[ScreenCommandShowMonListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">
@@ -239,12 +245,6 @@
       <ApplicationNavigationLink
         Name="link26"
         Command="!module/Commands[ScreenCommandShowBànListDetail]" />
-      <ApplicationNavigationLink
-        Name="link27"
-        Command="!module/Commands[ScreenCommandShowMónListDetail]" />
-      <ApplicationNavigationLink
-        Name="link28"
-        Command="!module/Commands[ScreenCommandShowMónListDetail1]" />
       <ApplicationNavigationLink
         Name="link30"
         Command="!module/Commands[ScreenCommandShowNhóm_MónListDetail]" />

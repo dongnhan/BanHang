@@ -18,6 +18,9 @@ Namespace LightSwitchApplication
             Me.ChonMons.AddNew()
             Me.FindControl("BànItem1").Focus()
             Me.ChonMons.SelectedItem.Trạng_thái = 0
+            Me.ChonMons.SelectedItem.Khách_hàng = "Test"
+            Me.ChonMons.SelectedItem.UserName = "TestUser"
+
         End Sub
         Private Sub OK_Execute()
             ' Write your code here.
@@ -45,7 +48,7 @@ Namespace LightSwitchApplication
             Me.ChonMonChiTiets.SelectedItem.SoLuong = Me.DataWorkspace.BanHangDataQuan.SoLuongs_Single(1)
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = False
-
+            Me.FindControl("ChonMonChiTietsAddAndEditNew").Focus()
         End Sub
 
         Private Sub ChonMonChiTietsEditSelected_CanExecute(ByRef result As Boolean)
@@ -84,6 +87,25 @@ Namespace LightSwitchApplication
 
             End Try
 
+        End Sub
+
+        Private Sub Tổng_hợp_Execute()
+            Try
+                Me.Application.ShowvDoanhThuQuanTongHopReportPreviewScreen(Today, Today)
+            Catch ex As Exception
+
+            End Try
+            ' Write your code here.
+
+        End Sub
+
+        Private Sub Theo_món_Execute()
+            ' Write your code here.
+            Try
+                Me.Application.ShowvDoanhThuQuanTheoMonReportPreviewScreen(Today, Today)
+            Catch ex As Exception
+
+            End Try
         End Sub
     End Class
 

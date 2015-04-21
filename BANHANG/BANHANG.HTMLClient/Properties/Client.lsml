@@ -103,5 +103,8 @@
     <ApplicationNavigationMethodLink
       Name="link18"
       Method="!module/Methods[showvDoanh_Thu_Quán_Tổng_HợpBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link19"
+      Method="!module/Methods[showBrowseChonMons1]" />
   </Application.NavigationItems>
 </Application>

@@ -49,6 +49,8 @@ Partial Public Class XtraReport_PhieuTinhTien
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
         Me.Id = New DevExpress.XtraReports.Parameters.Parameter()
+        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
         Me.LightSwitchDataSource1 = New DevExpress.XtraReports.LightSwitchDataSource()
         Me.LightSwitchDataSource2 = New DevExpress.XtraReports.LightSwitchDataSource()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,19 +174,19 @@ Partial Public Class XtraReport_PhieuTinhTien
         'XrLabel9
         '
         Me.XrLabel9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 22.99999!)
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(10.00001!, 22.99999!)
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel9.SizeF = New System.Drawing.SizeF(57.25707!, 23.0!)
         Me.XrLabel9.StylePriority.UseFont = False
         Me.XrLabel9.StylePriority.UseTextAlignment = False
-        Me.XrLabel9.Text = "Giảm"
+        Me.XrLabel9.Text = "Giảm %"
         Me.XrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
         '
         'XrLabel8
         '
         Me.XrLabel8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 45.99997!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(9.99999!, 68.99999!)
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel8.SizeF = New System.Drawing.SizeF(57.25707!, 23.0!)
@@ -209,7 +211,7 @@ Partial Public Class XtraReport_PhieuTinhTien
         '
         Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Me.LightSwitchDataSource1, "Tổng_tiền", "{0:n0}")})
         Me.XrLabel3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(67.25709!, 45.99997!)
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(67.25709!, 68.99999!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(127.4651!, 23.0!)
@@ -292,16 +294,16 @@ Partial Public Class XtraReport_PhieuTinhTien
         Me.XrTableCell5.StylePriority.UseTextAlignment = False
         Me.XrTableCell5.Text = "XrTableCell5"
         Me.XrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
-        Me.XrTableCell5.Weight = 0.28663422620054563R
+        Me.XrTableCell5.Weight = 0.30007659160905964R
         '
         'XrTableCell6
         '
         Me.XrTableCell6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "SoLuong.Số_lượng", "{0:n0}")})
-        Me.XrTableCell6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell6.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrTableCell6.Name = "XrTableCell6"
         Me.XrTableCell6.StylePriority.UseFont = False
         Me.XrTableCell6.Text = "XrTableCell6"
-        Me.XrTableCell6.Weight = 0.057971035577206155R
+        Me.XrTableCell6.Weight = 0.056248924015183527R
         '
         'XrTableCell9
         '
@@ -312,7 +314,7 @@ Partial Public Class XtraReport_PhieuTinhTien
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
         Me.XrTableCell9.Text = "XrTableCell9"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
-        Me.XrTableCell9.Weight = 0.20611924749497224R
+        Me.XrTableCell9.Weight = 0.19439899364848084R
         '
         'XrTableCell10
         '
@@ -327,8 +329,8 @@ Partial Public Class XtraReport_PhieuTinhTien
         '
         'ReportFooter
         '
-        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel1, Me.XrLabel2, Me.XrLabel3, Me.XrLabel7, Me.XrLabel8, Me.XrLabel9})
-        Me.ReportFooter.HeightF = 70.83334!
+        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel10, Me.XrLabel6, Me.XrLabel1, Me.XrLabel2, Me.XrLabel3, Me.XrLabel7, Me.XrLabel8, Me.XrLabel9})
+        Me.ReportFooter.HeightF = 97.91666!
         Me.ReportFooter.Name = "ReportFooter"
         '
         'Id
@@ -337,6 +339,31 @@ Partial Public Class XtraReport_PhieuTinhTien
         Me.Id.Type = GetType(Integer)
         Me.Id.ValueInfo = "0"
         Me.Id.Visible = False
+        '
+        'XrLabel6
+        '
+        Me.XrLabel6.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 46.0!)
+        Me.XrLabel6.Name = "XrLabel6"
+        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel6.SizeF = New System.Drawing.SizeF(57.25707!, 23.0!)
+        Me.XrLabel6.StylePriority.UseFont = False
+        Me.XrLabel6.StylePriority.UseTextAlignment = False
+        Me.XrLabel6.Text = "Giảm món"
+        Me.XrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
+        '
+        'XrLabel10
+        '
+        Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Me.LightSwitchDataSource1, "Tổng_giảm", "{0:n0}")})
+        Me.XrLabel10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(67.25706!, 46.0!)
+        Me.XrLabel10.Name = "XrLabel10"
+        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel10.SizeF = New System.Drawing.SizeF(122.7429!, 23.0!)
+        Me.XrLabel10.StylePriority.UseFont = False
+        Me.XrLabel10.StylePriority.UseTextAlignment = False
+        Me.XrLabel10.Text = "XrLabel10"
+        Me.XrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
         'LightSwitchDataSource1
         '
@@ -397,4 +424,6 @@ Partial Public Class XtraReport_PhieuTinhTien
     Friend WithEvents XrLabel1 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents ReportFooter As DevExpress.XtraReports.UI.ReportFooterBand
     Friend WithEvents XrLabel4 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel10 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel6 As DevExpress.XtraReports.UI.XRLabel
 End Class

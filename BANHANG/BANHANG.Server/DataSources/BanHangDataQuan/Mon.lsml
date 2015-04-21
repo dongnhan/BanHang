@@ -97,6 +97,11 @@
         Association="FK_ChonMonChiTiet_Món"
         FromEnd="Món"
         ToEnd="ChonMonChiTiet" />
+      <NavigationProperty
+        Name="MonDinhLuongs"
+        Association="FK_MonDinhLuong_Món"
+        FromEnd="Món"
+        ToEnd="MonDinhLuong" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -200,6 +205,16 @@
         Name="ChonMonChiTiet"
         EntitySet="ChonMonChiTiets" />
     </AssociationSet>
+    <AssociationSet
+      Name="FK_MonDinhLuong_Món"
+      Association="FK_MonDinhLuong_Món">
+      <AssociationSetEnd
+        Name="Món"
+        EntitySet="Mon" />
+      <AssociationSetEnd
+        Name="MonDinhLuong"
+        EntitySet="MonDinhLuongs" />
+    </AssociationSet>
   </EntityContainer>
   <Association
     Name="FK_ChonMonChiTiet_Món">
@@ -215,6 +230,22 @@
       Name="ChonMonChiTiet"
       Multiplicity="Many"
       EntityType="ChonMonChiTiet1" />
+  </Association>
+  <Association
+    Name="FK_MonDinhLuong_Món">
+    <AssociationEnd
+      Name="Món"
+      Multiplicity="One"
+      EntityType="MónItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MonDinhLuong"
+      Multiplicity="Many"
+      EntityType="MonDinhLuong" />
   </Association>
   <DataService
     Name="BanHangDataQuanDataService">
@@ -285,6 +316,27 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ChonMonChiTiet_Mon" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MonDinhLuong_Món">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MonDinhLuong_Món" />
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_MonDinhLuong_Món]/Members[Món]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_MonDinhLuong_Món]/Members[MonDinhLuong]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DinhLuong_Mon" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

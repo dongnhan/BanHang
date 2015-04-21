@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="MónListDetail">
+    Name="Sản_PhẩmListDetail1">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="MÓN" />
+        Value="SẢN PHẨM" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -25,40 +25,27 @@
             Name="ListColumn"
             Kind="Group">
             <ContentItem
-              Name="MónItemList"
+              Name="Sản_PhẩmItem1List"
               Kind="Collection"
-              DataType="CollectionView$MónItem"
+              DataType="CollectionView$Sản_PhẩmItem1"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="MónListDetail/Properties[Món]" />
+                      Member="Sản_PhẩmListDetail1/Properties[Sản_Phẩm]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="MónItem">
+                DataType="Sản_PhẩmItem1">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem
-                  Name="Mã"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Mã]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
                 <ContentItem
                   Name="Tên"
                   Kind="Value"
@@ -67,7 +54,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Tên]" />
+                          Member="Sản_PhẩmItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -75,25 +62,12 @@
                 <ContentItem
                   Name="Giá"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  DataType=":Decimal">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Giá]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Tình_trạng"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Tình_trạng]" />
+                          Member="Sản_PhẩmItem1/Properties[Giá]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -106,28 +80,50 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Ghi_chú]" />
+                          Member="Sản_PhẩmItem1/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Hình_ảnh"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?">
+                  Name="Đơn_Vị_TínhItem"
+                  Kind="Details"
+                  DataType="Đơn_Vị_TínhItem2">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Hình_ảnh]" />
+                          Member="Sản_PhẩmItem1/Properties[Đơn_Vị_TínhItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate1"
+                    Kind="Details"
+                    DataType="Đơn_Vị_TínhItem2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
-                  Name="MónItemListAddAndEditNew"
+                  Name="Sản_PhẩmItem1ListAddAndEditNew"
                   Kind="Command">
                   <ContentItem.Attributes>
                     <DisplayName
@@ -137,19 +133,19 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="MónListDetail/Methods[MónItemListAddAndEditNew]" />
+                          Target="Sản_PhẩmListDetail1/Methods[Sản_PhẩmItem1ListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Món_DeleteSelected"
+                  Name="Sản_Phẩm_DeleteSelected"
                   Kind="Command">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónListDetail/Properties[Món]" />
+                          Member="Sản_PhẩmListDetail1/Properties[Sản_Phẩm]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -211,35 +207,24 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="True"
-                      ResultType=":Boolean" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
             </ContentItem.PropertySources>
           </ContentItem>
           <ContentItem
             Name="DetailsColumn"
             Kind="Group">
             <ContentItem
-              Name="MónItemDetails"
+              Name="Sản_PhẩmItem1Details"
               Kind="Details"
-              DataType="MónItem"
-              View="Microsoft.LightSwitch.RichClient:RowsLayout">
+              DataType="Sản_PhẩmItem1">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Món Item Details" />
+                  Value="Sản Phẩm Item1 Details" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="MónListDetail/Properties[Món]" />
+                      Member="Sản_PhẩmListDetail1/Properties[Sản_Phẩm]" />
                     <MemberExpression
                       Member="SelectedItem" />
                   </ChainExpression>
@@ -250,19 +235,6 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
-                  Name="Mã1"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Mã]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Tên1"
                   Kind="Value"
                   DataType=":String">
@@ -270,36 +242,45 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Tên]" />
+                          Member="Sản_PhẩmItem1/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Giá1"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  Name="Đơn_Vị_TínhItem1"
+                  Kind="Details"
+                  DataType="Đơn_Vị_TínhItem2">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Giá]" />
+                          Member="Sản_PhẩmItem1/Properties[Đơn_Vị_TínhItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Tình_trạng1"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[Tình_trạng]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate2"
+                    Kind="Details"
+                    DataType="Đơn_Vị_TínhItem2">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox/Properties[AutoCompleteBoxFilterMode]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Contains"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
               </ContentItem>
               <ContentItem
@@ -307,37 +288,14 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
-                  Name="NhomMon"
-                  Kind="Details"
-                  DataType="NhomMon">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem/Properties[NhomMon]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="NhomMon1"
-                    Kind="Details"
-                    DataType="NhomMon">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="Hình_ảnh1"
+                  Name="Giá1"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?">
+                  DataType=":Decimal">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Hình_ảnh]" />
+                          Member="Sản_PhẩmItem1/Properties[Giá]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -350,7 +308,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem/Properties[Ghi_chú]" />
+                          Member="Sản_PhẩmItem1/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -401,7 +359,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="MónListDetail/Methods[Save]" />
+                    Target="Sản_PhẩmListDetail1/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -413,7 +371,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="MónListDetail/Methods[Refresh]" />
+                    Target="Sản_PhẩmListDetail1/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -425,7 +383,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="MónListDetail/Methods[Báo_cáo]" />
+                    Target="Sản_PhẩmListDetail1/Methods[Báo_cáo]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -449,7 +407,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="MónListDetail/Methods[Close]" />
+                    Target="Sản_PhẩmListDetail1/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -501,7 +459,7 @@
       <ScreenMethod
         Name="Báo_cáo" />
       <ScreenMethod
-        Name="MónItemListAddAndEditNew">
+        Name="Sản_PhẩmItem1ListAddAndEditNew">
         <ScreenMethod.Attributes>
           <BuiltInMethodOverride
             MethodName="AddAndEditNew" />
@@ -510,20 +468,20 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Món"
+        Name="Sản_Phẩm"
         PageSize="45"
-        PropertyType="CollectionView$MónItem">
+        PropertyType="CollectionView$Sản_PhẩmItem1">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="MónQuery"
-            ReturnType="MónItem*">
+            Name="Sản_PhẩmQuery"
+            ReturnType="Sản_PhẩmItem1*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[Mon]" />
+                  Member="BanHangDataQuan/Members[Sản_Phẩm]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -531,7 +489,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="MónListDetail/Properties[Món]/Query" />
+              Target="Sản_PhẩmListDetail1/Properties[Sản_Phẩm]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -539,10 +497,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowMónListDetail">
+      Name="ShowSản_PhẩmListDetail1">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="MónListDetail" />
+          TargetScreen="Sản_PhẩmListDetail1" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

@@ -16,12 +16,12 @@ Namespace LightSwitchApplication
         End Sub
 
         Private Sub Tổng_tiền_Validate(results As EntityValidationResultsBuilder)
-            Me.Tổng_tiền = Thành_tiền - Tiền_giảm
+            Me.Tổng_tiền = Thành_tiền - Tiền_giảm - Tổng_giảm
         End Sub
 
      
         Private Sub Tiền_giảm_Validate(results As EntityValidationResultsBuilder)
-            Me.Tổng_tiền = Thành_tiền - Tiền_giảm
+            Me.Tổng_tiền = Thành_tiền - Tiền_giảm - Tổng_giảm
         End Sub
 
         Private Sub Giảm_giá_Validate(results As EntityValidationResultsBuilder)
@@ -40,6 +40,17 @@ Namespace LightSwitchApplication
             End Try
             ' results.AddPropertyError("<Error-Message>")
 
+        End Sub
+
+        Private Sub Tổng_giảm_Validate(results As EntityValidationResultsBuilder)
+            ' results.AddPropertyError("<Error-Message>")
+            Dim tien = 0.0
+            For Each d In ChonMonChiTiets
+                tien += d.Tiền_giảm
+            Next
+            If tien > 0 Then
+                Me.Tổng_giảm = tien
+            End If
         End Sub
     End Class
 

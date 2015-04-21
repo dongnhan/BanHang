@@ -23,6 +23,8 @@
           <Hidden />
           <Required />
           <NotSearchable />
+          <DisplayName
+            Value="Mã" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
@@ -41,6 +43,8 @@
         PropertyType=":Int32?">
         <EntityProperty.Attributes>
           <NotSearchable />
+          <DisplayName
+            Value="KH" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -52,7 +56,12 @@
         Name="BànItem"
         Association="BànItem_ChonMon"
         FromEnd="ChonMon"
-        ToEnd="Bàn" />
+        ToEnd="Bàn">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Bàn" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -128,6 +137,8 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -168,6 +179,8 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>

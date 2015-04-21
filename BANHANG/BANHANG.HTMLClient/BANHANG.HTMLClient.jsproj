@@ -130,9 +130,6 @@
     <Content Include="Screens\Bàn\ViewBànItem1.lsml.js">
       <DependentUpon>ViewBànItem1.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\ChonMonChiTiets\ViewChonMonChiTiet1.lsml.js">
-      <DependentUpon>ViewChonMonChiTiet1.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\ChonMonsBrowse.lsml.js">
       <DependentUpon>ChonMonsBrowse.lsml</DependentUpon>
     </Content>
@@ -201,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\BanHangDataQuan\Ban.lsml" />
-    <LightSwitchModel Include="Properties\BanHangDataQuan\ChonMonChiTiets.lsml" />
     <LightSwitchModel Include="Properties\BanHangDataQuan\ChonMons.lsml" />
     <LightSwitchModel Include="Properties\BanHangDataQuan\KhuVuc.lsml" />
     <LightSwitchModel Include="Properties\BanHangDataQuan\Mon.lsml" />
@@ -227,9 +223,6 @@
     <LightSwitchModel Include="Screens\Bàn\AddEditBànItem1.lsml" />
     <LightSwitchModel Include="Screens\Bàn\BrowseBàn.lsml" />
     <LightSwitchModel Include="Screens\Bàn\ViewBànItem1.lsml" />
-    <LightSwitchModel Include="Screens\ChonMonChiTiets\AddEditChonMonChiTiet1.lsml" />
-    <LightSwitchModel Include="Screens\ChonMonChiTiets\BrowseChonMonChiTiets.lsml" />
-    <LightSwitchModel Include="Screens\ChonMonChiTiets\ViewChonMonChiTiet1.lsml" />
     <LightSwitchModel Include="Screens\ChonMonsBrowse.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon11.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons1.lsml" />
