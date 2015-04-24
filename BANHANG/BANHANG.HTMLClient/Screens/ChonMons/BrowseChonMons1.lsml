@@ -160,7 +160,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showAddEditChonMon1]">
+                        Target="!module/Methods[showAddEditChonMon11]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
                             Collection="BrowseChonMons1/Properties[ChonMons]" />
@@ -200,28 +200,28 @@
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditChonMon11]">
+                          <CallExpression.Attributes>
+                            <AssociatedCollection
+                              Collection="BrowseChonMons1/Properties[ChonMons]" />
+                            <CreateNewEntity
+                              TargetParameter="!module/Methods[showAddEditChonMon11]/Parameters[ChonMon1]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
                           Value="msls-add"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showAddEditChonMon1]">
-                          <CallExpression.Attributes>
-                            <AssociatedCollection
-                              Collection="BrowseChonMons1/Properties[ChonMons]" />
-                            <CreateNewEntity
-                              TargetParameter="!module/Methods[showAddEditChonMon1]/Parameters[ChonMon1]" />
-                          </CallExpression.Attributes>
-                        </CallExpression>
+                          ResultType="Microsoft.LightSwitch:String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

@@ -31,6 +31,11 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="ChonMonChiTiets"
+        Association="FK_ChonMonChiTiet_SoLuong"
+        FromEnd="SoLuong"
+        ToEnd="ChonMonChiTiet" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -124,7 +129,32 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="FK_ChonMonChiTiet_SoLuong"
+      Association="FK_ChonMonChiTiet_SoLuong">
+      <AssociationSetEnd
+        Name="SoLuong"
+        EntitySet="SoLuongs" />
+      <AssociationSetEnd
+        Name="ChonMonChiTiet"
+        EntitySet="ChonMonChiTiets" />
+    </AssociationSet>
   </EntityContainer>
+  <Association
+    Name="FK_ChonMonChiTiet_SoLuong">
+    <AssociationEnd
+      Name="SoLuong"
+      Multiplicity="One"
+      EntityType="SoLuong">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ChonMonChiTiet"
+      Multiplicity="Many"
+      EntityType="ChonMonChiTiet1" />
+  </Association>
   <DataService
     Name="BanHangDataQuanDataService">
     <DataService.Attributes>
@@ -148,5 +178,26 @@
           Property="SoLuong/Properties[Số_lượng]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ChonMonChiTiet_SoLuong">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ChonMonChiTiet_SoLuong" />
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_ChonMonChiTiet_SoLuong]/Members[SoLuong]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_ChonMonChiTiet_SoLuong]/Members[ChonMonChiTiet]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Số lượng" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

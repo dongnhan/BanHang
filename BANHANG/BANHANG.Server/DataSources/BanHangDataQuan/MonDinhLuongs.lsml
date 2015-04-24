@@ -35,7 +35,7 @@
             Scale="2" />
           <NotSearchable />
           <StringValueFormat
-            Value="n2" />
+            Value="n0" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty

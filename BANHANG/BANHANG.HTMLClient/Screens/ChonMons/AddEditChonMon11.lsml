@@ -65,8 +65,7 @@
                 <ContentItem
                   Name="Ngày"
                   Kind="Value"
-                  DataType=":DateTime"
-                  View="Microsoft.LightSwitch.MobileWeb:Text">
+                  DataType=":DateTime">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -79,8 +78,7 @@
                 <ContentItem
                   Name="BànItem"
                   Kind="Details"
-                  DataType="BànItem1"
-                  View="Microsoft.LightSwitch.MobileWeb:Summary">
+                  DataType="BànItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -90,76 +88,28 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="Tên3"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="BànItem1/Properties[Tên]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Mã1"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="BànItem1/Properties[Mã]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Khu_VựcItem2"
+                    Name="RowTemplate"
                     Kind="Details"
-                    DataType="Khu_VựcItem1">
+                    DataType="BànItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="BànItem1/Properties[Khu_VựcItem]" />
-                        </ChainExpression>
+                        <ChainExpression />
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
-                    <ContentItem
-                      Name="Khu_VựcItem11"
-                      Kind="Details"
-                      DataType="Khu_VựcItem1">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  Name="Bàn"
-                  Kind="Command">
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="AddEditChonMon11/Methods[showDialog]">
-                            <ArgumentExpression
-                              Parameter="dialogName">
-                              <ConstantExpression
-                                Value="Group"
-                                ResultType=":String" />
-                            </ArgumentExpression>
-                          </CallExpression>
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
+                  Name="UserName"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMon1/Properties[UserName]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -251,6 +201,75 @@
               </ContentItem>
             </ContentItem>
             <ContentItem
+              Name="Group"
+              Kind="Group">
+              <ContentItem
+                Name="Group1"
+                Kind="Group"
+                View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+                <ContentItem
+                  Name="Thành_tiền"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AddEditChonMon11/Properties[ChonMon1]" />
+                        <MemberExpression
+                          Member="Thành_tiền" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Tiền_giảm"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AddEditChonMon11/Properties[ChonMon1]" />
+                        <MemberExpression
+                          Member="Tiền_giảm" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Tổng_giảm"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AddEditChonMon11/Properties[ChonMon1]" />
+                        <MemberExpression
+                          Member="Tổng_giảm" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Tổng_tiền"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Money">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AddEditChonMon11/Properties[ChonMon1]" />
+                        <MemberExpression
+                          Member="Tổng_tiền" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
               Name="Group2"
               Kind="Group">
               <ContentItem
@@ -299,10 +318,57 @@
                     </ContentItem>
                   </ContentItem>
                   <ContentItem
+                    Name="SoLuong"
+                    Kind="Details"
+                    DataType="SoLuong"
+                    View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="SL" />
+                    </ContentItem.Attributes>
+                    <ContentItem.ChoicesSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="AddEditChonMon11/Properties[SoLuongs]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.ChoicesSource>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ChonMonChiTiet1/Properties[SoLuong]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="SoLuongTemplate"
+                      Kind="Details"
+                      DataType="SoLuong"
+                      View="Microsoft.LightSwitch.MobileWeb:Summary">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="SoLuong1"
+                        Kind="Details"
+                        DataType="SoLuong">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
                     Name="Tiền_giảm1"
                     Kind="Value"
                     DataType="Microsoft.LightSwitch.Extensions:Money"
-                    View="Microsoft.LightSwitch.MobileWeb:MoneyViewer">
+                    View="Microsoft.LightSwitch.MobileWeb:TextBox">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Giảm" />
@@ -319,18 +385,12 @@
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="AddEditChonMon11/Methods[showDialog]">
-                          <ArgumentExpression
-                            Parameter="dialogName">
-                            <ConstantExpression
-                              Value="Group5"
-                              ResultType=":String" />
-                          </ArgumentExpression>
-                        </CallExpression>
+                        <ConstantExpression
+                          Value="msls-add"
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -375,7 +435,7 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="LƯU"
+                Name="XÓA_MÓN"
                 Kind="Command">
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -383,7 +443,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="AddEditChonMon11/Methods[LƯU]" />
+                          Target="AddEditChonMon11/Methods[XÓA_MÓN]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -392,27 +452,8 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
-                          Value="msls-save"
+                          Value="msls-remove"
                           ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="ShowBrowseChonMons1"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="THOÁT" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showBrowseChonMons1]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -454,6 +495,23 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="Tên1"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Món" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="AddEditChonMon11/Properties[Tên]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
               </ContentItem>
               <ContentItem
                 Name="THÊM"
@@ -524,163 +582,6 @@
               </ContentItem>
             </ContentItem>
           </ContentItem>
-          <ContentItem
-            Name="Group5"
-            Kind="Group">
-            <ContentItem
-              Name="Group6"
-              Kind="Group"
-              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
-              <ContentItem
-                Name="XÓA"
-                Kind="Command">
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="AddEditChonMon11/Methods[XÓA]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="SỬA"
-                Kind="Command">
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="AddEditChonMon11/Methods[SỬA]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="THOÁT"
-                Kind="Command">
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="AddEditChonMon11/Methods[THOÁT]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
-              Name="ChonMonChiTiets_selectedItem"
-              Kind="Details"
-              DataType="ChonMonChiTiet1">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="AddEditChonMon11/Properties[ChonMonChiTiets]" />
-                    <MemberExpression
-                      Member="selectedItem" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="MónItem2"
-                Kind="Details"
-                DataType="MónItem1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ChonMonChiTiet1/Properties[MónItem]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="MónItem11"
-                  Kind="Details"
-                  DataType="MónItem1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Tiền_giảm2"
-                Kind="Value"
-                DataType="Microsoft.LightSwitch.Extensions:Money">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ChonMonChiTiet1/Properties[Tiền_giảm]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-          </ContentItem>
-          <ContentItem
-            Name="Group"
-            Kind="Group">
-            <ContentItem
-              Name="Ban"
-              Kind="Collection"
-              DataType="CollectionView$BànItem1"
-              View="Microsoft.LightSwitch.MobileWeb:List">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="AddEditChonMon11/Properties[Ban]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="BanTemplate"
-                Kind="Details"
-                DataType="BànItem1">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="Tên2"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="BànItem1/Properties[Tên]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="AddEditChonMon11/Methods[Ban_ItemTap]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-          </ContentItem>
         </ContentItem>
         <ContentItem.PropertySources>
           <ControlPropertySource
@@ -734,21 +635,7 @@
       <ScreenMethod
         Name="THÊM_ĐÓNG" />
       <ScreenMethod
-        Name="THOÁT" />
-      <ScreenMethod
-        Name="LƯU" />
-      <ScreenMethod
-        Name="XÓA" />
-      <ScreenMethod
-        Name="SỬA" />
-      <ScreenMethod
-        Name="Bàn" />
-      <ScreenMethod
-        Name="Bàn_Tap" />
-      <ScreenMethod
-        Name="Bàn_Tap1" />
-      <ScreenMethod
-        Name="Ban_ItemTap" />
+        Name="XÓA_MÓN" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
@@ -858,7 +745,12 @@
             <CallExpression
               Target="AddEditChonMon11/Properties[Món]/Query">
               <ArgumentExpression
-                Parameter="Tên" />
+                Parameter="Tên">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="AddEditChonMon11/Properties[Tên]" />
+                </ChainExpression>
+              </ArgumentExpression>
               <ArgumentExpression
                 Parameter="Id">
                 <ChainExpression>
@@ -874,7 +766,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="SoLuongs"
-        PageSize="24"
+        PageSize="45"
         PropertyType="CollectionView$SoLuong">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -901,32 +793,9 @@
       <ScreenProperty
         Name="Nhóm"
         PropertyType="Nhóm_MónItem" />
-      <ScreenCollectionProperty
-        Name="Ban"
-        PageSize="45"
-        PropertyType="CollectionView$BànItem1">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="BanQuery"
-            ReturnType="BànItem1*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="BanHangDataQuan/Members[Ban]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="AddEditChonMon11/Properties[Ban]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="Tên"
+        PropertyType=":String?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>

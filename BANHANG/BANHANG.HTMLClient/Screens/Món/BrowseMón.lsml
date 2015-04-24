@@ -28,7 +28,7 @@
               Name="Món"
               Kind="Collection"
               DataType="CollectionView$MónItem1"
-              View="Microsoft.LightSwitch.MobileWeb:Table">
+              View="Microsoft.LightSwitch.MobileWeb:TileList">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="Món" />
@@ -89,6 +89,31 @@
                     </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem
+                    Name="Mã"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MónItem1/Properties[Mã]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="Small"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                  <ContentItem
                     Name="Giá"
                     Kind="Value"
                     DataType="Microsoft.LightSwitch.Extensions:Money">
@@ -133,7 +158,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="!module/Methods[showAddEditMónItem1]">
+                        Target="!module/Methods[showViewMónItem1]">
                         <CallExpression.Attributes>
                           <AssociatedCollection
                             Collection="BrowseMón/Properties[Món]" />
@@ -148,16 +173,6 @@
                           </ChainExpression>
                         </ArgumentExpression>
                       </CallExpression>
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="msls-edit"
-                        ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>

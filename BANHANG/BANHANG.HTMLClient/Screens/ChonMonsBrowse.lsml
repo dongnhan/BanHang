@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="ĐẶT MÓN (B)" />
+        Value="ĐẶT MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -614,6 +614,74 @@
                           <ChainExpression>
                             <ConstantExpression
                               Value="200"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
+                  </ContentItem>
+                  <ContentItem
+                    Name="SoLuong"
+                    Kind="Details"
+                    DataType="SoLuong"
+                    View="Microsoft.LightSwitch.MobileWeb:DetailsModalPicker">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="SL" />
+                    </ContentItem.Attributes>
+                    <ContentItem.ChoicesSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ChonMonsBrowse/Properties[SoLuongs]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.ChoicesSource>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ChonMonChiTiet1/Properties[SoLuong]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="SoLuongTemplate"
+                      Kind="Details"
+                      DataType="SoLuong">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="SoLuong1"
+                        Kind="Details"
+                        DataType="SoLuong">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression />
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                    </ContentItem>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinHeight]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="7"
+                              ResultType=":Double" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxHeight]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="7"
                               ResultType=":Double" />
                           </ChainExpression>
                         </ScreenExpressionTree>

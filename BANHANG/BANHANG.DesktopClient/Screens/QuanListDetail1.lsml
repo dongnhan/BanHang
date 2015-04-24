@@ -943,17 +943,27 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  Name="Số_lượng1"
-                  Kind="Value"
-                  DataType=":Int32">
+                  Name="SoLuong"
+                  Kind="Details"
+                  DataType="SoLuong">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ChonMonChiTiet1/Properties[Số_lượng]" />
+                          Member="ChonMonChiTiet1/Properties[SoLuong]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate5"
+                    Kind="Details"
+                    DataType="SoLuong">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   Name="Giá"
@@ -1142,31 +1152,29 @@
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox/Properties[AutoCompleteBoxFilterMode]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="Contains"
-                            ResultType=":String" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Số_lượng"
-                  Kind="Value"
-                  DataType=":Int32">
+                  Name="SoLuong1"
+                  Kind="Details"
+                  DataType="SoLuong">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ChonMonChiTiet1/Properties[Số_lượng]" />
+                          Member="ChonMonChiTiet1/Properties[SoLuong]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem
+                    Name="SoLuong2"
+                    Kind="Details"
+                    DataType="SoLuong">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   Name="Giá1"

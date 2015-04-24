@@ -540,7 +540,7 @@
     <LightSwitchModel Include="DataSources\BanHangDataQuan\vDoanhThuQuanTongHops.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\Đơn_Vị_Tính.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\MonDinhLuongs.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangDataQuan\SanPhams.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Sản_Phẩm.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -670,7 +670,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1286/</IISUrl>
+          <IISUrl>http://localhost:1437/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

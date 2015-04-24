@@ -14,7 +14,7 @@ myapp.Home.ScreenContent_render = function (element, contentItem) {
     var width = "width:254px;";
 
     var items = [];
-    var excluded = ["Screen", "AddEditMónItem1", "BrowseBàn", "AddEditBànItem1", "ViewBànItem1", "AddEditKhu_VựcItem1", "BrowseKhuVuc", "ViewKhu_VựcItem1", "ViewMónItem1", "AddEditNhóm_MónItem", "BrowseNhóm_Món", "ViewNhóm_MónItem", "AddEditChonMonChiTiet1", "BrowseChonMonChiTiets", "ViewChonMonChiTiet1", "AddEditChonMon11", "ViewChonMon11", "vDoanh_Thu_Ngày_Theo_Khách_HàngBrowse", "vDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse", "vDoanh_Thu_NgàyBrowse", "vLời_Lỗ_Ngày_Theo_Khách_HàngBrowse", "vLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse", "vLời_Lỗ_NgàyBrowse", "vTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse", "vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse", "vTồn_Quỹ_Tiền_MặtBrowse","BrowseChonMons","ChonMonsBrowse"];
+    var excluded = ["Screen", "AddEditMónItem1", "BrowseBàn", "AddEditBànItem1", "ViewBànItem1", "AddEditKhu_VựcItem1", "BrowseKhuVuc", "ViewKhu_VựcItem1", "AddEditMónItem1", "BrowseMón", "ViewMónItem1", "AddEditNhóm_MónItem", "BrowseNhóm_Món", "ViewNhóm_MónItem", "BrowseChonMons", "AddEditChonMonChiTiet1", "BrowseChonMonChiTiets", "ViewChonMonChiTiet1", "AddEditChonMon11"];
     //var excluded = ["Screen", "AddEditMónItem1", "AddEditBànItem1", "ViewBànItem1", "AddEditKhu_VựcItem1", "ViewKhu_VựcItem1", "AddEditMónItem1", "ViewMónItem1", "AddEditNhóm_MónItem", "ViewNhóm_MónItem", "BrowseChonMons", "AddEditChọn_MónItem","BrowseChọn_Món","ViewChọn_MónItem"];
     excluded.push(contentItem.screen.details.getModel().name);
 

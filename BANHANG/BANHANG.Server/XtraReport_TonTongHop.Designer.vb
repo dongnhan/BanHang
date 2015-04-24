@@ -553,9 +553,9 @@ Partial Public Class XtraReport_TonTongHop
         Me.FilterString = "[Thang] = ?Thang And [Nam] = ?Nam"
         Me.Landscape = True
         Me.Margins = New System.Drawing.Printing.Margins(16, 16, 25, 42)
-        Me.PageHeight = 827
-        Me.PageWidth = 1169
-        Me.PaperKind = System.Drawing.Printing.PaperKind.A4
+        Me.PageHeight = 382
+        Me.PageWidth = 594
+        Me.PaperKind = System.Drawing.Printing.PaperKind.Prc32K
         Me.Parameters.AddRange(New DevExpress.XtraReports.Parameters.Parameter() {Me.Thang, Me.Nam, Me.TenDonVi, Me.DiaChiDonVi})
         Me.ScriptsSource = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Version = "13.1"
