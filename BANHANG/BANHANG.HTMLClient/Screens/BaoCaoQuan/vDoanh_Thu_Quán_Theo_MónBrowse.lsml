@@ -175,7 +175,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Search" />
+                    Value="TÌM" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource

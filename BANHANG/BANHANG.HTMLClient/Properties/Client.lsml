@@ -47,32 +47,8 @@
   </GlobalAttributeGroup>
   <Application.NavigationItems>
     <ApplicationNavigationMethodLink
-      Name="link2"
-      Method="!module/Methods[showvTồn_Quỹ_Tiền_MặtBrowse]" />
-    <ApplicationNavigationMethodLink
       Name="link3"
       Method="!module/Methods[showvTồn_Tổng_HợpBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link4"
-      Method="!module/Methods[showvDoanh_Thu_NgàyBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link5"
-      Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Khách_HàngBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link6"
-      Method="!module/Methods[showvDoanh_Thu_Ngày_Theo_Khách_HàngBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link7"
-      Method="!module/Methods[showvDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link8"
-      Method="!module/Methods[showvLời_Lỗ_NgàyBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link9"
-      Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link11"
-      Method="!module/Methods[showBrowseChonMons]" />
     <ApplicationNavigationMethodLink
       Name="link"
       Method="!module/Methods[showBrowseMón]" />
@@ -86,15 +62,6 @@
       Name="link12"
       Method="!module/Methods[showBrowseKhuVuc]" />
     <ApplicationNavigationMethodLink
-      Name="link13"
-      Method="!module/Methods[showChonMonsBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link16"
-      Method="!module/Methods[showvTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link17"
-      Method="!module/Methods[showvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse]" />
-    <ApplicationNavigationMethodLink
       Name="link14"
       Method="!module/Methods[showvDoanh_Thu_Quán_Theo_MónBrowse]" />
     <ApplicationNavigationMethodLink
@@ -103,8 +70,5 @@
     <ApplicationNavigationMethodLink
       Name="link18"
       Method="!module/Methods[showvDoanh_Thu_Quán_Tổng_HợpBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link19"
-      Method="!module/Methods[showBrowseChonMons1]" />
   </Application.NavigationItems>
 </Application>

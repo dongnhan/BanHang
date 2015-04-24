@@ -132,39 +132,6 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
-            <ContentItem.CommandItems>
-              <ContentItem
-                Name="SearchvDoanh_Thu_Quán_Tổng_Hợp"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Search" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="vDoanh_Thu_Quán_Tổng_HợpBrowse/Properties[vDoanh_Thu_Quán_Tổng_Hợp]" />
-                        <CallExpression
-                          Target="showSearch" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="msls-search"
-                          ResultType="Microsoft.LightSwitch:String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-            </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem.PropertySources>
             <ControlPropertySource

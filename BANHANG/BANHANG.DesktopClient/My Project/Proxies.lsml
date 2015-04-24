@@ -748,12 +748,6 @@
         Target="ServiceInterface:FK_ChonMonChiTiet_Món" />
     </Association.Attributes>
   </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_ChonMonChiTiet_SoLuong" />
-    </Association.Attributes>
-  </Association>
   <EntityType>
     <EntityType.Attributes>
       <Proxy

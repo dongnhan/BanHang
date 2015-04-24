@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.BANHANG.HTMLClient" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <Partial />
+  </Application.Attributes>
+  <Screen
+    Name="AddEditChonMon">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="BanHangData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.MobileWeb:Screen">
+        <ContentItem
+          Name="Tabs"
+          Kind="Group"
+          View="Microsoft.LightSwitch.MobileWeb:TabPages">
+          <ContentItem
+            Name="Details"
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Details" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="columns"
+              Kind="Details"
+              DataType="ChonMon"
+              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="columns" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="AddEditChonMon/Properties[ChonMon]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="left"
+                Kind="Group">
+                <ContentItem
+                  Name="Ngày"
+                  Kind="Value"
+                  DataType=":DateTime">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMon/Properties[Ngày]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="c__KhachHang"
+                  Kind="Value"
+                  DataType=":Int32?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMon/Properties[c__KhachHang]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="200"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="400"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="right"
+                Kind="Group">
+                <ContentItem
+                  Name="BànItem"
+                  Kind="Details"
+                  DataType="BànItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMon/Properties[BànItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate"
+                    Kind="Details"
+                    DataType="BànItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MinWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="200"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[MaxWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="400"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Name="Chọn_Món_Chi_Tiết"
+            Kind="Group"
+            View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+            <ContentItem
+              Name="Chọn_Món_Chi_Tiết1"
+              Kind="Collection"
+              DataType="CollectionView$ChonMonChiTiet"
+              View="Microsoft.LightSwitch.MobileWeb:TileList">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Chọn_Món_Chi_Tiết" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="AddEditChonMon/Properties[Chọn_Món_Chi_Tiết]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="rows"
+                Kind="Details"
+                DataType="ChonMonChiTiet"
+                View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="rows" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Ghi_chú"
+                  Kind="Value"
+                  DataType=":String?">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMonChiTiet/Properties[Ghi_chú]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Large"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Số_lượng"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMonChiTiet/Properties[Số_lượng]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="MónItem"
+                  Kind="Details"
+                  DataType="MónItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ChonMonChiTiet/Properties[MónItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="RowTemplate2"
+                    Kind="Details"
+                    DataType="MónItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[FontStyle]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Small"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="FitToContent"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="AddEditChonMon/Properties[Chọn_Món_Chi_Tiết]" />
+                      <CallExpression
+                        Target="viewSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem
+          Name="Popups"
+          Kind="Group"
+          View="Microsoft.LightSwitch.MobileWeb:DialogPages" />
+        <ContentItem.PropertySources>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ScreenType]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="Edit"
+                  ResultType=":String" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="True"
+                  ResultType=":Boolean" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+        </ContentItem.PropertySources>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="showTab">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+        <ScreenMethodParameter
+          Name="tabName"
+          ParameterType=":String" />
+      </ScreenMethod>
+      <ScreenMethod
+        Name="showDialog">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+        <ScreenMethodParameter
+          Name="dialogName"
+          ParameterType=":String" />
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="ChonMon"
+        PropertyType="ChonMon">
+        <ScreenProperty.Attributes>
+          <IsParameter />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenCollectionProperty
+        Name="Chọn_Món_Chi_Tiết"
+        PageSize="15"
+        PropertyType="CollectionView$ChonMonChiTiet">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="Chọn_Món_Chi_TiếtQuery"
+            ReturnType="ChonMonChiTiet*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="AddEditChonMon/Properties[ChonMon]" />
+                  <MemberExpression
+                    Member="Chọn_Món_Chi_Tiết" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="AddEditChonMon/Properties[Chọn_Món_Chi_Tiết]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+  </Screen>
+  <Application.Methods>
+    <ApplicationMethod
+      Name="showAddEditChonMon">
+      <ApplicationMethod.Attributes>
+        <ShowScreenMethod
+          TargetScreen="AddEditChonMon" />
+      </ApplicationMethod.Attributes>
+      <ApplicationMethodParameter
+        Name="ChonMon"
+        ParameterType="ChonMon" />
+    </ApplicationMethod>
+  </Application.Methods>
+</Application>

@@ -36,6 +36,9 @@
         PropertyType=":Date">
         <KeyProperty.Attributes>
           <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty

@@ -329,29 +329,6 @@
                   </ContentItem>
                 </ContentItem>
                 <ContentItem
-                  Name="SoLuong1"
-                  Kind="Details"
-                  DataType="SoLuong">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMonChiTiet1/Properties[SoLuong]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="SoLuong2"
-                    Kind="Details"
-                    DataType="SoLuong">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
                   Name="Giá1"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
@@ -718,29 +695,6 @@
                     Name="RowTemplate4"
                     Kind="Details"
                     DataType="MónItem1">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="SoLuong"
-                  Kind="Details"
-                  DataType="SoLuong">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ChonMonChiTiet1/Properties[SoLuong]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate5"
-                    Kind="Details"
-                    DataType="SoLuong">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />

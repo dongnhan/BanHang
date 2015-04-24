@@ -196,3 +196,7 @@ myapp.BrowseChonMons.BỎ_CHỌN_execute = function (screen) {
     var list = screen.findContentItem("Món");
     lsWire.list.selectAll(list, false);
 };
+myapp.BrowseChonMons.created = function (screen) {
+    // Write code here.
+
+};
