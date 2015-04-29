@@ -107,6 +107,16 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="SoLuong"
+        Association="ChonMonChiTiet1_SoLuong"
+        FromEnd="ChonMonChiTiet1"
+        ToEnd="SoLuong">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Số lượng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer

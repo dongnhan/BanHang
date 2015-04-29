@@ -868,4 +868,10 @@
         Target="ServiceInterface:Đơn_Vị_TínhItem2" />
     </EntityType.Attributes>
   </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChonMonChiTiet1_SoLuong" />
+    </Association.Attributes>
+  </Association>
 </Application>

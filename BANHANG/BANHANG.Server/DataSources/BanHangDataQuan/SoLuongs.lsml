@@ -31,6 +31,11 @@
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="ChonMonChiTiets"
+        Association="ChonMonChiTiet1_SoLuong"
+        FromEnd="SoLuong"
+        ToEnd="ChonMonChiTiet1" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -124,6 +129,16 @@
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
+    <AssociationSet
+      Name="ChonMonChiTiet1_SoLuongs"
+      Association="ChonMonChiTiet1_SoLuong">
+      <AssociationSetEnd
+        Name="ChonMonChiTiet1"
+        EntitySet="ChonMonChiTiets" />
+      <AssociationSetEnd
+        Name="SoLuong"
+        EntitySet="SoLuongs" />
+    </AssociationSet>
   </EntityContainer>
   <DataService
     Name="BanHangDataQuanDataService">
@@ -148,5 +163,44 @@
           Property="SoLuong/Properties[Số_lượng]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="ChonMonChiTiet1_SoLuongs">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ChonMonChiTiet1_SoLuongs" />
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[ChonMonChiTiet1_SoLuongs]/Members[ChonMonChiTiet1]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Số lượng" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[ChonMonChiTiet1_SoLuongs]/Members[SoLuong]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
+  <Association
+    Name="ChonMonChiTiet1_SoLuong">
+    <Association.Attributes>
+      <UserDefined />
+    </Association.Attributes>
+    <AssociationEnd
+      Name="ChonMonChiTiet1"
+      Multiplicity="Many"
+      EntityType="ChonMonChiTiet1" />
+    <AssociationEnd
+      Name="SoLuong"
+      Multiplicity="One"
+      EntityType="SoLuong">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
 </ServiceApplication>

@@ -554,6 +554,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="Web\CauBaQuan.png" />
     <Content Include="Web\GetUserName.ashx" />
     <_ServerFile Include="LogIn.aspx" />
     <_ServerFile Include="LogOut.aspx" />

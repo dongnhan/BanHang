@@ -158,3 +158,7 @@ myapp.AddEditChonMon1.LƯU_execute = function (screen) {
            });
     screen.closePopup();
 };
+myapp.AddEditChonMon1.IN1_execute = function (screen) {
+    // Write code here.
+    window.open("http://192.168.1.106/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fPhieuTinhTIen1&rs:Command=Render&id=" + screen.ChonMon1.Id + "&rs:Format=PDF", '_blank');
+};

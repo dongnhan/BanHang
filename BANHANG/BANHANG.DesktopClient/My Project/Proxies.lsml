@@ -814,4 +814,10 @@
         Target="ServiceInterface:ChonMonChiTiet1" />
     </EntityType.Attributes>
   </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChonMonChiTiet1_SoLuong" />
+    </Association.Attributes>
+  </Association>
 </Application>
