@@ -165,6 +165,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowMonListDetail"
       Target="!module/Methods[ShowMonListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvDoanhThuQuanTheoMonsSearch"
+      Target="!module/Methods[ShowvDoanhThuQuanTheoMonsSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvDoanhThuQuanTongHopsSearch"
+      Target="!module/Methods[ShowvDoanhThuQuanTongHopsSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -213,6 +219,12 @@
       <ApplicationNavigationLink
         Name="MonListDetail"
         Command="!module/Commands[ScreenCommandShowMonListDetail]" />
+      <ApplicationNavigationLink
+        Name="vDoanhThuQuanTheoMonsSearch"
+        Command="!module/Commands[ScreenCommandShowvDoanhThuQuanTheoMonsSearch]" />
+      <ApplicationNavigationLink
+        Name="vDoanhThuQuanTongHopsSearch"
+        Command="!module/Commands[ScreenCommandShowvDoanhThuQuanTongHopsSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">

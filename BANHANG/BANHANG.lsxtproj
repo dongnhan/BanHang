@@ -136,7 +136,7 @@
     </ProjectReference>
     <ProjectReference Include="BANHANG.HTMLClient\BANHANG.HTMLClient.jsproj">
       <Name>BANHANG.HTMLClient</Name>
-      <Project>{981f0d44-ec4a-43ce-9fab-1575c4a3efe3}</Project>
+      <Project>{e48a95de-5148-4c5a-995c-8576f2e499ba}</Project>
       <Private>True</Private>
       <Type>Client</Type>
     </ProjectReference>

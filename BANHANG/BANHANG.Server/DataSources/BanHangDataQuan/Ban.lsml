@@ -44,16 +44,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="Khu_VựcItem"
-        Association="FK_Bàn_Khu_Vực1"
-        FromEnd="Bàn"
-        ToEnd="Khu_Vực">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Khu vực" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <NavigationProperty
         Name="ChonMons"
         Association="FK_Chọn_Món_Bàn"
         FromEnd="Bàn"
@@ -206,11 +196,6 @@
           Nullable="False"
           Type="nvarchar"
           Property="BànItem1/Properties[Mã]" />
-        <SsdlForeignKeyProperty
-          Name="Ban_KhuVuc"
-          Nullable="False"
-          Type="int"
-          PropertyName="Ban_KhuVuc" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

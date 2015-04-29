@@ -11,7 +11,7 @@
     <Partial
       IsPrimary="True" />
     <HomeScreen
-      Value="Home" />
+      Value="BrowseChonMons" />
   </Application.Attributes>
   <EntityContainerGroup
     Name="DataWorkspace">
@@ -30,14 +30,14 @@
       Name="BanHangData"
       EntityContainer="BanHangData" />
     <EntityContainerGroupProperty
-      Name="XtraReportsServiceData"
-      EntityContainer="XtraReportsServiceData" />
-    <EntityContainerGroupProperty
       Name="BanHangData1"
       EntityContainer="BanHangData1" />
     <EntityContainerGroupProperty
       Name="BanHangDataQuan"
       EntityContainer="BanHangDataQuan" />
+    <EntityContainerGroupProperty
+      Name="XtraReportsServiceData"
+      EntityContainer="XtraReportsServiceData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -47,64 +47,22 @@
   </GlobalAttributeGroup>
   <Application.NavigationItems>
     <ApplicationNavigationMethodLink
-      Name="link2"
-      Method="!module/Methods[showvTồn_Quỹ_Tiền_MặtBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link3"
-      Method="!module/Methods[showvTồn_Tổng_HợpBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link4"
-      Method="!module/Methods[showvDoanh_Thu_NgàyBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link5"
-      Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Khách_HàngBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link6"
-      Method="!module/Methods[showvDoanh_Thu_Ngày_Theo_Khách_HàngBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link7"
-      Method="!module/Methods[showvDoanh_Thu_Ngày_Theo_Sản_PhẩmBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link8"
-      Method="!module/Methods[showvLời_Lỗ_NgàyBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link9"
-      Method="!module/Methods[showvLời_Lỗ_Ngày_Theo_Sản_PhẩmBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link11"
-      Method="!module/Methods[showBrowseChonMons]" />
-    <ApplicationNavigationMethodLink
       Name="link"
-      Method="!module/Methods[showBrowseMón]" />
+      Method="!module/Methods[showBrowseBan]" />
     <ApplicationNavigationMethodLink
       Name="link1"
-      Method="!module/Methods[showBrowseNhóm_Món]" />
+      Method="!module/Methods[showBrowseMon]" />
     <ApplicationNavigationMethodLink
-      Name="link10"
-      Method="!module/Methods[showBrowseBàn]" />
+      Name="link2"
+      Method="!module/Methods[showBrowseNhomMon]" />
     <ApplicationNavigationMethodLink
-      Name="link12"
-      Method="!module/Methods[showBrowseKhuVuc]" />
+      Name="link3"
+      Method="!module/Methods[showBrowseSản_Phẩm]" />
     <ApplicationNavigationMethodLink
-      Name="link13"
-      Method="!module/Methods[showChonMonsBrowse]" />
+      Name="link4"
+      Method="!module/Methods[showBrowseChonMons]" />
     <ApplicationNavigationMethodLink
-      Name="link16"
-      Method="!module/Methods[showvTồn_Công_Nợ_Phải_Thu_Khách_HàngBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link17"
-      Method="!module/Methods[showvTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link14"
-      Method="!module/Methods[showvDoanh_Thu_Quán_Theo_MónBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link15"
-      Method="!module/Methods[showvDoanh_Thu_Quán_Theo_PhiếuBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link18"
-      Method="!module/Methods[showvDoanh_Thu_Quán_Tổng_HợpBrowse]" />
-    <ApplicationNavigationMethodLink
-      Name="link19"
-      Method="!module/Methods[showBrowseChonMons1]" />
+      Name="link5"
+      Method="!module/Methods[showBrowseĐơn_Vị_Tính]" />
   </Application.NavigationItems>
 </Application>

@@ -527,6 +527,12 @@
     <Compile Include="Screens\BanHang\Đặt_HàngListDetail.lsml.vb">
       <DependentUpon>Đặt_HàngListDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\vDoanhThuQuanTheoMonsSearch.lsml.vb">
+      <DependentUpon>vDoanhThuQuanTheoMonsSearch.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\vDoanhThuQuanTongHopsSearch.lsml.vb">
+      <DependentUpon>vDoanhThuQuanTongHopsSearch.lsml</DependentUpon>
+    </Compile>
     <Compile Include="UserCode\Application.vb" />
     <Compile Include="UserCode\Shared\IModule.vb" />
     <Compile Include="UserCode\Shared\MultiSelectGridExtensions.vb" />
@@ -544,6 +550,7 @@
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Xuất_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="My Project\BanHangDataQuan\ChonMons.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -606,6 +613,8 @@
     <LightSwitchModel Include="Screens\Quan\MonListDetail.lsml" />
     <LightSwitchModel Include="Screens\BaoCaoQuan\vDoanhThuQuanTongHopReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\BaoCaoQuan\vDoanhThuQuanTheoMonReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\vDoanhThuQuanTheoMonsSearch.lsml" />
+    <LightSwitchModel Include="Screens\vDoanhThuQuanTongHopsSearch.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />
@@ -626,9 +635,7 @@
   <ItemGroup>
     <Resource Include="Resources\WallPaper.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="My Project\BanHangDataQuan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />
   <Target Name="BeforeBuild">

@@ -24,6 +24,7 @@ Namespace LightSwitchApplication
         End Sub
         Private Sub OK_Execute()
             ' Write your code here.
+            Me.FindControl("ChonMonChiTietsAddAndEditNew").Focus()
             Me.CloseModalWindow("GroupChiTiet")
         End Sub
 
@@ -45,7 +46,7 @@ Namespace LightSwitchApplication
         Private Sub ChonMonChiTietsAddAndEditNew_Execute()
             ' Write your code here.
             Me.ChonMonChiTiets.AddNew()
-            Me.ChonMonChiTiets.SelectedItem.SoLuong = Me.DataWorkspace.BanHangDataQuan.SoLuongs_Single(1)
+            Me.ChonMonChiTiets.SelectedItem.Số_lượng = 1
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = False
             Me.FindControl("ChonMonChiTietsAddAndEditNew").Focus()

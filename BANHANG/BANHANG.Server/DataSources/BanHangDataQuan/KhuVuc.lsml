@@ -43,28 +43,8 @@
             Value="50" />
         </EntityProperty.Attributes>
       </EntityProperty>
-      <NavigationProperty
-        Name="Bàn"
-        Association="FK_Bàn_Khu_Vực1"
-        FromEnd="Khu_Vực"
-        ToEnd="Bàn" />
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="FK_Bàn_Khu_Vực1">
-    <AssociationEnd
-      Name="Khu_Vực"
-      Multiplicity="One"
-      EntityType="Khu_VựcItem1">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Bàn"
-      Multiplicity="Many"
-      EntityType="BànItem1" />
-  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
@@ -76,16 +56,6 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="Khu_VựcItem1" />
-    <AssociationSet
-      Name="FK_Bàn_Khu_Vực"
-      Association="FK_Bàn_Khu_Vực1">
-      <AssociationSetEnd
-        Name="Khu_Vực"
-        EntitySet="KhuVuc" />
-      <AssociationSetEnd
-        Name="Bàn"
-        EntitySet="Ban" />
-    </AssociationSet>
     <QueryOperation
       Name="KhuVuc_Single"
       ReturnType="Khu_VựcItem1">
@@ -198,26 +168,5 @@
           Property="Khu_VựcItem1/Properties[Mã]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="FK_Bàn_Khu_Vực">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="FK_Bàn_Khu Vực" />
-        <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Bàn_Khu_Vực]/Members[Khu_Vực]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Id" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_Bàn_Khu_Vực]/Members[Bàn]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Ban_KhuVuc" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

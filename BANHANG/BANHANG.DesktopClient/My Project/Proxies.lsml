@@ -586,12 +586,6 @@
         Target="ServiceInterface:Khu_VựcItem1" />
     </EntityType.Attributes>
   </EntityType>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_Bàn_Khu_Vực1" />
-    </Association.Attributes>
-  </Association>
   <EntityContainer>
     <EntityContainer.Attributes>
       <Proxy
@@ -610,18 +604,6 @@
         Target="ServiceInterface:FK_Món_Nhóm_Món" />
     </Association.Attributes>
   </Association>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:ChonMon1" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:ChonMonChiTiet1" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
@@ -748,12 +730,6 @@
         Target="ServiceInterface:FK_ChonMonChiTiet_Món" />
     </Association.Attributes>
   </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
-        Target="ServiceInterface:FK_ChonMonChiTiet_SoLuong" />
-    </Association.Attributes>
-  </Association>
   <EntityType>
     <EntityType.Attributes>
       <Proxy
@@ -832,4 +808,10 @@
         Target="ServiceInterface:FK_Sản_Phẩm_Đơn_Vị_Tính1" />
     </Association.Attributes>
   </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChonMonChiTiet1" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>
