@@ -145,8 +145,8 @@
         <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
             <LayoutTemplate>
                 <div class="accountInfo">
-                    <h1><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CẬU BA QUÁN</strong><br />
-                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Web/CauBaQuan.png" />
+                    <h1><strong>&nbsp;CẬU BA QUÁN</strong><br />
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Web/CauBaQuan.png" Width="298px" />
                     </h1>
                     <div style="margin-bottom: 10px;">
                         <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="Username" Text="TÀI KHOẢN:" CssClass="labelStyle" />

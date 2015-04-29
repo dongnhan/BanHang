@@ -10,17 +10,23 @@ myapp.AddEditChonMon1.Mon_postRender = function (element, contentItem) {
 };
 myapp.AddEditChonMon1.created = function (screen) {
     // Write code here.
-    screen.ChonMon1.Ngày = new Date();
-    screen.ChonMon1.Ngày_thực = new Date();
+    //screen.ChonMon1.Ngày = new Date();
+    //screen.ChonMon1.Ngày_thực = new Date();
+    if (screen.ChonMon1.Ngày == undefined && screen.ChonMon1.Ngày == null) {
+        screen.ChonMon1.Ngày = new Date();
+    }
+    if (screen.ChonMon1.Ngày_thực == undefined && screen.ChonMon1.Ngày_thực == null) {
+        screen.ChonMon1.Ngày_thực = new Date();
+    }
     msls.promiseOperation(CallGetUserName).then(function PromiseSuccess(PromiseResult) {
         // Set the result of the CallGetUserName function to the 
         // UserName of the entity
         screen.ChonMon1.UserName = PromiseResult;
     });
     //screen.ChonMon1.UserName = "admin";
-    //if (screen.ChonMon1.UserName == undefined && screen.ChonMon1.UserName == null) {
-    //    screen.ChonMon1.UserName = screen.UserName;
-    //}
+    if (screen.ChonMon1.Khách_hàng == undefined && screen.ChonMon1.Khách_hàng == null) {
+        screen.ChonMon1.Khách_hàng = "Vãng lai";
+    }
     //Write code here.
     if (screen.ChonMon1.Đã_xóa == undefined && screen.ChonMon1.Đã_xóa == null) {
         screen.ChonMon1.Đã_xóa = 0;
@@ -95,8 +101,8 @@ myapp.AddEditChonMon1.LƯU2_execute = function (screen) {
     //});
     return myapp.activeDataWorkspace.BanHangDataQuan.saveChanges().then(function () {
         //screen.closePopup();
-        msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
-        //window.alert("LƯU THÀNH CÔNG !");
+        //msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
+        window.alert("LƯU THÀNH CÔNG !");
     }, function fail(e) {
         //If error occurs,
         msls.showMessageBox(e.message, { title: e.title }).then(function () {
@@ -137,8 +143,8 @@ myapp.AddEditChonMon1.LƯU1_execute = function (screen) {
     //    });
     return myapp.activeDataWorkspace.BanHangDataQuan.saveChanges().then(function () {
         //screen.closePopup();
-        msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
-        //window.alert("LƯU THÀNH CÔNG !");
+       // msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
+        window.alert("LƯU THÀNH CÔNG !");
     }, function fail(e) {
         //If error occurs,
         msls.showMessageBox(e.message, { title: e.title }).then(function () {
@@ -163,8 +169,9 @@ myapp.AddEditChonMon1.XÓA_execute = function (screen) {
     //       });
     return myapp.activeDataWorkspace.BanHangDataQuan.saveChanges().then(function () {
         //screen.closePopup();
-        msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
-       // window.alert("XÓA THÀNH CÔNG !");
+        // msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
+        screen.closePopup();
+        window.alert("XÓA THÀNH CÔNG !");
     }, function fail(e) {
         //If error occurs,
         msls.showMessageBox(e.message, { title: e.title }).then(function () {
@@ -172,36 +179,36 @@ myapp.AddEditChonMon1.XÓA_execute = function (screen) {
             window.location.reload();
         });
     });
-    screen.closePopup();
+    
 
 };
 myapp.AddEditChonMon1.LƯU_execute = function (screen) {
     // Write code here.
     screen.ChonMon1.details.refresh();
     screen.ChonMonChiTiets.refresh();
-    //myapp.applyChanges().then(function success() {
-    //            // If success.
-    //    msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
-    //       }, function fail(e) {
-    //    // If error occurs,
-    //    msls.showMessageBox(e.message, { title: e.title }).then(function () {
-    //        // Cancel Changes
-    //        history.go(-1);
-    //        window.location.reload();
-    //    });
-    //       });
-    //screen.closePopup();
-    return myapp.activeDataWorkspace.BanHangDataQuan.saveChanges().then(function () {
-        screen.closePopup();
-         msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
-        //window.alert("LƯU THÀNH CÔNG !");
+    myapp.commitChanges().then(function success() {
+                // If success.
+        window.alert("LƯU THÀNH CÔNG !");
            }, function fail(e) {
-         //If error occurs,
+        // If error occurs,
         msls.showMessageBox(e.message, { title: e.title }).then(function () {
-          //   Cancel Changes
+            // Cancel Changes
+           // history.go(-1);
             window.location.reload();
         });
            });
+    //screen.closePopup();
+    //return myapp.activeDataWorkspace.BanHangDataQuan.saveChanges().then(function () {
+    //    screen.closePopup();
+    //     //msls.showMessageBox("LƯU THÀNH CÔNG !!!", { title: "LƯU" });
+    //    window.alert("LƯU THÀNH CÔNG !");
+    //       }, function fail(e) {
+    //     //If error occurs,
+    //    msls.showMessageBox(e.message, { title: e.title }).then(function () {
+    //      //   Cancel Changes
+    //        window.location.reload();
+    //    });
+    //       });
 
 };
 myapp.AddEditChonMon1.IN1_execute = function (screen) {
