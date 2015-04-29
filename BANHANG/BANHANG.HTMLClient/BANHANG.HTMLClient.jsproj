@@ -73,9 +73,6 @@
     <Content Include="Screens\ChonMons\AddEditChonMon1.lsml.js">
       <DependentUpon>AddEditChonMon1.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\ChonMons\BrowseChonMons.lsml.js">
-      <DependentUpon>BrowseChonMons.lsml</DependentUpon>
-    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.3.min.js" />
     <Content Include="Scripts\IsWires.js" />
