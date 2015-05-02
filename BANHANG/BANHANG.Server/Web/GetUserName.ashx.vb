@@ -7,7 +7,6 @@ Public Class GetUserName
     Sub ProcessRequest(ByVal context As HttpContext) Implements IHttpHandler.ProcessRequest
 
         Dim servercontext = ServerApplicationContext.CreateContext()
-
         context.Response.ContentType = "text/plain"
         context.Response.Write(servercontext.Application.User.Name)
 

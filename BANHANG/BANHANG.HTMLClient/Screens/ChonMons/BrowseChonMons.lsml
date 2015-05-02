@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="DS PHIẾU CHỌN MÓN" />
+        Value="DS PHIẾU MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -234,95 +234,25 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="ShowBrowseBan"
+                Name="TƯƠI"
                 Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="BÀN" />
-                </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="!module/Methods[showBrowseBan]" />
+                          Target="BrowseChonMons/Methods[TƯƠI]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="ShowBrowseMon"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="MÓN" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
                   <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showBrowseMon]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="ShowBrowseNhomMon"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="NHÓM MÓN" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showBrowseNhomMon]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="ShowBrowseSản_Phẩm"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="SẢN PHẨM" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showBrowseSản_Phẩm]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="ShowBrowseĐơn_Vị_Tính"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="ĐƠN VỊ TÍNH" />
-                </ContentItem.Attributes>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="!module/Methods[showBrowseĐơn_Vị_Tính]" />
+                        <ConstantExpression
+                          Value="msls-refresh"
+                          ResultType=":String" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -372,6 +302,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="TƯƠI" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

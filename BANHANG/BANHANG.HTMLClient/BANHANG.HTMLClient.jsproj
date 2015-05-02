@@ -14,7 +14,7 @@
     <UseDesignTimeFeatures>true</UseDesignTimeFeatures>
   </PropertyGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{e48a95de-5148-4c5a-995c-8576f2e499ba}</ProjectGuid>
+    <ProjectGuid>{ee77618f-c2cb-4cd7-953c-786361943abd}</ProjectGuid>
     <LightSwitchVersion>v4.5</LightSwitchVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -67,14 +67,14 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
-    <Content Include="Screens\Ban\BrowseBan.lsml.js">
-      <DependentUpon>BrowseBan.lsml</DependentUpon>
-    </Content>
     <Content Include="Screens\ChonMons\AddEditChonMon1.lsml.js">
       <DependentUpon>AddEditChonMon1.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\ChonMons\BrowseChonMons.lsml.js">
+      <DependentUpon>BrowseChonMons.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
-    <Content Include="Scripts\datajs-1.1.3.min.js" />
+    <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\IsWires.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -108,18 +108,8 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
-    <LightSwitchModel Include="Screens\Ban\AddEditBànItem1.lsml" />
-    <LightSwitchModel Include="Screens\Ban\BrowseBan.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon1.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons.lsml" />
-    <LightSwitchModel Include="Screens\Mon\AddEditMónItem1.lsml" />
-    <LightSwitchModel Include="Screens\Mon\BrowseMon.lsml" />
-    <LightSwitchModel Include="Screens\NhomMon\AddEditNhóm_MónItem.lsml" />
-    <LightSwitchModel Include="Screens\NhomMon\BrowseNhomMon.lsml" />
-    <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSản_PhẩmItem1.lsml" />
-    <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />
-    <LightSwitchModel Include="Screens\Đơn_Vị_Tính\AddEditĐơn_Vị_TínhItem2.lsml" />
-    <LightSwitchModel Include="Screens\Đơn_Vị_Tính\BrowseĐơn_Vị_Tính.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">
@@ -140,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\BanHangDataQuan\" />
-    <Folder Include="Properties\BanHangData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />
