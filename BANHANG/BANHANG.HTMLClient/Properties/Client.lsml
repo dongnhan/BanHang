@@ -47,5 +47,23 @@
     <ApplicationNavigationMethodLink
       Name="link"
       Method="!module/Methods[showBrowseChonMons]" />
+    <ApplicationNavigationMethodLink
+      Name="link1"
+      Method="!module/Methods[showBrowseBan]" />
+    <ApplicationNavigationMethodLink
+      Name="link2"
+      Method="!module/Methods[showBrowseMon]" />
+    <ApplicationNavigationMethodLink
+      Name="link3"
+      Method="!module/Methods[showBrowseNhomMon]" />
+    <ApplicationNavigationMethodLink
+      Name="link4"
+      Method="!module/Methods[showBrowseSản_Phẩm]" />
+    <ApplicationNavigationMethodLink
+      Name="link5"
+      Method="!module/Methods[showvDoanhThuQuanTheoMonsBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link6"
+      Method="!module/Methods[showvDoanhThuQuanTongHopsBrowse]" />
   </Application.NavigationItems>
 </Application>

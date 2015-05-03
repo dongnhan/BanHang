@@ -73,6 +73,12 @@
     <Content Include="Screens\ChonMons\BrowseChonMons.lsml.js">
       <DependentUpon>BrowseChonMons.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\vDoanhThuQuanTheoMonsBrowse.lsml.js">
+      <DependentUpon>vDoanhThuQuanTheoMonsBrowse.lsml</DependentUpon>
+    </Content>
+    <Content Include="Screens\vDoanhThuQuanTongHopsBrowse.lsml.js">
+      <DependentUpon>vDoanhThuQuanTongHopsBrowse.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\IsWires.js" />
@@ -108,8 +114,18 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\Ban\AddEditBànItem1.lsml" />
+    <LightSwitchModel Include="Screens\Ban\BrowseBan.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon1.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons.lsml" />
+    <LightSwitchModel Include="Screens\Mon\AddEditMónItem1.lsml" />
+    <LightSwitchModel Include="Screens\Mon\BrowseMon.lsml" />
+    <LightSwitchModel Include="Screens\NhomMon\AddEditNhóm_MónItem.lsml" />
+    <LightSwitchModel Include="Screens\NhomMon\BrowseNhomMon.lsml" />
+    <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSản_PhẩmItem1.lsml" />
+    <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />
+    <LightSwitchModel Include="Screens\vDoanhThuQuanTheoMonsBrowse.lsml" />
+    <LightSwitchModel Include="Screens\vDoanhThuQuanTongHopsBrowse.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">
@@ -130,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\BanHangDataQuan\" />
+    <Folder Include="Properties\BanHangData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\MobileClient\Microsoft.LightSwitch.MobileClient.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.Build.Tasks.targets" />
