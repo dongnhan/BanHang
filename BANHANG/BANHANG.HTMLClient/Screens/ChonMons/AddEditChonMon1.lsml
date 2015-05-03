@@ -456,19 +456,6 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
-              <ContentItem
-                Name="Id1"
-                Kind="Value"
-                DataType=":Int32?">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="AddEditChonMon1/Properties[Id]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
             </ContentItem>
             <ContentItem
               Name="Mon"
@@ -640,6 +627,14 @@
                   Name="SoLuong"
                   Kind="Details"
                   DataType="SoLuong">
+                  <ContentItem.ChoicesSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="AddEditChonMon1/Properties[SoLuongs]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.ChoicesSource>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -858,9 +853,6 @@
       <ScreenProperty
         Name="Tên"
         PropertyType=":String?" />
-      <ScreenProperty
-        Name="Id"
-        PropertyType=":Int32?" />
       <ScreenCollectionProperty
         Name="ChonMonChiTiets"
         PageSize="45"
@@ -888,6 +880,32 @@
           <ChainExpression>
             <CallExpression
               Target="AddEditChonMon1/Properties[ChonMonChiTiets]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="SoLuongs"
+        PageSize="45"
+        PropertyType="CollectionView$SoLuong">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="SoLuongsQuery"
+            ReturnType="SoLuong*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="BanHangDataQuan/Members[SoLuongs]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="AddEditChonMon1/Properties[SoLuongs]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>

@@ -9,10 +9,10 @@ myapp.AddEditChonMon1.created = function (screen) {
         // UserName of the entity
         screen.ChonMon1.UserName = PromiseResult;
     });
-    //screen.ChonMon1.UserName = "admin";
-    //if (screen.ChonMon1.UserName == undefined && screen.ChonMon1.UserName == null) {
-    //    screen.ChonMon1.UserName = screen.UserName;
-    //}
+    //screen.ChonMon1.Khách_hàng = "admin";
+    if (screen.ChonMon1.Khách_hàng == undefined && screen.ChonMon1.Khách_hàng == null) {
+        screen.ChonMon1.Khách_hàng = "Vãng lai";
+    }
     //Write code here.
     if (screen.ChonMon1.Đã_xóa == undefined && screen.ChonMon1.Đã_xóa == null) {
         screen.ChonMon1.Đã_xóa = 0;
@@ -77,8 +77,31 @@ myapp.AddEditChonMon1.LƯU2_execute = function (screen) {
 };
 myapp.AddEditChonMon1.LƯU_execute = function (screen) {
     // Write code here.
+    var list = screen.findContentItem("Mon");
+
+    //var count = lsWire.list.selectedCount(list);
+
+    var selected = lsWire.list.selected(list);
+
+    //var text = "Món bạn đã chọn gồm \n\n";
+
+    _.forEach(selected, function (item) {
+
+        //text += item.Mã + " - " + item.Tên + "\n";
+        var newChiTiet = screen.ChonMonChiTiets.addNew();
+        newChiTiet.setMónItem(item);
+        var soluong = screen.SoLuongs.data[0];
+        newChiTiet.setSoLuong(soluong);
+        //newChiTiet.SoLuong(1);
+        newChiTiet.Số_lượng = 1
+        newChiTiet.Giá = item.Giá;
+        newChiTiet.Tiền_giảm = 0;
+        newChiTiet.Thành_tiền = 0;
+    });
+    lsWire.list.selectAll(list, false);
     myapp.applyChanges().then(function success() {
         window.alert("LƯU THÀNH CÔNG !");
+        //không đóng
         //screen.closePopup();
     }, function fail(e) {
         window.alert("LƯU THẤT BẠI - CẦN LÀM TƯƠI LẠI !");
@@ -89,6 +112,28 @@ myapp.AddEditChonMon1.LƯU_execute = function (screen) {
 };
 myapp.AddEditChonMon1.LƯU_ĐÓNG_execute = function (screen) {
     // Write code here.
+    var list = screen.findContentItem("Mon");
+
+    //var count = lsWire.list.selectedCount(list);
+
+    var selected = lsWire.list.selected(list);
+
+    //var text = "Món bạn đã chọn gồm \n\n";
+
+    _.forEach(selected, function (item) {
+
+        //text += item.Mã + " - " + item.Tên + "\n";
+        var newChiTiet = screen.ChonMonChiTiets.addNew();
+        newChiTiet.setMónItem(item);
+        var soluong = screen.SoLuongs.data[0];
+        newChiTiet.setSoLuong(soluong);
+        //newChiTiet.SoLuong(1);
+        newChiTiet.Số_lượng = 1
+        newChiTiet.Giá = item.Giá;
+        newChiTiet.Tiền_giảm = 0;
+        newChiTiet.Thành_tiền = 0;
+    });
+    lsWire.list.selectAll(list, false);
     myapp.applyChanges().then(function success() {
         window.alert("LƯU THÀNH CÔNG !");
         screen.closePopup();
