@@ -181,3 +181,7 @@ myapp.AddEditChonMon1.Details_postRender = function (element, contentItem) {
     // Write code here.
     $("[data-ls-tap='tap:{data.shell.saveCommand.command}']").hide();
 };
+myapp.AddEditChonMon1.IN1_execute = function (screen) {
+    // Write code here.
+    window.open("http://192.168.43.21/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fPhieuTinhTien&rs:Command=Render&id=" + screen.ChonMon1.Id + "&rs:Format=PDF", '_blank');
+};
