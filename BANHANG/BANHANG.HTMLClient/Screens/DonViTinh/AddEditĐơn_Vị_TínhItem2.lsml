@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="AddEditMónItem1">
+    Name="AddEditĐơn_Vị_TínhItem2">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="MÓN CHI TIẾT" />
+        Value="ĐƠN VỊ TÍNH CHI TIẾT" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -32,7 +32,7 @@
             <ContentItem
               Name="columns"
               Kind="Details"
-              DataType="MónItem1"
+              DataType="Đơn_Vị_TínhItem2"
               View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
               <ContentItem.Attributes>
                 <DisplayName
@@ -42,26 +42,13 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="AddEditMónItem1/Properties[MónItem1]" />
+                      Member="AddEditĐơn_Vị_TínhItem2/Properties[Đơn_Vị_TínhItem2]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="left"
                 Kind="Group">
-                <ContentItem
-                  Name="Mã"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Mã]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
                 <ContentItem
                   Name="Tên"
                   Kind="Value"
@@ -70,20 +57,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem1/Properties[Tên]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Giá"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Giá]" />
+                          Member="Đơn_Vị_TínhItem2/Properties[Tên]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -115,42 +89,6 @@
                 Name="right"
                 Kind="Group">
                 <ContentItem
-                  Name="Nhóm_MónItem"
-                  Kind="Details"
-                  DataType="Nhóm_MónItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Nhóm_MónItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate"
-                    Kind="Details"
-                    DataType="Nhóm_MónItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="Tình_trạng"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MónItem1/Properties[Tình_trạng]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="Ghi_chú"
                   Kind="Value"
                   DataType=":String?">
@@ -158,7 +96,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="MónItem1/Properties[Ghi_chú]" />
+                          Member="Đơn_Vị_TínhItem2/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -243,8 +181,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty
-        Name="MónItem1"
-        PropertyType="MónItem1">
+        Name="Đơn_Vị_TínhItem2"
+        PropertyType="Đơn_Vị_TínhItem2">
         <ScreenProperty.Attributes>
           <IsParameter />
         </ScreenProperty.Attributes>
@@ -253,14 +191,14 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="showAddEditMónItem1">
+      Name="showAddEditĐơn_Vị_TínhItem2">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="AddEditMónItem1" />
+          TargetScreen="AddEditĐơn_Vị_TínhItem2" />
       </ApplicationMethod.Attributes>
       <ApplicationMethodParameter
-        Name="MónItem1"
-        ParameterType="MónItem1" />
+        Name="Đơn_Vị_TínhItem2"
+        ParameterType="Đơn_Vị_TínhItem2" />
     </ApplicationMethod>
   </Application.Methods>
 </Application>

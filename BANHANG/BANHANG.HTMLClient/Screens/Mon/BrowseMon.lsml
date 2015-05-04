@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="DS MÓN" />
+        Value="MÓN" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

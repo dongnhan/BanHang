@@ -349,12 +349,6 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Đơn_Vị_TínhItem2" />
-    </EntityType.Attributes>
-  </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
         Target="ServiceInterface:Khu_VựcItem1" />
     </EntityType.Attributes>
   </EntityType>
@@ -872,6 +866,12 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:Sản_PhẩmItem1" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Đơn_Vị_TínhItem2" />
     </EntityType.Attributes>
   </EntityType>
 </Application>

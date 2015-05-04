@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="Sản_PhẩmItem1">
+    Name="Đơn_Vị_TínhItem2">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -35,17 +35,6 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="Giá"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
         Name="Ghi_chú"
         PropertyType=":String?">
         <EntityProperty.Attributes>
@@ -55,37 +44,22 @@
       </EntityProperty>
       <NavigationProperty
         Name="MonDinhLuongs"
-        Association="FK_MonDinhLuong_Sản_Phẩm"
-        FromEnd="Sản_Phẩm"
+        Association="FK_MonDinhLuong_Đơn_Vị_Tính"
+        FromEnd="Đơn_Vị_Tính"
         ToEnd="MonDinhLuong" />
       <NavigationProperty
-        Name="Đơn_Vị_TínhItem"
+        Name="Sản_Phẩm"
         Association="FK_Sản_Phẩm_Đơn_Vị_Tính1"
-        FromEnd="Sản_Phẩm"
-        ToEnd="Đơn_Vị_Tính">
-        <NavigationProperty.Attributes>
-          <DisplayName
-            Value="Đơn Vị Tính" />
-        </NavigationProperty.Attributes>
-      </NavigationProperty>
-      <EntityProperty
-        Name="Giá_thử"
-        PropertyType=":Decimal?">
-        <EntityProperty.Attributes>
-          <DecimalConstraint
-            Precision="18"
-            Scale="0" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        FromEnd="Đơn_Vị_Tính"
+        ToEnd="Sản_Phẩm" />
     </EntityType.Properties>
   </EntityType>
   <Association
-    Name="FK_MonDinhLuong_Sản_Phẩm">
+    Name="FK_MonDinhLuong_Đơn_Vị_Tính">
     <AssociationEnd
-      Name="Sản_Phẩm"
+      Name="Đơn_Vị_Tính"
       Multiplicity="One"
-      EntityType="Sản_PhẩmItem1">
+      EntityType="Đơn_Vị_TínhItem2">
       <AssociationEnd.Attributes>
         <DeleteRule />
       </AssociationEnd.Attributes>
@@ -95,30 +69,55 @@
       Multiplicity="Many"
       EntityType="MonDinhLuong" />
   </Association>
+  <Association
+    Name="FK_Sản_Phẩm_Đơn_Vị_Tính1">
+    <AssociationEnd
+      Name="Đơn_Vị_Tính"
+      Multiplicity="One"
+      EntityType="Đơn_Vị_TínhItem2">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Sản_Phẩm"
+      Multiplicity="Many"
+      EntityType="Sản_PhẩmItem1" />
+  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Sản_Phẩm"
+      Name="DonViTinh"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="Sản_PhẩmItem1" />
+      EntityType="Đơn_Vị_TínhItem2" />
     <AssociationSet
-      Name="FK_MonDinhLuong_Sản_Phẩm"
-      Association="FK_MonDinhLuong_Sản_Phẩm">
+      Name="FK_MonDinhLuong_Đơn_Vị_Tính"
+      Association="FK_MonDinhLuong_Đơn_Vị_Tính">
       <AssociationSetEnd
-        Name="Sản_Phẩm"
-        EntitySet="Sản_Phẩm" />
+        Name="Đơn_Vị_Tính"
+        EntitySet="DonViTinh" />
       <AssociationSetEnd
         Name="MonDinhLuong"
         EntitySet="MonDinhLuongs" />
     </AssociationSet>
+    <AssociationSet
+      Name="FK_Sản_Phẩm_Đơn_Vị_Tính"
+      Association="FK_Sản_Phẩm_Đơn_Vị_Tính1">
+      <AssociationSetEnd
+        Name="Đơn_Vị_Tính"
+        EntitySet="DonViTinh" />
+      <AssociationSetEnd
+        Name="Sản_Phẩm"
+        EntitySet="SanPham" />
+    </AssociationSet>
     <QueryOperation
-      Name="Sản_Phẩm_Single"
-      ReturnType="Sản_PhẩmItem1">
+      Name="DonViTinh_Single"
+      ReturnType="Đơn_Vị_TínhItem2">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -144,7 +143,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Sản_Phẩm" />
+            Member="DonViTinh" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -157,8 +156,8 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Sản_Phẩm_SingleOrDefault"
-      ReturnType="Sản_PhẩmItem1">
+      Name="DonViTinh_SingleOrDefault"
+      ReturnType="Đơn_Vị_TínhItem2">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -184,7 +183,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Sản_Phẩm" />
+            Member="DonViTinh" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -203,63 +202,69 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Sản_Phẩm">
+      EntitySet="DonViTinh">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Sản Phẩm" />
+          Table="Đơn Vị Tính" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
           StoreGeneratedPattern="Identity"
           Type="int"
-          Property="Sản_PhẩmItem1/Properties[Id]" />
+          Property="Đơn_Vị_TínhItem2/Properties[Id]" />
         <SsdlProperty
           MaxLength="500"
           Name="Tên"
           Nullable="False"
           Type="nvarchar"
-          Property="Sản_PhẩmItem1/Properties[Tên]" />
-        <SsdlProperty
-          Name="Giá"
-          Nullable="False"
-          Type="decimal"
-          Property="Sản_PhẩmItem1/Properties[Giá]" />
+          Property="Đơn_Vị_TínhItem2/Properties[Tên]" />
         <SsdlProperty
           MaxLength="500"
           Name="Ghi chú"
           Nullable="True"
           Type="nvarchar"
-          Property="Sản_PhẩmItem1/Properties[Ghi_chú]" />
-        <SsdlProperty
-          Name="Giá thử"
-          Nullable="True"
-          Type="decimal"
-          Property="Sản_PhẩmItem1/Properties[Giá_thử]" />
-        <SsdlForeignKeyProperty
-          Name="_DonViTinh"
-          Nullable="False"
-          Type="int"
-          PropertyName="c__DonViTinh" />
+          Property="Đơn_Vị_TínhItem2/Properties[Ghi_chú]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="FK_MonDinhLuong_Sản_Phẩm">
+      AssociationSet="FK_MonDinhLuong_Đơn_Vị_Tính">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="FK_MonDinhLuong_Sản Phẩm" />
+          Name="FK_MonDinhLuong_Đơn Vị Tính" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_MonDinhLuong_Sản_Phẩm]/Members[Sản_Phẩm]">
+          End="BanHangDataQuan/Members[FK_MonDinhLuong_Đơn_Vị_Tính]/Members[Đơn_Vị_Tính]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[FK_MonDinhLuong_Sản_Phẩm]/Members[MonDinhLuong]">
+          End="BanHangDataQuan/Members[FK_MonDinhLuong_Đơn_Vị_Tính]/Members[MonDinhLuong]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="DinhLuong_SanPham" />
+              Name="DinhLuong_DonViTinh" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Sản_Phẩm_Đơn_Vị_Tính">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Sản Phẩm_Đơn Vị Tính" />
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_Sản_Phẩm_Đơn_Vị_Tính]/Members[Đơn_Vị_Tính]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_Sản_Phẩm_Đơn_Vị_Tính]/Members[Sản_Phẩm]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="_DonViTinh" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

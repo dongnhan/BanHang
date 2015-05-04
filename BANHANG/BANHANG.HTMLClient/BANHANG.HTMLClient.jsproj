@@ -118,6 +118,8 @@
     <LightSwitchModel Include="Screens\Ban\BrowseBan.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon1.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons.lsml" />
+    <LightSwitchModel Include="Screens\DonViTinh\AddEditĐơn_Vị_TínhItem2.lsml" />
+    <LightSwitchModel Include="Screens\DonViTinh\BrowseDonViTinh.lsml" />
     <LightSwitchModel Include="Screens\Mon\AddEditMónItem1.lsml" />
     <LightSwitchModel Include="Screens\Mon\BrowseMon.lsml" />
     <LightSwitchModel Include="Screens\NhomMon\AddEditNhóm_MónItem.lsml" />

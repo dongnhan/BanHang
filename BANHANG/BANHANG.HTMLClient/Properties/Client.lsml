@@ -10,6 +10,8 @@
       Namespace="LightSwitchApplication" />
     <Partial
       IsPrimary="True" />
+    <HomeScreen
+      Value="BrowseChonMons" />
   </Application.Attributes>
   <EntityContainerGroup
     Name="DataWorkspace">
@@ -59,6 +61,9 @@
     <ApplicationNavigationMethodLink
       Name="link4"
       Method="!module/Methods[showBrowseSản_Phẩm]" />
+    <ApplicationNavigationMethodLink
+      Name="link7"
+      Method="!module/Methods[showBrowseDonViTinh]" />
     <ApplicationNavigationMethodLink
       Name="link5"
       Method="!module/Methods[showvDoanhThuQuanTheoMonsBrowse]" />

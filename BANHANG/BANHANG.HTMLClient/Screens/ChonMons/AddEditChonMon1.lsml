@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="PHIẾU MÓN" />
+        Value="PHIẾU MÓN CHI TIẾT" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

@@ -5,7 +5,7 @@ Namespace LightSwitchApplication
 
         Private Sub Sản_PhẩmItem_Validate(results As EntityValidationResultsBuilder)
             Try
-                Dim dvt As Đơn_Vị_TínhItem2 = Me.DataWorkspace.BanHangDataQuan.Đơn_Vị_Tính_Single(Me.Sản_PhẩmItem.Đơn_Vị_TínhItem.Id)
+                Dim dvt As Đơn_Vị_TínhItem2 = Me.DataWorkspace.BanHangDataQuan.DonViTinh_Single(Me.Sản_PhẩmItem.Đơn_Vị_TínhItem.Id)
                 Me.Đơn_Vị_TínhItem = dvt
             Catch ex As Exception
 

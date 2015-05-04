@@ -10,7 +10,7 @@
       <SaveChangesTo
         EntityContainer="BanHangDataQuan" />
       <DisplayName
-        Value="DS SẢN PHẨM" />
+        Value="SẢN PHẨM" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -330,7 +330,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangDataQuan/Members[Sản_Phẩm]" />
+                  Member="BanHangDataQuan/Members[SanPham]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
