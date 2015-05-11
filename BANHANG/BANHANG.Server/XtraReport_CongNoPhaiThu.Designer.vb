@@ -46,13 +46,19 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.xrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.xrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.TenDoiTuong = New DevExpress.XtraReports.Parameters.Parameter()
         Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.Nam = New DevExpress.XtraReports.Parameters.Parameter()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.Thang = New DevExpress.XtraReports.Parameters.Parameter()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.DiaChi = New DevExpress.XtraReports.UI.XRLabel()
+        Me.DiaChiDonVi = New DevExpress.XtraReports.Parameters.Parameter()
         Me.TenCongTy = New DevExpress.XtraReports.UI.XRLabel()
+        Me.TenDonVi = New DevExpress.XtraReports.Parameters.Parameter()
         Me.Title = New DevExpress.XtraReports.UI.XRLabel()
         Me.xrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.xrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -62,13 +68,7 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.xrTable1 = New DevExpress.XtraReports.UI.XRTable()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
-        Me.Thang = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.Nam = New DevExpress.XtraReports.Parameters.Parameter()
         Me.IdDoiTuong = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.TenDoiTuong = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.TenDonVi = New DevExpress.XtraReports.Parameters.Parameter()
-        Me.DiaChiDonVi = New DevExpress.XtraReports.Parameters.Parameter()
         Me.LightSwitchDataSource1 = New DevExpress.XtraReports.LightSwitchDataSource()
         CType(Me.xrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -289,6 +289,21 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.ReportHeader.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.ReportHeader.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
+        'XrLabel12
+        '
+        Me.XrLabel12.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.TenDoiTuong, "Text", "")})
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(423.2083!, 83.00002!)
+        Me.XrLabel12.Name = "XrLabel12"
+        Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel12.SizeF = New System.Drawing.SizeF(318.7916!, 24.99998!)
+        Me.XrLabel12.Text = "XrLabel12"
+        '
+        'TenDoiTuong
+        '
+        Me.TenDoiTuong.Description = "Parameter1"
+        Me.TenDoiTuong.Name = "TenDoiTuong"
+        Me.TenDoiTuong.Visible = False
+        '
         'XrLabel4
         '
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(343.7083!, 82.99998!)
@@ -306,6 +321,14 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(56.25!, 24.99998!)
         Me.XrLabel3.Text = "XrLabel3"
+        '
+        'Nam
+        '
+        Me.Nam.Description = "Parameter1"
+        Me.Nam.Name = "Nam"
+        Me.Nam.Type = GetType(Integer)
+        Me.Nam.ValueInfo = "0"
+        Me.Nam.Visible = False
         '
         'XrLabel1
         '
@@ -327,6 +350,14 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.XrLabel11.Text = "NgayCT"
         Me.XrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
+        'Thang
+        '
+        Me.Thang.Description = "Parameter1"
+        Me.Thang.Name = "Thang"
+        Me.Thang.Type = GetType(Integer)
+        Me.Thang.ValueInfo = "0"
+        Me.Thang.Visible = False
+        '
         'XrLabel9
         '
         Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(178.125!, 83.00001!)
@@ -347,6 +378,12 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.DiaChi.Text = "DiaChi"
         Me.DiaChi.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
+        'DiaChiDonVi
+        '
+        Me.DiaChiDonVi.Description = "Parameter1"
+        Me.DiaChiDonVi.Name = "DiaChiDonVi"
+        Me.DiaChiDonVi.Visible = False
+        '
         'TenCongTy
         '
         Me.TenCongTy.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.TenDonVi, "Text", "")})
@@ -357,6 +394,12 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.TenCongTy.SizeF = New System.Drawing.SizeF(574.0001!, 25.0!)
         Me.TenCongTy.Text = "TenCongTy"
         Me.TenCongTy.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'TenDonVi
+        '
+        Me.TenDonVi.Description = "Parameter1"
+        Me.TenDonVi.Name = "TenDonVi"
+        Me.TenDonVi.Visible = False
         '
         'Title
         '
@@ -439,22 +482,6 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
-        'Thang
-        '
-        Me.Thang.Description = "Parameter1"
-        Me.Thang.Name = "Thang"
-        Me.Thang.Type = GetType(Integer)
-        Me.Thang.ValueInfo = "0"
-        Me.Thang.Visible = False
-        '
-        'Nam
-        '
-        Me.Nam.Description = "Parameter1"
-        Me.Nam.Name = "Nam"
-        Me.Nam.Type = GetType(Integer)
-        Me.Nam.ValueInfo = "0"
-        Me.Nam.Visible = False
-        '
         'IdDoiTuong
         '
         Me.IdDoiTuong.Description = "Parameter1"
@@ -462,33 +489,6 @@ Partial Public Class XtraReport_CongNoPhaiThu
         Me.IdDoiTuong.Type = GetType(Integer)
         Me.IdDoiTuong.ValueInfo = "0"
         Me.IdDoiTuong.Visible = False
-        '
-        'TenDoiTuong
-        '
-        Me.TenDoiTuong.Description = "Parameter1"
-        Me.TenDoiTuong.Name = "TenDoiTuong"
-        Me.TenDoiTuong.Visible = False
-        '
-        'XrLabel12
-        '
-        Me.XrLabel12.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.TenDoiTuong, "Text", "")})
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(423.2083!, 83.00002!)
-        Me.XrLabel12.Name = "XrLabel12"
-        Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel12.SizeF = New System.Drawing.SizeF(318.7916!, 24.99998!)
-        Me.XrLabel12.Text = "XrLabel12"
-        '
-        'TenDonVi
-        '
-        Me.TenDonVi.Description = "Parameter1"
-        Me.TenDonVi.Name = "TenDonVi"
-        Me.TenDonVi.Visible = False
-        '
-        'DiaChiDonVi
-        '
-        Me.DiaChiDonVi.Description = "Parameter1"
-        Me.DiaChiDonVi.Name = "DiaChiDonVi"
-        Me.DiaChiDonVi.Visible = False
         '
         'LightSwitchDataSource1
         '
@@ -500,7 +500,7 @@ Partial Public Class XtraReport_CongNoPhaiThu
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.ReportHeader, Me.ReportFooter, Me.BottomMargin, Me.PageHeader, Me.TopMarginBand1})
         Me.DataSource = Me.LightSwitchDataSource1
-        Me.FilterString = "[Thang] = ?Thang And [Nam] = [Nam] And [IdDoiTuong] = ?IdDoiTuong"
+        Me.FilterString = "[Thang] = ?Thang And [Nam] = ?Nam And [IdDoiTuong] = ?IdDoiTuong"
         Me.Margins = New System.Drawing.Printing.Margins(50, 33, 50, 33)
         Me.PageHeight = 1169
         Me.PageWidth = 827

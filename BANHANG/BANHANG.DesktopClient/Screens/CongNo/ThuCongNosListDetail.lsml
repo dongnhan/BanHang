@@ -289,7 +289,7 @@
                 Name="Xuất_Sản_Phẩm"
                 Kind="Collection"
                 DataType="CollectionView$XuatSanPham"
-                View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+                View="Microsoft.LightSwitch.RichClient:DataGrid">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -311,6 +311,10 @@
                     Name="Id"
                     Kind="Value"
                     DataType=":Int32">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Mã" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -370,19 +374,6 @@
                     </ContentItem>
                   </ContentItem>
                   <ContentItem
-                    Name="Thanh_toán"
-                    Kind="Value"
-                    DataType=":Int32">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="XuatSanPham/Properties[Thanh_toán]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
                     Name="Thành_tiền"
                     Kind="Value"
                     DataType="Microsoft.LightSwitch.Extensions:Money">
@@ -422,50 +413,6 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem>
-                <ContentItem.CommandItems>
-                  <ContentItem
-                    Name="Xuất_Sản_Phẩm_AddAndEditNew"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
-                          <CallExpression
-                            Target="AddAndEditNew" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Xuất_Sản_Phẩm_EditSelected"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
-                          <CallExpression
-                            Target="EditSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Xuất_Sản_Phẩm_DeleteSelected"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ThuCongNosListDetail/Properties[Xuất_Sản_Phẩm]" />
-                          <CallExpression
-                            Target="DeleteSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem.CommandItems>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
@@ -474,6 +421,16 @@
                         <ConstantExpression
                           Value="625458240000000000"
                           ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
@@ -1382,6 +1339,15 @@
                 Name="IdKhachHang"
                 ParameterType=":Int32?" />
             </ScreenQueryDefinition.Parameters>
+            <ScreenQueryDefinition.SortCriteria>
+              <SortCriterion
+                Direction="Descending">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Id" />
+                </ChainExpression>
+              </SortCriterion>
+            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>

@@ -313,6 +313,12 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <Link>UserCode\Shared\NhapSanPhamDauKyChiTiet.lsml.vb</Link>
     </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\Xuất_Sản_PhẩmItem.lsml.vb">
+      <Link>UserCode\Shared\Xuất_Sản_PhẩmItem.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\Xuất_Sản_Phẩm_Chi_TiếtItem.lsml.vb">
+      <Link>UserCode\Shared\Xuất_Sản_Phẩm_Chi_TiếtItem.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangDataQuan\ChonMon1.lsml.vb">
       <Link>UserCode\Shared\ChonMon1.lsml.vb</Link>
     </Compile>
@@ -551,6 +557,7 @@
     <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="My Project\BanHangDataQuan\ChonMons.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />

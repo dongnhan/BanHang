@@ -18,13 +18,7 @@ Namespace LightSwitchApplication
         Private Sub OK_Execute()
             ' Write your code here.
             Me.CloseModalWindow("GroupChiTiet")
-            If Me.Application.KiemTraTonKho = 0 Then
-                FindControl("Tồn_Thực").Focus()
-            End If
-            'ẩn tồn_thực nếu KiemTraTonKho = 2
-            If Me.Application.KiemTraTonKho = 2 Then
-                FindControl("Sản_Phẩm").Focus()
-            End If
+            Me.FindControl("Xuất_Sản_Phẩm_Chi_TiếtAddAndEditNew").Focus()
         End Sub
 
         Private Sub Hủy_Execute()
@@ -47,6 +41,23 @@ Namespace LightSwitchApplication
             Me.Xuất_Sản_Phẩm_Chi_Tiết.AddNew()
             Me.OpenModalWindow("GroupChiTiet") ' Write your code here.
             Me.flagEdit = False
+            If Me.Application.KiemTraTonKho = 0 Then
+                Try
+                    FindControl("Tồn_Thực").Focus()
+                Catch ex As Exception
+
+                End Try
+
+            End If
+            'ẩn tồn_thực nếu KiemTraTonKho = 2
+            If Me.Application.KiemTraTonKho = 2 Then
+                Try
+                    FindControl("Sản_Phẩm").Focus()
+                Catch ex As Exception
+
+                End Try
+
+            End If
         End Sub
 
         Private Sub Xuất_Sản_Phẩm_Chi_TiếtEditSelected_CanExecute(ByRef result As Boolean)

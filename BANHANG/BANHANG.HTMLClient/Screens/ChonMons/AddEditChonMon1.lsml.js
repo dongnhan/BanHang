@@ -2,8 +2,14 @@
 
 myapp.AddEditChonMon1.created = function (screen) {
     // Write code here.
-    screen.ChonMon1.Ngày = new Date();
-    screen.ChonMon1.Ngày_thực = new Date();
+    //screen.ChonMon1.Ngày = new Date();
+    //screen.ChonMon1.Ngày_thực = new Date();
+    if (screen.ChonMon1.Ngày == undefined && screen.ChonMon1.Ngày == null) {
+        screen.ChonMon1.Ngày = new Date();
+    }
+    if (screen.ChonMon1.Ngày_thực == undefined && screen.ChonMon1.Ngày_thực == null) {
+        screen.ChonMon1.Ngày_thực = new Date();
+    }
     msls.promiseOperation(CallGetUserName).then(function PromiseSuccess(PromiseResult) {
         // Set the result of the CallGetUserName function to the 
         // UserName of the entity
@@ -183,5 +189,5 @@ myapp.AddEditChonMon1.Details_postRender = function (element, contentItem) {
 };
 myapp.AddEditChonMon1.IN1_execute = function (screen) {
     // Write code here.
-    window.open("http://192.168.43.21/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fPhieuTinhTien&rs:Command=Render&id=" + screen.ChonMon1.Id + "&rs:Format=PDF", '_blank');
+    window.open("http://192.168.1.38/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx?%2fPhieuTinhTien&rs:Command=Render&id=" + screen.ChonMon1.Id + "&rs:Format=PDF", '_blank');
 };

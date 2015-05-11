@@ -15,20 +15,20 @@
       </EntityMethod>
     </EntityType.Methods>
     <EntityType.Properties>
-      <EntityProperty
+      <KeyProperty
         Name="Thang"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
         Name="Nam"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+        </KeyProperty.Attributes>
+      </KeyProperty>
       <EntityProperty
         Name="Đầu_Kỳ"
         PropertyType="Microsoft.LightSwitch.Extensions:Money?">
@@ -134,16 +134,56 @@
             NodeType="And">
             <BinaryExpression.Left>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="And">
                 <BinaryExpression.Left>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="IdDoiTuong" />
-                  </ChainExpression>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="IdDoiTuong" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="IdDoiTuong" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_tượng" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Đối_tượng" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
-                  <ParameterExpression
-                    Parameter="IdDoiTuong" />
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nam" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="Nam" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Left>
@@ -153,12 +193,12 @@
                 <BinaryExpression.Left>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Đối_tượng" />
+                      Member="Thang" />
                   </ChainExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <ParameterExpression
-                    Parameter="Đối_tượng" />
+                    Parameter="Thang" />
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Right>
@@ -171,6 +211,22 @@
             Member="vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_Cấp" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Thang"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Thang' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Nam"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Nam' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
       <QueryOperationParameter
         Name="Đối_tượng"
         ParameterType="Microsoft.LightSwitch:String?">
@@ -202,16 +258,56 @@
             NodeType="And">
             <BinaryExpression.Left>
               <BinaryExpression
-                NodeType="Equal">
+                NodeType="And">
                 <BinaryExpression.Left>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="IdDoiTuong" />
-                  </ChainExpression>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="IdDoiTuong" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="IdDoiTuong" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="Đối_tượng" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="Đối_tượng" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
-                  <ParameterExpression
-                    Parameter="IdDoiTuong" />
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nam" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="Nam" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Left>
@@ -221,12 +317,12 @@
                 <BinaryExpression.Left>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Đối_tượng" />
+                      Member="Thang" />
                   </ChainExpression>
                 </BinaryExpression.Left>
                 <BinaryExpression.Right>
                   <ParameterExpression
-                    Parameter="Đối_tượng" />
+                    Parameter="Thang" />
                 </BinaryExpression.Right>
               </BinaryExpression>
             </BinaryExpression.Right>
@@ -239,6 +335,22 @@
             Member="vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_Cấp" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Thang"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Thang' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="Nam"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Nam' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
       <QueryOperationParameter
         Name="Đối_tượng"
         ParameterType="Microsoft.LightSwitch:String?">
@@ -271,12 +383,12 @@
         <IsView />
         <SsdlProperty
           Name="Thang"
-          Nullable="True"
+          Nullable="False"
           Type="int"
           Property="vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpItem/Properties[Thang]" />
         <SsdlProperty
           Name="Nam"
-          Nullable="True"
+          Nullable="False"
           Type="int"
           Property="vTồn_Công_Nợ_Phải_Trả_Nhà_Cung_CấpItem/Properties[Nam]" />
         <SsdlProperty

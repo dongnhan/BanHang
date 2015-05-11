@@ -7,30 +7,28 @@
   <EntityType>
     <EntityType.Attributes>
       <Proxy
-        Target="ServiceInterface:Xuất_Sản_PhẩmItem" />
-      <SummaryProperty
-        Property="Xuất_Sản_PhẩmItem/Properties[Id]" />
+        Target="ServiceInterface:Xuất_Sản_Phẩm_Chi_TiếtItem" />
     </EntityType.Attributes>
     <EntityType.Properties>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:Xuất_Sản_PhẩmItem/Properties[Thành_tiền]" />
+            Target="LightSwitchServiceApplication:Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Thành_tiền]" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:Xuất_Sản_PhẩmItem/Properties[Tiền_thuế]" />
+            Target="LightSwitchServiceApplication:Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Tiền_thuế]" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:Xuất_Sản_PhẩmItem/Properties[Tổng_tiền]" />
+            Target="LightSwitchServiceApplication:Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Tổng_tiền]" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

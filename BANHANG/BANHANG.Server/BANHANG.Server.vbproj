@@ -269,6 +269,12 @@
     <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <DependentUpon>Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\BanHangData1\Xuất_Sản_PhẩmItem.lsml.vb">
+      <DependentUpon>Xuất_Sản_Phẩm.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangData1\Xuất_Sản_Phẩm_Chi_TiếtItem.lsml.vb">
+      <DependentUpon>Xuất_Sản_Phẩm_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangDataQuan\ChonMon1.lsml.vb">
       <DependentUpon>ChonMons.lsml</DependentUpon>
     </Compile>
@@ -320,6 +326,12 @@
     </Compile>
     <Compile Include="Web\GetUserName.ashx.vb">
       <DependentUpon>GetUserName.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport1.Designer.vb">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport1.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReport_Chi.Designer.vb">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
@@ -585,6 +597,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="XtraReport1.resx">
+      <DependentUpon>XtraReport1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_Chi.resx">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
     </EmbeddedResource>
