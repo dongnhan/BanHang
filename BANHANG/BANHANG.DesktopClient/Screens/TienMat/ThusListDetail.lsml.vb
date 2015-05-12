@@ -1,7 +1,8 @@
-﻿
+﻿Imports System.Collections.ObjectModel
 Namespace LightSwitchApplication
 
     Public Class ThusListDetail
+        Private Selected As New ObservableCollection(Of Xuất_Sản_PhẩmItem)()
         Dim flagEdit As Boolean
         Private Sub ThuListAddAndEditNew_CanExecute(ByRef result As Boolean)
             ' Write your code here.
@@ -56,6 +57,52 @@ Namespace LightSwitchApplication
         Private Sub Báo_cáo_Execute()
             ' Write your code here.
             Me.Application.ShowThuReportPreviewScreen(Me.Thus.SelectedItem.Id, NumToText(Me.Thus.SelectedItem.Số_tiền))
+        End Sub
+
+        Private Sub Chọn_tất_cả_Execute()
+            ' Write your code here.
+            Dim pageCount As Integer = Me.Details.Properties.Xuất_Sản_Phẩm.PageCount
+            Dim CurrentPageNumber As Integer = 1
+            For i As Integer = 0 To pageCount
+                Me.Details.Properties.Xuất_Sản_Phẩm.PageNumber = CurrentPageNumber
+                CurrentPageNumber = CurrentPageNumber + 1
+                '=====DO WORKS HERE======//
+                For Each p As Xuất_Sản_PhẩmItem In Xuất_Sản_Phẩm
+                    Selected.Add(p)
+                Next
+            Next
+            Xuất_Sản_Phẩm.Refresh()
+            Me.Details.Properties.Xuất_Sản_Phẩm.PageNumber = 1
+        End Sub
+
+        Private Sub Bỏ_tất_cả_Execute()
+            ' Write your code here.
+            Dim pageCount As Integer = Me.Details.Properties.Xuất_Sản_Phẩm.PageCount
+            Dim CurrentPageNumber As Integer = 1
+            For i As Integer = 0 To pageCount
+                Me.Details.Properties.Xuất_Sản_Phẩm.PageNumber = CurrentPageNumber
+                CurrentPageNumber = CurrentPageNumber + 1
+                '=====DO WORKS HERE======//
+                For Each p As Xuất_Sản_PhẩmItem In Xuất_Sản_Phẩm
+                    Selected.Remove(p)
+                Next
+            Next
+            Xuất_Sản_Phẩm.Refresh()
+            Me.Details.Properties.Xuất_Sản_Phẩm.PageNumber = 1
+        End Sub
+
+        Private Sub Chuyển_Execute()
+            ' Write your code here.
+            For Each item In Selected
+                Dim chitiet As ThuChiTiet = Thu_Chi_Tiết.AddNew
+                chitiet.Ngày = item.Ngày_xuất
+                chitiet.Đối_TượngItem = Me.DataWorkspace.BanHangData.DoiTuong_Single(item.Đối_TượngItem.Id)
+                chitiet.Số_tiền = item.Tổng_tiền
+            Next
+        End Sub
+
+        Private Sub ThusListDetail_InitializeDataWorkspace(saveChangesTo As List(Of IDataService))
+            Me.FindControl("Xuất_Sản_Phẩm").AddCheckBoxColumnForMultiSelection(Of Xuất_Sản_PhẩmItem)(Selected) ' Write your code here.
         End Sub
     End Class
 

@@ -264,10 +264,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKy.lsml.vb">
-      <DependentUpon>Nhập_Sản_Phẩm_Đầu_Kỳ.lsml</DependentUpon>
+      <DependentUpon>NhapSanPhamDauKys.lsml</DependentUpon>
     </Compile>
     <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
-      <DependentUpon>Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml</DependentUpon>
+      <DependentUpon>NhapSanPhamDauKyChiTiets.lsml</DependentUpon>
     </Compile>
     <Compile Include="DataSources\BanHangData1\Xuất_Sản_PhẩmItem.lsml.vb">
       <DependentUpon>Xuất_Sản_Phẩm.lsml</DependentUpon>
@@ -521,8 +521,8 @@
     <LightSwitchModel Include="DataSources\BanHangData1\Chi_Công_Nợ_Đầu_Kỳ.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Đối_Tượng.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Đơn_Vị_Tính.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\NhapSanPhamDauKys.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\NhapSanPhamDauKyChiTiets.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Sản_Phẩm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Thu_Công_Nợ_Đầu_Kỳ.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Tiền_Mặt_Đầu_Kỳ1.lsml" />

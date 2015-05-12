@@ -478,6 +478,21 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem
+                Name="TÌM"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="AddEditChonMon1/Methods[TÌM]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
             </ContentItem>
             <ContentItem
               Name="Mon"
@@ -771,6 +786,8 @@
         Name="ShowGroup_Tap" />
       <ScreenMethod
         Name="LƯU_ĐÓNG" />
+      <ScreenMethod
+        Name="TÌM" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenProperty

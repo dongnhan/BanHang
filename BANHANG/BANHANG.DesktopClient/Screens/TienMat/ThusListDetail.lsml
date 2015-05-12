@@ -238,7 +238,7 @@
                 Name="Xuất_Sản_Phẩm"
                 Kind="Collection"
                 DataType="CollectionView$Xuất_Sản_PhẩmItem"
-                View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+                View="Microsoft.LightSwitch.RichClient:DataGrid">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -360,43 +360,37 @@
                 </ContentItem>
                 <ContentItem.CommandItems>
                   <ContentItem
-                    Name="Xuất_Sản_Phẩm_AddAndEditNew"
+                    Name="Chọn_tất_cả"
                     Kind="Command">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
-                          <MemberExpression
-                            Member="ThusListDetail/Properties[Xuất_Sản_Phẩm]" />
                           <CallExpression
-                            Target="AddAndEditNew" />
+                            Target="ThusListDetail/Methods[Chọn_tất_cả]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Xuất_Sản_Phẩm_EditSelected"
+                    Name="Bỏ_tất_cả"
                     Kind="Command">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
-                          <MemberExpression
-                            Member="ThusListDetail/Properties[Xuất_Sản_Phẩm]" />
                           <CallExpression
-                            Target="EditSelected" />
+                            Target="ThusListDetail/Methods[Bỏ_tất_cả]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Xuất_Sản_Phẩm_DeleteSelected"
+                    Name="Chuyển"
                     Kind="Command">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
-                          <MemberExpression
-                            Member="ThusListDetail/Properties[Xuất_Sản_Phẩm]" />
                           <CallExpression
-                            Target="DeleteSelected" />
+                            Target="ThusListDetail/Methods[Chuyển]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -415,6 +409,16 @@
                   </ControlPropertySource>
                   <ControlPropertySource
                     Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[ShowAddNewRowProperty]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
@@ -1104,6 +1108,12 @@
             MethodName="EditSelected" />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="Chọn_tất_cả" />
+      <ScreenMethod
+        Name="Bỏ_tất_cả" />
+      <ScreenMethod
+        Name="Chuyển" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

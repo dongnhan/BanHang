@@ -131,7 +131,7 @@
         EntitySet="Sản_Phẩm" />
       <AssociationSetEnd
         Name="NhapSanPhamDauKyChiTiet"
-        EntitySet="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+        EntitySet="NhapSanPhamDauKyChiTiets" />
     </AssociationSet>
     <QueryOperation
       Name="Sản_Phẩm_Single"

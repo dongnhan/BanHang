@@ -155,13 +155,13 @@
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết"
+      Name="NhapSanPhamDauKyChiTiets"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
       EntityType="NhapSanPhamDauKyChiTiet" />
     <QueryOperation
-      Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_Single"
+      Name="NhapSanPhamDauKyChiTiets_Single"
       ReturnType="NhapSanPhamDauKyChiTiet">
       <QueryOperation.Attributes>
         <Generated />
@@ -188,7 +188,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+            Member="NhapSanPhamDauKyChiTiets" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -201,7 +201,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết_SingleOrDefault"
+      Name="NhapSanPhamDauKyChiTiets_SingleOrDefault"
       ReturnType="NhapSanPhamDauKyChiTiet">
       <QueryOperation.Attributes>
         <Generated />
@@ -228,7 +228,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết" />
+            Member="NhapSanPhamDauKyChiTiets" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -247,7 +247,7 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết">
+      EntitySet="NhapSanPhamDauKyChiTiets">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"

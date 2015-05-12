@@ -992,7 +992,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData1/Members[Nhập_Sản_Phẩm_Đầu_Kỳ]" />
+                  Member="BanHangData1/Members[NhapSanPhamDauKys]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>

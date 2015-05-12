@@ -147,6 +147,7 @@
     </_ClientBuildFile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\BanHangData1\" />
     <Folder Include="Properties\BanHangDataQuan\" />
     <Folder Include="Properties\BanHangData\" />
   </ItemGroup>

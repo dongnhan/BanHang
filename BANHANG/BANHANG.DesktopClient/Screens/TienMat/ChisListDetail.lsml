@@ -258,7 +258,7 @@
                 Name="Nhập_Sản_Phẩm"
                 Kind="Collection"
                 DataType="CollectionView$NhapSanPham"
-                View="C1.LightSwitch.FlexGrid:C1FlexGrid">
+                View="Microsoft.LightSwitch.RichClient:DataGrid">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -377,6 +377,44 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="Chọn_tất_cả"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ChisListDetail/Methods[Chọn_tất_cả]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Bỏ_tất_cả"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ChisListDetail/Methods[Bỏ_tất_cả]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Chuyển"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ChisListDetail/Methods[Chuyển]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
                     Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
@@ -390,6 +428,16 @@
                   </ControlPropertySource>
                   <ControlPropertySource
                     Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[ShowAddNewRowProperty]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <ConstantExpression
@@ -1089,6 +1137,12 @@
             MethodName="EditSelected" />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="Chọn_tất_cả" />
+      <ScreenMethod
+        Name="Bỏ_tất_cả" />
+      <ScreenMethod
+        Name="Chuyển" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
