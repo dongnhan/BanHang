@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="vTồn_Tổng_HợpSearch">
+    Name="vTồn_Theo_LôSearch">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangData1" />
       <DisplayName
-        Value="TỒN TỔNG HỢP" />
+        Value="TỒN THEO LÔ" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -35,7 +35,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpSearch/Properties[Tháng]" />
+                        Member="vTồn_Theo_LôSearch/Properties[Tháng]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -58,7 +58,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpSearch/Properties[Năm]" />
+                        Member="vTồn_Theo_LôSearch/Properties[Năm]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -98,24 +98,24 @@
           <ContentItem
             Name="grid"
             Kind="Collection"
-            DataType="CollectionView$vTồn_Tổng_HợpItem"
+            DataType="CollectionView$vTồn_Theo_LôItem"
             View="C1.LightSwitch.FlexGrid:C1FlexGrid">
             <ContentItem.Attributes>
               <DisplayName
-                Value="Tồn Tổng Hợp" />
+                Value="Tồn theo lô" />
             </ContentItem.Attributes>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="vTồn_Tổng_HợpSearch/Properties[vTồn_Tổng_Hợp]" />
+                    Member="vTồn_Theo_LôSearch/Properties[vTồn_Theo_Lô]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
             <ContentItem
               Name="RowTemplate"
               Kind="Details"
-              DataType="vTồn_Tổng_HợpItem">
+              DataType="vTồn_Theo_LôItem">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression />
@@ -129,22 +129,10 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpItem/Properties[Tên_Sản_Phẩm]" />
+                        Member="vTồn_Theo_LôItem/Properties[Tên_Sản_Phẩm]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[ShowAsLink]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
                 Name="Đơn_Vị_Tính"
@@ -154,7 +142,33 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpItem/Properties[Đơn_Vị_Tính]" />
+                        Member="vTồn_Theo_LôItem/Properties[Đơn_Vị_Tính]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Số_lô"
+                Kind="Value"
+                DataType=":Int32">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Theo_LôItem/Properties[Số_lô]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Hạn_dùng"
+                Kind="Value"
+                DataType=":Date">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="vTồn_Theo_LôItem/Properties[Hạn_dùng]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -167,7 +181,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpItem/Properties[Đầu_kỳ]" />
+                        Member="vTồn_Theo_LôItem/Properties[Đầu_kỳ]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -180,7 +194,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpItem/Properties[Nhập]" />
+                        Member="vTồn_Theo_LôItem/Properties[Nhập]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -193,7 +207,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpItem/Properties[Xuất]" />
+                        Member="vTồn_Theo_LôItem/Properties[Xuất]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -206,7 +220,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="vTồn_Tổng_HợpItem/Properties[Tồn]" />
+                        Member="vTồn_Theo_LôItem/Properties[Tồn]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -286,7 +300,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vTồn_Tổng_HợpSearch/Methods[Save]" />
+                    Target="vTồn_Theo_LôSearch/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -298,7 +312,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vTồn_Tổng_HợpSearch/Methods[Refresh]" />
+                    Target="vTồn_Theo_LôSearch/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -310,7 +324,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vTồn_Tổng_HợpSearch/Methods[Báo_cáo]" />
+                    Target="vTồn_Theo_LôSearch/Methods[Báo_cáo]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -334,7 +348,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="vTồn_Tổng_HợpSearch/Methods[Close]" />
+                    Target="vTồn_Theo_LôSearch/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -388,13 +402,13 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="vTồn_Tổng_Hợp"
+        Name="vTồn_Theo_Lô"
         PageSize="45"
-        PropertyType="CollectionView$vTồn_Tổng_HợpItem">
+        PropertyType="CollectionView$vTồn_Theo_LôItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="vTồn_Tổng_HợpQuery"
-            ReturnType="vTồn_Tổng_HợpItem*">
+            Name="vTồn_Theo_LôQuery"
+            ReturnType="vTồn_Theo_LôItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <BinaryExpression
@@ -405,7 +419,7 @@
                       <BinaryExpression.Left>
                         <ChainExpression>
                           <MemberExpression
-                            Member="vTồn_Tổng_HợpItem/Properties[Thang]" />
+                            Member="vTồn_Theo_LôItem/Properties[Thang]" />
                         </ChainExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
@@ -420,7 +434,7 @@
                       <BinaryExpression.Left>
                         <ChainExpression>
                           <MemberExpression
-                            Member="vTồn_Tổng_HợpItem/Properties[Nam]" />
+                            Member="vTồn_Theo_LôItem/Properties[Nam]" />
                         </ChainExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
@@ -435,7 +449,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[vTon_Tong_Hop]" />
+                  Member="BanHangData1/Members[vTồn_Theo_Lô]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>
@@ -451,12 +465,12 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="vTồn_Tổng_HợpSearch/Properties[vTồn_Tổng_Hợp]/Query">
+              Target="vTồn_Theo_LôSearch/Properties[vTồn_Theo_Lô]/Query">
               <ArgumentExpression
                 Parameter="Thang">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vTồn_Tổng_HợpSearch/Properties[Tháng]" />
+                    Member="vTồn_Theo_LôSearch/Properties[Tháng]" />
                   <MemberExpression
                     Member="Id" />
                 </ChainExpression>
@@ -465,7 +479,7 @@
                 Parameter="Nam">
                 <ChainExpression>
                   <MemberExpression
-                    Member="vTồn_Tổng_HợpSearch/Properties[Năm]" />
+                    Member="vTồn_Theo_LôSearch/Properties[Năm]" />
                   <MemberExpression
                     Member="Id" />
                 </ChainExpression>
@@ -475,19 +489,19 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenProperty
-        Name="Tháng"
-        PropertyType="ThángItem" />
-      <ScreenProperty
         Name="Năm"
         PropertyType="NămItem" />
+      <ScreenProperty
+        Name="Tháng"
+        PropertyType="ThángItem" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowvTồn_Tổng_HợpSearch">
+      Name="ShowvTồn_Theo_LôSearch">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="vTồn_Tổng_HợpSearch" />
+          TargetScreen="vTồn_Theo_LôSearch" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

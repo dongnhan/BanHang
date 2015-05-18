@@ -313,6 +313,12 @@
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <Link>UserCode\Shared\NhapSanPhamDauKyChiTiet.lsml.vb</Link>
     </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\Nhập_Sản_PhẩmItem.lsml.vb">
+      <Link>UserCode\Shared\Nhập_Sản_PhẩmItem.lsml.vb</Link>
+    </Compile>
+    <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\Nhập_Sản_Phẩm_Chi_TiếtItem.lsml.vb">
+      <Link>UserCode\Shared\Nhập_Sản_Phẩm_Chi_TiếtItem.lsml.vb</Link>
+    </Compile>
     <Compile Include="..\BANHANG.Server\DataSources\BanHangData1\Xuất_Sản_PhẩmItem.lsml.vb">
       <Link>UserCode\Shared\Xuất_Sản_PhẩmItem.lsml.vb</Link>
     </Compile>
@@ -365,6 +371,12 @@
     <Compile Include="Screens\BaoCaoQuan\vDoanhThuQuanTongHopReportPreviewScreen.lsml.vb">
       <DependentUpon>vDoanhThuQuanTongHopReportPreviewScreen.lsml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\BaoCao\vTonTheoLoReportPreviewScreen.lsml.vb">
+      <DependentUpon>vTonTheoLoReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\BaoCao\vTồn_Theo_LôSearch.lsml.vb">
+      <DependentUpon>vTồn_Theo_LôSearch.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\CongNo\Thu_Công_NợListDetail.lsml.vb">
       <DependentUpon>Thu_Công_NợListDetail.lsml</DependentUpon>
     </Compile>
@@ -385,6 +397,9 @@
     </Compile>
     <Compile Include="Screens\CongNo\ChiCongNosListDetail.lsml.vb">
       <DependentUpon>ChiCongNosListDetail.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MuaHang\Nhập_Sản_PhẩmListDetail1.lsml.vb">
+      <DependentUpon>Nhập_Sản_PhẩmListDetail1.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\QuanListDetail1.lsml.vb">
       <DependentUpon>QuanListDetail1.lsml</DependentUpon>
@@ -553,11 +568,13 @@
     <LightSwitchModel Include="My Project\BanHangData\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="My Project\BanHangData\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
-    <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ_Chi_Tiết.lsml" />
-    <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Đầu_Kỳ.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\NhapSanPhamDauKyChiTiets.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\NhapSanPhamDauKys.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Xuất_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="My Project\BanHangDataQuan\ChonMons.lsml" />
     <LightSwitchModel Include="My Project\BanHangData1\Xuất_Sản_Phẩm_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="My Project\BanHangData1\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
     <None Include="My Project\OutOfBrowserSettings.xml" />
     <ClientResource Include="My Project\Config.xml" />
     <LightSwitchModel Include="My Project\Proxies.lsml" />
@@ -622,6 +639,9 @@
     <LightSwitchModel Include="Screens\BaoCaoQuan\vDoanhThuQuanTheoMonReportPreviewScreen.lsml" />
     <LightSwitchModel Include="Screens\vDoanhThuQuanTheoMonsSearch.lsml" />
     <LightSwitchModel Include="Screens\vDoanhThuQuanTongHopsSearch.lsml" />
+    <LightSwitchModel Include="Screens\MuaHang\Nhập_Sản_PhẩmListDetail1.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vTồn_Theo_LôSearch.lsml" />
+    <LightSwitchModel Include="Screens\BaoCao\vTonTheoLoReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

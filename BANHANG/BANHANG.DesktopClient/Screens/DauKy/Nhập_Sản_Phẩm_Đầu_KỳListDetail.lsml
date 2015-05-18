@@ -263,6 +263,32 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
+                  Name="Số_lô"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="NhapSanPhamDauKyChiTiet/Properties[Số_lô]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Hạn_dùng"
+                  Kind="Value"
+                  DataType=":Date">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="NhapSanPhamDauKyChiTiet/Properties[Hạn_dùng]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Giá_nhập1"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">

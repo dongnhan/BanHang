@@ -147,6 +147,11 @@
         Association="FK_Xuất_Sản_Phẩm_Khách_Hàng"
         FromEnd="Đối_Tượng"
         ToEnd="Xuất_Sản_Phẩm" />
+      <NavigationProperty
+        Name="Nhập_Sản_Phẩm"
+        Association="FK_Nhập_Sản_Phẩm_Đối_Tượng"
+        FromEnd="Đối_Tượng"
+        ToEnd="Nhập_Sản_Phẩm" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -340,6 +345,16 @@
         Name="Xuất_Sản_Phẩm"
         EntitySet="Xuất_Sản_Phẩm" />
     </AssociationSet>
+    <AssociationSet
+      Name="FK_Nhập_Sản_Phẩm_Đối_Tượng"
+      Association="FK_Nhập_Sản_Phẩm_Đối_Tượng">
+      <AssociationSetEnd
+        Name="Đối_Tượng"
+        EntitySet="Đối_Tượng" />
+      <AssociationSetEnd
+        Name="Nhập_Sản_Phẩm"
+        EntitySet="Nhập_Sản_Phẩm" />
+    </AssociationSet>
   </EntityContainer>
   <Association
     Name="FK_Chi_Công_Nợ_Chi_Tiết_Đối_Tượng">
@@ -415,6 +430,21 @@
       Name="Xuất_Sản_Phẩm"
       Multiplicity="Many"
       EntityType="Xuất_Sản_PhẩmItem" />
+  </Association>
+  <Association
+    Name="FK_Nhập_Sản_Phẩm_Đối_Tượng">
+    <AssociationEnd
+      Name="Đối_Tượng"
+      Multiplicity="One"
+      EntityType="Đối_TượngItem1">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Nhập_Sản_Phẩm"
+      Multiplicity="Many"
+      EntityType="Nhập_Sản_PhẩmItem" />
   </Association>
   <DataService
     Name="BanHangData1DataService">
@@ -557,6 +587,27 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="ChiCongNo_DoiTuong" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Nhập_Sản_Phẩm_Đối_Tượng">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Nhập Sản Phẩm_Đối Tượng" />
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đối_Tượng]/Members[Đối_Tượng]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangData1/Members[FK_Nhập_Sản_Phẩm_Đối_Tượng]/Members[Nhập_Sản_Phẩm]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="_NhaCungCap" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

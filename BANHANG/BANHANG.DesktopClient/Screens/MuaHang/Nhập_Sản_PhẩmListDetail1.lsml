@@ -5,12 +5,12 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="Nhập_Sản_PhẩmListDetail">
+    Name="Nhập_Sản_PhẩmListDetail1">
     <Screen.Attributes>
       <SaveChangesTo
-        EntityContainer="BanHangData" />
+        EntityContainer="BanHangData1" />
       <DisplayName
-        Value="NHẬP HÀNG (cũ)" />
+        Value="MUA HÀNG" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -27,29 +27,38 @@
             <ContentItem
               Name="Nhập_Sản_PhẩmItemList"
               Kind="Collection"
-              DataType="CollectionView$NhapSanPham"
+              DataType="CollectionView$Nhập_Sản_PhẩmItem"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Danh sách Nhập Sản Phẩm" />
-              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm]" />
+                      Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="RowTemplate"
                 Kind="Details"
-                DataType="NhapSanPham">
+                DataType="Nhập_Sản_PhẩmItem">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem
+                  Name="Id"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_PhẩmItem/Properties[Id]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
                 <ContentItem
                   Name="Ngày_nhập"
                   Kind="Value"
@@ -58,7 +67,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Ngày_nhập]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Ngày_nhập]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -71,7 +80,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Số_hóa_đơn]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Số_hóa_đơn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -84,7 +93,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Ngày_hóa_đơn]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Ngày_hóa_đơn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -97,7 +106,20 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Ghi_chú]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Ghi_chú]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Thanh_toán"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_PhẩmItem/Properties[Thanh_toán]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -105,19 +127,19 @@
                 <ContentItem
                   Name="Đối_TượngItem"
                   Kind="Details"
-                  DataType="Đối_TượngItem">
+                  DataType="Đối_TượngItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Đối_TượngItem]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Đối_TượngItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate1"
                     Kind="Details"
-                    DataType="Đối_TượngItem">
+                    DataType="Đối_TượngItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -125,45 +147,18 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem>
-                <ContentItem
-                  Name="Thành_tiền1"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <MemberExpression
-                          Member="NhapSanPham/Properties[Thành_tiền]" />
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Tiền_thuế1"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="NhapSanPham/Properties[Tiền_thuế]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Tổng_tiền1"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Money">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="NhapSanPham/Properties[Tổng_tiền]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
@@ -177,7 +172,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="Nhập_Sản_PhẩmListDetail/Methods[Nhập_Sản_PhẩmItemListAddAndEditNew]" />
+                          Target="Nhập_Sản_PhẩmListDetail1/Methods[Nhập_Sản_PhẩmItemListAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -189,7 +184,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm]" />
+                          Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -228,36 +223,21 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
-                <ControlPropertySource
-                  Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[ShowAddNewRowProperty]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="False"
-                        ResultType=":Boolean" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
               Name="GroupChiTiet"
-              IsHidden="True"
               Kind="Group"
               View="Microsoft.LightSwitch.RichClient:ModalWindow">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Chi tiết của Nhập Sản Phẩm" />
-              </ContentItem.Attributes>
               <ContentItem
                 Name="Nhập_Sản_Phẩm_Chi_Tiết_SelectedItem"
                 Kind="Details"
-                DataType="NhapSanPhamChiTiet">
+                DataType="Nhập_Sản_Phẩm_Chi_TiếtItem">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm_Chi_Tiết]" />
+                        Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm_Chi_Tiết]" />
                       <MemberExpression
                         Member="SelectedItem" />
                     </ChainExpression>
@@ -266,19 +246,19 @@
                 <ContentItem
                   Name="Sản_PhẩmItem1"
                   Kind="Details"
-                  DataType="SanPham">
+                  DataType="Sản_PhẩmItem">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[SanPham]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Sản_PhẩmItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="Sản_PhẩmItem2"
                     Kind="Details"
-                    DataType="SanPham">
+                    DataType="Sản_PhẩmItem">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -301,13 +281,13 @@
                 <ContentItem
                   Name="Đơn_Vị_TínhItem1"
                   Kind="Details"
-                  DataType="Đơn_Vị_TínhItem"
+                  DataType="Đơn_Vị_TínhItem1"
                   View="Microsoft.LightSwitch.RichClient:Summary">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Đơn_Vị_TínhItem]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Đơn_Vị_TínhItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -320,7 +300,33 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Số_lượng]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lượng]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Số_lô1"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lô]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Hạn_dùng1"
+                  Kind="Value"
+                  DataType=":Date">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Hạn_dùng]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -333,7 +339,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Giá_nhập]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Giá_nhập]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -346,7 +352,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Phần_trăm_thuế]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Phần_trăm_thuế]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -359,46 +365,46 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Ghi_chú]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Thành_tiền"
+                  Name="Thành_tiền2"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Thành_tiền]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Thành_tiền]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Tiền_thuế"
+                  Name="Tiền_thuế2"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Tiền_thuế]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Tiền_thuế]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Tổng_tiền"
+                  Name="Tổng_tiền2"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Tổng_tiền]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Tổng_tiền]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -411,7 +417,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <CallExpression
-                            Target="Nhập_Sản_PhẩmListDetail/Methods[OK]" />
+                            Target="Nhập_Sản_PhẩmListDetail1/Methods[OK]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -423,25 +429,35 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <CallExpression
-                            Target="Nhập_Sản_PhẩmListDetail/Methods[Hủy]" />
+                            Target="Nhập_Sản_PhẩmListDetail1/Methods[Hủy]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem.CommandItems>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="350"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinHeight]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="350"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="False"
-                        ResultType=":Boolean" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.PropertySources>
               <ControlPropertySource
@@ -454,16 +470,6 @@
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="True"
-                      ResultType=":Boolean" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
             </ContentItem.PropertySources>
           </ContentItem>
           <ContentItem
@@ -472,7 +478,7 @@
             <ContentItem
               Name="Nhập_Sản_PhẩmItemDetails"
               Kind="Details"
-              DataType="NhapSanPham">
+              DataType="Nhập_Sản_PhẩmItem">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="Nhập Sản Phẩm Item Details" />
@@ -481,7 +487,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm]" />
+                      Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm]" />
                     <MemberExpression
                       Member="SelectedItem" />
                   </ChainExpression>
@@ -492,6 +498,19 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
+                  Name="Id1"
+                  Kind="Value"
+                  DataType=":Int32">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_PhẩmItem/Properties[Id]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
                   Name="Ngày_nhập1"
                   Kind="Value"
                   DataType=":Date">
@@ -499,7 +518,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Ngày_nhập]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Ngày_nhập]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -512,7 +531,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Số_hóa_đơn]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Số_hóa_đơn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -525,7 +544,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Ngày_hóa_đơn]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Ngày_hóa_đơn]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -538,76 +557,24 @@
                 <ContentItem
                   Name="Đối_TượngItem1"
                   Kind="Details"
-                  DataType="Đối_TượngItem">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Nhà Cung Cấp" />
-                  </ContentItem.Attributes>
-                  <ContentItem.ChoicesSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="Nhập_Sản_PhẩmListDetail/Properties[NhaCungCap]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.ChoicesSource>
+                  DataType="Đối_TượngItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Đối_TượngItem]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Đối_TượngItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate2"
                     Kind="Details"
-                    DataType="Đối_TượngItem"
-                    View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                    DataType="Đối_TượngItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
-                    <ContentItem
-                      Name="Tên"
-                      Kind="Value"
-                      DataType=":String">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Đối_TượngItem/Properties[Tên]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem
-                      Name="Địa_chỉ"
-                      Kind="Value"
-                      DataType=":String?">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Đối_TượngItem/Properties[Địa_chỉ]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                    <ContentItem
-                      Name="Điện_thoại_di_động"
-                      Kind="Value"
-                      DataType=":String">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="Đối_TượngItem/Properties[Điện_thoại_di_động]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
                   </ContentItem>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
@@ -623,14 +590,14 @@
                   </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
-                  Name="Thanh_toán"
+                  Name="Thanh_toán1"
                   Kind="Value"
                   DataType=":Int32">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Thanh_toán]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Thanh_toán]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -643,7 +610,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Ghi_chú]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -654,40 +621,40 @@
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
-                  Name="Thành_tiền3"
+                  Name="Thành_tiền"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Thành_tiền]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Thành_tiền]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Tiền_thuế3"
+                  Name="Tiền_thuế"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Tiền_thuế]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Tiền_thuế]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Tổng_tiền3"
+                  Name="Tổng_tiền"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPham/Properties[Tổng_tiền]" />
+                          Member="Nhập_Sản_PhẩmItem/Properties[Tổng_tiền]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -709,24 +676,20 @@
             <ContentItem
               Name="Nhập_Sản_Phẩm_Chi_Tiết"
               Kind="Collection"
-              DataType="CollectionView$NhapSanPhamChiTiet"
+              DataType="CollectionView$Nhập_Sản_Phẩm_Chi_TiếtItem"
               View="C1.LightSwitch.FlexGrid:C1FlexGrid">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Chi tiết của Nhập Sản Phẩm" />
-              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm_Chi_Tiết]" />
+                      Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm_Chi_Tiết]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
                 Name="RowTemplate3"
                 Kind="Details"
-                DataType="NhapSanPhamChiTiet">
+                DataType="Nhập_Sản_Phẩm_Chi_TiếtItem">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
@@ -735,19 +698,19 @@
                 <ContentItem
                   Name="Sản_PhẩmItem"
                   Kind="Details"
-                  DataType="SanPham">
+                  DataType="Sản_PhẩmItem">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[SanPham]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Sản_PhẩmItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate5"
                     Kind="Details"
-                    DataType="SanPham">
+                    DataType="Sản_PhẩmItem">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -758,19 +721,19 @@
                 <ContentItem
                   Name="Đơn_Vị_TínhItem"
                   Kind="Details"
-                  DataType="Đơn_Vị_TínhItem">
+                  DataType="Đơn_Vị_TínhItem1">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Đơn_Vị_TínhItem]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Đơn_Vị_TínhItem]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
                     Name="RowTemplate4"
                     Kind="Details"
-                    DataType="Đơn_Vị_TínhItem">
+                    DataType="Đơn_Vị_TínhItem1">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression />
@@ -786,7 +749,33 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Số_lượng]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lượng]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Số_lô"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lô]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Hạn_dùng"
+                  Kind="Value"
+                  DataType=":Date">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Hạn_dùng]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -799,7 +788,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Giá_nhập]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Giá_nhập]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -812,7 +801,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Phần_trăm_thuế]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Phần_trăm_thuế]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -825,46 +814,46 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Ghi_chú]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Ghi_chú]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Thành_tiền2"
+                  Name="Thành_tiền1"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Thành_tiền]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Thành_tiền]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Tiền_thuế2"
+                  Name="Tiền_thuế1"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Tiền_thuế]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Tiền_thuế]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="Tổng_tiền2"
+                  Name="Tổng_tiền1"
                   Kind="Value"
                   DataType="Microsoft.LightSwitch.Extensions:Money">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="NhapSanPhamChiTiet/Properties[Tổng_tiền]" />
+                          Member="Nhập_Sản_Phẩm_Chi_TiếtItem/Properties[Tổng_tiền]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -873,9 +862,11 @@
                   <ControlPropertySource
                     Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
                     <ScreenExpressionTree>
-                      <ConstantExpression
-                        Value="True"
-                        ResultType=":Boolean" />
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
@@ -892,7 +883,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="Nhập_Sản_PhẩmListDetail/Methods[Nhập_Sản_Phẩm_Chi_TiếtAddAndEditNew]" />
+                          Target="Nhập_Sản_PhẩmListDetail1/Methods[Nhập_Sản_Phẩm_Chi_TiếtAddAndEditNew]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -908,7 +899,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="Nhập_Sản_PhẩmListDetail/Methods[Nhập_Sản_Phẩm_Chi_TiếtEditSelected]" />
+                          Target="Nhập_Sản_PhẩmListDetail1/Methods[Nhập_Sản_Phẩm_Chi_TiếtEditSelected]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -920,7 +911,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm_Chi_Tiết]" />
+                          Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm_Chi_Tiết]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -929,6 +920,16 @@
                 </ContentItem>
               </ContentItem.CommandItems>
               <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
                 <ControlPropertySource
                   Property="C1.LightSwitch.FlexGrid:C1FlexGrid/Properties[C1LicenseProperty]">
                   <ScreenExpressionTree>
@@ -983,7 +984,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Nhập_Sản_PhẩmListDetail/Methods[Save]" />
+                    Target="Nhập_Sản_PhẩmListDetail1/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -995,7 +996,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Nhập_Sản_PhẩmListDetail/Methods[Refresh]" />
+                    Target="Nhập_Sản_PhẩmListDetail1/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1007,7 +1008,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Nhập_Sản_PhẩmListDetail/Methods[Báo_cáo]" />
+                    Target="Nhập_Sản_PhẩmListDetail1/Methods[Báo_cáo]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1031,7 +1032,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="Nhập_Sản_PhẩmListDetail/Methods[Close]" />
+                    Target="Nhập_Sản_PhẩmListDetail1/Methods[Close]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1081,11 +1082,11 @@
         </ScreenMethod.Attributes>
       </ScreenMethod>
       <ScreenMethod
+        Name="Báo_cáo" />
+      <ScreenMethod
         Name="OK" />
       <ScreenMethod
         Name="Hủy" />
-      <ScreenMethod
-        Name="Báo_cáo" />
       <ScreenMethod
         Name="Nhập_Sản_PhẩmItemListAddAndEditNew">
         <ScreenMethod.Attributes>
@@ -1112,18 +1113,18 @@
       <ScreenCollectionProperty
         Name="Nhập_Sản_Phẩm"
         PageSize="45"
-        PropertyType="CollectionView$NhapSanPham">
+        PropertyType="CollectionView$Nhập_Sản_PhẩmItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Nhập_Sản_PhẩmQuery"
-            ReturnType="NhapSanPham*">
+            ReturnType="Nhập_Sản_PhẩmItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="BanHangData/Members[Nhập_Sản_Phẩm]" />
+                  Member="BanHangData1/Members[Nhập_Sản_Phẩm]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -1131,18 +1132,18 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm]/Query" />
+              Target="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="Nhập_Sản_Phẩm_Chi_Tiết"
         PageSize="15"
-        PropertyType="CollectionView$NhapSanPhamChiTiet">
+        PropertyType="CollectionView$Nhập_Sản_Phẩm_Chi_TiếtItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
             Name="Nhập_Sản_Phẩm_Chi_TiếtQuery"
-            ReturnType="NhapSanPhamChiTiet*">
+            ReturnType="Nhập_Sản_Phẩm_Chi_TiếtItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree />
             </ScreenQueryDefinition.FilterExpression>
@@ -1150,7 +1151,7 @@
               <QuerySourceExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm]" />
+                    Member="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm]" />
                   <MemberExpression
                     Member="SelectedItem" />
                   <MemberExpression
@@ -1163,33 +1164,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="Nhập_Sản_PhẩmListDetail/Properties[Nhập_Sản_Phẩm_Chi_Tiết]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="NhaCungCap"
-        PageSize="45"
-        PropertyType="CollectionView$Đối_TượngItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="NhaCungCapQuery"
-            ReturnType="Đối_TượngItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="BanHangData/Members[NhaCungCap]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="Nhập_Sản_PhẩmListDetail/Properties[NhaCungCap]/Query" />
+              Target="Nhập_Sản_PhẩmListDetail1/Properties[Nhập_Sản_Phẩm_Chi_Tiết]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1197,10 +1172,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowNhập_Sản_PhẩmListDetail">
+      Name="ShowNhập_Sản_PhẩmListDetail1">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="Nhập_Sản_PhẩmListDetail" />
+          TargetScreen="Nhập_Sản_PhẩmListDetail1" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

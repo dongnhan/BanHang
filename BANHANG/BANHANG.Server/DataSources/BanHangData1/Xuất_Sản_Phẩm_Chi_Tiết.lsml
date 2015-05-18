@@ -134,6 +134,26 @@
           </Attribute>
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty
+        Name="Số_lô"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Hạn_dùng"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -251,6 +271,17 @@
           Scale="2"
           Type="decimal"
           Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lượng]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Số lô"
+          Nullable="False"
+          Type="nvarchar"
+          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Số_lô]" />
+        <SsdlProperty
+          Name="Hạn dùng"
+          Nullable="False"
+          Type="date"
+          Property="Xuất_Sản_Phẩm_Chi_TiếtItem/Properties[Hạn_dùng]" />
         <SsdlProperty
           Name="Giá bán"
           Nullable="False"

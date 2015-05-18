@@ -814,4 +814,40 @@
         Target="ServiceInterface:ChonMonChiTiet1_SoLuong" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Chi_Công_Nợ_Nhập_Sản_Phẩm" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Chi_Tiết_Đơn_Vị_Tính" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Chi_Tiết_Nhập_Sản_Phẩm" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Chi_Tiết_Sản_Phẩm" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Nhập_Sản_Phẩm_Đối_Tượng" />
+    </Association.Attributes>
+  </Association>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:vTồn_Theo_LôItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

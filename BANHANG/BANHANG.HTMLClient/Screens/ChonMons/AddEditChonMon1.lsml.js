@@ -195,3 +195,23 @@ myapp.AddEditChonMon1.TÌM_execute = function (screen) {
     // Write code here.
  
 };
+myapp.AddEditChonMon1.ShowGroup_postRender = function (element, contentItem) {
+    // Write code here.
+    setTimeout(function () {
+        var $uiIcon = $(element).find(".ui-icon");
+        var $uiBtnText = $(element).find(".ui-btn-text");
+        //$uiBtnText.css("font-size", "14px");
+        $uiIcon.css("width", "48px");
+        $uiIcon.css("heigth", "25px");
+    }, 500);
+};
+myapp.AddEditChonMon1.LƯU2_postRender = function (element, contentItem) {
+    // Write code here.
+    setTimeout(function () {
+        var $uiIcon = $(element).find(".ui-icon");
+        var $uiBtnText = $(element).find(".ui-btn-text");
+        $uiBtnText.css("font-size", "14px");
+        $uiIcon.css("width", "48px");
+        $uiIcon.css("heigth", "25px");
+    }, 500);
+};

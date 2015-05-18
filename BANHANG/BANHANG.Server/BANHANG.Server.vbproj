@@ -269,6 +269,12 @@
     <Compile Include="DataSources\BanHangData1\NhapSanPhamDauKyChiTiet.lsml.vb">
       <DependentUpon>NhapSanPhamDauKyChiTiets.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\BanHangData1\Nhập_Sản_PhẩmItem.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Chi_TiếtItem.lsml.vb">
+      <DependentUpon>Nhập_Sản_Phẩm_Chi_Tiết.lsml</DependentUpon>
+    </Compile>
     <Compile Include="DataSources\BanHangData1\Xuất_Sản_PhẩmItem.lsml.vb">
       <DependentUpon>Xuất_Sản_Phẩm.lsml</DependentUpon>
     </Compile>
@@ -326,12 +332,6 @@
     </Compile>
     <Compile Include="Web\GetUserName.ashx.vb">
       <DependentUpon>GetUserName.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="XtraReport1.Designer.vb">
-      <DependentUpon>XtraReport1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="XtraReport1.vb">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReport_Chi.Designer.vb">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
@@ -435,6 +435,12 @@
     <Compile Include="XtraReport_PhieuTinhTien.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_SoChiTietMuaHang.Designer.vb">
+      <DependentUpon>XtraReport_SoChiTietMuaHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_SoChiTietMuaHang.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_TheKhoTongHop.Designer.vb">
       <DependentUpon>XtraReport_TheKhoTongHop.vb</DependentUpon>
     </Compile>
@@ -445,6 +451,12 @@
       <DependentUpon>XtraReport_Thu.vb</DependentUpon>
     </Compile>
     <Compile Include="XtraReport_Thu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_TonKhoTheoLo.Designer.vb">
+      <DependentUpon>XtraReport_TonKhoTheoLo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_TonKhoTheoLo.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReport_TonTienMat.Designer.vb">
@@ -535,8 +547,6 @@
     <LightSwitchModel Include="DataSources\BanHangDataQuan\NhomMon.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\ChonMons.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\ChonMonChiTiets.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\ChonMons.lsml" />
-    <LightSwitchModel Include="DataSources\BanHangData\ChonMonChiTiets.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\SoLuongs.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Chi_Công_Nợ.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Chi_Công_Nợ_Chi_Tiết.lsml" />
@@ -553,6 +563,11 @@
     <LightSwitchModel Include="DataSources\BanHangDataQuan\DonViTinh.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\MonDinhLuongs.lsml" />
     <LightSwitchModel Include="DataSources\BanHangDataQuan\SanPham.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\ChonMons.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData\ChonMonChiTiets.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangData1\vTồn_Theo_Lô.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -597,9 +612,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\licenses.licx" />
-    <EmbeddedResource Include="XtraReport1.resx">
-      <DependentUpon>XtraReport1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_Chi.resx">
       <DependentUpon>XtraReport_Chi.vb</DependentUpon>
     </EmbeddedResource>
@@ -651,11 +663,17 @@
     <EmbeddedResource Include="XtraReport_PhieuTinhTien.resx">
       <DependentUpon>XtraReport_PhieuTinhTien.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_SoChiTietMuaHang.resx">
+      <DependentUpon>XtraReport_SoChiTietMuaHang.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_TheKhoTongHop.resx">
       <DependentUpon>XtraReport_TheKhoTongHop.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_Thu.resx">
       <DependentUpon>XtraReport_Thu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_TonKhoTheoLo.resx">
+      <DependentUpon>XtraReport_TonKhoTheoLo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_TonTienMat.resx">
       <DependentUpon>XtraReport_TonTienMat.vb</DependentUpon>

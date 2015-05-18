@@ -171,6 +171,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowvDoanhThuQuanTongHopsSearch"
       Target="!module/Methods[ShowvDoanhThuQuanTongHopsSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhập_Sản_PhẩmListDetail1"
+      Target="!module/Methods[ShowNhập_Sản_PhẩmListDetail1]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowvTồn_Theo_LôSearch"
+      Target="!module/Methods[ShowvTồn_Theo_LôSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -225,6 +231,12 @@
       <ApplicationNavigationLink
         Name="vDoanhThuQuanTongHopsSearch"
         Command="!module/Commands[ScreenCommandShowvDoanhThuQuanTongHopsSearch]" />
+      <ApplicationNavigationLink
+        Name="Nhập_Sản_PhẩmListDetail1"
+        Command="!module/Commands[ScreenCommandShowNhập_Sản_PhẩmListDetail1]" />
+      <ApplicationNavigationLink
+        Name="vTồn_Theo_LôSearch"
+        Command="!module/Commands[ScreenCommandShowvTồn_Theo_LôSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">
@@ -285,7 +297,7 @@
       </ApplicationNavigationGroup.Attributes>
       <ApplicationNavigationLink
         Name="link1"
-        Command="!module/Commands[ScreenCommandShowNhập_Sản_PhẩmListDetail]" />
+        Command="!module/Commands[ScreenCommandShowNhập_Sản_PhẩmListDetail1]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group2">
@@ -350,6 +362,9 @@
       <ApplicationNavigationLink
         Name="link8"
         Command="!module/Commands[ScreenCommandShowvThẻ_Kho_Tổng_HợpSearch]" />
+      <ApplicationNavigationLink
+        Name="link27"
+        Command="!module/Commands[ScreenCommandShowvTồn_Theo_LôSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group5">
