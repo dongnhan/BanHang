@@ -177,6 +177,12 @@
     <ApplicationCommand
       Name="ScreenCommandShowvTồn_Theo_LôSearch"
       Target="!module/Methods[ShowvTồn_Theo_LôSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowNhập_Sản_PhẩmSearch"
+      Target="!module/Methods[ShowNhập_Sản_PhẩmSearch]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowXuất_Sản_PhẩmSearch"
+      Target="!module/Methods[ShowXuất_Sản_PhẩmSearch]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -237,6 +243,12 @@
       <ApplicationNavigationLink
         Name="vTồn_Theo_LôSearch"
         Command="!module/Commands[ScreenCommandShowvTồn_Theo_LôSearch]" />
+      <ApplicationNavigationLink
+        Name="Nhập_Sản_PhẩmSearch"
+        Command="!module/Commands[ScreenCommandShowNhập_Sản_PhẩmSearch]" />
+      <ApplicationNavigationLink
+        Name="Xuất_Sản_PhẩmSearch"
+        Command="!module/Commands[ScreenCommandShowXuất_Sản_PhẩmSearch]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="group7">

@@ -362,6 +362,12 @@
       <Link>UserCode\Shared\XuatSanPhamChiTiet.lsml.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Screens\BanHang\SoChiTietBanHangReportPreviewScreen.lsml.vb">
+      <DependentUpon>SoChiTietBanHangReportPreviewScreen.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\BanHang\Xuất_Sản_PhẩmSearch.lsml.vb">
+      <DependentUpon>Xuất_Sản_PhẩmSearch.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\BaoCaoQuan\PhieuTinhTienReportPreviewScreen.lsml.vb">
       <DependentUpon>PhieuTinhTienReportPreviewScreen.lsml</DependentUpon>
     </Compile>
@@ -400,6 +406,12 @@
     </Compile>
     <Compile Include="Screens\MuaHang\Nhập_Sản_PhẩmListDetail1.lsml.vb">
       <DependentUpon>Nhập_Sản_PhẩmListDetail1.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MuaHang\Nhập_Sản_PhẩmSearch.lsml.vb">
+      <DependentUpon>Nhập_Sản_PhẩmSearch.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MuaHang\SoChiTietMuaHangReportPreviewScreen.lsml.vb">
+      <DependentUpon>SoChiTietMuaHangReportPreviewScreen.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\QuanListDetail1.lsml.vb">
       <DependentUpon>QuanListDetail1.lsml</DependentUpon>
@@ -642,6 +654,10 @@
     <LightSwitchModel Include="Screens\MuaHang\Nhập_Sản_PhẩmListDetail1.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vTồn_Theo_LôSearch.lsml" />
     <LightSwitchModel Include="Screens\BaoCao\vTonTheoLoReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\MuaHang\Nhập_Sản_PhẩmSearch.lsml" />
+    <LightSwitchModel Include="Screens\MuaHang\SoChiTietMuaHangReportPreviewScreen.lsml" />
+    <LightSwitchModel Include="Screens\BanHang\Xuất_Sản_PhẩmSearch.lsml" />
+    <LightSwitchModel Include="Screens\BanHang\SoChiTietBanHangReportPreviewScreen.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\report.jpg" />

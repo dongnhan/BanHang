@@ -435,6 +435,12 @@
     <Compile Include="XtraReport_PhieuTinhTien.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReport_SoChiTietBanHang.Designer.vb">
+      <DependentUpon>XtraReport_SoChiTietBanHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_SoChiTietBanHang.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReport_SoChiTietMuaHang.Designer.vb">
       <DependentUpon>XtraReport_SoChiTietMuaHang.vb</DependentUpon>
     </Compile>
@@ -662,6 +668,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_PhieuTinhTien.resx">
       <DependentUpon>XtraReport_PhieuTinhTien.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_SoChiTietBanHang.resx">
+      <DependentUpon>XtraReport_SoChiTietBanHang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport_SoChiTietMuaHang.resx">
       <DependentUpon>XtraReport_SoChiTietMuaHang.vb</DependentUpon>
