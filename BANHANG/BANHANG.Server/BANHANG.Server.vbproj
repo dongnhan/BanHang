@@ -574,6 +574,12 @@
     <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\Nhập_Sản_Phẩm_Chi_Tiết.lsml" />
     <LightSwitchModel Include="DataSources\BanHangData1\vTồn_Theo_Lô.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Chis.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Chi_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\DoiTuong.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Thus.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\Thu_Chi_Tiết.lsml" />
+    <LightSwitchModel Include="DataSources\BanHangDataQuan\vTồn_Quỹ_Tiền_Mặt.lsml" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

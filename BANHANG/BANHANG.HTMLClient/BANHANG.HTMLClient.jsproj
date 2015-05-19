@@ -79,6 +79,9 @@
     <Content Include="Screens\vDoanhThuQuanTongHopsBrowse.lsml.js">
       <DependentUpon>vDoanhThuQuanTongHopsBrowse.lsml</DependentUpon>
     </Content>
+    <Content Include="Screens\vTồn_Quỹ_Tiền_MặtBrowse.lsml.js">
+      <DependentUpon>vTồn_Quỹ_Tiền_MặtBrowse.lsml</DependentUpon>
+    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\IsWires.js" />
@@ -118,6 +121,8 @@
     <LightSwitchModel Include="Screens\Ban\BrowseBan.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\AddEditChonMon1.lsml" />
     <LightSwitchModel Include="Screens\ChonMons\BrowseChonMons.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\AddEditTiền_Mặt_Đầu_KỳItem1.lsml" />
+    <LightSwitchModel Include="Screens\DauKy\BrowseTiền_Mặt_Đầu_Kỳ1.lsml" />
     <LightSwitchModel Include="Screens\DonViTinh\AddEditĐơn_Vị_TínhItem2.lsml" />
     <LightSwitchModel Include="Screens\DonViTinh\BrowseDonViTinh.lsml" />
     <LightSwitchModel Include="Screens\Mon\AddEditMónItem1.lsml" />
@@ -126,8 +131,14 @@
     <LightSwitchModel Include="Screens\NhomMon\BrowseNhomMon.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\AddEditSản_PhẩmItem1.lsml" />
     <LightSwitchModel Include="Screens\Sản_Phẩm\BrowseSản_Phẩm.lsml" />
+    <LightSwitchModel Include="Screens\TienMat\AddEditChi1.lsml" />
+    <LightSwitchModel Include="Screens\TienMat\AddEditThu1.lsml" />
+    <LightSwitchModel Include="Screens\TienMat\AddEditĐối_TượngItem2.lsml" />
+    <LightSwitchModel Include="Screens\TienMat\BrowseChis.lsml" />
+    <LightSwitchModel Include="Screens\TienMat\BrowseThus.lsml" />
     <LightSwitchModel Include="Screens\vDoanhThuQuanTheoMonsBrowse.lsml" />
     <LightSwitchModel Include="Screens\vDoanhThuQuanTongHopsBrowse.lsml" />
+    <LightSwitchModel Include="Screens\vTồn_Quỹ_Tiền_MặtBrowse.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="SoLuong">
+    Name="Chi1">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -17,41 +17,121 @@
     <EntityType.Properties>
       <KeyProperty
         Name="Id"
+        IsReadOnly="True"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
+          <Hidden />
           <Required />
           <NotSearchable />
+          <DisplayName
+            Value="Mã" />
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Số_lượng"
-        PropertyType=":Int32">
+        Name="Ngày_nhập"
+        PropertyType=":Date">
         <EntityProperty.Attributes>
           <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Số_hóa_đơn"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ngày_hóa_đơn"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Ghi_chú"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="500" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Số_tiền"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
           <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="ChonMonChiTiets"
-        Association="ChonMonChiTiet1_SoLuong"
-        FromEnd="SoLuong"
-        ToEnd="ChonMonChiTiet1" />
+        Name="Chi_Chi_Tiết"
+        Association="FK_Chi_Chi_Tiết_Chi"
+        FromEnd="Chi"
+        ToEnd="Chi_Chi_Tiết" />
+      <NavigationProperty
+        Name="Đối_TượngItem"
+        Association="FK_Chi_Đối_Tượng1"
+        FromEnd="Chi"
+        ToEnd="Đối_Tượng">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Đối Tượng" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
     </EntityType.Properties>
   </EntityType>
+  <Association
+    Name="FK_Chi_Chi_Tiết_Chi">
+    <AssociationEnd
+      Name="Chi"
+      Multiplicity="One"
+      EntityType="Chi1">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Chi_Chi_Tiết"
+      Multiplicity="Many"
+      EntityType="Chi_Chi_TiếtItem" />
+  </Association>
   <EntityContainer
     Name="BanHangDataQuan">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="SoLuongs"
+      Name="Chis"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="SoLuong" />
+      EntityType="Chi1" />
+    <AssociationSet
+      Name="FK_Chi_Chi_Tiết_Chi"
+      Association="FK_Chi_Chi_Tiết_Chi">
+      <AssociationSetEnd
+        Name="Chi"
+        EntitySet="Chis" />
+      <AssociationSetEnd
+        Name="Chi_Chi_Tiết"
+        EntitySet="Chi_Chi_Tiết" />
+    </AssociationSet>
     <QueryOperation
-      Name="SoLuongs_Single"
-      ReturnType="SoLuong">
+      Name="Chis_Single"
+      ReturnType="Chi1">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -77,7 +157,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="SoLuongs" />
+            Member="Chis" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -86,12 +166,14 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="SoLuongs_SingleOrDefault"
-      ReturnType="SoLuong">
+      Name="Chis_SingleOrDefault"
+      ReturnType="Chi1">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -117,7 +199,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="SoLuongs" />
+            Member="Chis" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -126,78 +208,80 @@
         <QueryOperationParameter.Attributes>
           <Description
             Value="The value of the 'Id' key property of the entity to retrieve." />
+          <DisplayName
+            Value="Mã" />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
-    <AssociationSet
-      Name="ChonMonChiTiet1_SoLuongs"
-      Association="ChonMonChiTiet1_SoLuong">
-      <AssociationSetEnd
-        Name="ChonMonChiTiet1"
-        EntitySet="ChonMonChiTiets" />
-      <AssociationSetEnd
-        Name="SoLuong"
-        EntitySet="SoLuongs" />
-    </AssociationSet>
   </EntityContainer>
-  <Association
-    Name="ChonMonChiTiet1_SoLuong">
-    <Association.Attributes>
-      <UserDefined />
-    </Association.Attributes>
-    <AssociationEnd
-      Name="ChonMonChiTiet1"
-      Multiplicity="Many"
-      EntityType="ChonMonChiTiet1" />
-    <AssociationEnd
-      Name="SoLuong"
-      Multiplicity="One"
-      EntityType="SoLuong">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-  </Association>
   <DataService
     Name="BanHangDataQuanDataService">
     <DataService.Attributes>
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="SoLuongs">
+      EntitySet="Chis">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="SoLuong" />
+          Table="Chi" />
         <SsdlProperty
           Name="Id"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
-          Property="SoLuong/Properties[Id]" />
+          Property="Chi1/Properties[Id]" />
         <SsdlProperty
-          Name="Số lượng"
+          Name="Ngày nhập"
+          Nullable="False"
+          Type="date"
+          Property="Chi1/Properties[Ngày_nhập]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Số hóa đơn"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Chi1/Properties[Số_hóa_đơn]" />
+        <SsdlProperty
+          Name="Ngày hóa đơn"
+          Nullable="True"
+          Type="date"
+          Property="Chi1/Properties[Ngày_hóa_đơn]" />
+        <SsdlProperty
+          MaxLength="500"
+          Name="Ghi chú"
+          Nullable="True"
+          Type="nvarchar"
+          Property="Chi1/Properties[Ghi_chú]" />
+        <SsdlProperty
+          Name="Số tiền"
+          Nullable="False"
+          Type="decimal"
+          Property="Chi1/Properties[Số_tiền]" />
+        <SsdlForeignKeyProperty
+          Name="Chi_DoiTuong"
           Nullable="False"
           Type="int"
-          Property="SoLuong/Properties[Số_lượng]" />
+          PropertyName="Chi_DoiTuong" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
-      AssociationSet="ChonMonChiTiet1_SoLuongs">
+      AssociationSet="FK_Chi_Chi_Tiết_Chi">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
-          Name="ChonMonChiTiet1_SoLuongs" />
+          Name="FK_Chi Chi Tiết_Chi" />
         <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[ChonMonChiTiet1_SoLuongs]/Members[ChonMonChiTiet1]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="Số lượng" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="BanHangDataQuan/Members[ChonMonChiTiet1_SoLuongs]/Members[SoLuong]">
+          End="BanHangDataQuan/Members[FK_Chi_Chi_Tiết_Chi]/Members[Chi]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="BanHangDataQuan/Members[FK_Chi_Chi_Tiết_Chi]/Members[Chi_Chi_Tiết]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChiChiTiet_Chi" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

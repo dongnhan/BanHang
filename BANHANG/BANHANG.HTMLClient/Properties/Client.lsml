@@ -70,5 +70,17 @@
     <ApplicationNavigationMethodLink
       Name="link6"
       Method="!module/Methods[showvDoanhThuQuanTongHopsBrowse]" />
+    <ApplicationNavigationMethodLink
+      Name="link8"
+      Method="!module/Methods[showBrowseTiền_Mặt_Đầu_Kỳ1]" />
+    <ApplicationNavigationMethodLink
+      Name="link9"
+      Method="!module/Methods[showBrowseThus]" />
+    <ApplicationNavigationMethodLink
+      Name="link10"
+      Method="!module/Methods[showBrowseChis]" />
+    <ApplicationNavigationMethodLink
+      Name="link11"
+      Method="!module/Methods[showvTồn_Quỹ_Tiền_MặtBrowse]" />
   </Application.NavigationItems>
 </Application>
